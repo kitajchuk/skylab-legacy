@@ -59,15 +59,16 @@ const config = {
 
 
 module.exports = ( env ) => {
-    if ( env.staging || env.production ) {
-        config.plugins.push(new CompressionPlugin({
-            asset: "[path]",
-            algorithm: "gzip",
-            test: /\.(js|css)$/,
-            threshold: 0,
-            minRatio: 0.8
-        }));
-    }
+    // Don't gzip unless we end up using S3 / CloudFront
+    // if ( env.staging || env.production ) {
+    //     config.plugins.push(new CompressionPlugin({
+    //         asset: "[path]",
+    //         algorithm: "gzip",
+    //         test: /\.(js|css)$/,
+    //         threshold: 0,
+    //         minRatio: 0.8
+    //     }));
+    // }
 
     return config;
 };
