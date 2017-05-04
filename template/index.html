@@ -50,6 +50,10 @@
         <header class="header js-header -fzero"></header>
         <nav class="navi js-navi -wrap -exp -fzero">
             <a class="h2" href="/">Home</a>
+            <% locals.site.getSliceZone( "site.navi" ).value.forEach(function ( slice ) { %>
+                <a class="h2" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a class="h2" href="/<%= slice.value.value[ 0 ].data.page.value.document.uid %>/"><%= slice.value.value[ 0 ].data.name.value %></a>
+            <% }) %>
         </nav>
         <main class="main js-main -fzero">
             <%- include( locals.template ) %>

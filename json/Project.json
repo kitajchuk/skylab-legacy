@@ -1,0 +1,57 @@
+{
+    "Project Information": {
+        "title": {
+            "type": "Text",
+            "fieldset": "Project Title",
+            "config": {
+                "label": "Project Title"
+            }
+        },
+        "uid" : {
+            "type" : "UID",
+            "config" : {
+            "placeholder" : "Project Slug",
+                "label" : "Project Slug"
+            }
+        },
+        "description": {
+            "type": "StructuredText",
+            "fieldset": "Project Description",
+            "config": {
+                "placeholder": "Project Description",
+                "multi": "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+            }
+        },
+        "image": {
+            "type": "Image",
+            "fieldset": "Project Image",
+            "config": {
+                "placeholder": "Project Image",
+                "constraint": {
+                    "width": "2400"
+                },
+                "thumbnails": [
+                    {
+                        "name": "tablet",
+                        "width": "1600",
+                        "height": "5000"
+                    },
+                    {
+                        "name": "mobile",
+                        "width": "800",
+                        "height": "5000"
+                    }
+                ]
+            }
+        }
+    },
+    "Project Content": {
+        "slices": {
+            "type": "Slices",
+            "fieldset": "Dynamic Page Content",
+            "config": {
+                "choices": {}
+            }
+        }
+    }
+}

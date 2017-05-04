@@ -1,5 +1,5 @@
 {
-    "Main": {
+    "Site Information": {
         "title": {
             "type": "Text",
             "fieldset": "Title",
@@ -42,20 +42,15 @@
                 "label": "Google Site Verification"
             }
         },
-        "awsCloudFrontUrl": {
-            "type": "Text",
-            "fieldset": "AWS CloudFront URL",
-            "config": {
-                "label": "AWS CloudFront URL"
-            }
-        },
         "appName": {
             "type": "Text",
             "fieldset": "App Name",
             "config": {
                 "label": "App Name"
             }
-        },
+        }
+    },
+    "Site Images": {
         "appLogo": {
             "type": "Image",
             "fieldset": "Logo Image ( can be svg )",
@@ -77,7 +72,6 @@
                 "placeholder": "Favicon Image ( png )"
             }
         },
-
         "appIOSIcon180x180": {
             "type": "Image",
             "fieldset": "apple-icon-180x180 ( png )",
@@ -141,7 +135,6 @@
                 "placeholder": "apple-icon-57x57 ( png )"
             }
         },
-
         "appIcon192x192": {
             "type": "Image",
             "fieldset": "favicon-192x192 ( png )",
@@ -170,7 +163,6 @@
                 "placeholder": "favicon-16x16 ( png )"
             }
         },
-
         "appMSTileColor": {
             "type": "Color",
             "fieldset": "msapplication-TileColor",
@@ -204,6 +196,41 @@
             "fieldset": "msapp-icon-70x70logo ( png )",
             "config": {
                 "placeholder": "msapp-icon-70x70logo ( png )"
+            }
+        }
+    },
+    "Site Navigation": {
+        "navi": {
+            "type": "Slices",
+            "fieldset": "Navigation Items",
+            "config": {
+                "choices": {
+                    "item": {
+                        "type": "Group",
+                        "fieldset": "Navigation Item",
+                        "config": {
+                            "fields": {
+                                "name": {
+                                    "type": "Text",
+                                    "fieldset": "Navigation Display Text",
+                                    "config": {
+                                        "label": "Navigation Display Text"
+                                    }
+                                },
+                                "page": {
+                                    "type": "Link",
+                                    "fieldset": "Navigation Link to a Page",
+                                    "config": {
+                                        "placeholder": "Choose a Page to add to the Navigation",
+                                        "select": "document",
+                                        "masks": ["page"]
+                                    }
+                                }
+                            },
+                            "repeat": false
+                        }
+                    }
+                }
             }
         }
     }
