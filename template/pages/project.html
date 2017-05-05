@@ -1,0 +1,29 @@
+<% if ( locals.document ) { %>
+    <div class="project js-project">
+        <div class="project__info -wrap">
+            <div class="cms">
+                <% if ( locals.document.getText( 'project.title' ) ) { %>
+                    <h1><%= locals.document.getText( 'project.title' ) %></h1>
+                <% } %>
+                <% if ( locals.document.getStructuredText( 'project.description' ) ) { %>
+                    <%- locals.document.getStructuredText( 'project.description' ).asHtml() %>
+                <% } %>
+            </div>
+        </div>
+        <div class="project__body">
+            <div class="slices cms">
+                <% if ( locals.document.getSliceZone( 'project.slices' ) ) { %>
+                    <% locals.document.getSliceZone( 'project.slices' ).slices.forEach(( slice ) => { %>
+                        <div class="slices__slice slices__<%= slice.sliceType %> animate js-animate">
+                            <div class="slices__content">
+                                <%- include( `../slices/${slice.sliceType}.html`, {slice: slice} ) %>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+<% } else if ( locals.documents ) { %>
+    <%- include( '../partials/index.html' ) %>
+<% } %>

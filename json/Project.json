@@ -1,57 +1,189 @@
 {
-    "Project Information": {
-        "title": {
-            "type": "Text",
-            "fieldset": "Project Title",
-            "config": {
-                "label": "Project Title"
-            }
-        },
-        "uid" : {
-            "type" : "UID",
-            "config" : {
-            "placeholder" : "Project Slug",
-                "label" : "Project Slug"
-            }
-        },
-        "description": {
-            "type": "StructuredText",
-            "fieldset": "Project Description",
-            "config": {
-                "placeholder": "Project Description",
-                "multi": "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
-            }
-        },
-        "image": {
-            "type": "Image",
-            "fieldset": "Project Image",
-            "config": {
-                "placeholder": "Project Image",
-                "constraint": {
-                    "width": "2400"
-                },
-                "thumbnails": [
-                    {
-                        "name": "tablet",
-                        "width": "1600",
-                        "height": "5000"
-                    },
-                    {
-                        "name": "mobile",
-                        "width": "800",
-                        "height": "5000"
-                    }
-                ]
-            }
+  "Project Information" : {
+    "title" : {
+      "type" : "Text",
+      "fieldset" : "Project Title",
+      "config" : {
+        "label" : "Project Title"
+      }
+    },
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "placeholder" : "Project Slug",
+        "label" : "Project Slug"
+      }
+    }
+  },
+  "Project Metadata" : {
+      "image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 2400
+          },
+          "thumbnails" : [ {
+            "name" : "tablet",
+            "width" : 1600,
+            "height" : 900
+          }, {
+            "name" : "mobile",
+            "width" : 800,
+            "height" : 450
+          } ],
+          "label" : "Project Image"
         }
     },
-    "Project Content": {
-        "slices": {
-            "type": "Slices",
-            "fieldset": "Dynamic Page Content",
-            "config": {
-                "choices": {}
+    "description" : {
+      "type" : "StructuredText",
+      "fieldset" : "Project Description",
+      "config" : {
+        "placeholder" : "Project Description",
+        "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+      }
+    },
+    "city" : {
+      "type" : "Text",
+      "fieldset" : "City - Location",
+      "config" : {
+          "label" : "City - Location"
+      }
+    },
+    "state" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ],
+        "label" : "State - Location",
+        "placeholder" : "Select State"
+      }
+    },
+    "status" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Conceptual", "In Progress", "Complete" ],
+        "label" : "Select Status",
+        "placeholder" : "Select Status"
+      }
+    },
+    "client" : {
+      "type" : "Text",
+      "fieldset" : "Project Client",
+      "config" : {
+        "label" : "Project Client"
+      }
+    },
+    "year" : {
+      "type" : "Text",
+      "fieldset" : "Project Year",
+      "config" : {
+        "label" : "Project Year"
+      }
+    },
+    "size" : {
+      "type" : "Text",
+      "fieldset" : "Project Size",
+      "config" : {
+        "label" : "Project Size"
+      }
+    },
+    "awards" : {
+      "type" : "StructuredText",
+      "fieldset" : "Project Awards",
+      "config" : {
+        "placeholder" : "Project Awards",
+        "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+      }
+    },
+    "categories" : {
+      "type" : "Group",
+      "fieldset" : "Categories",
+      "config" : {
+        "fields" : {
+          "category" : {
+            "type" : "Select",
+            "config" : {
+              "options" : [ "Commercial", "Exhibition", "Hospitality", "Mountain", "Planning", "Product", "Public", "Residential", "Retail", "Retro", "Sports/Rec", "Workspace" ],
+              "label" : "Select Category",
+              "placeholder" : "Select Category"
             }
-        }
+          }
+        },
+        "repeat" : true
+      }
     }
+  },
+  "Project Content" : {
+    "type" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Standard", "Feature" ],
+        "label" : "Project Type",
+        "placeholder" : "Select Type"
+      }
+    },
+    "feature" : {
+      "config" : {
+        "fields" : {
+          "image" : {
+            "type" : "Image",
+            "fieldset" : "Image",
+            "config" : {
+              "placeholder" : "Image",
+              "constraint" : {
+                "width" : 2400
+              },
+              "thumbnails" : [ {
+                "name" : "tablet",
+                "width" : 1600,
+                "height" : 900
+              }, {
+                "name" : "mobile",
+                "width" : 800,
+                "height" : 450
+              } ]
+            }
+          }
+        },
+        "repeat" : false,
+        "label" : "Feature"
+      },
+      "type" : "Group",
+      "fieldset" : "Feature"
+    },
+    "slices" : {
+      "type" : "Slices",
+      "fieldset" : "Dynamic Content",
+      "config" : {
+        "choices" : {
+          "text" : {
+            "type" : "StructuredText",
+            "fieldset" : "Text Block",
+            "config" : {
+              "placeholder" : "Text Block",
+              "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+            }
+          },
+          "image" : {
+            "type" : "Image",
+            "fieldset" : "Single Image Block",
+            "config" : {
+              "placeholder" : "Single Image Block",
+              "constraint" : {
+                "width" : 2400
+              },
+              "thumbnails" : [ {
+                "name" : "tablet",
+                "width" : 1600,
+                "height" : 900
+              }, {
+                "name" : "mobile",
+                "width" : 800,
+                "height" : 450
+              } ]
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -37,7 +37,7 @@ const getNavi = function ( type ) {
     let ret = false;
 
     cache.site.getSliceZone( "site.navi" ).value.forEach(( slice ) => {
-        if ( slice.value.value[ 0 ].data.page.value.document.uid === type ) {
+        if ( slice.value.value[ 0 ].data.page && slice.value.value[ 0 ].data.page.value.document.uid === type ) {
             ret = slice.value.value[ 0 ].data.page.value.document;
         }
     });
@@ -58,7 +58,7 @@ const getPreview = function ( req, res ) {
         return `/${doc.type}/${doc.uid}/`;
     };
 
-    prismic.api( config.apiAccess, null ).then(( api ) => {
+    prismic.api( config.api.access, null ).then(( api ) => {
         api.previewSession( previewToken, linkResolver, "/", ( error, redirectUrl ) => {
             res.cookie( prismic.previewCookie, previewToken, {
                 maxAge: 60 * 30 * 1000,
@@ -110,7 +110,7 @@ const getPartial = function ( params, query, data ) {
  */
 const getSite = function () {
     return new Promise(( resolve, reject ) => {
-        prismic.api( config.apiAccess, null ).then(( api ) => {
+        prismic.api( config.api.access, null ).then(( api ) => {
             api.getSingle( "site" ).then(( site ) => {
                 cache.api = api;
                 cache.site = site;
@@ -130,7 +130,7 @@ const getSite = function () {
  */
 const getDataForApi = function ( req ) {
     return new Promise(( resolve, reject ) => {
-        prismic.api( config.apiAccess, null ).then(( api ) => {
+        prismic.api( config.api.access, null ).then(( api ) => {
             const done = function ( json ) {
                 resolve( json.results );
             };

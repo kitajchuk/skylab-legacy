@@ -19,7 +19,7 @@ const config = {
             host: "localhost",
             port: 8001,
             proxy: "http://localhost:8000",
-            files: ["template/*"]
+            files: ["template/**/*.html"]
         }),
         new webpack.LoaderOptionsPlugin({
             options: {

@@ -1,0 +1,34 @@
+<div class="index js-index">
+    <ul class="index__ul">
+        <% locals.documents.forEach(( doc ) => { %>
+            <li class="index__li animate js-animate -wrap-index -exp-2">
+                <div class="index__image index__col -column -column--1of3">
+                    <% if ( doc.getImage( 'project.image' ) ) { %>
+                        <a href="/<%= doc.type %>/<%= doc.uid %>/" class="-column">
+                            <img class="index__img image js-lazy-image" data-img-src="<%= doc.getImage( 'project.image' ).url %>" />
+                        </a>
+                    <% } %>
+                </div>
+                <div class="index__title index__col -column -column--1of3">
+                    <% if ( doc.getText( 'project.title' ) ) { %>
+                        <div class="h3">
+                            <%= doc.getText( 'project.title' ) %>
+                        </div>
+                    <% } %>
+                    <% if ( doc.getText( 'project.city' ) || doc.getText( 'project.state' ) ) { %>
+                        <div class="p">
+                            <%= doc.getText( 'project.city' ) %>, <%= doc.getText( 'project.state' ) %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="index__categories index__col -column -column--1of3">
+                    <% if ( doc.getGroup( 'project.categories' ) ) { %>
+                        <% doc.getGroup( 'project.categories' ).toArray().forEach(function ( item ) { %>
+                            <div class="p"><%= item.data.category.value %></div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</div>
