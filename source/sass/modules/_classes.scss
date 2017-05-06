@@ -18,12 +18,56 @@
         .navi__ul {
             pointer-events: auto;
             }
+        .navi__li {
+            opacity: 1;
+            transform: translateY( 0 );
+            }
+        .navi__a.is-active:after {
+            top: 50%;
+            }
+    }
+    &.is-closing {
+        .navi__a.is-active:after {
+            top: 50%;
+            }
+        .navi__li {
+            opacity: 1;
+            transform: translateY( 0 );
+            }
     }
 }
+.navi__li {
+    opacity: 0;
+    transform: translateY( 100% );
+    transition: transform $base-duration $ease-bounce,
+                opacity $base-duration $ease;
+
+    &:nth-child( 2 ) {
+        transition-delay: 50ms;
+        }
+    &:nth-child( 3 ) {
+        transition-delay: 100ms;
+        }
+}
 .navi__a {
-    font-size: 8vw;
-    line-height: 1.5;
-    }
+    font-size: 20vh;
+    font-weight: bold;
+    line-height: 1.2;
+    position: relative;
+
+    &:after {
+        background-color: $white;
+        content: "";
+        display: inline-block;
+        height: 30px;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        transition: top $long-duration $ease-bounce,
+                    transform $fast-duration $ease-bounce;
+        width: 100%;
+        }
+}
 .main {
     padding-top: $header-height;
     transition: opacity $fast-duration $ease;
@@ -45,12 +89,13 @@
     }
 .index__li {
     border-top: 1px solid $charcoal;
+    transition: border-color $base-duration $ease;
     }
 .project {}
 .project__info {
     left: 0;
     padding-top: $header-height;
-    position: fixed;
+    position: absolute;
     top: 0;
     @include wrap-copy();
     }
@@ -78,3 +123,32 @@
         margin-top: $expander-mobile;
         }
 }
+.cms + .meta {
+    margin-top: $expander-mobile;
+    }
+.theme {
+    bottom: 0;
+    height: $header-height;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    z-index: $z_layer_05;
+    }
+.theme__spot {
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-block;
+    height: $circle;
+    pointer-events: auto;
+    width: $circle;
+
+    &.is-light {
+        background-color: $white;
+        border: 2px solid transparent;
+        }
+    &.is-dark {
+        background-color: $black;
+        border: 2px solid $white;
+        margin-left: 12px;
+        }
+    }

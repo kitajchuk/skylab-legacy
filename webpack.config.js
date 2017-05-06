@@ -1,6 +1,7 @@
 const path = require( "path" );
 const root = path.resolve( __dirname );
 const source = path.join( root, "source" );
+const config = require( "./server/config" );
 const nodeModules = "node_modules";
 const webpack = require( "webpack" );
 const autoprefixer = require( "autoprefixer" );
@@ -9,7 +10,7 @@ const CompressionPlugin = require( "compression-webpack-plugin" );
 
 
 
-const config = {
+const webpackConfig = {
     devtool: "source-map",
 
 
@@ -17,9 +18,13 @@ const config = {
         new BrowserSyncPlugin({
             open: true,
             host: "localhost",
-            port: 8001,
-            proxy: "http://localhost:8000",
-            files: ["template/**/*.html"]
+            port: config.browser.port,
+            proxy: `http://localhost:${config.express.port}`,
+            // files: [
+            //     "source/**/*.js",
+            //     "source/**/*.scss",
+            //     "template/**/*.html"
+            // ]
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
@@ -59,7 +64,7 @@ const config = {
 
 
 module.exports = ( env ) => {
-    // Don't gzip unless we end up using S3 / CloudFront
+    // You can enable gzip compression here...
     // if ( env.staging || env.production ) {
     //     config.plugins.push(new CompressionPlugin({
     //         asset: "[path]",
@@ -70,5 +75,5 @@ module.exports = ( env ) => {
     //     }));
     // }
 
-    return config;
+    return webpackConfig;
 };

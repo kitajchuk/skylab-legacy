@@ -6,6 +6,7 @@ import * as core from "./core";
 import navi from "./navi";
 import intro from "./intro";
 import Analytics from "./class/Analytics";
+import $ from "properjs-hobo";
 
 
 /**
@@ -22,7 +23,23 @@ class App {
         this.intro = intro;
         this.router = router;
 
+        this.bindEvents();
         this.initModules();
+    }
+
+
+    bindEvents () {
+        this.core.dom.html.on( "click", ".js-theme-spot", ( e ) => {
+            const $spot = $( e.target );
+            const data = $spot.data();
+
+            if ( data.theme === "light" ) {
+                core.dom.html.addClass( "is-theme--light" );
+
+            } else {
+                core.dom.html.removeClass( "is-theme--light" );
+            }
+        });
     }
 
 

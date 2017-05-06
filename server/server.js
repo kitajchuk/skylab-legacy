@@ -3,7 +3,12 @@ const express = require( "express" );
 const expressApp = express();
 const compression = require( "compression" );
 const cookieParser = require( "cookie-parser" );
-const lib = require( "./lib/index" );
+const lib = {
+    watch: require( "./lib/watch" ),
+    query: require( "./lib/query" ),
+    content: require( "./lib/content" ),
+    template: require( "./lib/template" )
+};
 
 
 
@@ -29,8 +34,8 @@ expressApp.get( "/api/:type", lib.query.getApi );
 expressApp.get( "/api/:type/:uid", lib.query.getApi );
 expressApp.get( "/preview", lib.query.getPreview );
 expressApp.get( "/", lib.content.getPage );
-expressApp.get( "/:path", lib.content.getPage );
-expressApp.get( "/:path/:uid", lib.content.getPage );
+expressApp.get( "/:type", lib.content.getPage );
+expressApp.get( "/:type/:uid", lib.content.getPage );
 
 
 

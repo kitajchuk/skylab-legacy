@@ -1,7 +1,9 @@
 /******************************************************************************
  * Fonts
+ * BrownRegular
 *******************************************************************************/
-$font-family-sans: "BrownRegular";
+$font-family: "BrownRegular";
+$font-family-backslanted: "BrownBackSlanted";
 
 
 
@@ -42,6 +44,7 @@ $padding-wrap: 5vw;
 $wrap-copy: 700px;
 $logo-width: 480px;
 $header-height: 160px;
+$circle: 24px;
 
 
 
@@ -50,18 +53,18 @@ $header-height: 160px;
  * Typography
 *******************************************************************************/
 $p-size: 16px;
-$p-line: 1.5;
-$h1-size: 32px;
-$h1-line: 1.5;
-$h2-size: 28px;
-$h2-line: 1.5;
-$h3-size: 24px;
-$h3-line: 1.5;
-$h4-size: 20px;
-$h4-line: 1.5;
-$h5-size: 16px;
+$p-line: 2;
+$h1-size: 64px;
+$h1-line: 1;
+$h2-size: 56px;
+$h2-line: 1;
+$h3-size: 48px;
+$h3-line: 1;
+$h4-size: 40px;
+$h4-line: 1;
+$h5-size: 32px;
 $h5-line: 1;
-$h6-size: 12px;
+$h6-size: 24px;
 $h6-line: 1;
 
 
@@ -87,12 +90,9 @@ $break-mobile-small: 320px;
  * Animations
 *******************************************************************************/
 $ease: cubic-bezier( 0.25, 0.1, 0.25, 1 );
-$ease-one: cubic-bezier( 0.9, 0, 0.1, 1 );
-$ease-two: cubic-bezier( 0.14, 1, 0.34, 1 );
-$ease-three: cubic-bezier( 0, 0, 0.2, 1 );
+$ease-bounce: cubic-bezier( 0.370, 0.005, 0.000, 1.650 );
 $long-duration: 600ms;
 $base-duration: 400ms;
-$midi-duration: 300ms;
 $fast-duration: 200ms;
 
 

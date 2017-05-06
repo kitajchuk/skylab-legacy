@@ -3,8 +3,10 @@
 *******************************************************************************/
 .p,
 .cms p,
+.meta p,
 .li,
-.cms li {
+.cms li,
+.meta li {
     @include p();
 
     a {
@@ -18,8 +20,15 @@
         font-weight: bold;
         }
     }
-.cms li {
+.li,
+.cms li,
+.meta li {
     line-height: 1.5;
+    }
+.em,
+.cms em,
+.meta em {
+    @include em();
     }
 
 
@@ -27,9 +36,10 @@
  * Links
 *******************************************************************************/
 .a,
-.cms a {
+.cms a,
+.meta a {
     border-bottom: 1px solid transparent;
-    transition: border-bottom-color $fast-duration $ease-three;
+    transition: border-bottom-color $fast-duration $ease;
     @include a();
 
     &:hover {

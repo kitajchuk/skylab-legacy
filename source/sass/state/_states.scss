@@ -1,3 +1,68 @@
 /******************************************************************************
  * Document States
 *******************************************************************************/
+.is-theme--dark {
+    // Defaults
+}
+.is-theme--light {
+    background-color: $white;
+    color: $charcoal;
+
+    .icon--list {
+        span {
+            background-color: $black;
+            }
+    }
+    .icon--search {
+        .glass {
+            border-color: $black;
+            }
+        .handle {
+            background-color: $black;
+            }
+    }
+    .index__li {
+        border-top-color: $grey;
+        }
+    .navi__a {
+        color: $black;
+
+        &:after {
+            background-color: $black;
+            }
+    }
+    .theme__spot {
+        &.is-light {
+            border: 2px solid $black;
+            }
+        &.is-dark {
+            border: 2px solid transparent;
+            }
+    }
+}
+.is-navi-open {
+    .icon--list {
+        .top,
+        .mid,
+        .bot {
+            opacity: 0;
+            }
+        .ex1,
+        .ex2 {
+            opacity: 1;
+            }
+        .ex1 {
+            transform: rotate( -45deg );
+            }
+        .ex2 {
+            transform: rotate( 45deg );
+            }
+    }
+}
+.is-hoverable {
+    .navi__a:not( .is-active ):hover {
+        &:after {
+            transform: translateY( 100% );
+            }
+    }
+}

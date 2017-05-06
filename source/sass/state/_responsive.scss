@@ -42,6 +42,42 @@
 
 
 
+@media only screen and ( max-width: $break-tablet-small ) {
+    .-wrap,
+    .-wrap-index {
+        padding-left: $expander-mobile;
+        padding-right: $expander-mobile;
+        }
+
+    $header-height: 100px;
+    .header,
+    .theme {
+        height: $header-height;
+        }
+    .main {
+        padding-top: $header-height;
+        }
+
+    .index__li {
+        padding-bottom: $expander-mobile;
+        padding-top: $expander-mobile;
+        }
+    .index__title .p:nth-child( 2 ),
+    .index__title .p:nth-child( 3 ) {
+        display: none;
+        }
+
+    .navi__a {
+        font-size: 12vh;
+
+        &:after {
+            height: 10px;
+            }
+    }
+}
+
+
+
 @media only screen and ( min-width: $wrap-copy ) {
     .-wrap-copy {
         max-width: $wrap-copy;

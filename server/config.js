@@ -1,5 +1,7 @@
 const path = require( "path" );
 const config = {
+    // Homepage UID
+    homepage: "home",
     // Timestamp ( Will be time app booted )
     timestamp: Date.now(),
     // Environments
@@ -10,7 +12,9 @@ const config = {
     },
     // API CMS config ( Prismic, Contentful )
     api: {
-        access: "https://skylab.cdn.prismic.io/api"
+        // Prismic
+        access: "https://skylab.cdn.prismic.io/api",
+        adapter: "prismic"
     },
     // Deployment config ( AWS etc... )
     deploy: {
@@ -30,6 +34,10 @@ const config = {
     express: {
         port: 8000
     },
+    // Browser-sync config
+    browser: {
+        port: 8001
+    },
     // Static assets config
     static: {
         // One day
@@ -43,7 +51,7 @@ const config = {
         threshold: 0
     },
     // Console log prefix
-    logger: "[@kitajchuk]"
+    logger: "[@clutch]"
 };
 
 
