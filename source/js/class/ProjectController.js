@@ -10,8 +10,7 @@ import debounce from "properjs-debounce";
  * @public
  * @global
  * @class ProjectController
- * @param {Element} elements The dom elements to work with.
- * @param {Element} container The scrolling parent container
+ * @param {Element} element The dom element to work with.
  * @classdesc Handle scroll events for a DOMElement.
  *
  */

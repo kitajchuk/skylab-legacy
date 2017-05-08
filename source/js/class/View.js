@@ -1,7 +1,5 @@
 import $ from "properjs-hobo";
-import * as core from "../core";
-import ImageController from "./ImageController";
-import AnimateController from "./AnimateController";
+import Controllers from "./Controllers";
 
 
 /**
@@ -23,6 +21,7 @@ class View {
         this.callback = args.cb;
         this.response = "";
         this.data = {};
+        this.controllers = new Controllers();
 
         this.init();
     }
@@ -126,17 +125,7 @@ class View {
      *
      */
     exec () {
-        this.images = core.dom.main.find( core.config.lazyImageSelector );
-        this.animates = core.dom.main.find( core.config.animSelector );
-
-        this.imageController = new ImageController( this.images );
-        this.imageController.on( "preloaded", () => {
-            core.emitter.fire( "app--intro-teardown" );
-        });
-
-        if ( this.animates.length ) {
-            this.animateController = new AnimateController( this.animates );
-        }
+        this.controllers.exec();
     }
 
 
@@ -149,15 +138,7 @@ class View {
      *
      */
     destroy () {
-        if ( this.imageController ) {
-            this.imageController.destroy();
-            this.imageController = null;
-        }
-
-        if ( this.animateController ) {
-            this.animateController.destroy();
-            this.animateController = null;
-        }
+        this.controllers.destroy();
     }
 }
 
