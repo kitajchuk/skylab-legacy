@@ -91,10 +91,9 @@
     }
 .index {}
 .index__col + .index__col {
-    padding-left: $padding-wrap;
+    padding-left: 11vw;
     }
 .index__li {
-    border-top: 1px solid $charcoal;
     transition: border-color $base-duration $ease;
     }
 .project {}
@@ -156,9 +155,9 @@
     border-radius: 100%;
     cursor: pointer;
     display: inline-block;
-    height: 16px;
+    height: 12px;
     pointer-events: auto;
-    width: 16px;
+    width: 12px;
 
     &.is-light {
         background-color: $white;
