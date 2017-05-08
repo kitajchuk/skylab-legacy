@@ -1,7 +1,7 @@
 <% if ( locals.context.get( 'item' ) ) { %>
     <% const item = locals.context.get( 'item' ) %>
     <div class="project js-project">
-        <div class="project__info -wrap">
+        <div class="project__info -wrap js-project-info">
             <div class="cms">
                 <% if ( item.getText( 'project.title' ) ) { %>
                     <h1><%= item.getText( 'project.title' ) %></h1>
@@ -29,7 +29,7 @@
                 <% } %>
             </div>
         </div>
-        <div class="project__body">
+        <div class="project__body js-project-body">
             <div class="slices cms">
                 <% if ( item.getSliceZone( 'project.slices' ) ) { %>
                     <% item.getSliceZone( 'project.slices' ).slices.forEach(( slice ) => { %>

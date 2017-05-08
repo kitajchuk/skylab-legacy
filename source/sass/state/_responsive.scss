@@ -1,4 +1,4 @@
-@media only screen and ( max-width: $break-laptop-medium ) {
+@media only screen and ( max-width: $break-laptop-full ) {
     .-wrap-index {
         @include wrap();
         }
@@ -8,6 +8,9 @@
     .project__body {
         .slices__content {
             width: calc( 100vw - #{$padding-wrap} - #{$break-mobile-medium} );
+            }
+        .slices__slice + .slices__slice {
+            margin-top: $expander-one / 2;
             }
     }
 }
@@ -28,14 +31,17 @@
     .project__info {
         max-width: $wrap-copy;
         padding-bottom: $expander-one;
-        padding-top: 0;
+        padding-top: 10vh;
         position: relative;
         }
     .project__body {
-        padding-left: $padding-wrap;
+        padding-right: 0;
 
         .slices__content {
             width: 100%;
+            }
+        .slices__slice + .slices__slice {
+            margin-top: $expander-mobile / 2;
             }
     }
 }
@@ -56,6 +62,12 @@
         }
     .main {
         padding-top: $header-height;
+        }
+    .project__info {
+        padding-bottom: $expander-one;
+        }
+    .project__body {
+        padding-bottom: $header-height;
         }
 
     .index__li {
@@ -81,7 +93,5 @@
 @media only screen and ( min-width: $wrap-copy ) {
     .-wrap-copy {
         max-width: $wrap-copy;
-        // padding-left: 0;
-        // padding-right: 0;
         }
 }

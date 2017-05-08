@@ -2,6 +2,7 @@ import $ from "properjs-hobo";
 import PageController from "properjs-pagecontroller";
 import ImageController from "./class/ImageController";
 import AnimateController from "./class/AnimateController";
+import ProjectController from "./class/ProjectController";
 import * as core from "./core";
 import views from "./views";
 import navi from "./navi";
@@ -59,6 +60,19 @@ const router = {
      */
     push ( path, cb ) {
         this.controller.routeSilently( path, (cb || core.util.noop) );
+    },
+
+
+    /**
+     *
+     * @public
+     * @method topper
+     * @memberof router
+     * @description Set scroll position and clear scroll classNames.
+     *
+     */
+    topper () {
+        window.scrollTo( 0, 0 );
     },
 
 
@@ -206,6 +220,9 @@ const router = {
 
         core.emitter.fire( "app--analytics-push" );
 
+        // Ensure topout prior to preload being done...
+        this.topper();
+
         this.changeClass( data );
     },
 
@@ -238,14 +255,21 @@ const router = {
     execControllers () {
         this.images = core.dom.main.find( core.config.lazyImageSelector );
         this.animates = core.dom.main.find( core.config.animSelector );
+        this.project = core.dom.main.find( core.config.projectSelector );
 
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
             core.emitter.fire( "app--intro-teardown" );
+
+            this.topper();
         });
 
         if ( this.animates.length ) {
             this.animateController = new AnimateController( this.animates );
+        }
+
+        if ( this.project.length ) {
+            this.projectController = new ProjectController( this.project );
         }
     },
 
@@ -267,6 +291,11 @@ const router = {
         if ( this.animateController ) {
             this.animateController.destroy();
             this.animateController = null;
+        }
+
+        if ( this.projectController ) {
+            this.projectController.destroy();
+            this.projectController = null;
         }
     }
 };

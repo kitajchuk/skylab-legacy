@@ -36,6 +36,7 @@
 }
 @mixin h1() {
     font-size: $h1-size;
+    font-weight: 600;
     line-height: $h1-line;
 }
 @mixin h2() {

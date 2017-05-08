@@ -14,6 +14,36 @@ import detect from "./detect";
 
 /**
  *
+ * @description Add pixel units when inline styling
+ * @method px
+ * @param {string} str The value to pixel-ify
+ * @memberof core.util
+ * @returns {string}
+ *
+ */
+const px = function ( str ) {
+    return `${str}px`;
+};
+
+
+/**
+ *
+ * @description Apply a translate3d transform
+ * @method translate3d
+ * @param {object} el The element to transform
+ * @param {string|number} x The x value
+ * @param {string|number} y The y value
+ * @param {string|number} z The z value
+ * @memberof core.util
+ *
+ */
+const translate3d = function ( el, x, y, z ) {
+    el.style[ detect.getPrefixed( "transform" ) ] = `translate3d( ${x}, ${y}, ${z} )`;
+};
+
+
+/**
+ *
  * @description Module onImageLoadHander method, handles event
  * @method isElementLoadable
  * @param {object} el The DOMElement to check the offset of
@@ -149,15 +179,58 @@ const getTransitionDuration = function ( el ) {
 };
 
 
+/**
+ *
+ * Get the applied transform values from CSS
+ * @method getTransformValues
+ * @param {object} el The DOMElement
+ * @memberof util
+ * @returns {object}
+ *
+ */
+const getTransformValues = function ( el ) {
+    if ( !el ) {
+        return null;
+    }
+
+    const transform = window.getComputedStyle( el )[ detect.getPrefixed( "transform" ) ];
+    const values = transform.replace( /matrix|3d|\(|\)|\s/g, "" ).split( "," );
+    const ret = {};
+
+    // No Transform
+    if ( values[ 0 ] === "none" ) {
+        ret.x = 0;
+        ret.y = 0;
+        ret.z = 0;
+
+    // Matrix 3D
+    } else if ( values.length === 16 ) {
+        ret.x = parseFloat( values[ 12 ] );
+        ret.y = parseFloat( values[ 13 ] );
+        ret.z = parseFloat( values[ 14 ] );
+
+    } else {
+        ret.x = parseFloat( values[ 4 ] );
+        ret.y = parseFloat( values[ 5 ] );
+        ret.z = 0;
+    }
+
+    return ret;
+};
+
+
 
 /******************************************************************************
  * Export
 *******************************************************************************/
 export {
+    px,
     noop,
     loadImages,
+    translate3d,
     isElementLoadable,
     isElementVisible,
     getElementsInView,
+    getTransformValues,
     getTransitionDuration
 };
