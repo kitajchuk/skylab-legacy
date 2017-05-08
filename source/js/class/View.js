@@ -1,3 +1,4 @@
+import * as core from "../core";
 import $ from "properjs-hobo";
 import Controllers from "./Controllers";
 
@@ -91,13 +92,27 @@ class View {
      *
      */
     load () {
-        return $.ajax({
-            url: this.endpoint,
-            dataType: "html",
-            method: "GET",
-            data: {
-                format: "html",
-                template: this.id
+        return new Promise(( resolve ) => {
+            const cache = core.cache.get( `partial--${this.id}` );
+
+            if ( cache ) {
+                resolve( cache );
+
+            } else {
+                $.ajax({
+                    url: this.endpoint,
+                    dataType: "html",
+                    method: "GET",
+                    data: {
+                        format: "html",
+                        template: this.id
+                    }
+
+                }).then(( response ) => {
+                    core.cache.set( `partial--${this.id}`, response );
+
+                    resolve( response );
+                });
             }
         });
     }
