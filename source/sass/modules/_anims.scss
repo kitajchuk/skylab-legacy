@@ -12,12 +12,3 @@
         transition-duration: 0ms;
         }
 }
-.animate--transform {
-    transform: translateY( $expander-two );
-    transition: opacity $base-duration $ease,
-                transform $base-duration $ease;
-
-    &.is-animate {
-        transform: translateY( 0 );
-        }
-}
