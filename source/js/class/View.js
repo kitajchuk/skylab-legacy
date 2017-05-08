@@ -1,6 +1,7 @@
 import * as core from "../core";
 import $ from "properjs-hobo";
 import Controllers from "./Controllers";
+import paramalama from "paramalama";
 
 
 /**
@@ -94,6 +95,10 @@ class View {
     load () {
         return new Promise(( resolve ) => {
             const cache = core.cache.get( `partial--${this.id}` );
+            const query = paramalama( window.location.search );
+
+            query.format = "html";
+            query.template = this.id;
 
             if ( cache ) {
                 resolve( cache );
@@ -103,13 +108,10 @@ class View {
                     url: this.endpoint,
                     dataType: "html",
                     method: "GET",
-                    data: {
-                        format: "html",
-                        template: this.id
-                    }
+                    data: query
 
                 }).then(( response ) => {
-                    core.cache.set( `partial--${this.id}`, response );
+                    // core.cache.set( `partial--${this.id}`, response );
 
                     resolve( response );
                 });

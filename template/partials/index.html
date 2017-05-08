@@ -29,7 +29,9 @@
                 <div class="index__categories index__col -column -column--1of3">
                     <% if ( item.getGroup( 'project.categories' ) ) { %>
                         <% item.getGroup( 'project.categories' ).toArray().forEach(function ( item ) { %>
-                            <div class="p"><%= item.data.category.value %></div>
+                            <div class="p">
+                                <a class="em" href="/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                            </div>
                         <% }) %>
                     <% } %>
                 </div>
