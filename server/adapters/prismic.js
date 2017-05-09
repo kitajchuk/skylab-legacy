@@ -52,11 +52,11 @@ const getApi = function ( req, res ) {
 
         if ( req.query.format === "html" ) {
             getPartial( req.params, req.query, data ).then(( html ) => {
-                res.send( html );
+                res.status( 200 ).send( html );
             });
 
         } else {
-            res.json( data );
+            res.status( 200 ).json( data );
         }
 
     }).catch(( error ) => {
@@ -364,6 +364,11 @@ const getRef = function ( req, api ) {
 
 
 
+/**
+ *
+ * Get one document from all documents.
+ *
+ */
 const getDoc = function ( uid, documents ) {
     return documents.find(( doc ) => {
         return (doc.uid === uid);
@@ -372,6 +377,11 @@ const getDoc = function ( uid, documents ) {
 
 
 
+/**
+ *
+ * Get the stub of the search form.
+ *
+ */
 const getForm = function ( req, api ) {
     return api.form( "everything" ).pageSize( 100 ).ref( getRef( req, api ) );
 };

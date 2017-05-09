@@ -1,0 +1,9 @@
+<li class="index__li index__feature animate js-animate -exp-2 -text--<%= item.getGroup( 'project.feature' ).value[ 0 ].data.layout.value.toLowerCase() %>">
+    <div class="index__image index__col -column -column--3of4">
+        <% if ( item.getImage( 'project.image' ) ) { %>
+            <a href="/<%= item.type %>/<%= item.uid %>/" class="-column">
+                <img class="index__img image js-lazy-image" data-img-src="<%= item.getImage( 'project.image' ).url %>" />
+            </a>
+        <% } %>
+    </div>
+</li>

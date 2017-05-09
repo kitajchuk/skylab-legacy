@@ -93,6 +93,7 @@ const router = {
     initPage ( data ) {
         this.changeClass( data );
         this.controllers.exec();
+        // navi.open();
     },
 
 

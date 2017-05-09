@@ -93,9 +93,7 @@
 .index__col + .index__col {
     padding-left: 11vw;
     }
-.index__li {
-    transition: border-color $base-duration $ease;
-    }
+.index__li {}
 .project {}
 .project__info,
 .project__body {
@@ -118,9 +116,9 @@
 .slices__slice {
     width: 100%;
     }
-.slices__slice + .slices__slice {
-    margin-top: $expander-one;
-    }
+// .slices__slice + .slices__slice {
+//     margin-top: $expander-one;
+//     }
 .slices__text {
     text-align: left;
     }

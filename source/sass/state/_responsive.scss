@@ -8,9 +8,9 @@
     .slices__content {
         width: calc( 100vw - #{$padding-wrap} - #{$break-mobile-medium} );
         }
-    .slices__slice + .slices__slice {
-        margin-top: $expander-one / 2;
-        }
+    // .slices__slice + .slices__slice {
+    //     margin-top: $expander-one / 2;
+    //     }
 }
 
 
@@ -38,9 +38,9 @@
     .slices__content {
         width: 100%;
         }
-    .slices__slice + .slices__slice {
-        margin-top: $expander-mobile / 2;
-        }
+    // .slices__slice + .slices__slice {
+    //     margin-top: $expander-mobile / 2;
+    //     }
 }
 
 

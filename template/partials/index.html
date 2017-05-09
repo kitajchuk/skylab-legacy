@@ -1,41 +1,12 @@
 <div class="index js-index animate js-animate js-animate--intro">
     <ul class="index__ul">
         <% locals.context.get( 'items' ).forEach(( item ) => { %>
-            <li class="index__li animate js-animate -wrap-index -exp-1">
-                <div class="index__image index__col -column -column--1of3">
-                    <% if ( item.getImage( 'project.image' ) ) { %>
-                        <a href="/<%= item.type %>/<%= item.uid %>/" class="-column">
-                            <img class="index__img image js-lazy-image" data-img-src="<%= item.getImage( 'project.image' ).url %>" />
-                        </a>
-                    <% } %>
-                </div>
-                <div class="index__title index__col -column -column--1of3">
-                    <% if ( item.getText( 'project.title' ) ) { %>
-                        <div class="p">
-                            <strong><%= item.getText( 'project.title' ) %></strong>
-                        </div>
-                    <% } %>
-                    <% if ( item.getText( 'project.city' ) || item.getText( 'project.state' ) ) { %>
-                        <div class="p">
-                            <%= item.getText( 'project.city' ) %>, <%= item.getText( 'project.state' ) %>
-                        </div>
-                    <% } %>
-                    <% if ( item.getText( 'project.year' ) ) { %>
-                        <div class="p">
-                            <%= item.getText( 'project.year' ) %>
-                        </div>
-                    <% } %>
-                </div>
-                <div class="index__categories index__col -column -column--1of3">
-                    <% if ( item.getGroup( 'project.categories' ) ) { %>
-                        <% item.getGroup( 'project.categories' ).toArray().forEach(function ( item ) { %>
-                            <div class="p">
-                                <a class="em" href="/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
-                            </div>
-                        <% }) %>
-                    <% } %>
-                </div>
-            </li>
+            <% if ( item.getText( 'project.type' ) === 'Feature' ) { %>
+                <%- include( 'index--feature.html', {item: item} ) %>
+
+            <% } else { %>
+                <%- include( 'index--standard.html', {item: item} ) %>
+            <% } %>
         <% }) %>
     </ul>
 </div>
