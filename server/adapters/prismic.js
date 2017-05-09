@@ -234,10 +234,22 @@ const getPartial = function ( params, query, data ) {
  *
  */
 const getDataForApi = function ( req ) {
+    const sortProject = function ( a, b ) {
+        const aT = a.getText( "project.type" );
+        const bT = b.getText( "project.type" );
+
+        if ( aT === "Feature" ) {
+            return -1;
+
+        } else {
+            return 1;
+        }
+    };
+
     return new Promise(( resolve, reject ) => {
         prismic.api( config.api.access, null ).then(( api ) => {
             const done = function ( json ) {
-                resolve( json.results );
+                resolve( (type === "project" ? json.results.sort( sortProject ) : json.results) );
             };
             const fail = function ( error ) {
                 resolve({
