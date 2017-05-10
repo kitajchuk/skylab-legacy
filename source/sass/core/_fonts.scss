@@ -9,6 +9,13 @@
     font-style: normal;
     font-stretch: normal;
 }
+// BrownBold
+@font-face {
+    font-family: $font-family-bold;
+    src: url( "/fonts/lineto-brown-bold.woff" ) format( "woff" );
+    font-style: normal;
+    font-stretch: normal;
+}
 // BrownBackSlanted
 @font-face {
     font-family: $font-family-backslanted;

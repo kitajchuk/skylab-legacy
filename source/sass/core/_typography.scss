@@ -11,13 +11,10 @@
 
     a {
         border-bottom: 1px solid inherit;
-        font-weight: bold;
-        }
-    em {
-        font-style: italic;
+        @include font-family-bold();
         }
     strong {
-        font-weight: bold;
+        @include font-family-bold();
         }
     }
 .li,

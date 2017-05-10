@@ -51,9 +51,9 @@
 .navi__li--primary {
     .navi__a {
         font-size: 20vh;
-        font-weight: bold;
         line-height: 1.2;
         position: relative;
+        @include font-family-bold();
 
         &:after {
             background-color: $white;

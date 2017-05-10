@@ -14,6 +14,10 @@
     font-family: $font-family;
     @include font-normal();
 }
+@mixin font-family-bold() {
+    font-family: $font-family-bold;
+    @include font-normal();
+}
 @mixin font-family-backslanted() {
     font-family: $font-family-backslanted;
     @include font-normal();
@@ -36,8 +40,8 @@
 }
 @mixin h1() {
     font-size: $h1-size;
-    font-weight: 600;
     line-height: $h1-line;
+    @include font-family-bold();
 }
 @mixin h2() {
     font-size: $h2-size;
