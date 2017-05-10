@@ -41,9 +41,7 @@ const getApi = function ( req, res ) {
 
         // Single document for /:type/:uid
         if ( req.params.uid ) {
-            data.document = json.find(( document ) => {
-                return (document.uid === req.params.uid);
-            });
+            data.document = getDoc( req.params.uid, json );
 
         // All documents for /:type
         } else {
@@ -221,6 +219,13 @@ const getPartial = function ( params, query, data ) {
             localObject.context.set( "items", data.documents );
         }
 
+        // Add `features` array to the context
+        if ( params.type === "project" ) {
+            localObject.context.set( "features", data.documents.filter(( doc ) => {
+                return (doc.getText( "project.type" ) === "Feature");
+            }));
+        }
+
         lib.template.render( template, localObject )
             .then(( html ) => {
                 resolve( html );
@@ -239,22 +244,10 @@ const getPartial = function ( params, query, data ) {
  *
  */
 const getDataForApi = function ( req ) {
-    const sortProject = function ( a, b ) {
-        const aT = a.getText( "project.type" );
-        const bT = b.getText( "project.type" );
-
-        if ( aT === "Feature" ) {
-            return -1;
-
-        } else {
-            return 1;
-        }
-    };
-
     return new Promise(( resolve, reject ) => {
         prismic.api( config.api.access, null ).then(( api ) => {
             const done = function ( json ) {
-                resolve( (type === "project" ? json.results.sort( sortProject ) : json.results) );
+                resolve( json.results );
             };
             const fail = function ( error ) {
                 resolve({
@@ -280,9 +273,7 @@ const getDataForApi = function ( req ) {
 
             // orderings?
             // Feature, Standard
-            if ( type === "project" ) {
-                form.orderings( `[my.${type}.type]` );
-            }
+            // form.orderings( `` );
 
             // submit
             form.submit().then( done ).catch( fail );

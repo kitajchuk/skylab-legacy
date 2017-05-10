@@ -16,6 +16,8 @@ class CoverController extends Controller {
         super();
 
         this.element = element;
+        this.coverType = this.element.data( "cover" ) || "default";
+        this.isActive = false;
 
         this.start();
     }
@@ -32,11 +34,17 @@ class CoverController extends Controller {
     start () {
         // Call on parent cycle
         this.go(() => {
-            if ( core.util.isElementVisible( this.element[ 0 ] ) ) {
-                core.dom.html.addClass( "is-cover" ).removeClass( "is-cover--less" );
+            if ( core.util.isElementVisible( this.element[ 0 ] ) && !this.isActive ) {
+                this.isActive = true;
+                core.dom.html.addClass( `is-cover is-cover--${this.coverType}` );
+                core.emitter.fire( `app--activate-cover--${this.coverType}` );
+                console.log( `[CoverController::Activate ${this.coverType}]` );
 
-            } else {
-                core.dom.html.removeClass( "is-cover" ).addClass( "is-cover--less" );
+            } else if ( !core.util.isElementVisible( this.element[ 0 ] ) && this.isActive ) {
+                this.isActive = false;
+                core.dom.html.removeClass( `is-cover is-cover--${this.coverType}` );
+                core.emitter.fire( `app--deactivate-cover--${this.coverType}` );
+                console.log( `[CoverController::Deactivate ${this.coverType}]` );
             }
         });
     }
@@ -51,7 +59,7 @@ class CoverController extends Controller {
      *
      */
     destroy () {
-        core.dom.html.removeClass( "is-cover is-cover--less" );
+        core.dom.html.removeClass( `is-cover is-cover--${this.coverType}` );
 
         this.stop();
     }

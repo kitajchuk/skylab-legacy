@@ -11,8 +11,13 @@
         pointer-events: auto;
         }
 }
+.header__list {
+    transition: opacity $fast-duration $ease;
+    }
 .header__logo {
+    opacity: 0;
     transform: translateX( -50% );
+    transition: opacity $fast-duration $ease;
     width: $logo-width-header;
 
     .svg {

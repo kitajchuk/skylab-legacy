@@ -5,6 +5,7 @@
     padding-top: $header-height;
     position: fixed;
     top: 0;
+    transition: opacity $fast-duration $ease;
     @include wrap-copy();
     z-index: $z_layer_02;
     }

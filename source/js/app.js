@@ -40,6 +40,14 @@ class App {
                 core.dom.html.removeClass( "is-theme--light" );
             }
         });
+
+        this.core.emitter.on( "app--activate-cover--feature", () => {
+            navi.openSpecial();
+        });
+
+        this.core.emitter.on( "app--deactivate-cover--feature", () => {
+            navi.closeSpecial();
+        });
     }
 
 

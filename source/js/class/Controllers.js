@@ -2,6 +2,8 @@ import * as core from "../core";
 import ImageController from "./ImageController";
 import AnimateController from "./AnimateController";
 import ProjectController from "./ProjectController";
+import CoverController from "./CoverController";
+// import OffsetController from "./OffsetController";
 
 
 /**
@@ -20,6 +22,8 @@ class Controllers {
         this.images = core.dom.main.find( core.config.lazyImageSelector );
         this.animates = core.dom.main.find( core.config.animSelector );
         this.project = core.dom.main.find( core.config.projectSelector );
+        this.cover = core.dom.main.find( core.config.coverSelector );
+        this.offsets = core.dom.main.find( ".js-offset" );
 
         if ( this.animates.length ) {
             this.animateController = new AnimateController( this.animates );
@@ -33,6 +37,14 @@ class Controllers {
         if ( this.project.length ) {
             this.projectController = new ProjectController( this.project );
         }
+
+        if ( this.cover.length ) {
+            this.coverController = new CoverController( this.cover );
+        }
+
+        // if ( this.offsets.length ) {
+        //     this.offsetController = new OffsetController( this.offsets );
+        // }
     }
 
 
@@ -50,6 +62,16 @@ class Controllers {
         if ( this.projectController ) {
             this.projectController.destroy();
             this.projectController = null;
+        }
+
+        if ( this.coverController ) {
+            this.coverController.destroy();
+            this.coverController = null;
+        }
+
+        if ( this.offsetController ) {
+            this.offsetController.destroy();
+            this.offsetController = null;
         }
     }
 }

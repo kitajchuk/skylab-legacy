@@ -1,12 +1,14 @@
-<div class="index js-index animate js-animate js-animate--intro">
+<div class="feature js-feature js-cover" data-cover="feature">
+    <ul class="feature__ul">
+        <% locals.context.get( 'features' ).forEach(( feature ) => { %>
+            <%- include( 'index--feature.html', {feature: feature} ) %>
+        <% }) %>
+    </ul>
+</div>
+<div class="index js-index">
     <ul class="index__ul">
         <% locals.context.get( 'items' ).forEach(( item ) => { %>
-            <% if ( item.getText( 'project.type' ) === 'Feature' ) { %>
-                <%- include( 'index--feature.html', {item: item} ) %>
-
-            <% } else { %>
-                <%- include( 'index--standard.html', {item: item} ) %>
-            <% } %>
+            <%- include( 'index--item.html', {item: item} ) %>
         <% }) %>
     </ul>
 </div>

@@ -1,5 +1,10 @@
 .navi {
     background-color: transparent;
+    transform-origin: $padding-wrap $expander-mobile;
+    transition: opacity $fast-duration $ease,
+                z-index $fast-duration $ease,
+                visibility $fast-duration $ease,
+                transform $fast-duration $ease;
 
     &.is-active {
         pointer-events: none;
@@ -23,6 +28,10 @@
             opacity: 1;
             transform: translateY( 0 );
             }
+    }
+    &.is-special {
+        opacity: 0;
+        transform: scale( 0.05 );
     }
 }
 .navi__li {

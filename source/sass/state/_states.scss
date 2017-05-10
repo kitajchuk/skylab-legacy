@@ -63,10 +63,26 @@
             transform: rotate( 45deg );
             }
     }
+    .project__info {
+        opacity: 0.2;
+        }
+}
+.is-home-page {
+    .main {
+        padding-top: 0;
+        }
 }
 .is-project-page {
     .main {
         padding-top: 0;
+        }
+}
+.is-cover--feature {
+    .header__list {
+        opacity: 0;
+        }
+    .header__logo {
+        opacity: 1;
         }
 }
 .is-hoverable {

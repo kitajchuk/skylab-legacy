@@ -24,6 +24,7 @@ const navi = {
         this.items = this.element.find( ".js-navi-a" );
         this.trigger = core.dom.body.find( ".js-controller--navi" );
         this.timing = core.util.getTransitionDuration( this.element[ 0 ] );
+        this.timeout = null;
         this.bind();
     },
 
@@ -36,6 +37,7 @@ const navi = {
 
 
     open () {
+        this.clearOut();
         this.isOpen = true;
         this.element.addClass( "is-active" );
         core.dom.html.addClass( "is-navi-open" );
@@ -43,11 +45,40 @@ const navi = {
 
 
     close () {
+        this.clearOut();
         this.isOpen = false;
         this.element.addClass( "is-closing" ).removeClass( "is-active" );
         core.dom.html.removeClass( "is-navi-open" );
 
-        setTimeout( () => this.element.removeClass( "is-closing" ), this.timing );
+        this.timeout = setTimeout( () => this.element.removeClass( "is-closing" ), this.timing );
+    },
+
+
+    openSpecial () {
+        this.clearOut();
+        this.isOpen = true;
+        this.element.addClass( "is-active is-special" );
+        core.dom.html.addClass( "is-navi-open" );
+
+        this.timeout = setTimeout( () => this.element.removeClass( "is-special" ), this.timing );
+    },
+
+
+    closeSpecial () {
+        this.clearOut();
+        this.isOpen = false;
+        this.element.addClass( "is-special" );
+        core.dom.html.removeClass( "is-navi-open" );
+
+        this.timeout = setTimeout( () => this.element.removeClass( "is-active is-special" ), this.timing );
+    },
+
+
+    clearOut () {
+        if ( this.timeout ) {
+            clearTimeout( this.timeout );
+            this.timeout = null;
+        }
     },
 
 
