@@ -5,6 +5,7 @@ import router from "./router";
 import * as core from "./core";
 import navi from "./navi";
 import intro from "./intro";
+import filter from "./filter";
 import Analytics from "./class/Analytics";
 import $ from "properjs-hobo";
 
@@ -22,6 +23,7 @@ class App {
         this.navi = navi;
         this.intro = intro;
         this.router = router;
+        this.filter = filter;
 
         this.bindEvents();
         this.initModules();
@@ -69,6 +71,7 @@ class App {
         // Views
         this.navi.init();
         this.intro.init();
+        this.filter.init();
 
         // Controller
         this.router.init();

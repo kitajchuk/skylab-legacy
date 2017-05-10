@@ -13,7 +13,7 @@
             background-color: $black;
             }
     }
-    .icon--search {
+    .icon--filter {
         .glass {
             border-color: $black;
             }
@@ -45,6 +45,24 @@
             }
     }
 }
+.is-home-page {
+    .main {
+        padding-top: 0;
+        }
+}
+.is-project-page {
+    .main {
+        padding-top: 0;
+        }
+}
+.is-cover--feature {
+    .header__list {
+        opacity: 0;
+        }
+    .header__logo {
+        opacity: 1;
+        }
+}
 .is-navi-open {
     .icon--list {
         .top,
@@ -67,23 +85,24 @@
         opacity: 0.2;
         }
 }
-.is-home-page {
+.is-filter-open {
     .main {
-        padding-top: 0;
+        padding-right: $filter-width;
         }
-}
-.is-project-page {
-    .main {
-        padding-top: 0;
-        }
-}
-.is-cover--feature {
-    .header__list {
-        opacity: 0;
+    .header {
+        padding-right: calc( #{$filter-width} + #{$padding-wrap} );
         }
     .header__logo {
-        opacity: 1;
+        opacity: 0;
         }
+    .filter {
+        transform: translate3d( 0, 0, 0 );
+        }
+    .icon--filter {
+        .handle {
+            transform: translate3d( 200%, -50%, 0 );
+            }
+    }
 }
 .is-hoverable {
     .navi__a:not( .is-active ):hover {

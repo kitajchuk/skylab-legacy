@@ -87,10 +87,20 @@ const getPage = function ( req ) {
  * Load the Site context model.
  *
  */
-const getSite = function () {
+const getSite = function ( req ) {
     return new Promise(( resolve, reject ) => {
         prismic.api( config.api.access, null ).then(( api ) => {
-            api.getSingle( "site" ).then(( document ) => {
+            const form = api.form( "sitewide" ).pageSize( 100 ).ref( getRef( req, api ) );
+
+            form.submit().then(( json ) => {
+                const docs = {
+                    site: json.results.find(( doc ) => {
+                        return (doc.type === "site");
+                    }),
+                    project: json.results.filter(( doc ) => {
+                        return (doc.type === "project");
+                    })
+                };
                 const navi = {
                     items: []
                 };
@@ -99,16 +109,16 @@ const getSite = function () {
                 };
 
                 // Normalize site context
-                for ( let i in document.fragments ) {
+                for ( let i in docs.site.fragments ) {
                     if ( i !== "site.navi" ) {
                         const key = i.replace( /^site\./, "" );
 
-                        site.data[ key ] = document.fragments[ i ].value || document.fragments[ i ].url;
+                        site.data[ key ] = docs.site.fragments[ i ].value || docs.site.fragments[ i ].url;
                     }
                 }
 
                 // Normalize navi context
-                document.getSliceZone( "site.navi" ).value.forEach(( slice ) => {
+                docs.site.getSliceZone( "site.navi" ).value.forEach(( slice ) => {
                     let id = null;
                     let uid = null;
                     let type = null;
@@ -144,6 +154,7 @@ const getSite = function () {
                 cache.api = api;
                 cache.site = site;
                 cache.navi = navi;
+                cache.docs = docs;
 
                 resolve();
             });
@@ -245,39 +256,48 @@ const getPartial = function ( params, query, data ) {
  */
 const getDataForApi = function ( req ) {
     return new Promise(( resolve, reject ) => {
-        prismic.api( config.api.access, null ).then(( api ) => {
-            const done = function ( json ) {
-                resolve( json.results );
-            };
-            const fail = function ( error ) {
-                resolve({
-                    error: error
-                });
-            };
-            const type = req.params.type;
-            const query = [];
-            const form = getForm( req, api );
+        const doQuery = function ( type ) {
+            prismic.api( config.api.access, null ).then(( api ) => {
+                const done = function ( json ) {
+                    resolve( json.results );
+                };
+                const fail = function ( error ) {
+                    resolve({
+                        error: error
+                    });
+                };
+                const query = [];
+                const form = getForm( req, api );
 
-            // query: type?
-            query.push( prismic.Predicates.at( "document.type", type ) );
+                // query: type?
+                query.push( prismic.Predicates.at( "document.type", type ) );
 
-            // query: category?
-            if ( req.query.category ) {
-                query.push( prismic.Predicates.at( `my.${type}.categories.category`, req.query.category ) );
-            }
+                // query: category?
+                if ( req.query.category ) {
+                    query.push( prismic.Predicates.at( `my.${type}.categories.category`, req.query.category ) );
+                }
 
-            // query?
-            if ( query.length ) {
-                form.query( query );
-            }
+                // query?
+                if ( query.length ) {
+                    form.query( query );
+                }
 
-            // orderings?
-            // Feature, Standard
-            // form.orderings( `` );
+                // orderings?
+                // Feature, Standard
+                // form.orderings( `` );
 
-            // submit
-            form.submit().then( done ).catch( fail );
-        });
+                // submit
+                form.submit().then( done ).catch( fail );
+            });
+        };
+
+        if ( req.params.type === "project" ) {
+            console.log( "getApi::cache::project" );
+            resolve( cache.docs.project );
+
+        } else {
+            doQuery( req.params.type );
+        }
     });
 };
 
@@ -297,7 +317,7 @@ const getDataForPage = function ( req ) {
         const doQuery = function ( type ) {
             const done = function ( json ) {
                 if ( !json.results.length ) {
-                    reject( `The page template for "${type}" exists but Prismic has no data for it.` );
+                    reject( `Prismic has no data for the content-type "${type}".` );
 
                 } else {
                     // uid
@@ -340,10 +360,15 @@ const getDataForPage = function ( req ) {
             form.submit().then( done ).catch( fail );
         };
 
-        getSite().then(() => {
+        getSite( req ).then(() => {
             const type = (req.params.type || "");
 
             if ( !type ) {
+                resolve( data );
+
+            } else if ( type === "project" ) {
+                console.log( "getPage::cache::project" );
+                data.items = cache.docs.project;
                 resolve( data );
 
             } else {
@@ -392,6 +417,16 @@ const getDoc = function ( uid, documents ) {
  */
 const getForm = function ( req, api ) {
     return api.form( "everything" ).pageSize( 100 ).ref( getRef( req, api ) );
+};
+
+
+
+const getCategories = function ( req, api ) {
+    const cats = [];
+
+
+
+    return cats;
 };
 
 

@@ -52,7 +52,7 @@
         transform: translateY( -50% );
         }
 }
-.icon--search {
+.icon--filter {
     .glass {
         border: 2px solid $white;
         border-radius: 100%;
@@ -67,7 +67,8 @@
         left: 0;
         position: absolute;
         transform: translate3d( -100%, -50%, 0 );
-        transition: background-color $fast-duration $ease;
+        transition: transform $fast-duration $ease,
+                    background-color $fast-duration $ease;
         top: 50%;
         width: $circle / 2;
         }

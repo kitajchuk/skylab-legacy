@@ -85,7 +85,18 @@ const dom = {
      * @description The cached <nav> nodes.
      *
      */
-    navi: $( config.naviSelector )
+    navi: $( config.naviSelector ),
+
+
+    /**
+     *
+     * @public
+     * @member filter
+     * @memberof core.dom
+     * @description The cached <filter> node.
+     *
+     */
+    filter: $( config.filterSelector )
 };
 
 

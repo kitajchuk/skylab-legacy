@@ -58,7 +58,10 @@ const router = {
      */
     initPages () {
         this.controller = new PageController({
-            transitionTime: this.pageDuration
+            transitionTime: this.pageDuration,
+            routerOptions: {
+                handle404: false
+            }
         });
 
         this.controller.setConfig([

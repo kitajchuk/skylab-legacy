@@ -156,6 +156,17 @@ const config = {
     /**
      *
      * @public
+     * @member filterSelector
+     * @memberof core.config
+     * @description The string selector used for filter menu.
+     *
+     */
+    filterSelector: ".js-filter",
+
+
+    /**
+     *
+     * @public
      * @member lazyImageAttr
      * @memberof core.config
      * @description The string attribute for lazy image source URLs.
