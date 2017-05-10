@@ -38,22 +38,38 @@
         transition-delay: 64ms;
         }
 }
-.navi__a {
-    font-size: 20vh;
-    font-weight: bold;
-    line-height: 1.2;
-    position: relative;
+.navi__a {}
+.navi__li--primary {
+    .navi__a {
+        font-size: 20vh;
+        font-weight: bold;
+        line-height: 1.2;
+        position: relative;
 
-    &:after {
-        background-color: $white;
-        content: "";
-        display: inline-block;
-        height: 30px;
-        left: 0;
-        position: absolute;
-        top: 100%;
-        transition: top $long-duration $ease-bounce,
-                    transform $fast-duration $ease-bounce;
-        width: 100%;
+        &:after {
+            background-color: $white;
+            content: "";
+            display: inline-block;
+            height: 30px;
+            left: 0;
+            position: absolute;
+            top: 100%;
+            transition: top $long-duration $ease-bounce,
+                        transform $fast-duration $ease-bounce;
+            width: 100%;
+            }
+    }
+}
+.navi__li--tertiary {
+    margin-top: $expander-mobile;
+        display: none;
+
+    & + .navi__li--tertiary {
+        margin-top: 10px;
+        }
+
+    .navi__a {
+        font-size: 24px;
+        @include em();
         }
 }
