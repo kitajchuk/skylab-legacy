@@ -9,7 +9,7 @@
     }
 .slices__content {
     display: inline-block;
-    width: calc( 100vw - #{$padding-wrap} - #{$wrap-copy} );
+    width: calc( 100vw - #{$wrap-copy} );
     }
 .slices__image {
     min-height: 20vh;

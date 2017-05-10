@@ -1,10 +1,7 @@
 .project {}
-.project__info,
-.project__body {
-    padding-bottom: $header-height;
-    }
 .project__info {
     left: 0;
+    padding-bottom: $header-height;
     padding-top: $header-height;
     position: fixed;
     top: 0;
@@ -12,8 +9,7 @@
     z-index: $z_layer_02;
     }
 .project__body {
-    padding-right: $padding-wrap;
     position: relative;
     text-align: right;
     z-index: $z_layer_01;
-}
+    }

@@ -59,6 +59,11 @@
             }
     }
 }
+.is-project-page {
+    .main {
+        padding-top: 0;
+        }
+}
 .is-hoverable {
     .navi__a:not( .is-active ):hover {
         &:after {
