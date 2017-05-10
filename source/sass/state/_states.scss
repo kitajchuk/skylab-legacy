@@ -39,6 +39,11 @@
             border: 2px solid transparent;
             }
     }
+    .header__logo {
+        .svg {
+            fill: $black;
+            }
+    }
 }
 .is-navi-open {
     .icon--list {

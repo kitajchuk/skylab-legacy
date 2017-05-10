@@ -11,3 +11,11 @@
         pointer-events: auto;
         }
 }
+.header__logo {
+    transform: translateX( -50% );
+    width: $logo-width-header;
+
+    .svg {
+        fill: $white;
+        }
+}
