@@ -1,0 +1,9 @@
+.cms {
+    p + p,
+    h1 + p {
+        margin-top: $expander-mobile;
+        }
+}
+.cms + .meta {
+    margin-top: $expander-mobile;
+    }

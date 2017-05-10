@@ -1,0 +1,26 @@
+.theme {
+    bottom: 0;
+    height: $header-height;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    z-index: $z_layer_05;
+    }
+.theme__spot {
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-block;
+    height: 12px;
+    pointer-events: auto;
+    width: 12px;
+
+    &.is-light {
+        background-color: $white;
+        border: 2px solid transparent;
+        }
+    &.is-dark {
+        background-color: $black;
+        border: 2px solid $white;
+        margin-left: 12px;
+        }
+    }

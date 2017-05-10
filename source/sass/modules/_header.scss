@@ -1,0 +1,13 @@
+.header {
+    height: $header-height;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $z_layer_05;
+
+    .header__icon {
+        pointer-events: auto;
+        }
+}
