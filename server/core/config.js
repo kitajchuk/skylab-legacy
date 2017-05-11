@@ -1,7 +1,10 @@
 const path = require( "path" );
+const root = path.join( __dirname, "../../" );
 const config = {
     // Homepage UID
     homepage: "home",
+    // Page Not Found — 404
+    notfound: "404",
     // Timestamp ( Will be time app booted )
     timestamp: Date.now(),
     // Environments
@@ -14,7 +17,11 @@ const config = {
     api: {
         // Prismic
         access: "https://skylab.cdn.prismic.io/api",
-        adapter: "prismic"
+        adapter: "prismic",
+        // Contentful
+        // space: "",
+        // access: "",
+        // adapter: "contentful"
     },
     // Deployment config ( AWS etc... )
     deploy: {
@@ -24,11 +31,11 @@ const config = {
     template: {
         module: "ejs",
         require: require( "ejs" ),
-        dir: path.join( __dirname, "../template" ),
-        layout: path.join( __dirname, "../template/index.html" ),
-        pagesDir: path.join( __dirname, "../template", "pages" ),
-        partialsDir: path.join( __dirname, "../template", "partials" ),
-        staticDir: path.join( __dirname, "../static" )
+        dir: path.join( root, "template" ),
+        layout: path.join( root, "template/index.html" ),
+        pagesDir: path.join( root, "template", "pages" ),
+        partialsDir: path.join( root, "template", "partials" ),
+        staticDir: path.join( root, "static" )
     },
     // Express.js config
     express: {
@@ -51,7 +58,15 @@ const config = {
         threshold: 0
     },
     // Console log prefix
-    logger: "[@clutch]"
+    logger: "[@clutch]",
+
+    // Skylab-www specific ( Prismic )
+    skylab: {
+        mainForm: "sitewide",
+        naviFrag: "site.navi",
+        siteType: "site",
+        mainType: "project"
+    }
 };
 
 
