@@ -54,6 +54,9 @@
     .main {
         padding-top: 0;
         }
+    .header__filter {
+        opacity: 0;
+        }
 }
 .is-cover--feature {
     .header__list {
@@ -86,11 +89,9 @@
         }
 }
 .is-filter-open {
-    .main {
-        padding-right: $filter-width;
-        }
+    .main,
     .header {
-        padding-right: calc( #{$filter-width} + #{$padding-wrap} );
+        transform: translate3d( -$filter-width, 0, 0 );
         }
     .header__logo {
         opacity: 0;

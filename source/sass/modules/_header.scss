@@ -6,13 +6,14 @@
     top: 0;
     width: 100%;
     z-index: $z_layer_05;
-    transition: padding-right $fast-duration $ease;
+    transition: transform $fast-duration $ease;
 
     .header__icon {
         pointer-events: auto;
         }
 }
-.header__list {
+.header__list,
+.header__filter {
     transition: opacity $fast-duration $ease;
     }
 .header__logo {

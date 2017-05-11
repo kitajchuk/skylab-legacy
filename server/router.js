@@ -136,7 +136,7 @@ module.exports = {
             expressApp.listen( core.config.express.port );
 
             console.log( core.config.logger, `Express server started` );
-            console.log( core.config.logger, `Access URL — http://localhost:${core.config.express.port}` );
+            console.log( core.config.logger, `Access URL — http://localhost:${core.config.browser.port}` );
         });
     }
 };
