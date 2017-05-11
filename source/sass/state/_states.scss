@@ -45,11 +45,16 @@
             }
     }
 }
-.is-home-page {
+.is-home-page:not( .is-category-query ) {
     .main {
         padding-top: 0;
         }
 }
+// .is-home-page.is-category-query {
+//     .index__li:first-child {
+//         padding-top: 0;
+//         }
+// }
 .is-project-page {
     .main {
         padding-top: 0;

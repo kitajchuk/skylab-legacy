@@ -24,6 +24,7 @@ class View {
         this.response = "";
         this.data = {};
         this.controllers = new Controllers();
+        this.classNames = [];
 
         this.init();
     }
@@ -97,6 +98,15 @@ class View {
             const cache = core.cache.get( `partial--${this.id}` );
             const query = paramalama( window.location.search );
 
+            // Gather classNames for query params
+            // Stuff like ?category=foo&tag=bar
+            for ( const prop in query ) {
+                if ( query.hasOwnProperty( prop ) ) {
+                    this.classNames.push( `is-${prop}-query` );
+                }
+            }
+
+            // Set these for Clutch API partial rendering
             query.format = "html";
             query.template = this.id;
 
@@ -112,6 +122,8 @@ class View {
 
                 }).then(( response ) => {
                     // core.cache.set( `partial--${this.id}`, response );
+
+                    core.dom.html.addClass( this.classNames.join( " " ) );
 
                     resolve( response );
                 });
@@ -155,6 +167,8 @@ class View {
      *
      */
     destroy () {
+        core.dom.html.removeClass( this.classNames.join( " " ) );
+
         this.controllers.destroy();
     }
 }

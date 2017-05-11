@@ -56,7 +56,7 @@ const getApi = function ( req, res, handle ) {
 
             // Render partial for ?format=html&template=foo
             if ( req.query.format === "html" ) {
-                getPartial( req.params, req.query, data ).then(( html ) => {
+                getPartial( req, data ).then(( html ) => {
                     resolve( html );
                 });
 
@@ -135,9 +135,9 @@ const getWebhook = function ( req, res ) {
  * Handle partial rendering.
  *
  */
-const getPartial = function ( params, query, data ) {
+const getPartial = function ( req, data ) {
     return new Promise(( resolve, reject ) => {
-        const partial = (query.template || params.type);
+        const partial = (req.query.template || req.params.type);
         const localObject = {
             context: new ContextObject( partial )
         };
@@ -152,7 +152,7 @@ const getPartial = function ( params, query, data ) {
         }
 
         // Add `features` array to the context
-        if ( params.type === core.config.skylab.mainType ) {
+        if ( req.params.type === core.config.skylab.mainType && !req.query.category ) {
             localObject.context.set( "features", data.documents.filter(( doc ) => {
                 return (doc.getText( `${core.config.skylab.mainType}.type` ) === "Feature");
             }));
@@ -296,7 +296,7 @@ const getDataForApi = function ( req, handle ) {
 
                 // query: pubsub?
                 if ( handle ) {
-                    query = handle.handler( cache.client, query, req );
+                    query = handle.handler( prismic, query, req );
                 }
 
                 // query?
@@ -309,13 +309,13 @@ const getDataForApi = function ( req, handle ) {
             });
         };
 
-        if ( req.params.type === core.config.skylab.mainType ) {
-            console.log( `getApi::cache::${core.config.skylab.mainType}` );
-            resolve( cache.docs[ core.config.skylab.mainType ] );
+        // if ( req.params.type === core.config.skylab.mainType ) {
+            // console.log( `getApi::cache::${core.config.skylab.mainType}` );
+            // resolve( cache.docs[ core.config.skylab.mainType ] );
 
-        } else {
+        // } else {
             doQuery( req.params.type );
-        }
+        // }
     });
 };
 
@@ -371,7 +371,7 @@ const getDataForPage = function ( req, handle ) {
 
             // query: pubsub?
             if ( handle ) {
-                query = handle.handler( cache.client, query, req );
+                query = handle.handler( prismic, query, req );
             }
 
             // query?
@@ -392,16 +392,16 @@ const getDataForPage = function ( req, handle ) {
             if ( !type ) {
                 resolve( data );
 
-            } else if ( type === core.config.skylab.mainType ) {
-                if ( uid ) {
-                    data.item = getDoc( uid, cache.docs[ core.config.skylab.mainType ] );
-
-                } else {
-                    data.items = cache.docs[ core.config.skylab.mainType ];
-                }
-
-                console.log( `getPage::cache::${core.config.skylab.mainType}` );
-                resolve( data );
+            // } else if ( type === core.config.skylab.mainType ) {
+            //     if ( uid ) {
+            //         data.item = getDoc( uid, cache.docs[ core.config.skylab.mainType ] );
+            //
+            //     } else {
+            //         data.items = cache.docs[ core.config.skylab.mainType ];
+            //     }
+            //
+            //     console.log( `getPage::cache::${core.config.skylab.mainType}` );
+            //     resolve( data );
 
             } else {
                 doQuery( type );

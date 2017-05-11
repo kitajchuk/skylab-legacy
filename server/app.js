@@ -3,21 +3,19 @@ const router = require( "./router" );
 
 
 
+const onCategory = function ( client, query, req ) {
+    if ( req.query.category ) {
+        query.push( client.Predicates.at( `my.${config.skylab.mainType}.categories.category`, req.query.category ) );
+    }
+
+    return query;
+};
+
+
+
 // :req, :type, :uid, :callback
-// router.on( "page", "example", null, ( client, query, req ) => {
-//     console.log( config.logger, "Example page pubsub" );
-//
-//     // MUST return {query} for final client data fetch
-//     return query;
-// });
-//
-// // :req, :type, :uid, :callback
-// router.on( "api", "page", null, ( client, query, req ) => {
-//     console.log( config.logger, "Example api pubsub" );
-//
-//     // MUST return {query} for final client data fetch
-//     return query;
-// });
+router.on( "api", "project", null, onCategory );
+router.on( "page", "project", null, onCategory );
 
 
 
