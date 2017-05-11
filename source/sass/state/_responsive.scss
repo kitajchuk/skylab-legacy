@@ -70,12 +70,14 @@
         display: none;
         }
 
-    .navi__a {
-        font-size: 12vh;
+    .navi__li--primary {
+        .navi__a {
+            font-size: 12vh;
 
-        &:after {
-            height: 10px;
-            }
+            &:after {
+                height: 10px;
+                }
+        }
     }
 }
 

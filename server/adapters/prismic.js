@@ -361,14 +361,21 @@ const getDataForPage = function ( req ) {
         };
 
         getSite( req ).then(() => {
+            const uid = req.params.uid;
             const type = (req.params.type || "");
 
             if ( !type ) {
                 resolve( data );
 
             } else if ( type === "project" ) {
+                if ( uid ) {
+                    data.item = getDoc( uid, cache.docs.project );
+
+                } else {
+                    data.items = cache.docs.project;
+                }
+
                 console.log( "getPage::cache::project" );
-                data.items = cache.docs.project;
                 resolve( data );
 
             } else {
