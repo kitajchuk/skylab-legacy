@@ -1,4 +1,6 @@
 import * as core from "./core";
+import paramalama from "paramalama";
+import $ from "properjs-hobo";
 
 
 /**
@@ -21,16 +23,56 @@ const filter = {
     init () {
         this.isOpen = false;
         this.element = core.dom.filter;
+        this.options = this.element.find( ".js-filter-option" );
+        this.label = this.element.find( ".js-filter-label" );
         this.trigger = core.dom.body.find( ".js-controller--filter" );
         this.timing = core.util.getTransitionDuration( this.element[ 0 ] );
         this.timeout = null;
+
         this.bind();
+        this.query();
+    },
+
+
+    query () {
+        this.params = paramalama( window.location.search );
+
+        for ( const prop in this.params ) {
+            if ( this.params.hasOwnProperty( prop ) ) {
+                const option = this.options.filter( `.js-filter-${prop}[data-value='${this.params[ prop ]}']` );
+
+                if ( option.length ) {
+                    this.active( option );
+
+                } else {
+                    this.inactive();
+                }
+            }
+        }
+    },
+
+
+    inactive () {
+        this.options.removeClass( "is-active" );
+        this.label[ 0 ].innerHTML = "";
+    },
+
+
+    active ( option ) {
+        this.options.removeClass( "is-active" );
+        option.addClass( "is-active" );
+
+        this.label[ 0 ].innerHTML = option.data().value;
     },
 
 
     bind () {
         this.trigger.on( "click", () => {
             this.toggle();
+        });
+
+        this.options.on( "click", ( e ) => {
+            this.active( $( e.target ) );
         });
     },
 

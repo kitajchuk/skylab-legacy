@@ -2,7 +2,7 @@
 .filter {
     background-color: transparent;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     position: fixed;
     right: 0;
     top: 0;
@@ -12,85 +12,26 @@
     width: $filter-width;
     -webkit-overflow-scrolling: touch;
     }
-.filter-label {
-    overflow: hidden;
-    padding-left: 60px;
-    text-align: left;
-    text-overflow: ellipsis;
-    transition: opacity $fast-duration $ease;
-    white-space: nowrap;
-    width: 100%;
-
-    span {
-        transition: color $fast-duration $ease;
-        }
-    span:hover {
-        color: $white;
-        }
-    span:hover:before {
-        color: $white;
-        }
-    span + span:before {
-        content: " + ";
-        color: $white;
-        position: relative;
-        }
+.filter__label {
+    height: $header-height;
     }
-.filter__opt {
+.filter__a {
     cursor: pointer;
     position: relative;
     transition: color $fast-duration $ease;
 
-    &:hover {
-        color: $black;
-        }
-
-    &.is-active {
-        color: $black;
-
-        &:before {
-            background-color: $black;
-            border-radius: 6px;
-            content: "";
-            height: 6px;
-            left: 0;
-            position: absolute;
-            top: 50%;
-            transform: translate3d( -16px, -50%, 0 );
-            width: 6px;
-            }
+    &.is-active:before {
+        background-color: $white;
+        border-radius: 6px;
+        content: "";
+        height: 6px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate3d( -16px, -70%, 0 );
+        width: 6px;
         }
     }
 .filter__col + .filter__col {
     padding-top: $expander-one;
-    }
-.filter__set {
-    margin-top: 20px;
-    }
-
-
-
-// Search field...
-.search {
-    border-bottom: 1px solid transparent;
-    height: $header-height;
-    position: relative;
-    }
-.search__field {
-    background-color: transparent;
-    border: 0;
-    color: $black;
-    height: 100%;
-    left: 0;
-    outline: 0;
-    padding-left: $expander-two;
-    position: absolute;
-    top: 0;
-    transition: padding-left $fast-duration $ease;
-    width: 100%;
-    -webkit-appearance: none;
-
-    &:focus {
-        outline: 0;
-        }
     }

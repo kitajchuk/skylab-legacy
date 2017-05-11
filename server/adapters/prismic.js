@@ -152,7 +152,7 @@ const getPartial = function ( req, data ) {
         }
 
         // Add `features` array to the context
-        if ( req.params.type === core.config.skylab.mainType && !req.query.category ) {
+        if ( req.params.type === core.config.skylab.mainType && !req.query.category && !req.query.status ) {
             localObject.context.set( "features", data.documents.filter(( doc ) => {
                 return (doc.getText( `${core.config.skylab.mainType}.type` ) === "Feature");
             }));
@@ -195,6 +195,26 @@ const getSite = function ( req ) {
                 const site = {
                     data: {}
                 };
+                const statuses = [];
+                const categories = [];
+
+                // Normalize filter criteria ( category, status etc... )
+                docs[ core.config.skylab.mainType ].forEach(( doc ) => {
+                    const cats = doc.getGroup( `${core.config.skylab.mainType}.categories` );
+                    const status = doc.getText( `${core.config.skylab.mainType}.status` );
+
+                    if ( status && statuses.indexOf( status ) === -1 ) {
+                        statuses.push( status );
+                    }
+
+                    if ( cats ) {
+                        cats.value.forEach(( cat ) => {
+                            if ( categories.indexOf( cat.data.category.value ) === -1 ) {
+                                categories.push( cat.data.category.value );
+                            }
+                        });
+                    }
+                });
 
                 // Normalize site context
                 for ( let i in docs.site.fragments ) {
@@ -243,6 +263,8 @@ const getSite = function ( req ) {
                 cache.site = site;
                 cache.navi = navi;
                 cache.docs = docs;
+                cache.statuses = statuses;
+                cache.categories = categories;
 
                 resolve();
             });

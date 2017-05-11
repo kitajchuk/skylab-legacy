@@ -3,7 +3,11 @@ const router = require( "./router" );
 
 
 
-const onCategory = function ( client, query, req ) {
+const onQuery = function ( client, query, req ) {
+    if ( req.query.status ) {
+        query.push( client.Predicates.at( `my.${config.skylab.mainType}.status`, req.query.status ) );
+    }
+
     if ( req.query.category ) {
         query.push( client.Predicates.at( `my.${config.skylab.mainType}.categories.category`, req.query.category ) );
     }
@@ -14,8 +18,8 @@ const onCategory = function ( client, query, req ) {
 
 
 // :req, :type, :uid, :callback
-router.on( "api", "project", null, onCategory );
-router.on( "page", "project", null, onCategory );
+router.on( "api", "project", null, onQuery );
+router.on( "page", "project", null, onQuery );
 
 
 

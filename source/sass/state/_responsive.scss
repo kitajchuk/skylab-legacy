@@ -57,7 +57,8 @@
 
     $header-height: 100px;
     .header,
-    .theme {
+    .theme,
+    .filter__label {
         height: $header-height;
         }
     .main {

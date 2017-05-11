@@ -29,7 +29,7 @@
         <% if ( item.getGroup( 'project.categories' ) ) { %>
             <% item.getGroup( 'project.categories' ).toArray().forEach(function ( item ) { %>
                 <div class="p">
-                    <a class="em" href="/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                    <a class="em" href="?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
                 </div>
             <% }) %>
         <% } %>

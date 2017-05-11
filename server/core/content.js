@@ -19,11 +19,6 @@ const getPage = function ( req, res, handle ) {
         const page = (req.params.type ? req.params.type : core.config.homepage);
         const context = new ContextObject( page );
         const check = function ( data ) {
-            context.set({
-                site: core.query.cache.site,
-                navi: core.query.cache.navi
-            });
-
             // 0.0 => Missing template file
             // 0.1 => Single ContentItem
             // 0.2 => Multiple ContentItems(s)
@@ -43,8 +38,6 @@ const getPage = function ( req, res, handle ) {
         };
         const fail = function ( error ) {
             context.set({
-                navi: core.query.cache.navi,
-                site: core.query.cache.site,
                 page: core.config.notfound,
                 error: error
             });
@@ -52,6 +45,13 @@ const getPage = function ( req, res, handle ) {
             done();
         };
         const done = function () {
+            context.set({
+                navi: core.query.cache.navi,
+                site: core.query.cache.site,
+                statuses: core.query.cache.statuses,
+                categories: core.query.cache.categories
+            });
+
             resolve(( callback ) => {
                 render( callback );
             });

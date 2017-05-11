@@ -3,6 +3,7 @@ import ImageController from "./ImageController";
 import AnimateController from "./AnimateController";
 import ProjectController from "./ProjectController";
 import CoverController from "./CoverController";
+import QueryController from "./QueryController";
 // import OffsetController from "./OffsetController";
 
 
@@ -42,6 +43,8 @@ class Controllers {
             this.coverController = new CoverController( this.cover );
         }
 
+        this.queryController = new QueryController();
+
         // if ( this.offsets.length ) {
         //     this.offsetController = new OffsetController( this.offsets );
         // }
@@ -69,10 +72,15 @@ class Controllers {
             this.coverController = null;
         }
 
-        if ( this.offsetController ) {
-            this.offsetController.destroy();
-            this.offsetController = null;
+        if ( this.queryController ) {
+            this.queryController.destroy();
+            this.queryController = null;
         }
+
+        // if ( this.offsetController ) {
+        //     this.offsetController.destroy();
+        //     this.offsetController = null;
+        // }
     }
 }
 

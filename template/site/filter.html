@@ -1,3 +1,19 @@
 <menu class="filter js-filter -fzero">
-    
+    <div class="filter__label ghost">
+        <div class="ghost__child js-filter-label p em"></div>
+    </div>
+    <ul class="filter__col">
+        <% locals.context.get( 'categories' ).forEach(( category ) => { %>
+            <li class="filter__li">
+                <a class="filter__a js-filter-option js-filter-category p" data-value="<%= category %>" href="?category=<%= category %>"><%= category %></a>
+            </li>
+        <% }) %>
+    </ul>
+    <ul class="filter__col">
+        <% locals.context.get( 'statuses' ).forEach(( status ) => { %>
+            <li class="filter__li">
+                <a class="filter__a js-filter-option js-filter-status p" data-value="<%= status %>" href="?status=<%= status %>"><%= status %></a>
+            </li>
+        <% }) %>
+    </ul>
 </menu>

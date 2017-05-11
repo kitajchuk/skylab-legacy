@@ -4,6 +4,7 @@ import Controllers from "./class/Controllers";
 import * as core from "./core";
 import views from "./views";
 import navi from "./navi";
+import filter from "./filter";
 
 
 /**
@@ -162,6 +163,7 @@ const router = {
         core.dom.main.addClass( "is-inactive" );
 
         navi.close();
+        filter.close();
         this.controllers.destroy();
     },
 
@@ -202,6 +204,7 @@ const router = {
         core.dom.html.removeClass( "is-routing" );
         core.dom.main.removeClass( "is-inactive" );
 
+        filter.query();
         this.controllers.exec();
     },
 

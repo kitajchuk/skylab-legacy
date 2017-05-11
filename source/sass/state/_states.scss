@@ -45,24 +45,21 @@
             }
     }
 }
-.is-home-page:not( .is-category-query ) {
+.is-home-page.is-cover {
     .main {
         padding-top: 0;
         }
 }
-// .is-home-page.is-category-query {
-//     .index__li:first-child {
-//         padding-top: 0;
-//         }
-// }
 .is-project-page {
     .main {
         padding-top: 0;
         }
     .header__filter {
         opacity: 0;
+        pointer-events: none;
         }
 }
+.is-cover {}
 .is-cover--feature {
     .header__list {
         opacity: 0;
@@ -102,6 +99,7 @@
         opacity: 0;
         }
     .filter {
+        overflow: visible;
         transform: translate3d( 0, 0, 0 );
         }
     .icon--filter {
