@@ -93,7 +93,7 @@
 .is-filter-open {
     .main,
     .header {
-        transform: translate3d( -$filter-width, 0, 0 );
+        width: calc( 100vw - #{$filter-width} );
         }
     .header__logo {
         opacity: 0;

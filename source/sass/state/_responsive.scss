@@ -41,9 +41,14 @@
     .slices__content {
         width: 100%;
         }
-    // .slices__slice + .slices__slice {
-    //     margin-top: $expander-mobile / 2;
-    //     }
+
+    .is-filter-open {
+        .main,
+        .header {
+            transform: translate3d( -$filter-width, 0, 0 );
+            width: 100%;
+            }
+    }
 }
 
 
@@ -91,7 +96,7 @@
 
 
 @media only screen and ( max-width: $break-mobile-full ) {
-    $filter-width: 70%;
+    $filter-width: 50%;
 
     .filter {
         width: $filter-width;
@@ -100,6 +105,7 @@
         .main,
         .header {
             transform: translate3d( -$filter-width, 0, 0 );
+            width: 100%;
             }
     }
 }

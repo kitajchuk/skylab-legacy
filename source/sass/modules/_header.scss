@@ -6,7 +6,8 @@
     top: 0;
     width: 100%;
     z-index: $z_layer_05;
-    transition: transform $fast-duration $ease;
+    transition: width $fast-duration $ease,
+                transform $fast-duration $ease;
 
     .header__icon {
         pointer-events: auto;

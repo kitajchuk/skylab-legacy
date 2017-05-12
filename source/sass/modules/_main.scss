@@ -2,7 +2,9 @@
     overflow-x: hidden;
     padding-top: $header-height;
     transition: opacity $fast-duration $ease,
+                width $fast-duration $ease,
                 transform $fast-duration $ease;
+    width: 100%;
 
     &.is-inactive {
         opacity: 0;
