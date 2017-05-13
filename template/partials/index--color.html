@@ -1,0 +1,12 @@
+<li class="index__li animate js-animate -wrap-index -exp-1">
+    <div class="index__image index__col -column -column--1of3">
+        <a href="<%= color.image.doc %>" class="-column">
+            <img class="image js-lazy-image" data-img-src="<%= color.image.url %>" />
+        </a>
+    </div>
+    <div class="index__title index__col -column -column--1of3">
+        <% color.colors.forEach(( colour ) => { %>
+            <div class="-column filter__color" style="background-color:<%= colour %>;"></div>
+        <% }) %>
+    </div>
+</li>

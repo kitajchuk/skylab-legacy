@@ -65,7 +65,16 @@ const config = {
         mainForm: "sitewide",
         naviFrag: "site.navi",
         siteType: "site",
-        mainType: "project"
+        mainType: "project",
+        cacheDir: path.join( root, "server", "cache" ),
+        colors: [
+            { background: "red", query: "red" },
+            { background: "#ff7b2b", query: "orange" },
+            { background: "#ffee00", query: "yellow" },
+            { background: "#85e042", query: "green" },
+            { background: "#2ae0ff", query: "blue" },
+            { background: "violet", query: "violet" }
+        ]
     }
 };
 

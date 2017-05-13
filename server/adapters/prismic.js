@@ -23,11 +23,12 @@
 const path = require( "path" );
 const prismic = require( "prismic.io" );
 const cache = {
+    api: null,
     site: null,
-    navi: null,
-    client: null
+    navi: null
 };
 const core = {
+    watch: require( "../core/watch" ),
     config: require( "../core/config" ),
     template: require( "../core/template" )
 };
@@ -103,8 +104,8 @@ const getPreview = function ( req, res ) {
             return `/${doc.type}/${doc.uid}/`;
         };
 
-        prismic.api( core.config.api.access, null ).then(( client ) => {
-            client.previewSession( previewToken, linkResolver, "/", ( error, redirectUrl ) => {
+        prismic.api( core.config.api.access, null ).then(( api ) => {
+            api.previewSession( previewToken, linkResolver, "/", ( error, redirectUrl ) => {
                 res.cookie( prismic.previewCookie, previewToken, {
                     maxAge: 60 * 30 * 1000,
                     path: "/",
@@ -152,7 +153,7 @@ const getPartial = function ( req, data ) {
         }
 
         // Add `features` array to the context
-        if ( req.params.type === core.config.skylab.mainType && !req.query.category && !req.query.status ) {
+        if ( req.params.type === core.config.skylab.mainType && !req.query.category && !req.query.status && !req.query.color ) {
             localObject.context.set( "features", data.documents.filter(( doc ) => {
                 return (doc.getText( `${core.config.skylab.mainType}.type` ) === "Feature");
             }));
@@ -177,8 +178,8 @@ const getPartial = function ( req, data ) {
  */
 const getSite = function ( req ) {
     return new Promise(( resolve, reject ) => {
-        prismic.api( core.config.api.access, null ).then(( client ) => {
-            const form = client.form( core.config.skylab.mainForm ).pageSize( 100 ).ref( getRef( req, client ) );
+        prismic.api( core.config.api.access, null ).then(( api ) => {
+            const form = api.form( core.config.skylab.mainForm ).pageSize( 100 ).ref( getRef( req, api ) );
 
             form.submit().then(( json ) => {
                 const docs = {
@@ -259,7 +260,7 @@ const getSite = function ( req ) {
                     });
                 });
 
-                cache.client = client;
+                cache.api = api;
                 cache.site = site;
                 cache.navi = navi;
                 cache.docs = docs;
@@ -301,7 +302,7 @@ const getNavi = function ( type ) {
 const getDataForApi = function ( req, handle ) {
     return new Promise(( resolve, reject ) => {
         const doQuery = function ( type ) {
-            prismic.api( core.config.api.access, null ).then(( client ) => {
+            prismic.api( core.config.api.access, null ).then(( api ) => {
                 const done = function ( json ) {
                     resolve( json.results );
                 };
@@ -310,7 +311,7 @@ const getDataForApi = function ( req, handle ) {
                         error: error
                     });
                 };
-                const form = getForm( req, client );
+                const form = getForm( req, api );
                 let query = [];
 
                 // query: type?
@@ -318,16 +319,22 @@ const getDataForApi = function ( req, handle ) {
 
                 // query: pubsub?
                 if ( handle ) {
-                    query = handle.handler( prismic, query, req );
+                    query = handle.handler( prismic, api, query, cache, req );
                 }
 
-                // query?
-                if ( query.length ) {
-                    form.query( query );
-                }
+                // query: promise?
+                if ( query instanceof Promise ) {
+                    query.then( done ).catch( fail );
 
-                // submit
-                form.submit().then( done ).catch( fail );
+                } else {
+                    // query?
+                    if ( query.length ) {
+                        form.query( query );
+                    }
+
+                    // submit
+                    form.submit().then( done ).catch( fail );
+                }
             });
         };
 
@@ -357,7 +364,13 @@ const getDataForPage = function ( req, handle ) {
         const doQuery = function ( type ) {
             const done = function ( json ) {
                 if ( !json.results.length ) {
-                    reject( `Prismic has no data for the content-type "${type}".` );
+                    // Static page with no CMS data attached to it...
+                    if ( core.watch.cache.pages.indexOf( `${type}.html` ) !== -1 ) {
+                        resolve( data );
+
+                    } else {
+                        reject( `Prismic has no data for the content-type "${type}".` );
+                    }
 
                 } else {
                     // uid
@@ -379,7 +392,7 @@ const getDataForPage = function ( req, handle ) {
                 reject( error );
             };
             const navi = getNavi( type );
-            const form = getForm( req, cache.client );
+            const form = getForm( req, cache.api );
             let query = [];
 
             // query: type?
@@ -393,18 +406,24 @@ const getDataForPage = function ( req, handle ) {
 
             // query: pubsub?
             if ( handle ) {
-                query = handle.handler( prismic, query, req );
+                query = handle.handler( prismic, cache.api, query, cache, req );
             }
 
-            // query?
-            if ( query.length ) {
-                form.query( query );
+            // query: promise?
+            if ( query instanceof Promise ) {
+                query.then( done ).catch( fail );
+
+            } else {
+                // query?
+                if ( query.length ) {
+                    form.query( query );
+                }
+
+                // ordering?
+
+                // submit
+                form.submit().then( done ).catch( fail );
             }
-
-            // ordering?
-
-            // submit
-            form.submit().then( done ).catch( fail );
         };
 
         getSite( req ).then(() => {
@@ -439,8 +458,8 @@ const getDataForPage = function ( req, handle ) {
  * Get valid `ref` for Prismic API data.
  *
  */
-const getRef = function ( req, client ) {
-    let ref = client.master();
+const getRef = function ( req, api ) {
+    let ref = api.master();
 
     if ( req && req.cookies && req.cookies[ prismic.previewCookie ] ) {
         ref = req.cookies[ prismic.previewCookie ];
@@ -469,8 +488,8 @@ const getDoc = function ( uid, documents ) {
  * Get the stub of the search form.
  *
  */
-const getForm = function ( req, client ) {
-    return client.form( "everything" ).pageSize( 100 ).ref( getRef( req, client ) );
+const getForm = function ( req, api ) {
+    return api.form( "everything" ).pageSize( 100 ).ref( getRef( req, api ) );
 };
 
 

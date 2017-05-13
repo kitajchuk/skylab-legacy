@@ -16,4 +16,16 @@
             </li>
         <% }) %>
     </ul>
+    <ul class="filter__col">
+        <li class="filter__li">
+            <div class="p">
+                <strong>By <span style="color:#8aacdd;">C</span><span style="color:#95bc6a;">o</span><span style="color:#f3e28c;">l</span><span style="color:#d4a56d;">o</span><span style="color:#d4796f;">r</span></strong>
+            </div>
+        </li>
+        <li class="filter__li">
+            <% locals.context.get( 'colors' ).forEach(( color ) => { %>
+                <a class="filter__color js-filter-option js-filter-color" style="background-color:<%= color.background %>;" data-value="<%= color.query %>" href="?color=<%= color.query %>"></a>
+            <% }) %>
+        </li>
+    </ul>
 </menu>

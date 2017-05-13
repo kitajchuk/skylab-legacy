@@ -34,6 +34,11 @@ const getPage = function ( req, res, handle ) {
                 context.set( "items", data.items );
             }
 
+            // Add `colors` array to the context
+            if ( req.query.color ) {
+                context.set( "colorset", data.items );
+            }
+
             done();
         };
         const fail = function ( error ) {
@@ -49,7 +54,8 @@ const getPage = function ( req, res, handle ) {
                 navi: core.query.cache.navi,
                 site: core.query.cache.site,
                 statuses: core.query.cache.statuses,
-                categories: core.query.cache.categories
+                categories: core.query.cache.categories,
+                colors: core.config.skylab.colors
             });
 
             resolve(( callback ) => {

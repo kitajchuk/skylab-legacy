@@ -15,7 +15,8 @@
     "deploy:staging": "rsync -av -e 'ssh -i ./local/skylab.pem' --rsync-path 'sudo rsync' --exclude 'server/node_modules' server static template ec2-user@35.161.152.178:/var/www/html/",
     "deploy:production": "rsync -av -e 'ssh -i ./local/skylab.pem' --rsync-path 'sudo rsync' --exclude 'server/node_modules' server static template ec2-user@35.162.151.95:/var/www/html/",
     "connect:staging": "ssh ec2-user@35.161.152.178 -i ./local/skylab.pem",
-    "connect:production": "ssh ec2-user@35.162.151.95 -i ./local/skylab.pem"
+    "connect:production": "ssh ec2-user@35.162.151.95 -i ./local/skylab.pem",
+    "task:colorprocess": "node server/tasks/colorprocess.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",

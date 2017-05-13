@@ -36,3 +36,13 @@
 .filter__col + .filter__col {
     padding-top: $expander-one;
     }
+.filter__color {
+    background-color: $white;
+    border-radius: 100%;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    }
+.filter__color + .filter__color {
+    margin-left: 10px;
+    }

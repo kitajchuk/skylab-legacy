@@ -7,6 +7,11 @@
         <% } else { %>
             <a href="/<%= item.type %>/<%= item.uid %>/" class="-column -fpo" data-msg="Needs Image"></a>
         <% } %>
+        <% if ( item._colors ) { %>
+            <% item._colors.forEach(( color ) => { %>
+                <div class="-column filter__color" style="background-color:<%= color %>;"></div>
+            <% }) %>
+        <% } %>
     </div>
     <div class="index__title index__col -column -column--1of3">
         <% if ( item.getText( 'project.title' ) ) { %>

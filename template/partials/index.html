@@ -1,20 +1,31 @@
 <%
-const features = locals.context.get( 'features' );
 const items = locals.context.get( 'items' );
+const colorset = locals.context.get( 'colorset' );
+const features = locals.context.get( 'features' );
 %>
-<% if ( features ) { %>
-    <div class="feature js-feature js-cover" data-cover="feature">
-        <ul class="feature__ul">
-            <% features.forEach(( feature ) => { %>
-                <%- include( 'index--feature.html', {feature: feature} ) %>
+<% if ( colorset ) { %>
+    <div class="colors js-colors">
+        <ul class="colors__ul">
+            <% colorset.forEach(( color ) => { %>
+                <%- include( 'index--color.html', {color: color} ) %>
+            <% }) %>
+        </ul>
+    </div>
+<% } else { %>
+    <% if ( features ) { %>
+        <div class="feature js-feature js-cover" data-cover="feature">
+            <ul class="feature__ul">
+                <% features.forEach(( feature ) => { %>
+                    <%- include( 'index--feature.html', {feature: feature} ) %>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+    <div class="index js-index">
+        <ul class="index__ul">
+            <% items.forEach(( item ) => { %>
+                <%- include( 'index--item.html', {item: item} ) %>
             <% }) %>
         </ul>
     </div>
 <% } %>
-<div class="index js-index">
-    <ul class="index__ul">
-        <% items.forEach(( item ) => { %>
-            <%- include( 'index--item.html', {item: item} ) %>
-        <% }) %>
-    </ul>
-</div>
