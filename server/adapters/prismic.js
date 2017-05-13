@@ -159,6 +159,11 @@ const getPartial = function ( req, data ) {
             }));
         }
 
+        // Add `colors` array to the context
+        if ( req.query.color ) {
+            localObject.context.set( "colorset", data.documents );
+        }
+
         core.template.render( template, localObject )
             .then(( html ) => {
                 resolve( html );

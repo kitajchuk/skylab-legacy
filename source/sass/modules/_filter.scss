@@ -34,13 +34,14 @@
         }
     }
 .filter__col + .filter__col {
-    padding-top: $expander-one;
+    padding-top: $expander-mobile;
     }
 .filter__color {
     background-color: $white;
     border-radius: 100%;
     display: inline-block;
     height: 20px;
+    margin-top: 10px;
     width: 20px;
     }
 .filter__color + .filter__color {

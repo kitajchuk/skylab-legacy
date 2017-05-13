@@ -36,6 +36,7 @@ const getPage = function ( req, res, handle ) {
 
             // Add `colors` array to the context
             if ( req.query.color ) {
+                console.log( "colorset" );
                 context.set( "colorset", data.items );
             }
 

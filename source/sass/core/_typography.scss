@@ -7,7 +7,8 @@
 .li,
 .cms li,
 .meta li {
-    @include p();
+    font-size: $p-size;
+    line-height: 1.7;
 
     a {
         border-bottom: 1px solid inherit;
