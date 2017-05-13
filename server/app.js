@@ -46,9 +46,27 @@ const onQuery = function ( client, api, query, cache, req ) {
 
 
 
-// :req, :type, :uid, :callback
-router.on( "api", "project", null, onQuery );
-router.on( "page", "project", null, onQuery );
+const onContext = function ( context, cache, req ) {
+    // Add `colors` array to the context
+    if ( req.query.color ) {
+        context.set( "colorset", context.get( "items" ) );
+    }
+
+    // Add `features` array to the context
+    if ( req.params.type === config.skylab.mainType && !req.params.uid && !req.query.category && !req.query.status && !req.query.color ) {
+        context.set( "features", context.get( "items" ).filter(( doc ) => {
+            return (doc.getText( `${config.skylab.mainType}.type` ) === "Feature");
+        }));
+    }
+
+    return context;
+};
+
+
+
+// :type, :handlers
+router.on( config.homepage, { query: onQuery, context: onContext } );
+router.on( config.skylab.mainType, { query: onQuery, context: onContext } );
 
 
 

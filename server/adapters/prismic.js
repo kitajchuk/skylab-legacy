@@ -41,9 +41,9 @@ const ContextObject = require( "../class/ContextObject" );
  * Handle API requests.
  *
  */
-const getApi = function ( req, res, handle ) {
+const getApi = function ( req, res, listener ) {
     return new Promise(( resolve, reject ) => {
-        getDataForApi( req, handle ).then(( json ) => {
+        getDataForApi( req, listener ).then(( json ) => {
             const data = {};
 
             // Single document for /:type/:uid
@@ -57,7 +57,7 @@ const getApi = function ( req, res, handle ) {
 
             // Render partial for ?format=html&template=foo
             if ( req.query.format === "html" ) {
-                getPartial( req, data ).then(( html ) => {
+                getPartial( req, data, listener ).then(( html ) => {
                     resolve( html );
                 });
 
@@ -79,9 +79,9 @@ const getApi = function ( req, res, handle ) {
  * Handle Page requests.
  *
  */
-const getPage = function ( req, res, handle ) {
+const getPage = function ( req, res, listener ) {
     return new Promise(( resolve, reject ) => {
-        getDataForPage( req, handle ).then(( json ) => {
+        getDataForPage( req, listener ).then(( json ) => {
             resolve( json );
 
         }).catch(( error ) => {
@@ -136,7 +136,7 @@ const getWebhook = function ( req, res ) {
  * Handle partial rendering.
  *
  */
-const getPartial = function ( req, data ) {
+const getPartial = function ( req, data, listener ) {
     return new Promise(( resolve, reject ) => {
         const partial = (req.query.template || req.params.type);
         const localObject = {
@@ -152,16 +152,9 @@ const getPartial = function ( req, data ) {
             localObject.context.set( "items", data.documents );
         }
 
-        // Add `features` array to the context
-        if ( req.params.type === core.config.skylab.mainType && !req.query.category && !req.query.status && !req.query.color ) {
-            localObject.context.set( "features", data.documents.filter(( doc ) => {
-                return (doc.getText( `${core.config.skylab.mainType}.type` ) === "Feature");
-            }));
-        }
-
-        // Add `colors` array to the context
-        if ( req.query.color ) {
-            localObject.context.set( "colorset", data.documents );
+        // context?
+        if ( listener && listener.handlers.context ) {
+            localObject.context = listener.handlers.context( localObject.context, cache, req );
         }
 
         core.template.render( template, localObject )
@@ -304,7 +297,7 @@ const getNavi = function ( type ) {
  * Load data for API response. Resolve RAW from Service.
  *
  */
-const getDataForApi = function ( req, handle ) {
+const getDataForApi = function ( req, listener ) {
     return new Promise(( resolve, reject ) => {
         const doQuery = function ( type ) {
             prismic.api( core.config.api.access, null ).then(( api ) => {
@@ -323,8 +316,8 @@ const getDataForApi = function ( req, handle ) {
                 query.push( prismic.Predicates.at( "document.type", type ) );
 
                 // query: pubsub?
-                if ( handle ) {
-                    query = handle.handler( prismic, api, query, cache, req );
+                if ( listener && listener.handlers.query ) {
+                    query = listener.handlers.query( prismic, api, query, cache, req );
                 }
 
                 // query: promise?
@@ -360,7 +353,7 @@ const getDataForApi = function ( req, handle ) {
  * Load data for Page response.
  *
  */
-const getDataForPage = function ( req, handle ) {
+const getDataForPage = function ( req, listener ) {
     return new Promise(( resolve, reject ) => {
         const data = {
             item: null,
@@ -410,8 +403,8 @@ const getDataForPage = function ( req, handle ) {
             }
 
             // query: pubsub?
-            if ( handle ) {
-                query = handle.handler( prismic, cache.api, query, cache, req );
+            if ( listener && listener.handlers.query ) {
+                query = listener.handlers.query( prismic, cache.api, query, cache, req );
             }
 
             // query: promise?

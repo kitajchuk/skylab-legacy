@@ -14,7 +14,7 @@ const ContextObject = require( "../class/ContextObject" );
  * Load the data for the given request.
  *
  */
-const getPage = function ( req, res, handle ) {
+const getPage = function ( req, res, listener ) {
     return new Promise(( resolve, reject ) => {
         const page = (req.params.type ? req.params.type : core.config.homepage);
         const context = new ContextObject( page );
@@ -34,10 +34,9 @@ const getPage = function ( req, res, handle ) {
                 context.set( "items", data.items );
             }
 
-            // Add `colors` array to the context
-            if ( req.query.color ) {
-                console.log( "colorset" );
-                context.set( "colorset", data.items );
+            // context?
+            if ( listener && listener.handlers.context ) {
+                context = listener.handlers.context( context, core.query.cache, req );
             }
 
             done();
@@ -54,9 +53,11 @@ const getPage = function ( req, res, handle ) {
             context.set({
                 navi: core.query.cache.navi,
                 site: core.query.cache.site,
+
+                // Find a better way for this maybe...?
+                colors: core.config.skylab.colors,
                 statuses: core.query.cache.statuses,
-                categories: core.query.cache.categories,
-                colors: core.config.skylab.colors
+                categories: core.query.cache.categories
             });
 
             resolve(( callback ) => {
@@ -76,7 +77,7 @@ const getPage = function ( req, res, handle ) {
             });
         };
 
-        core.query.getPage( req, res, handle ).then( check ).catch( fail );
+        core.query.getPage( req, res, listener ).then( check ).catch( fail );
     });
 };
 
