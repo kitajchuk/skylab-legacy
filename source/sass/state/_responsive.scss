@@ -96,10 +96,18 @@
 
 
 @media only screen and ( max-width: $break-mobile-full ) {
-    $filter-width: 50%;
+    $filter-width: 75%;
 
     .filter {
         width: $filter-width;
+        }
+    .filter__color {
+        height: 16px;
+        margin-top: 5px;
+        width: 16px;
+        }
+    .filter__color + .filter__color {
+        margin-left: 5px;
         }
     .is-filter-open {
         .main,

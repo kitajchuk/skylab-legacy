@@ -1,6 +1,7 @@
 import * as core from "./core";
 import paramalama from "paramalama";
 import $ from "properjs-hobo";
+import navi from "./navi";
 
 
 /**
@@ -82,6 +83,8 @@ const filter = {
         this.isOpen = true;
         this.element.addClass( "is-active" );
         core.dom.html.addClass( "is-filter-open" );
+
+        navi.close();
     },
 
 

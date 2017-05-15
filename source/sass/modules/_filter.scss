@@ -3,6 +3,7 @@
     background-color: transparent;
     height: 100%;
     overflow: hidden;
+    padding-bottom: $expander-one;
     padding-left: $expander-one;
     position: fixed;
     right: 0;
@@ -34,7 +35,7 @@
         }
     }
 .filter__col + .filter__col {
-    padding-top: $expander-mobile;
+    padding-top: $expander-one;
     }
 .filter__color {
     background-color: $white;

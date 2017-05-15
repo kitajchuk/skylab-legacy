@@ -99,14 +99,19 @@
         opacity: 0;
         }
     .filter {
-        overflow: visible;
+        overflow: auto;
         transform: translate3d( 0, 0, 0 );
+        -webkit-overflow-scrolling: touch;
         }
     .icon--filter {
         .handle {
             transform: translate3d( 200%, -50%, 0 );
             }
     }
+    .theme {
+        opacity: 0;
+        pointer-events: none;
+        }
 }
 .is-hoverable {
     .navi__a:not( .is-active ):hover {

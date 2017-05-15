@@ -4,6 +4,7 @@
     pointer-events: none;
     position: fixed;
     right: 0;
+    transition: opacity $fast-duration $ease;
     z-index: $z_layer_05;
     }
 .theme__spot {
