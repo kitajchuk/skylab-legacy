@@ -66,7 +66,6 @@ const config = {
         naviFrag: "site.navi",
         siteType: "site",
         mainType: "project",
-        cacheDir: path.join( root, "server", "cache" ),
         colors: [
             { background: "red", query: "red" },
             { background: "#ff7b2b", query: "orange" },

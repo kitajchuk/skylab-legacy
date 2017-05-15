@@ -39,3 +39,21 @@
     display: inline-block;
     vertical-align: middle;
     }
+
+
+
+.tile {}
+.tile__wrap {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    }
+.tile__photo {
+    &.image {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate3d( -50%, -50%, 0 );
+        width: 100%;
+        }
+}

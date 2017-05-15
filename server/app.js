@@ -24,7 +24,7 @@ const onQuery = function ( client, api, query, cache, req ) {
 
     if ( req.query.color ) {
         ret = new Promise(( resolve, reject ) => {
-            file.read( path.join( config.skylab.cacheDir, "colorprocess.json" ) ).then(( data ) => {
+            file.read( path.join( config.template.staticDir, "json", `colorprocess--${req.query.lib || "default"}.json` ) ).then(( data ) => {
                 const json = JSON.parse( String( data ) );
 
                 resolve({

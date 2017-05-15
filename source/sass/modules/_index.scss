@@ -1,7 +1,12 @@
-.index {}
 .index__col + .index__col {
     padding-left: 11vw;
     }
 .index__title {
     white-space: nowrap;
+    }
+
+
+
+.colors__li {
+    margin-bottom: $expander-one;
     }
