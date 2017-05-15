@@ -1,18 +1,24 @@
 [
     {
         "query": [
-            "violet"
+            "violet",
+            "orange",
+            "green"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/7359907b99768c5ff161a69d8ef7788ab43ec34f_skylab_sinju03.jpg",
             "doc": "/project/sinju/"
         },
         "colors": [
-            "#715d42",
+            "#68563b",
             "#c8bec2",
             "#a5a5c2",
             "#1b140b",
-            "#b2b4c9"
+            "#9f825e",
+            "#b2b4c9",
+            "#9e9388",
+            "#39210b",
+            "#8a8e67"
         ]
     },
     {
@@ -25,11 +31,15 @@
             "doc": "/project/sinju/"
         },
         "colors": [
-            "#0a3664",
             "#adc3d3",
+            "#052952",
             "#1372d1",
             "#52acf2",
-            "#050718"
+            "#050718",
+            "#0e5498",
+            "#48739a",
+            "#11507d",
+            "#4d5b78"
         ]
     },
     {
@@ -44,27 +54,37 @@
             "doc": "/project/spencercourt/"
         },
         "colors": [
-            "#463e38",
-            "#819bcf",
+            "#372e27",
+            "#819bd0",
             "#dec394",
             "#967b5f",
-            "#9ab6cc"
+            "#6f7989",
+            "#6e573f",
+            "#506079",
+            "#9ab6cc",
+            "#5472ac"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "red",
+            "orange"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/1182e0250c5c82c0c677da2a4141c945a2b52ad7_skylab_spencer05.jpg",
             "doc": "/project/spencercourt/"
         },
         "colors": [
-            "#30312e",
-            "#d4cfc1",
+            "#d4d0c2",
+            "#1e1f1d",
             "#90afc2",
             "#896f5f",
-            "#7a92b2"
+            "#7a92b2",
+            "#51514e",
+            "#64726a",
+            "#565d68",
+            "#c73e3a"
         ]
     },
     {
@@ -76,11 +96,15 @@
             "doc": "/project/spencercourt/"
         },
         "colors": [
-            "#45372e",
             "#d4d1ce",
             "#a18c75",
+            "#33251d",
             "#abb2b9",
-            "#9d9fa9"
+            "#9d9fa9",
+            "#7d736a",
+            "#6d5b4a",
+            "#584e46",
+            "#626066"
         ]
     },
     {
@@ -92,10 +116,14 @@
             "doc": "/project/spencercourt/"
         },
         "colors": [
-            "#857563",
+            "#938371",
             "#241f19",
             "#d9dae0",
+            "#544a3e",
+            "#533f29",
             "#b0b0bd",
+            "#473224",
+            "#69523e",
             "#ccb79a"
         ]
     },
@@ -103,18 +131,23 @@
         "query": [
             "orange",
             "green",
-            "violet"
+            "violet",
+            "red"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/b7d6d718794f7e0ba77f2d795d9dcab52ba00b55_skylab_spencer02.jpg",
             "doc": "/project/spencercourt/"
         },
         "colors": [
-            "#373634",
-            "#cdaf94",
+            "#292a25",
+            "#cdb095",
             "#87b7af",
             "#81766d",
-            "#6a6fa0"
+            "#6a6fa0",
+            "#59577c",
+            "#5c524b",
+            "#67706b",
+            "#c53b30"
         ]
     },
     {
@@ -127,39 +160,56 @@
             "doc": "/project/spencercourt/"
         },
         "colors": [
-            "#3b3930",
             "#c7bda1",
+            "#302d28",
             "#9ca89c",
             "#8a836a",
-            "#9099a1"
+            "#655940",
+            "#707857",
+            "#9099a1",
+            "#52554f",
+            "#656666"
         ]
     },
     {
-        "query": [],
+        "query": [
+            "violet"
+        ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/41d3ea486983e87e07d04949370777ecca12c4d3_skylab_columbiabuilding14.jpg",
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#878795",
+            "#706667",
             "#2e292f",
             "#ede7e6",
+            "#9bb2dc",
             "#5b4c40",
-            "#473a39"
+            "#b2c5e8",
+            "#473a39",
+            "#afa3a2",
+            "#99959b"
         ]
     },
     {
-        "query": [],
+        "query": [
+            "red",
+            "orange"
+        ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/1ffd105b3d3e73b332c6804e887ad7114347c960_skylab_columbiabuilding18.jpg",
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#423c36",
+            "#4a433d",
             "#d4d4c9",
             "#8b887e",
             "#9ea99d",
-            "#909ba4"
+            "#0e0a07",
+            "#6f786c",
+            "#909ba4",
+            "#ac6416",
+            "#6c6c74"
         ]
     },
     {
@@ -173,11 +223,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#b3c8d6",
-            "#838d24",
             "#272e1d",
+            "#a9c9e1",
+            "#808b24",
             "#5a4737",
-            "#677888"
+            "#b0a991",
+            "#908084",
+            "#eef6f4",
+            "#677888",
+            "#d0ce2f"
         ]
     },
     {
@@ -190,29 +244,38 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#c0c3c4",
             "#303620",
+            "#c8cbce",
             "#594b38",
             "#74733e",
-            "#707e7f"
+            "#707e7f",
+            "#a29d7f",
+            "#94a1aa",
+            "#898178",
+            "#489c9c"
         ]
     },
     {
         "query": [
             "orange",
             "yellow",
-            "green"
+            "green",
+            "violet"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/791c1a49b1ac204f5b3898e81759ed63ecc2409b_skylab_columbiabuilding24.jpg",
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#d4d1d6",
-            "#2c3112",
             "#7f8323",
+            "#2c3112",
+            "#e0dce3",
             "#7c899e",
-            "#5a4e36"
+            "#5a4e36",
+            "#b1a58a",
+            "#9fb4d3",
+            "#998879",
+            "#4c7ca5"
         ]
     },
     {
@@ -225,27 +288,37 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#c7c9c4",
             "#2a2a26",
+            "#d6dbd8",
             "#777770",
             "#936f45",
-            "#634a2d"
+            "#9b9e96",
+            "#8f8a7f",
+            "#634a2d",
+            "#b3ac9f",
+            "#b89c76"
         ]
     },
     {
         "query": [
-            "green"
+            "green",
+            "orange",
+            "yellow"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/fbc008cbd0d35d5c79749bcc9a966003d56c2efb_skylab_columbiabuilding22.jpg",
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#8f8d83",
+            "#827f76",
             "#2f2a1e",
             "#e6e9e5",
             "#4d4237",
-            "#5a5b37"
+            "#b4b4b0",
+            "#d2d5ba",
+            "#5a5b37",
+            "#bdd0aa",
+            "#aead95"
         ]
     },
     {
@@ -258,25 +331,35 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#988e80",
+            "#908373",
             "#2f2923",
             "#e3e5dd",
             "#7e582f",
-            "#5a3512"
+            "#5a3512",
+            "#c1c7c8",
+            "#b3b6af",
+            "#dcb087",
+            "#585852"
         ]
     },
     {
-        "query": [],
+        "query": [
+            "red"
+        ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/1a7646b808cf9f27c93a2e1dc8afbc5eb56937a2_skylab_columbiabuilding16.jpg",
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#353837",
             "#cfd0cf",
+            "#2b2d2c",
             "#868482",
             "#97adac",
-            "#8b9aa5"
+            "#607879",
+            "#5e5854",
+            "#8b9aa5",
+            "#54636c",
+            "#ac7c74"
         ]
     },
     {
@@ -286,11 +369,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#7b746c",
+            "#6c6760",
             "#dcd3c8",
             "#222320",
+            "#afa294",
             "#9ba8bc",
-            "#b9bcba"
+            "#979690",
+            "#3d332c",
+            "#b9bcba",
+            "#624825"
         ]
     },
     {
@@ -300,10 +387,14 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#958f87",
+            "#7f7870",
             "#efefee",
             "#3b3834",
             "#554b45",
+            "#d2cac3",
+            "#b8b6b2",
+            "#b2a99d",
+            "#c3c4c0",
             "#5d5443"
         ]
     },
@@ -318,27 +409,37 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#3d3729",
+            "#2d291e",
             "#cbaf77",
             "#8d7a53",
+            "#665b44",
+            "#53543f",
             "#a1a560",
+            "#727549",
+            "#6c6765",
             "#99949d"
         ]
     },
     {
         "query": [
-            "green"
+            "green",
+            "orange",
+            "yellow"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/109c0700d65f06249785c4b2e2e2e00657108e68_skylab_columbiabuilding10_lg.jpg",
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#6c6c54",
+            "#62634a",
             "#d4dadb",
             "#aad3e7",
             "#1f221c",
-            "#9ba8b5"
+            "#959291",
+            "#9ba8b5",
+            "#998e6a",
+            "#839752",
+            "#3b2927"
         ]
     },
     {
@@ -350,11 +451,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#f8fafa",
-            "#49b0a2",
+            "#48b9a9",
+            "#fbfbfb",
             "#93c8c4",
+            "#4b4b4a",
+            "#c4e5e0",
             "#7c7b7b",
-            "#82847c"
+            "#82847c",
+            "#bcbcb4",
+            "#bcb4b6"
         ]
     },
     {
@@ -368,16 +473,21 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#f8f8f7",
-            "#494949",
+            "#fafafa",
+            "#464646",
             "#9d9d9d",
+            "#747473",
             "#7c7c7b",
+            "#cccccc",
+            "#faf49c",
+            "#bcbcbc",
             "#9a996a"
         ]
     },
     {
         "query": [
             "orange",
+            "yellow",
             "green"
         ],
         "image": {
@@ -385,11 +495,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#eae9e4",
+            "#fbfbf8",
             "#696967",
+            "#bcbcbc",
             "#a3a29e",
+            "#f6eea9",
             "#999475",
-            "#857c62"
+            "#857c62",
+            "#bcb394",
+            "#7c846c"
         ]
     },
     {
@@ -399,11 +513,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#f7f7f7",
-            "#5c5c5c",
+            "#fafafa",
+            "#545454",
             "#a1a1a1",
+            "#747474",
             "#7c7c7c",
-            "#848484"
+            "#848484",
+            "#bcbcbc",
+            "#c4c4c4",
+            "#cfcfcf"
         ]
     },
     {
@@ -413,11 +531,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#050505",
             "#b7b7b7",
+            "#040404",
             "#5f5d5f",
             "#7c7c7c",
-            "#78747c"
+            "#3c3c3c",
+            "#2b2b2b",
+            "#78747c",
+            "#847c83",
+            "#3c343c"
         ]
     },
     {
@@ -429,11 +551,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#83837e",
+            "#747570",
             "#2e342f",
             "#e0ddd9",
+            "#b4afa9",
+            "#c3c5c3",
             "#474f3a",
-            "#463939"
+            "#a3a4a2",
+            "#463939",
+            "#b0b6c7"
         ]
     },
     {
@@ -443,11 +569,15 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#d9d9d9",
-            "#2c2c2c",
             "#6a6a6a",
+            "#f3f3f3",
+            "#8f8f8f",
             "#4c4c4c",
-            "#545454"
+            "#545454",
+            "#252525",
+            "#444444",
+            "#a4a4a4",
+            "#b0b0b0"
         ]
     },
     {
@@ -457,17 +587,21 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#dddddd",
             "#262626",
+            "#ececec",
             "#686868",
+            "#8a8a8a",
             "#5c5c5c",
-            "#747474"
+            "#747474",
+            "#a4a4a4",
+            "#b8b8b8",
+            "#acacac"
         ]
     },
     {
         "query": [
-            "violet",
             "orange",
+            "violet",
             "yellow",
             "green"
         ],
@@ -476,31 +610,42 @@
             "doc": "/project/columbiaplant/"
         },
         "colors": [
-            "#3e391f",
-            "#768fb5",
             "#dfd0af",
+            "#768fb5",
+            "#332f19",
             "#998048",
-            "#acb8b1"
+            "#acb8b1",
+            "#6d582d",
+            "#717b4b",
+            "#4f5a67",
+            "#3181aa"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "green",
+            "orange"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/a444ff1d08b94ed718f72e8245e777ac409863e8_skylab_nike01.jpg",
             "doc": "/project/nike/"
         },
         "colors": [
-            "#6e6960",
             "#dfdbd7",
+            "#656360",
             "#869ec7",
             "#aac1d1",
-            "#1d1b19"
+            "#1d1b19",
+            "#a99e86",
+            "#554d1c",
+            "#44261e",
+            "#8c9870"
         ]
     },
     {
         "query": [
+            "violet",
             "orange",
             "green"
         ],
@@ -509,45 +654,60 @@
             "doc": "/project/nike/"
         },
         "colors": [
-            "#98a8c0",
-            "#2f2d23",
+            "#a7b9d8",
             "#8b7339",
+            "#2f2d23",
             "#e6cdbf",
-            "#622d1a"
+            "#622d1a",
+            "#64656b",
+            "#929677",
+            "#6588bf",
+            "#40a9e8"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "green",
+            "blue"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/c58aa18db2793d8463d5e27160d49682676961de_skylab_nike05.jpg",
             "doc": "/project/nike/"
         },
         "colors": [
-            "#444334",
-            "#879cc1",
             "#d2d9da",
+            "#879cc1",
+            "#313023",
             "#b1c3d1",
-            "#9c927c"
+            "#9c927c",
+            "#7b836b",
+            "#64687b",
+            "#6e6247",
+            "#3c58af"
         ]
     },
     {
         "query": [
             "orange",
             "yellow",
-            "green"
+            "green",
+            "violet"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/348c0bd258187022e9c3292324b802b4669ec957_skylab_nike04.jpg",
             "doc": "/project/nike/"
         },
         "colors": [
-            "#b4c2d9",
             "#2a2a29",
             "#989451",
+            "#aec3e7",
             "#574b44",
-            "#607694"
+            "#607694",
+            "#a8a193",
+            "#eaedf3",
+            "#877e80",
+            "#447ca4"
         ]
     },
     {
@@ -557,11 +717,15 @@
             "doc": "/project/nike/"
         },
         "colors": [
-            "#464039",
+            "#4b433a",
             "#c6b7a9",
             "#948673",
+            "#767768",
+            "#161519",
             "#969aaa",
-            "#a5b0a5"
+            "#a5b0a5",
+            "#686572",
+            "#251a1c"
         ]
     },
     {
@@ -575,10 +739,14 @@
             "doc": "/project/weavebuilding/"
         },
         "colors": [
-            "#3b3539",
-            "#c39e82",
+            "#2a1a0e",
+            "#c4a78c",
+            "#465372",
             "#848aa2",
             "#845d3a",
+            "#626e8d",
+            "#5d3c1e",
+            "#c13a19",
             "#91a7ae"
         ]
     },
@@ -592,78 +760,108 @@
             "doc": "/project/skylodge/"
         },
         "colors": [
-            "#3d291e",
             "#d8c1a6",
+            "#2b1a13",
             "#a8a7a0",
             "#987051",
-            "#979195"
-        ]
-    },
-    {
-        "query": [],
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/1a580e7880adc6f9461e4bdbb0ce429975352337_skylab_sorel04.jpg",
-            "doc": "/project/sorel/"
-        },
-        "colors": [
-            "#f9f9f9",
-            "#7e6466",
-            "#aba7a8",
-            "#8e8e8e",
-            "#837c7b"
+            "#706c66",
+            "#693f22",
+            "#5b5758",
+            "#979195",
+            "#ce3e1f"
         ]
     },
     {
         "query": [
             "orange"
+        ],
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1a580e7880adc6f9461e4bdbb0ce429975352337_skylab_sorel04.jpg",
+            "doc": "/project/sorel/"
+        },
+        "colors": [
+            "#fbfbfb",
+            "#7e6466",
+            "#aba7a8",
+            "#8e8e8e",
+            "#c0c0c0",
+            "#837c7b",
+            "#d1cfcf",
+            "#f4c0b1",
+            "#ecddd1"
+        ]
+    },
+    {
+        "query": [
+            "orange",
+            "yellow"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/a62806e47dbee1338ea4e986a8f71e524990f31c_skylab_sorel05.jpg",
             "doc": "/project/sorel/"
         },
         "colors": [
-            "#f9f5f0",
             "#4e4538",
+            "#fbfaf9",
             "#ab8d67",
             "#886d4d",
-            "#a49a88"
+            "#eacca4",
+            "#ccad88",
+            "#a49a88",
+            "#ead2bf",
+            "#cfc8c1"
         ]
     },
     {
         "query": [
-            "orange"
+            "orange",
+            "green"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/c6b819383aa918655f55b606ebfa2c4b8bf42138_skylab_sorel03.jpg",
             "doc": "/project/sorel/"
         },
         "colors": [
-            "#f9f8f7",
             "#363533",
+            "#fafaf9",
             "#9f9a92",
             "#846f5b",
-            "#96846c"
+            "#96846c",
+            "#c0af9e",
+            "#cbc0ae",
+            "#cdcac3",
+            "#748474"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "green",
+            "red",
+            "orange"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/d6d6642d1527191c5bea61cb988f7f0dc0f8f90b_skylab_nikeolympictrials02.jpg",
             "doc": "/project/nikeolympictrials/"
         },
         "colors": [
-            "#363a32",
             "#cdddea",
+            "#313228",
             "#2c92d8",
             "#7ab7e6",
-            "#6b828c"
+            "#50687a",
+            "#6b828c",
+            "#4b5d4a",
+            "#7f6556",
+            "#bd4a24"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "blue",
+            "red",
+            "orange"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/15c41bd80334b7d51c78e59d840eb0a5b6c886a4_skylab_nikeolympictrials03.jpg",
@@ -671,63 +869,88 @@
         },
         "colors": [
             "#d0ccd5",
-            "#1875af",
+            "#1180bf",
             "#1d2333",
+            "#114473",
             "#043062",
-            "#6abef4"
+            "#7491b4",
+            "#054c8b",
+            "#6abef4",
+            "#ad512c"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "blue",
+            "red",
+            "orange"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/c78fe558953b6a0d2727230f2de1f18e14e74a51_skylab_nikeolympictrials05.jpg",
             "doc": "/project/nikeolympictrials/"
         },
         "colors": [
-            "#628bc5",
             "#e1eaf1",
             "#2e3534",
+            "#5889cf",
             "#a6cdf6",
-            "#2c3761"
+            "#9cb0cb",
+            "#5d646b",
+            "#2156a8",
+            "#2c3761",
+            "#e15961"
         ]
     },
     {
         "query": [
             "blue",
-            "violet"
+            "violet",
+            "red",
+            "orange"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/aee2ac4957fae1203b5fbf4ca78ec777205bf119_skylab_nikeolympictrials04.jpg",
             "doc": "/project/nikeolympictrials/"
         },
         "colors": [
-            "#2d3243",
             "#cfcdca",
+            "#2c3142",
             "#857d77",
             "#4d69ca",
-            "#90aabc"
+            "#46567a",
+            "#90aabc",
+            "#606d72",
+            "#22190f",
+            "#ab5432"
         ]
     },
     {
-        "query": [],
+        "query": [
+            "red",
+            "orange",
+            "violet"
+        ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/9985bde6951ad7e2e69ccdd028d22e127c1a1273_skylab_12thalder01.jpg",
             "doc": "/project/12thalder/"
         },
         "colors": [
-            "#4b494a",
+            "#373636",
             "#cdd2d6",
             "#aac0d1",
             "#968d84",
-            "#92a5b6"
+            "#80868b",
+            "#92a5b6",
+            "#746a63",
+            "#737880",
+            "#dc565c"
         ]
     },
     {
         "query": [
-            "orange",
             "violet",
+            "orange",
             "red"
         ],
         "image": {
@@ -735,11 +958,15 @@
             "doc": "/project/12thalder/"
         },
         "colors": [
-            "#292523",
-            "#b99983",
             "#437ab1",
+            "#b99a84",
+            "#1f1b19",
             "#7a4d2f",
-            "#8ba1be"
+            "#3b4e60",
+            "#8ba1be",
+            "#4e2c1c",
+            "#506b82",
+            "#9e4016"
         ]
     },
     {
@@ -754,33 +981,45 @@
             "doc": "/project/12thalder/"
         },
         "colors": [
-            "#252423",
             "#c89941",
+            "#191716",
             "#726752",
             "#74849a",
-            "#8899ac"
+            "#8899ac",
+            "#53626b",
+            "#4b3e2e",
+            "#444f60",
+            "#364043"
         ]
     },
     {
         "query": [
-            "violet"
+            "violet",
+            "red",
+            "orange",
+            "green"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/4eef952a65d150be3d8fb54ced743bd8e4bd4cd8_skylab_12thalder02.jpg",
             "doc": "/project/12thalder/"
         },
         "colors": [
-            "#6e5d4b",
+            "#5e4d39",
             "#d2c2b1",
+            "#8e8783",
             "#171b16",
             "#a6b6b0",
-            "#8792ad"
+            "#8792ad",
+            "#a07450",
+            "#3d2217",
+            "#7e8261"
         ]
     },
     {
         "query": [
             "orange",
-            "green"
+            "green",
+            "red"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/f34d9f71bd4abf4628ebd77f163ed682b1bee370_skylab_12thalder06.jpg",
@@ -788,10 +1027,14 @@
         },
         "colors": [
             "#d0c2ad",
-            "#2a1d10",
+            "#1f1409",
             "#7e6447",
             "#8f9f85",
-            "#738691"
+            "#553d23",
+            "#738691",
+            "#556956",
+            "#454d56",
+            "#a46428"
         ]
     },
     {
@@ -805,11 +1048,15 @@
             "doc": "/project/12thalder/"
         },
         "colors": [
-            "#bcc1ba",
-            "#29473f",
+            "#c9ccc6",
+            "#29453d",
             "#836428",
             "#8f7954",
-            "#623b1e"
+            "#649ca9",
+            "#623b1e",
+            "#bda582",
+            "#36abb5",
+            "#88797a"
         ]
     },
     {
@@ -823,43 +1070,59 @@
             "doc": "/project/12thalder/"
         },
         "colors": [
-            "#332e3a",
+            "#1d1b1f",
             "#bd9066",
+            "#584e6d",
             "#8b819b",
             "#816d6f",
-            "#8fa7b8"
+            "#54444a",
+            "#63707e",
+            "#8fa7b8",
+            "#d31d1a"
         ]
     },
     {
-        "query": [],
+        "query": [
+            "red",
+            "orange"
+        ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/2c6a44ed681c7d9e4fd2f4bc096f61d65d0e01bb_skylab_yard03.jpg",
             "doc": "/project/yard/"
         },
         "colors": [
-            "#382a26",
-            "#bea9a2",
+            "#2d2220",
+            "#bfada7",
             "#81574b",
+            "#5c4038",
             "#95a1b0",
-            "#868d9e"
+            "#63685e",
+            "#868d9e",
+            "#5b555e",
+            "#ae4730"
         ]
     },
     {
         "query": [
             "orange",
             "green",
-            "violet"
+            "violet",
+            "red"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/9c77d4a8af2296a81835ff8e2b985970e15abcd1_skylab_yard04.jpg",
             "doc": "/project/yard/"
         },
         "colors": [
-            "#505462",
+            "#4d4a53",
             "#d1d1c2",
             "#968f73",
+            "#597394",
             "#809bb7",
-            "#a3bbb9"
+            "#6c879e",
+            "#a3bbb9",
+            "#181a33",
+            "#bd584e"
         ]
     },
     {
@@ -869,11 +1132,15 @@
             "doc": "/project/yard/"
         },
         "colors": [
-            "#a89e96",
+            "#afa59c",
             "#27231e",
             "#e6e6e5",
+            "#6a635c",
             "#564a40",
-            "#605543"
+            "#807469",
+            "#dad5ca",
+            "#605543",
+            "#ddc7b7"
         ]
     },
     {
@@ -888,10 +1155,14 @@
             "doc": "/project/yard/"
         },
         "colors": [
-            "#655c54",
             "#d1c4b8",
+            "#59524a",
             "#151516",
+            "#a1968d",
+            "#918374",
+            "#2d2322",
             "#a5af86",
+            "#808764",
             "#9590b3"
         ]
     },
@@ -906,11 +1177,15 @@
             "doc": "/project/yard/"
         },
         "colors": [
-            "#f8f8f7",
+            "#fafaf9",
             "#3a3a35",
             "#b8c043",
             "#a1a19f",
-            "#7c746d"
+            "#cbcbcb",
+            "#cdd1a0",
+            "#7c746d",
+            "#bcb4b4",
+            "#dcd4d7"
         ]
     },
     {
@@ -922,11 +1197,15 @@
             "doc": "/project/yard/"
         },
         "colors": [
-            "#1b2130",
             "#aba7ae",
+            "#131726",
             "#7ea3ce",
             "#3f587b",
-            "#5c7aaa"
+            "#5c7aaa",
+            "#645349",
+            "#243757",
+            "#404035",
+            "#495d52"
         ]
     },
     {
@@ -943,7 +1222,11 @@
             "#5c4a36",
             "#171106",
             "#d9cba7",
+            "#9a8764",
+            "#2e1b0c",
+            "#8f6f4f",
             "#a9ae6b",
+            "#6e696f",
             "#9f9ca3"
         ]
     },
@@ -951,53 +1234,68 @@
         "query": [
             "orange",
             "yellow",
-            "green"
+            "green",
+            "red"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/dc69c06c3501a692b7582fc1d842d904f855ba05_skylab_artisanscup_02.jpg",
             "doc": "/project/artisanscup/"
         },
         "colors": [
-            "#181008",
-            "#d1c3ab",
+            "#d2c4ac",
+            "#0f0a06",
             "#6e5638",
+            "#392710",
             "#869141",
-            "#857987"
+            "#99563d",
+            "#44531d",
+            "#857987",
+            "#453545"
         ]
     },
     {
         "query": [
             "orange",
             "yellow",
-            "green"
+            "green",
+            "red"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/eef4a26a8572ea9800636516d508495575c5d97a_skylab_artisanscup_03.jpg",
             "doc": "/project/artisanscup/"
         },
         "colors": [
-            "#1a130d",
-            "#bea884",
+            "#bea985",
+            "#120d09",
             "#6e563b",
             "#829347",
-            "#8a848c"
+            "#463226",
+            "#4a5523",
+            "#954a29",
+            "#8a848c",
+            "#45414c"
         ]
     },
     {
         "query": [
             "orange",
             "yellow",
-            "green"
+            "green",
+            "red"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/870a754a908ce5ad5b26f8e103d31b729bb4e7b8_skylab_artisanscup_01.jpg",
             "doc": "/project/artisanscup/"
         },
         "colors": [
-            "#1d140d",
-            "#c0a380",
+            "#c1a380",
             "#6b5032",
+            "#110b09",
+            "#49331d",
             "#869050",
+            "#514e36",
+            "#a03d21",
+            "#4f434c",
             "#8c848c"
         ]
     },
@@ -1005,18 +1303,23 @@
         "query": [
             "red",
             "orange",
-            "yellow"
+            "yellow",
+            "green"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/e4c7814420dcba62109003dbdbe20b6fb0353acb_skylab_wseattle03.jpg",
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#865c2f",
-            "#1c0e06",
+            "#785026",
             "#efd2ad",
+            "#1c0e06",
             "#d6a471",
-            "#cdafa0"
+            "#bc9161",
+            "#b37c45",
+            "#a68066",
+            "#cdafa0",
+            "#3c4c39"
         ]
     },
     {
@@ -1033,28 +1336,15 @@
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#493113",
+            "#472f11",
             "#c6a173",
             "#946f40",
+            "#76572c",
+            "#0f0704",
             "#aaa673",
-            "#9562b4"
-        ]
-    },
-    {
-        "query": [
-            "orange",
-            "yellow"
-        ],
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/48430c3469cc0139f77665cd8ad57ce93af90e84_skylab_wseattle10.jpg",
-            "doc": "/project/wseattle/"
-        },
-        "colors": [
-            "#7e6445",
-            "#2e2115",
-            "#ede1cc",
-            "#cdad80",
-            "#cbbaa5"
+            "#9562b4",
+            "#765859",
+            "#7b6c44"
         ]
     },
     {
@@ -1064,14 +1354,41 @@
             "green"
         ],
         "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/48430c3469cc0139f77665cd8ad57ce93af90e84_skylab_wseattle10.jpg",
+            "doc": "/project/wseattle/"
+        },
+        "colors": [
+            "#785d3d",
+            "#ede1cc",
+            "#2e2115",
+            "#cdad80",
+            "#ae9a80",
+            "#cbbaa5",
+            "#442b1a",
+            "#b79663",
+            "#3c3c2a"
+        ]
+    },
+    {
+        "query": [
+            "orange",
+            "yellow",
+            "green",
+            "red"
+        ],
+        "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/6eed9f08774f81f86e5d49ab4f79057196de55fe_skylab_wseattle09.jpg",
             "doc": "/project/wseattle/"
         },
         "colors": [
             "#d6bd99",
-            "#332519",
+            "#291c13",
             "#91724e",
+            "#5f4a31",
             "#a99e82",
+            "#6a654a",
+            "#5e5a55",
+            "#b47c5c",
             "#a49494"
         ]
     },
@@ -1082,32 +1399,44 @@
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#776a5e",
+            "#8a7e71",
             "#dcd1be",
             "#1f1815",
             "#b6b7b3",
-            "#acaaad"
+            "#392821",
+            "#acaaad",
+            "#4e3928",
+            "#5a483f",
+            "#463e39"
         ]
     },
     {
         "query": [
-            "orange"
+            "orange",
+            "red",
+            "yellow",
+            "green"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/24a46c7c5440c74e06f3cfc536e80198c8b930fb_skylab_wseattle12.jpg",
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#786147",
             "#deccac",
+            "#6d5840",
             "#271c16",
+            "#a9977f",
+            "#3e2b1f",
+            "#af864f",
             "#bbb49e",
+            "#9b8c69",
             "#bbaca4"
         ]
     },
     {
         "query": [
             "orange",
+            "red",
             "green"
         ],
         "image": {
@@ -1115,9 +1444,13 @@
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#19100b",
-            "#d2b59b",
+            "#d2b69b",
+            "#110a07",
             "#674a33",
+            "#3e2c1d",
+            "#a8441d",
+            "#494d4c",
+            "#414244",
             "#839684",
             "#88847c"
         ]
@@ -1133,37 +1466,53 @@
             "#fbfbfb",
             "#8b8b89",
             "#817f6e",
-            "#7c7372"
+            "#7c7372",
+            "#747c74",
+            "#cacac9",
+            "#c2c0ad",
+            "#bcb4a7"
         ]
     },
     {
-        "query": [],
+        "query": [
+            "red"
+        ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/f458484289f2a97024984766287eef1cefa99bd5_skylab_wseattle02.jpg",
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#060606",
             "#a09995",
+            "#050505",
             "#57524f",
             "#6f6f6f",
+            "#2c2826",
+            "#3b3c3b",
+            "#7c4b35",
+            "#38323c",
             "#6c646c"
         ]
     },
     {
         "query": [
-            "orange"
+            "orange",
+            "red",
+            "violet"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/887b9f77c5219ffe15404e2421209d518ad2d20a_skylab_wseattle06.jpg",
             "doc": "/project/wseattle/"
         },
         "colors": [
-            "#3d302f",
-            "#cba091",
+            "#2f2627",
+            "#cca898",
             "#8b6b5e",
+            "#664c42",
             "#9f9f99",
-            "#8e90a0"
+            "#6f6861",
+            "#c53940",
+            "#8e90a0",
+            "#595867"
         ]
     },
     {
@@ -1173,46 +1522,60 @@
             "doc": "/project/nau/"
         },
         "colors": [
-            "#fafafa",
-            "#313131",
+            "#2e2e2e",
+            "#fbfbfb",
             "#a1a1a1",
             "#7c7c7c",
-            "#848484"
+            "#747474",
+            "#848484",
+            "#bcbcbc",
+            "#c4c4c4",
+            "#d0d0d0"
         ]
     },
     {
         "query": [
             "red",
-            "orange"
+            "orange",
+            "yellow"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/29e77c5c2942a159dda639bdf0dce4bb859e448f_skylab_nau01.jpg",
             "doc": "/project/nau/"
         },
         "colors": [
-            "#b36725",
+            "#ba6b25",
             "#e9e3dc",
             "#4b270c",
+            "#764214",
+            "#c58f69",
+            "#e99549",
             "#c6ac9d",
-            "#672b06"
+            "#672b06",
+            "#f6bc84"
         ]
     },
     {
         "query": [
             "orange",
             "red",
-            "yellow"
+            "yellow",
+            "green"
         ],
         "image": {
             "url": "https://skylab.cdn.prismic.io/skylab/a45dc587ec98ba32d895474d00fddd9bcee5509b_skylab_nau02.jpg",
             "doc": "/project/nau/"
         },
         "colors": [
-            "#8e7351",
+            "#91734e",
             "#302a1f",
             "#dfd7cb",
             "#d4a770",
-            "#b3afb1"
+            "#aa9e8d",
+            "#5a4b35",
+            "#b3afb1",
+            "#533210",
+            "#ba9e6e"
         ]
     }
 ]
