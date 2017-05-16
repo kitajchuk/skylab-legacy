@@ -20,8 +20,8 @@ const ContextObject = require( "../class/ContextObject" );
  */
 const getPage = function ( req, res, listener ) {
     return new Promise(( resolve, reject ) => {
-        let context = new ContextObject( page );
         const page = (req.params.type ? req.params.type : core.config.homepage);
+        let context = new ContextObject( page );
         const check = function ( data ) {
             // 0.0 => Missing template file
             // 0.1 => Single ContentItem
