@@ -73,6 +73,18 @@ const config = {
             { background: "#85e042", query: "green" },
             { background: "#2ae0ff", query: "blue" },
             { background: "violet", query: "violet" }
+        ],
+        materials: [
+            "Wood",
+            "Steel",
+            "Concrete",
+            "Glass",
+            "Brick",
+            "Lighting"
+        ],
+        spaces: [
+            "Interior",
+            "Exterior"
         ]
     }
 };

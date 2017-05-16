@@ -30,7 +30,6 @@
     "express": "^4.14.0",
     "forever": "^0.15.2",
     "get-image-colors": "^1.8.1",
-    "node-vibrant": "^3.0.0-alpha.2",
     "node-watch": "^0.5.3",
     "prismic.io": "^3.5.0"
   }

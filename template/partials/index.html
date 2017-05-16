@@ -1,13 +1,13 @@
 <%
 const items = locals.context.get( 'items' );
-const colorset = locals.context.get( 'colorset' );
+const tileset = locals.context.get( 'tileset' );
 const features = locals.context.get( 'features' );
 %>
-<% if ( colorset ) { %>
-    <div class="colors js-colors">
-        <ul class="colors__ul grid">
-            <% colorset.forEach(( color ) => { %>
-                <%- include( 'index--color.html', {color: color} ) %>
+<% if ( tileset ) { %>
+    <div class="tileset js-tileset">
+        <ul class="tileset__ul grid">
+            <% tileset.forEach(( tile ) => { %>
+                <%- include( 'index--tile.html', {tile: tile} ) %>
             <% }) %>
         </ul>
     </div>

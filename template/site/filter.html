@@ -17,6 +17,20 @@
         <% }) %>
     </ul>
     <ul class="filter__col">
+        <% locals.context.get( 'materials' ).forEach(( material ) => { %>
+            <li class="filter__li">
+                <a class="filter__a js-filter-option js-filter-material p" data-value="<%= material %>" href="?material=<%= material %>"><%= material %></a>
+            </li>
+        <% }) %>
+    </ul>
+    <ul class="filter__col">
+        <% locals.context.get( 'spaces' ).forEach(( space ) => { %>
+            <li class="filter__li">
+                <a class="filter__a js-filter-option js-filter-space p" data-value="<%= space %>" href="?space=<%= space %>"><%= space %></a>
+            </li>
+        <% }) %>
+    </ul>
+    <ul class="filter__col">
         <li class="filter__li">
             <div class="p">
                 <strong>By <span style="color:#8aacdd;">C</span><span style="color:#95bc6a;">o</span><span style="color:#f3e28c;">l</span><span style="color:#d4a56d;">o</span><span style="color:#d4796f;">r</span></strong>

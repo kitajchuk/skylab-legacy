@@ -59,8 +59,10 @@ const getPage = function ( req, res, listener ) {
                 site: core.query.cache.site,
 
                 // Find a better way for this maybe...?
+                spaces: core.config.skylab.spaces,
                 colors: core.config.skylab.colors,
                 statuses: core.query.cache.statuses,
+                materials: core.config.skylab.materials,
                 categories: core.query.cache.categories
             });
 

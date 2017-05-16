@@ -9,6 +9,45 @@ const router = require( "./router" );
 
 
 
+const canFeatures = function ( req ) {
+    return (
+        req.params.type === config.skylab.mainType &&
+        !req.params.uid &&
+        !req.query.category &&
+        !req.query.status &&
+        !req.query.color &&
+        !req.query.material &&
+        !req.query.space
+    );
+};
+
+
+
+const canTileset = function ( req ) {
+    return (req.query.color || req.query.material || req.query.space);
+};
+
+
+
+const getResults = function ( kind, value ) {
+    return new Promise(( resolve, reject ) => {
+        file.read( path.join( config.template.staticDir, "json", "imageprocess.json" ) ).then(( data ) => {
+            const json = JSON.parse( String( data ) );
+
+            resolve({
+                results: json.filter(( result ) => {
+                    return (result[ kind ].indexOf( value ) !== -1 );
+                })
+            });
+
+        }).catch(( error ) => {
+            reject( error );
+        });
+    });
+};
+
+
+
 const onQuery = function ( client, api, query, cache, req ) {
     let ret = query;
 
@@ -23,22 +62,13 @@ const onQuery = function ( client, api, query, cache, req ) {
     }
 
     if ( req.query.color ) {
-        ret = new Promise(( resolve, reject ) => {
-            file.read( path.join( config.template.staticDir, "json", `colorprocess--${req.query.lib || "default"}.json` ) ).then(( data ) => {
-                const json = JSON.parse( String( data ) );
-
-                resolve({
-                    results: json.filter(( color ) => {
-                        return (color.query.indexOf( req.query.color ) !== -1 );
-                    })
-                });
-
-            }).catch(( error ) => {
-                reject( error );
-            });
-        });
-
+        ret = getResults( "colors", req.query.color );
         console.log( config.logger, `Querying by Color ${req.query.color}` );
+    }
+
+    if ( req.query.material || req.query.space ) {
+        ret = getResults( "tags", req.query.material || req.query.space );
+        console.log( config.logger, `Querying by Tag ${req.query.material || req.query.space}` );
     }
 
     return ret;
@@ -47,13 +77,13 @@ const onQuery = function ( client, api, query, cache, req ) {
 
 
 const onContext = function ( context, cache, req ) {
-    // Add `colors` array to the context
-    if ( req.query.color ) {
-        context.set( "colorset", context.get( "items" ) );
+    // Add `tileset` array to the context for filter criteria
+    if ( canTileset( req ) ) {
+        context.set( "tileset", context.get( "items" ) );
     }
 
     // Add `features` array to the context
-    if ( req.params.type === config.skylab.mainType && !req.params.uid && !req.query.category && !req.query.status && !req.query.color ) {
+    if ( canFeatures( req ) ) {
         context.set( "features", context.get( "items" ).filter(( doc ) => {
             return (doc.getText( `${config.skylab.mainType}.type` ) === "Feature");
         }));
