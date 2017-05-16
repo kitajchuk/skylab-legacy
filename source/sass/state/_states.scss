@@ -48,7 +48,7 @@
         background-color: rgba( 138, 138, 138, 0.05 );
         }
 }
-.is-home-page.is-cover {
+.is-home-page:not( .is-query ) {
     .main {
         padding-top: 0;
         }

@@ -38,13 +38,13 @@ class CoverController extends Controller {
                 this.isActive = true;
                 core.dom.html.addClass( `is-cover is-cover--${this.coverType}` );
                 core.emitter.fire( `app--activate-cover--${this.coverType}` );
-                console.log( `[CoverController::Activate ${this.coverType}]` );
+                // console.log( `[CoverController::Activate ${this.coverType}]` );
 
             } else if ( !core.util.isElementVisible( this.element[ 0 ] ) && this.isActive ) {
                 this.isActive = false;
                 core.dom.html.removeClass( `is-cover is-cover--${this.coverType}` );
                 core.emitter.fire( `app--deactivate-cover--${this.coverType}` );
-                console.log( `[CoverController::Deactivate ${this.coverType}]` );
+                // console.log( `[CoverController::Deactivate ${this.coverType}]` );
             }
         });
     }

@@ -26,28 +26,28 @@ class Controllers {
         this.cover = core.dom.main.find( core.config.coverSelector );
         this.offsets = core.dom.main.find( ".js-offset" );
 
-        if ( this.animates.length ) {
-            this.animateController = new AnimateController( this.animates );
-        }
-
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
+            if ( this.animates.length ) {
+                this.animateController = new AnimateController( this.animates );
+            }
+
+            if ( this.project.length ) {
+                this.projectController = new ProjectController( this.project );
+            }
+
+            if ( this.cover.length ) {
+                this.coverController = new CoverController( this.cover );
+            }
+
+            this.queryController = new QueryController();
+
+            // if ( this.offsets.length ) {
+            //     this.offsetController = new OffsetController( this.offsets );
+            // }
+
             core.emitter.fire( "app--intro-teardown" );
         });
-
-        if ( this.project.length ) {
-            this.projectController = new ProjectController( this.project );
-        }
-
-        if ( this.cover.length ) {
-            this.coverController = new CoverController( this.cover );
-        }
-
-        this.queryController = new QueryController();
-
-        // if ( this.offsets.length ) {
-        //     this.offsetController = new OffsetController( this.offsets );
-        // }
     }
 
 

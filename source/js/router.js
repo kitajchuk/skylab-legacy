@@ -75,11 +75,14 @@ const router = {
             views
         ]);
 
-        //this.controller.on( "page-controller-router-samepage", () => {} );
         this.controller.on( "page-controller-router-transition-out", this.changePageOut.bind( this ) );
         this.controller.on( "page-controller-router-refresh-document", this.changeContent.bind( this ) );
         this.controller.on( "page-controller-router-transition-in", this.changePageIn.bind( this ) );
         this.controller.on( "page-controller-initialized-page", this.initPage.bind( this ) );
+        // this.controller.on( "page-controller-router-samepage", () => {} );
+        // this.controller.on( "page-controller-router-synced-modules", ( synced ) => {
+        //     console.log( "page-controller-router-synced-modules", synced );
+        // });
 
         this.controller.initPage();
     },
