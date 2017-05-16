@@ -5,7 +5,7 @@ const features = locals.context.get( 'features' );
 %>
 <% if ( colorset ) { %>
     <div class="colors js-colors">
-        <ul class="colors__ul">
+        <ul class="colors__ul grid">
             <% colorset.forEach(( color ) => { %>
                 <%- include( 'index--color.html', {color: color} ) %>
             <% }) %>
