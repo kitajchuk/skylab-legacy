@@ -48,7 +48,7 @@ class ProjectController extends Controller {
         const offsetPos = scrollPos * (this.infoAmount / maxScroll);
         const infoStyle = window.getComputedStyle( this.info[ 0 ] ).position;
 
-        if ( infoStyle === "relative" ) {
+        if ( infoStyle === "relative" || this.infoAmount <= 0 ) {
             this.moveInfo( 0 );
 
         } else {
