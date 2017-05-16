@@ -133,6 +133,14 @@
             margin-bottom: 0
             }
         }
+
+    .feature__li + .feature__li {
+        margin-top: -($expander-mobile / 2);
+        }
+
+    .animate-lift {
+        transform: translate3d( 0, $expander-one, 0 );
+        }
 }
 
 

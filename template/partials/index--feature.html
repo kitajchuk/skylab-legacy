@@ -1,11 +1,9 @@
 <li class="feature__li -text--<%= feature.getGroup( 'project.feature' ).value[ 0 ].data.layout.value.toLowerCase() %>">
-    <div class="feature__col -column <%= (feature.getImage( 'project.image' ) ? '' : '-column--3of4') %>">
-        <% if ( feature.getImage( 'project.image' ) ) { %>
-            <a href="/<%= feature.type %>/<%= feature.uid %>/" class="js-offset -column" data-speed="<%= (Math.floor( Math.random() * (6 - 2 + 1) + 2 )) %>">
-                <img class="feature__image js-lazy-image" data-img-src="<%= feature.getImage( 'project.image' ).url %>" />
-            </a>
-        <% } else { %>
-            <a href="/<%= feature.type %>/<%= feature.uid %>/" class="-column -fpo" data-msg="Needs Image"></a>
-        <% } %>
-    </div>
+    <% if ( feature.getImage( 'project.image' ) ) { %>
+        <a href="/<%= feature.type %>/<%= feature.uid %>/" class="feature__wrap -column animate-lift animate--slow js-animate" data-speed="<%= (Math.floor( Math.random() * (6 - 2 + 1) + 2 )) %>">
+            <img class="feature__image js-lazy-image" data-img-src="<%= feature.getImage( 'project.image' ).url %>" />
+        </a>
+    <% } else { %>
+        <a href="/<%= feature.type %>/<%= feature.uid %>/" class="feature__wrap -column -fpo animate-lift animate--slow js-animate" data-msg="Needs Image"></a>
+    <% } %>
 </li>

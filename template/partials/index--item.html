@@ -1,16 +1,11 @@
 <li class="index__li animate js-animate -wrap-index -exp-1">
     <div class="index__image index__col -column -column--1of3">
         <% if ( item.getImage( 'project.image' ) ) { %>
-            <a href="/<%= item.type %>/<%= item.uid %>/" class="-column">
+            <a href="/<%= item.type %>/<%= item.uid %>/" class="-full -column">
                 <img class="image js-lazy-image" data-img-src="<%= item.getImage( 'project.image' ).url %>" />
             </a>
         <% } else { %>
             <a href="/<%= item.type %>/<%= item.uid %>/" class="-column -fpo" data-msg="Needs Image"></a>
-        <% } %>
-        <% if ( item._colors ) { %>
-            <% item._colors.forEach(( color ) => { %>
-                <div class="-column filter__color" style="background-color:<%= color %>;"></div>
-            <% }) %>
         <% } %>
     </div>
     <div class="index__title index__col -column -column--1of3">
