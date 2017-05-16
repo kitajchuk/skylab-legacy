@@ -33,6 +33,12 @@ const navi = {
         this.trigger.on( "click", () => {
             this.toggle();
         });
+
+        this.element.on( "click", ( e ) => {
+            if ( !/js-navi-a/.test( e.target.className ) ) {
+                this.close();
+            }
+        });
     },
 
 

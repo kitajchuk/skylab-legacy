@@ -8,13 +8,13 @@
     .slices__content {
         width: calc( 100vw - #{$break-mobile-medium} );
         }
-    .navi__li--primary {
-        .navi__a {
-            &:after {
-                height: 20px;
-                }
-        }
-    }
+    // .navi__li--primary {
+    //     .navi__a {
+    //         &:after {
+    //             height: 20px;
+    //             }
+    //     }
+    // }
 }
 
 
@@ -87,7 +87,7 @@
             font-size: 12vh;
 
             &:after {
-                height: 10px;
+                height: 1.5vh;
                 }
         }
     }

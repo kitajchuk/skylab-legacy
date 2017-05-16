@@ -7,17 +7,14 @@
                 transform $fast-duration $ease;
 
     &.is-active {
-        pointer-events: none;
+        pointer-events: auto;
 
-        .navi__ul {
-            pointer-events: auto;
-            }
         .navi__li {
             opacity: 1;
             transform: translateY( 0 );
             }
         .navi__a.is-active:after {
-            top: 50%;
+            top: calc( 50% + (#{$navi-strikethrough} / 2) );
             }
     }
     &.is-closing {
@@ -34,6 +31,11 @@
         transform: scale( 0.05 );
     }
 }
+.navi__ul {
+    position: relative;
+    top: 50%;
+    transform: translateY( -50% );
+    }
 .navi__li {
     opacity: 0;
     transform: translateY( 100% );
@@ -59,7 +61,7 @@
             background-color: $white;
             content: "";
             display: inline-block;
-            height: 30px;
+            height: $navi-strikethrough;
             left: 0;
             position: absolute;
             top: 100%;
