@@ -1,0 +1,1560 @@
+[
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a038cf90391a2f8c7048d46df7caccc6360947d1_skylab_departure00.jpg",
+            "doc": "/project/departure/",
+            "width": 900,
+            "height": 600
+        },
+        "tags": [
+            "Bar",
+            "Interior",
+            "Wood",
+            "Lighting"
+        ],
+        "color": "#a87a4e",
+        "colors": [
+            "orange",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/e4c7814420dcba62109003dbdbe20b6fb0353acb_skylab_wseattle03.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior",
+            "Mirror"
+        ],
+        "color": "#895e31",
+        "colors": [
+            "orange",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/206f74d31c897e46f000a732059cd40be9e57ba2_skylab_wseattle04.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Bar",
+            "Interior",
+            "Lighting",
+            "Fabric"
+        ],
+        "color": "#614520",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/48430c3469cc0139f77665cd8ad57ce93af90e84_skylab_wseattle10.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior",
+            "Lighting"
+        ],
+        "color": "#564029",
+        "colors": [
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6eed9f08774f81f86e5d49ab4f79057196de55fe_skylab_wseattle09.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior"
+        ],
+        "color": "#d6bc99",
+        "colors": [
+            "orange",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c18464548c32f0baa2b655b3ff7841013425e6b8_skylab_wseattle11.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior"
+        ],
+        "color": "#897d71",
+        "colors": [
+            "orange",
+            "green",
+            "red",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/24a46c7c5440c74e06f3cfc536e80198c8b930fb_skylab_wseattle12.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior",
+            "Lighting",
+            "Mirror"
+        ],
+        "color": "#7a6347",
+        "colors": [
+            "orange",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/67c9a238ad5ffc649a6bc91a189266c9ef7a3042_skylab_wseattle08.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Wood",
+            "Light",
+            "Molded",
+            "Interior"
+        ],
+        "color": "#19100b",
+        "colors": [
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fd8fbb7d3806669ac248b5a1ebb20c304df3cb68_skylab_wseattle05.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Molded",
+            "Rendering",
+            "Wood",
+            "Model"
+        ],
+        "color": "#464645",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f458484289f2a97024984766287eef1cefa99bd5_skylab_wseattle02.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Elevation",
+            "Study"
+        ],
+        "color": "#060606",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/887b9f77c5219ffe15404e2421209d518ad2d20a_skylab_wseattle06.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Lobby",
+            "Interior",
+            "Lighting",
+            "Fabric",
+            "Furniture"
+        ],
+        "color": "#3d302e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a9bce0032b514e8a3b6d0a7900ac1e36651fa21f_skylab_wseattle06.jpg",
+            "doc": "/project/wseattle/",
+            "width": 1500,
+            "height": 1000
+        },
+        "tags": [
+            "Lobby",
+            "Interior",
+            "Lighting",
+            "Fabric",
+            "Furniture"
+        ],
+        "color": "#352a2b",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/63c86c4f960840f62e8a7ce3512adb3b8e39fdb4_skylab_nau04.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1598
+        },
+        "tags": [
+            "Sketches",
+            "Planning",
+            "Study"
+        ],
+        "color": "#fafafa",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/29e77c5c2942a159dda639bdf0dce4bb859e448f_skylab_nau01.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#b86c29",
+        "colors": [
+            "orange",
+            "violet",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a45dc587ec98ba32d895474d00fddd9bcee5509b_skylab_nau02.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#8d7250",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/da44f7bd7cdfad832d6d5a600029ea4c8853c606_skylab_nau00.jpg",
+            "doc": "/project/nau/",
+            "width": 550,
+            "height": 367
+        },
+        "tags": [
+            "Wood",
+            "Signage"
+        ],
+        "color": "#b46924",
+        "colors": [
+            "orange",
+            "violet",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/7359907b99768c5ff161a69d8ef7788ab43ec34f_skylab_sinju03.jpg",
+            "doc": "/project/sinju/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#725f43",
+        "colors": [
+            "orange",
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a5e540f779733d7c39ab3b70ec086300aea555bb_skylab_sinju02.jpg",
+            "doc": "/project/sinju/",
+            "width": 2400,
+            "height": 1800
+        },
+        "tags": [],
+        "color": "#07254a",
+        "colors": [
+            "blue",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/29ff084c6dc2d82b1d16d655a5132e6cbe2d020d_skylab_sinju00.jpg",
+            "doc": "/project/sinju/",
+            "width": 800,
+            "height": 1200
+        },
+        "tags": [],
+        "color": "#db2320",
+        "colors": [
+            "red",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fa13edac5a70de57643516427722e2e344680418_skylab_spencer06.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 2400,
+            "height": 1710
+        },
+        "tags": [],
+        "color": "#463c37",
+        "colors": [
+            "green",
+            "violet",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1182e0250c5c82c0c677da2a4141c945a2b52ad7_skylab_spencer05.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 2400,
+            "height": 3538
+        },
+        "tags": [],
+        "color": "#31322f",
+        "colors": [
+            "green",
+            "violet",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f6b2cf89141711603124480da7f3f6516ec703a0_skylab_spencer04.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 2400,
+            "height": 3662
+        },
+        "tags": [],
+        "color": "#47372c",
+        "colors": [
+            "green",
+            "violet",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/df41a3b7477cb81861fca675b656e20ebdb1f138_skylab_spencer03.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 2400,
+            "height": 1614
+        },
+        "tags": [],
+        "color": "#847563",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/b7d6d718794f7e0ba77f2d795d9dcab52ba00b55_skylab_spencer02.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 2400,
+            "height": 3093
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Steel"
+        ],
+        "color": "#373737",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/269bf0401821f65c4cffea9ebe334c5bfe08c269_skylab_spencer01.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 2400,
+            "height": 1573
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Steel"
+        ],
+        "color": "#3a372f",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8ac2b5cdb2a170cbbaa192b5f45bc849d4da7701_skylab_spencer00.jpg",
+            "doc": "/project/spencercourt/",
+            "width": 1000,
+            "height": 700
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Steel"
+        ],
+        "color": "#0f0e0f",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/84add8987c62d32a7655b97e98afbf68a8bc7552_skylab_hokehouse00.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 720,
+            "height": 1080
+        },
+        "tags": [
+            "Wood",
+            "Glass",
+            "Window",
+            "Shelving",
+            "Office",
+            "Interior"
+        ],
+        "color": "#c5c1b9",
+        "colors": [
+            "green",
+            "red",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/41d3ea486983e87e07d04949370777ecca12c4d3_skylab_columbiabuilding14.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1754
+        },
+        "tags": [],
+        "color": "#858592",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1ffd105b3d3e73b332c6804e887ad7114347c960_skylab_columbiabuilding18.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#423d37",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/d056b9c53ff1e4a6a005b3581bcee7a5265bbaa2_skylab_columbiabuilding13.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 3136
+        },
+        "tags": [],
+        "color": "#b3c7d4",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8aa4350aebd69901ff2ec2c2799e62b4d600d584_skylab_columbiabuilding15_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1618
+        },
+        "tags": [],
+        "color": "#bfc2c2",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/791c1a49b1ac204f5b3898e81759ed63ecc2409b_skylab_columbiabuilding24.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1800
+        },
+        "tags": [],
+        "color": "#d2d0d5",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/650c313fbe87a3a178c890cdb704cb2998c3b5a2_skylab_columbiabuilding26_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1613
+        },
+        "tags": [],
+        "color": "#c5c8c3",
+        "colors": [
+            "violet",
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fbc008cbd0d35d5c79749bcc9a966003d56c2efb_skylab_columbiabuilding22.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 2430
+        },
+        "tags": [],
+        "color": "#8f8d82",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9e5a650eaca555c5a0808248c033434b59e07cf3_skylab_columbiabuilding23.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 2699
+        },
+        "tags": [],
+        "color": "#978e80",
+        "colors": [
+            "green",
+            "violet",
+            "orange",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1a7646b808cf9f27c93a2e1dc8afbc5eb56937a2_skylab_columbiabuilding16.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [],
+        "color": "#393d3c",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8297f0295b40550b614421b1653ee329dad5f4b4_skylab_columbiabuilding17.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1614
+        },
+        "tags": [],
+        "color": "#7a746c",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/03d59bf61f5f1a160ead60a9c29c9e1220f66b5c_skylab_columbiabuilding25.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#969088",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/b6ba80541e4e3843284b38b4e8788e8cce5e7652_skylab_columbiabuilding12_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 960
+        },
+        "tags": [],
+        "color": "#3d3729",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/109c0700d65f06249785c4b2e2e2e00657108e68_skylab_columbiabuilding10_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1350
+        },
+        "tags": [
+            "Aerial",
+            "Landscape",
+            "Planning"
+        ],
+        "color": "#6d6c54",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/28d5846945926c06efac0fcf87a5ce0323bf2cb8_skylab_columbiabuilding07.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1058
+        },
+        "tags": [
+            "Elevation",
+            "Study"
+        ],
+        "color": "#f8fafa",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8b0456e04c7d7c260f7eae1456b84acb62c645a2_skylab_columbiabuilding04.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 859
+        },
+        "tags": [
+            "Elevation",
+            "Study"
+        ],
+        "color": "#f7f7f7",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/0d8a5639098e9411e5c4cb1e2e2e4ff12529e23f_skylab_columbiabuilding05.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1070
+        },
+        "tags": [
+            "Elevation",
+            "Study"
+        ],
+        "color": "#faf9f2",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a8c30a66d3c3399eef3bcd64be09dc6227460e13_skylab_columbiabuilding02.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1570
+        },
+        "tags": [
+            "Elevation",
+            "Study"
+        ],
+        "color": "#f7f7f7",
+        "colors": [
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/5ff7422df304a0f30419d47af2bd744eab41d794_skylab_columbiabuilding06.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 2022
+        },
+        "tags": [],
+        "color": "#050505",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/554f954ecc4f9e2b1af1d3001f9b94a84f8e1471_skylab_columbiabuilding08-lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1448
+        },
+        "tags": [
+            "Aerial",
+            "Landscape",
+            "Planning"
+        ],
+        "color": "#83837e",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/862f4cd2f31849e224967f55410cd6b3830b7ba2_skylab_columbiabuilding09.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1499
+        },
+        "tags": [],
+        "color": "#dadada",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c1fc42f90ae94a479321ae2a2cd856d7f55e3d2b_skylab_columbiabuilding03.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1443
+        },
+        "tags": [],
+        "color": "#dbdbdb",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/118e638848da8452b86ceef9512d557bf50d70b3_skylab_columbiabuilding11_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1398
+        },
+        "tags": [],
+        "color": "#3e3920",
+        "colors": [
+            "green",
+            "violet",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8142e7578bc4b2dc57c86965a449a2f89db7042c_skylab_columbiabuilding01.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2500,
+            "height": 1614
+        },
+        "tags": [],
+        "color": "#090807",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a444ff1d08b94ed718f72e8245e777ac409863e8_skylab_nike01.jpg",
+            "doc": "/project/nike/",
+            "width": 2400,
+            "height": 1715
+        },
+        "tags": [],
+        "color": "#858c96",
+        "colors": [
+            "violet",
+            "green",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/e6b03a97ea9d2681376d7a6084dd0b1cbf88f783_skylab_nike03.jpg",
+            "doc": "/project/nike/",
+            "width": 2400,
+            "height": 1715
+        },
+        "tags": [],
+        "color": "#98a7c0",
+        "colors": [
+            "violet",
+            "green",
+            "orange",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c58aa18db2793d8463d5e27160d49682676961de_skylab_nike05.jpg",
+            "doc": "/project/nike/",
+            "width": 2400,
+            "height": 1715
+        },
+        "tags": [],
+        "color": "#3f3e30",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/348c0bd258187022e9c3292324b802b4669ec957_skylab_nike04.jpg",
+            "doc": "/project/nike/",
+            "width": 2400,
+            "height": 1350
+        },
+        "tags": [],
+        "color": "#b4c2da",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/aa978cd50d8372a7a2a4e488e7bf215760a8d69a_skylab_nike06.jpg",
+            "doc": "/project/nike/",
+            "width": 2400,
+            "height": 1315
+        },
+        "tags": [
+            "Aerial",
+            "Landscape",
+            "Planning"
+        ],
+        "color": "#423c37",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/b1df4978ed20795b0e62d32b0fea010a75575a1b_skylab_nike06.jpg",
+            "doc": "/project/nike/",
+            "width": 1500,
+            "height": 822
+        },
+        "tags": [
+            "Aerial",
+            "Landscape",
+            "Planning"
+        ],
+        "color": "#453f38",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/2666eb5ff271b23d1fc9031ce18d0a3088fc6d96_missingimage01.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 1000,
+            "height": 731
+        },
+        "tags": [
+            "MissingImage"
+        ],
+        "color": "#a20e65",
+        "colors": [
+            "violet",
+            "blue"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/73f1e7d2453812b68b38b6549cec5d556fbbe664_skylab_tafthomb00.jpg",
+            "doc": "/project/tafthomb/",
+            "width": 800,
+            "height": 1200
+        },
+        "tags": [
+            "Exterior",
+            "Wood",
+            "Glass",
+            "Concrete",
+            "Steel",
+            "Hohm"
+        ],
+        "color": "#bcb8b0",
+        "colors": [
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/bb9baf351515dcd4d9329f0a788371812c82aa9e_skylab_weave01.jpg",
+            "doc": "/project/weavebuilding/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Glass",
+            "Steel",
+            "Exterior"
+        ],
+        "color": "#3b3539",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/196baa858670a45db2061e159d0c3ba754a0de9b_skylab_weave00.jpg",
+            "doc": "/project/weavebuilding/",
+            "width": 800,
+            "height": 1200
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Steel"
+        ],
+        "color": "#758982",
+        "colors": [
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fc0d559029985120767371364fc7a6ae1b7fd137_skylab_skylodge01.jpg",
+            "doc": "/project/skylodge/",
+            "width": 2400,
+            "height": 1599
+        },
+        "tags": [
+            "Wood",
+            "Glass",
+            "Lodge",
+            "Interior",
+            "Mountain"
+        ],
+        "color": "#412c21",
+        "colors": [
+            "red",
+            "orange",
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/2c51c2c2ae7a96f4cb9a25eee8a84b44122a10e5_skylab_skylodge00.jpg",
+            "doc": "/project/skylodge/",
+            "width": 900,
+            "height": 600
+        },
+        "tags": [
+            "Wood",
+            "Lodge",
+            "Exterior"
+        ],
+        "color": "#34343c",
+        "colors": [
+            "green",
+            "orange",
+            "red",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/cdf7037cef1b7d8315d4a61c285d3e111091242a_skylab_north00.jpg",
+            "doc": "/project/northhq/",
+            "width": 720,
+            "height": 1080
+        },
+        "tags": [
+            "Paper",
+            "Interior",
+            "Office"
+        ],
+        "color": "#bfa132",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1a580e7880adc6f9461e4bdbb0ce429975352337_skylab_sorel04.jpg",
+            "doc": "/project/sorel/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#f9f9f9",
+        "colors": [
+            "violet",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a62806e47dbee1338ea4e986a8f71e524990f31c_skylab_sorel05.jpg",
+            "doc": "/project/sorel/",
+            "width": 2400,
+            "height": 1440
+        },
+        "tags": [],
+        "color": "#f9f5f1",
+        "colors": [
+            "violet",
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c6b819383aa918655f55b606ebfa2c4b8bf42138_skylab_sorel03.jpg",
+            "doc": "/project/sorel/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#f9f8f7",
+        "colors": [
+            "violet",
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/12c56482afdc06c4c089788ac3173331ed43a93c_skylab_sorel00.jpg",
+            "doc": "/project/sorel/",
+            "width": 1200,
+            "height": 800
+        },
+        "tags": [],
+        "color": "#301f16",
+        "colors": [
+            "red",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/d6d6642d1527191c5bea61cb988f7f0dc0f8f90b_skylab_nikeolympictrials02.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#363a31",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/15c41bd80334b7d51c78e59d840eb0a5b6c886a4_skylab_nikeolympictrials03.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#d0ccd5",
+        "colors": [
+            "violet",
+            "blue"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c78fe558953b6a0d2727230f2de1f18e14e74a51_skylab_nikeolympictrials05.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#658fc9",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/aee2ac4957fae1203b5fbf4ca78ec777205bf119_skylab_nikeolympictrials04.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Exterior",
+            "Composite"
+        ],
+        "color": "#2d3243",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/b3556fee20e3a151c0fb170b47e7a33c3b491a01_skylab_nikeolympictrials01.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 1500,
+            "height": 992
+        },
+        "tags": [],
+        "color": "#bbaeb3",
+        "colors": [
+            "violet",
+            "green",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/093e86933bba9c93a52f2967dc3b0d5113739fe8_skylab_dougfir00.jpg",
+            "doc": "/project/dougfir/",
+            "width": 900,
+            "height": 600
+        },
+        "tags": [],
+        "color": "#e39009",
+        "colors": [
+            "orange",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9985bde6951ad7e2e69ccdd028d22e127c1a1273_skylab_12thalder01.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Brick",
+            "Steel"
+        ],
+        "color": "#4c4a4a",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6d2f3403f827f98c907ca1a5216b5c0a7a46660a_skylab_12thalder04.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Steel",
+            "Lounge",
+            "Furniture"
+        ],
+        "color": "#2b2523",
+        "colors": [
+            "green",
+            "orange",
+            "violet",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/4c3504b1696b772ac64a380b8a1dbad1851a39f2_skylab_12thalder05.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [],
+        "color": "#252423",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/4eef952a65d150be3d8fb54ced743bd8e4bd4cd8_skylab_12thalder02.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#6d5c4a",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f34d9f71bd4abf4628ebd77f163ed682b1bee370_skylab_12thalder06.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#cec0ab",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/5ef67047da7af301e69a6664e1b29ce90fcf1d0c_skylab_12thalder03.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#bac0b8",
+        "colors": [
+            "green",
+            "orange",
+            "red"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/bba98a2b652b64fe38c329164313e95750ecbede_skylab_12thalder07.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1814
+        },
+        "tags": [],
+        "color": "#322d39",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6f4aa0c4d73f56f6235c13b4401cd89959ea7a78_skylab_12thalder00.jpg",
+            "doc": "/project/12thalder/",
+            "width": 1500,
+            "height": 1838
+        },
+        "tags": [],
+        "color": "#242220",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/2c6a44ed681c7d9e4fd2f4bc096f61d65d0e01bb_skylab_yard03.jpg",
+            "doc": "/project/yard/",
+            "width": 2400,
+            "height": 1200
+        },
+        "tags": [],
+        "color": "#392b28",
+        "colors": [
+            "green",
+            "orange",
+            "red",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9c77d4a8af2296a81835ff8e2b985970e15abcd1_skylab_yard04.jpg",
+            "doc": "/project/yard/",
+            "width": 2400,
+            "height": 1200
+        },
+        "tags": [],
+        "color": "#505463",
+        "colors": [
+            "violet",
+            "green"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/091c7c47fc1ae92c2e78b12416f8a1a06590a9e4_skylab_yard06.jpg",
+            "doc": "/project/yard/",
+            "width": 2400,
+            "height": 1298
+        },
+        "tags": [],
+        "color": "#a89e95",
+        "colors": [
+            "green",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/730069130cd6f2b2ae0110b0a1931078141e1cfc_skylab_yard02.jpg",
+            "doc": "/project/yard/",
+            "width": 2400,
+            "height": 1286
+        },
+        "tags": [
+            "Aerial",
+            "Landscape",
+            "Planning"
+        ],
+        "color": "#655c54",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/d6576101f16173216d7d0745d212855ed9642ae9_skylab_yard05.jpg",
+            "doc": "/project/yard/",
+            "width": 2400,
+            "height": 870
+        },
+        "tags": [
+            "Elevation",
+            "Study",
+            "Planning",
+            "Rendering"
+        ],
+        "color": "#f8f8f7",
+        "colors": [
+            "violet",
+            "green",
+            "yellow"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fb8382a44eeb27aa188c55593c223b00a541cdd9_skylab_yard01.jpg",
+            "doc": "/project/yard/",
+            "width": 2400,
+            "height": 3709
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Steel"
+        ],
+        "color": "#1a2030",
+        "colors": [
+            "blue",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/dc25826b7069ac7b3dbd8f57b09d038812537942_skylab_yard00.jpg",
+            "doc": "/project/yard/",
+            "width": 1500,
+            "height": 1096
+        },
+        "tags": [],
+        "color": "#c2bbb4",
+        "colors": [
+            "violet",
+            "green",
+            "orange"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/ac97f97f9f2aa0eeaea33aafd4315ebe84dcbd8b_missingimage00.jpg",
+            "doc": "/project/eugenecivicpark/",
+            "width": 1000,
+            "height": 731
+        },
+        "tags": [
+            "MissingImage"
+        ],
+        "color": "#16839e",
+        "colors": [
+            "green",
+            "blue"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a4cac87342eab6fa9fffdb612e5e9bbd899f0435_skylab_artisanscup_04.jpg",
+            "doc": "/project/artisanscup/",
+            "width": 2400,
+            "height": 1683
+        },
+        "tags": [],
+        "color": "#5c4a36",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/dc69c06c3501a692b7582fc1d842d904f855ba05_skylab_artisanscup_02.jpg",
+            "doc": "/project/artisanscup/",
+            "width": 2400,
+            "height": 3597
+        },
+        "tags": [],
+        "color": "#181008",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/eef4a26a8572ea9800636516d508495575c5d97a_skylab_artisanscup_03.jpg",
+            "doc": "/project/artisanscup/",
+            "width": 2400,
+            "height": 1602
+        },
+        "tags": [],
+        "color": "#1c140e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/870a754a908ce5ad5b26f8e103d31b729bb4e7b8_skylab_artisanscup_01.jpg",
+            "doc": "/project/artisanscup/",
+            "width": 2400,
+            "height": 1387
+        },
+        "tags": [],
+        "color": "#1c130d",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/396a56387c726472dcb1d771b474545d9e188f5e_skylab_artisanscup_03.jpg",
+            "doc": "/project/artisanscup/",
+            "width": 1500,
+            "height": 1001
+        },
+        "tags": [],
+        "color": "#18110c",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ]
+    }
+]
