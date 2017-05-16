@@ -42,6 +42,18 @@
 
 
 
+.grid {
+    padding-left: $padding-wrap / 2;
+    padding-right: $padding-wrap / 2;
+    }
+.grid__item {
+    margin-bottom: $expander-one;
+    padding-left: $padding-wrap / 2;
+    padding-right: $padding-wrap / 2;
+    }
+
+
+
 .tile {}
 .tile__wrap {
     display: inline-block;
