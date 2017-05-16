@@ -88,7 +88,7 @@ const navi = {
     },
 
 
-    active ( view ) {
+    activate ( view ) {
         this.items.removeClass( "is-active" );
         this.items.filter( `.js-navi--${view}` ).addClass( "is-active" );
     },

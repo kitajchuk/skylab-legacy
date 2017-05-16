@@ -157,7 +157,7 @@ const router = {
             core.dom.html.addClass( "is-uid-page" );
         }
 
-        navi.active( this.view );
+        navi.activate( this.view );
     },
 
 
@@ -176,6 +176,7 @@ const router = {
 
         navi.close();
         filter.close();
+        filter.deactivate();
         this.controllers.destroy();
     },
 

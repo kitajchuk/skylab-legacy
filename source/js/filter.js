@@ -43,23 +43,23 @@ const filter = {
                 const option = this.options.filter( `.js-filter-${prop}[data-value='${this.params[ prop ]}']` );
 
                 if ( option.length ) {
-                    this.active( option );
+                    this.activate( option );
 
                 } else {
-                    this.inactive();
+                    this.deactivate();
                 }
             }
         }
     },
 
 
-    inactive () {
+    deactivate () {
         this.options.removeClass( "is-active" );
         this.label[ 0 ].innerHTML = "";
     },
 
 
-    active ( option ) {
+    activate ( option ) {
         this.options.removeClass( "is-active" );
         option.addClass( "is-active" );
 
@@ -73,7 +73,7 @@ const filter = {
         });
 
         this.options.on( "click", ( e ) => {
-            this.active( $( e.target ) );
+            this.activate( $( e.target ) );
         });
     },
 
