@@ -841,28 +841,6 @@
     },
     {
         "query": [
-            "red",
-            "orange",
-            "blue",
-            "green"
-        ],
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/aa978cd50d8372a7a2a4e488e7bf215760a8d69a_skylab_nike06.jpg",
-            "doc": "/project/nike/",
-            "width": 2400,
-            "height": 1315
-        },
-        "colors": [
-            "#bc642c",
-            "#e5c1a4",
-            "#1c3c60",
-            "#8e8078",
-            "#bdac9e",
-            "#4f443b"
-        ]
-    },
-    {
-        "query": [
             "orange",
             "green"
         ],
@@ -1553,27 +1531,6 @@
             "#a9906d",
             "#c9b1ae",
             "#6a5138"
-        ]
-    },
-    {
-        "query": [
-            "red",
-            "orange",
-            "green"
-        ],
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/eef4a26a8572ea9800636516d508495575c5d97a_skylab_artisanscup_03.jpg",
-            "doc": "/project/artisanscup/",
-            "width": 2400,
-            "height": 1602
-        },
-        "colors": [
-            "#94441e",
-            "#d9d59c",
-            "#684c0f",
-            "#a68a67",
-            "#c9b39f",
-            "#463327"
         ]
     },
     {
