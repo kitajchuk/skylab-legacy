@@ -4,3 +4,6 @@
 .index__title {
     white-space: nowrap;
     }
+.feature + .index {
+    padding-top: $expander-two;
+    }
