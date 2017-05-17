@@ -47,6 +47,10 @@ class ContextObject {
     getUrl ( item ) {
         return `/${item.type}/${item.uid}/`;
     }
+
+    getImageAspect ( image ) {
+        return `${image.height / image.width * 100}%`;
+    }
 }
 
 

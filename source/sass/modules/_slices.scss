@@ -1,19 +1,10 @@
 .slices__slice {
     width: 100%;
     }
-// .slices__slice + .slices__slice {
-//     margin-top: $expander-one;
-//     }
 .slices__text {
     text-align: left;
     }
 .slices__content {
     display: inline-block;
     width: calc( 100vw - #{$wrap-copy} );
-    }
-.slices__image {
-    min-height: 20vh;
-    }
-.slices__image[data-imageloader] {
-    min-height: 0;
     }

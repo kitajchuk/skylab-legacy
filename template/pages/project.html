@@ -1,5 +1,10 @@
 <% if ( locals.context.get( 'item' ) ) { %>
-    <% const item = locals.context.get( 'item' ) %>
+    <%
+    const item = locals.context.get( 'item' );
+    const image = item.getImage( 'project.image' );
+    const city = item.getText( 'project.city' );
+    const state = item.getText( 'project.state' );
+    %>
     <div class="project js-project animate js-animate js-animate--intro">
         <div class="project__info -wrap js-project-info">
             <div class="cms">
@@ -14,8 +19,8 @@
                 <% if ( item.getText( 'project.client' ) ) { %>
                     <p><strong>Client</strong>: <em><%- item.getText( 'project.client' ) %></em></p>
                 <% } %>
-                <% if ( item.getText( 'project.city' ) || item.getText( 'project.state' ) ) { %>
-                    <p><strong>Location</strong>: <em><%= item.getText( 'project.city' ) %>, <%= item.getText( 'project.state' ) %></em></p>
+                <% if ( city || state ) { %>
+                    <p><strong>Location</strong>: <em><% if ( city ) { %><%= city %>, <% } %><%= state %></em></p>
                 <% } %>
                 <% if ( item.getText( 'project.year' ) ) { %>
                     <p><strong>Year</strong>: <em><%- item.getText( 'project.year' ) %></em></p>
@@ -39,12 +44,6 @@
                             </div>
                         </div>
                     <% }) %>
-                <% } else { %>
-                    <div class="slices__slice slices__image animate js-animate">
-                        <div class="slices__content">
-                            <div class="slices__image -fpo" data-msg="Needs Content"></div>
-                        </div>
-                    </div>
                 <% } %>
             </div>
         </div>

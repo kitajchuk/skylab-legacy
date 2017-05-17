@@ -1,5 +1,5 @@
 <li class="tileset__li tile -column -column--1of3 grid__item">
-    <a href="<%= tile.image.doc %>" class="tile__wrap -column" style="padding-bottom:<%= tile.image.height / tile.image.width * 100 %>%;background-color:<%= tile.color %>;">
+    <a href="<%= tile.image.doc %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getImageAspect( tile.image ) %>;background-color:<%= tile.color %>;">
         <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= tile.image.url %>" data-img-size="[<%= tile.image.width %>,<%= tile.image.height %>]" />
     </a>
 </li>

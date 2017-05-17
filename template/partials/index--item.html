@@ -1,11 +1,14 @@
+<%
+const image = item.getImage( 'project.image' );
+const city = item.getText( 'project.city' );
+const state = item.getText( 'project.state' );
+%>
 <li class="index__li animate js-animate -wrap-index -exp-1">
     <div class="index__image index__col -column -column--1of3">
-        <% if ( item.getImage( 'project.image' ) ) { %>
-            <a href="<%= locals.context.getUrl( item ) %>" class="-full -column">
-                <img class="image js-lazy-image" data-img-src="<%= item.getImage( 'project.image' ).url %>" />
+        <% if ( image ) { %>
+            <a href="<%= locals.context.getUrl( item ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getImageAspect( image.main ) %>;">
+                <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
             </a>
-        <% } else { %>
-            <a href="<%= locals.context.getUrl( item ) %>" class="-column -fpo" data-msg="Needs Image"></a>
         <% } %>
     </div>
     <div class="index__title index__col -column -column--1of3">
@@ -14,9 +17,9 @@
                 <strong><%= item.getText( 'project.title' ) %></strong>
             </div>
         <% } %>
-        <% if ( item.getText( 'project.city' ) || item.getText( 'project.state' ) ) { %>
+        <% if ( city || state ) { %>
             <div class="p">
-                <%= item.getText( 'project.city' ) %>, <%= item.getText( 'project.state' ) %>
+                <% if ( city ) { %><%= city %>, <% } %><%= state %>
             </div>
         <% } %>
         <% if ( item.getText( 'project.year' ) ) { %>

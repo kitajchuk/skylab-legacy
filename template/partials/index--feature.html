@@ -1,9 +1,12 @@
+<%
+const image = feature.getImage( 'project.image' );
+%>
 <li class="feature__li -text--<%= feature.getGroup( 'project.feature' ).value[ 0 ].data.layout.value.toLowerCase() %>">
-    <% if ( feature.getImage( 'project.image' ) ) { %>
-        <a href="<%= locals.context.getUrl( feature ) %>" class="feature__wrap -column animate-lift animate--slow js-animate" data-speed="<%= (Math.floor( Math.random() * (6 - 2 + 1) + 2 )) %>">
-            <img class="feature__image js-lazy-image" data-img-src="<%= feature.getImage( 'project.image' ).url %>" />
-        </a>
-    <% } else { %>
-        <a href="<%= locals.context.getUrl( feature ) %>" class="feature__wrap -column -fpo animate-lift animate--slow js-animate" data-msg="Needs Image"></a>
+    <% if ( image ) { %>
+        <div class="feature__wrap -column" style="width:<%= image.main.width %>px;max-width:100%;">
+            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap animate-lift animate--slow js-animate" style="padding-bottom:<%= locals.context.getImageAspect( image.main ) %>;">
+                <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+            </a>
+        </div>
     <% } %>
 </li>
