@@ -33,11 +33,16 @@
         padding-left: $padding-index;
         }
     .project__info {
-        max-width: $wrap-copy;
+        max-width: 100%;
         padding-bottom: $expander-one;
-        padding-top: 10vh;
+        padding-top: $expander-two;
         position: relative;
-        }
+
+        .cms,
+        .meta {
+            max-width: $wrap-copy;
+            }
+    }
     .slices__content {
         width: 100%;
         }
@@ -120,6 +125,12 @@
             }
     }
 
+    // Mobile type
+    .h1,
+    .cms h1 {
+        font-size: $h1-size-small;
+        }
+
     .grid {
         display: flex;
         flex-wrap: wrap;
@@ -144,6 +155,10 @@
 
     .animate-lift {
         transform: translate3d( 0, $expander-one, 0 );
+        }
+
+    .paging {
+        display: none;
         }
 }
 

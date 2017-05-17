@@ -24,7 +24,7 @@
     width: 32px;
 
     span {
-        background-color: $white;
+        background-color: $grey;
         height: 2px;
         left: 0;
         position: absolute;
@@ -54,7 +54,7 @@
 }
 .icon--filter {
     .glass {
-        border: 2px solid $white;
+        border: 2px solid $grey;
         border-radius: 100%;
         height: $circle;
         transition: border-color $fast-duration $ease;
@@ -62,7 +62,7 @@
         }
 
     .handle {
-        background-color: $white;
+        background-color: $grey;
         height: 2px;
         left: 0;
         position: absolute;
@@ -83,11 +83,86 @@
     width: 0;
 
     &.icon--left {
-        border-right-color: $white;
+        border-right-color: $grey;
         margin-right: 10px;
         }
     &.icon--right {
-        border-left-color: $white;
+        border-left-color: $grey;
         margin-left: 10px;
         }
+}
+@keyframes pressed {
+    50% {
+        transform: scale( 2 );
+        }
+}
+.icon--keys {
+    height: 22px;
+    width: 34px;
+
+    span {
+        background-color: $grey;
+        border-radius: 2px;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+
+        &.is-pressed {
+            animation: pressed 200ms 1;
+            }
+
+        &:after {
+            border-color: transparent;
+            border-style: solid;
+            border-width: 3px;
+            content: "";
+            height: 0;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 0;
+            }
+    }
+
+    .up {
+        left: 50%;
+        opacity: 0.5;
+        top: 0;
+        margin-left: -5px;
+
+        &:after {
+            display: none;
+            }
+    }
+    .left {
+        bottom: 0;
+        left: 0;
+
+        &:after {
+            border-right-color: $black;
+            top: 50%;
+            transform: translateY( -50% );
+            }
+    }
+    .down {
+        bottom: 0;
+        left: 50%;
+        opacity: 0.5;
+        margin-left: -5px;
+
+        &:after {
+            display: none;
+            }
+    }
+    .right {
+        bottom: 0;
+        right: 0;
+
+        &:after {
+            border-left-color: $black;
+            left: 50%;
+            top: 50%;
+            transform: translateX( -1px ) translateY( -50% );
+            }
+    }
 }

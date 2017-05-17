@@ -10,23 +10,34 @@
 
     .icon--list {
         span {
-            background-color: $black;
+            background-color: $charcoal;
             }
     }
     .icon--filter {
         .glass {
-            border-color: $black;
+            border-color: $charcoal;
             }
         .handle {
-            background-color: $black;
+            background-color: $charcoal;
             }
     }
     .icon--dir {
         &.icon--left {
-            border-right-color: $black;
+            border-right-color: $charcoal;
             }
         &.icon--right {
-            border-left-color: $black;
+            border-left-color: $charcoal;
+            }
+    }
+    .icon--keys {
+        span {
+            background-color: $charcoal;
+            }
+        .left:after {
+            border-right-color: $white;
+            }
+        .right:after {
+            border-left-color: $white;
             }
     }
     .index__li {
@@ -41,7 +52,7 @@
     }
     .theme__spot {
         &.is-light {
-            border: 2px solid $black;
+            border: 2px solid $charcoal;
             }
         &.is-dark {
             border: 2px solid transparent;
@@ -49,7 +60,7 @@
     }
     .header__svg {
         .svg {
-            fill: $black;
+            fill: $charcoal;
             }
     }
     .filter {
@@ -65,14 +76,13 @@
     .main {
         padding-top: 0;
         }
-    .header__svg {
-        .svg--keys {
-            display: block;
-            }
-    }
-    .header__filter {
-        display: none;
+    .header__keys {
+        display: inline-block;
+        transform: translateX( -100% );
         }
+    // .header__filter {
+    //     display: none;
+    //     }
 }
 .is-cover {}
 .is-cover--feature {
@@ -80,10 +90,8 @@
         opacity: 0;
         }
     .header__svg {
-        .svg--logo {
-            display: block;
-            }
-    }
+        display: inline-block;
+        }
 }
 .is-navi-open {
     .icon--list {
@@ -112,11 +120,10 @@
     .header {
         width: calc( 100vw - #{$filter-width} );
         }
-    .header__svg {
-        .svg--logo {
-            display: none;
-            }
-    }
+    .header__svg,
+    .header__keys {
+        display: none !important;
+        }
     .filter {
         overflow: auto;
         transform: translate3d( 0, 0, 0 );
@@ -138,4 +145,9 @@
             transform: translateY( 100% );
             }
     }
+}
+.is-touchable {
+    .header__keys {
+        display: none !important;
+        }
 }

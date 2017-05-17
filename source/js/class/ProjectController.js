@@ -24,6 +24,10 @@ class ProjectController extends Controller {
         this.body = this.element.find( ".js-project-body" );
         this.next = this.element.find( ".js-project-next" );
         this.previous = this.element.find( ".js-project-previous" );
+        this.keys = {
+            left: core.dom.body.find( ".js-key-left" ),
+            right: core.dom.body.find( ".js-key-right" )
+        };
         this.scroller = new ScrollController();
         this.resizer = new ResizeController();
 
@@ -71,19 +75,24 @@ class ProjectController extends Controller {
     }
 
 
+    pressKey ( key ) {
+        key.addClass( "is-pressed" );
+
+        setTimeout( () => key.removeClass( "is-pressed" ), 1000 );
+    }
+
+
     watchKeys () {
         this.onKeydown = ( e ) => {
             // Left
             if ( e.keyCode === 37 && this.previous.length ) {
+                this.pressKey( this.keys.left );
                 router.route( this.previous[ 0 ].href );
 
             // Right
             } else if ( e.keyCode === 39 && this.next.length ) {
+                this.pressKey( this.keys.right );
                 router.route( this.next[ 0 ].href );
-
-            // Up
-            } else if ( e.keyCode === 38 ) {
-                router.route( "/" );
             }
         };
 

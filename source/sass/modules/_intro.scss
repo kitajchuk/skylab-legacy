@@ -2,22 +2,12 @@
     background-color: $white;
     pointer-events: auto;
     z-index: $z_layer_infront + 2;
-    }
+
+    &.is-active {
+        z-index: $z_layer_infront + 2;
+        }
+}
 .intro__logo {
     max-width: 100%;
     width: $logo-width;
     }
-
-
-
-// .svg {
-//     path {
-//         animation: draw 3.5s infinite;
-//         }
-// }
-//
-// @keyframes draw {
-//     50% {
-//         stroke-dashoffset: 0;
-//         }
-// }

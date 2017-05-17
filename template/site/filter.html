@@ -5,28 +5,28 @@
     <ul class="filter__col">
         <% locals.context.get( 'categories' ).forEach(( category ) => { %>
             <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-category p" data-value="<%= category %>" href="?category=<%= category %>"><%= category %></a>
+                <a class="filter__a js-filter-option js-filter-category p" data-value="<%= category %>" href="/?category=<%= category %>"><%= category %></a>
             </li>
         <% }) %>
     </ul>
     <ul class="filter__col">
         <% locals.context.get( 'statuses' ).forEach(( status ) => { %>
             <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-status p" data-value="<%= status %>" href="?status=<%= status %>"><%= status %></a>
+                <a class="filter__a js-filter-option js-filter-status p" data-value="<%= status %>" href="/?status=<%= status %>"><%= status %></a>
             </li>
         <% }) %>
     </ul>
     <ul class="filter__col">
         <% locals.context.get( 'materials' ).forEach(( material ) => { %>
             <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-material p" data-value="<%= material %>" href="?material=<%= material %>"><%= material %></a>
+                <a class="filter__a js-filter-option js-filter-material p" data-value="<%= material %>" href="/?material=<%= material %>"><%= material %></a>
             </li>
         <% }) %>
     </ul>
     <ul class="filter__col">
         <% locals.context.get( 'spaces' ).forEach(( space ) => { %>
             <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-space p" data-value="<%= space %>" href="?space=<%= space %>"><%= space %></a>
+                <a class="filter__a js-filter-option js-filter-space p" data-value="<%= space %>" href="/?space=<%= space %>"><%= space %></a>
             </li>
         <% }) %>
     </ul>
@@ -36,7 +36,7 @@
         </li>
         <li class="filter__li">
             <% locals.context.get( 'colors' ).forEach(( color ) => { %>
-                <a class="filter__color js-filter-option js-filter-color" style="background-color:<%= color.background %>;" data-value="<%= color.query %>" href="?color=<%= color.query %>"></a>
+                <a class="filter__color js-filter-option js-filter-color" style="background-color:<%= color.background %>;" data-value="<%= color.query %>" href="/?color=<%= color.query %>"></a>
             <% }) %>
         </li>
     </ul>

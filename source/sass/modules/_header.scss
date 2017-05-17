@@ -17,7 +17,11 @@
 .header__filter {
     transition: opacity $fast-duration $ease;
     }
+.header__keys {
+    display: none;
+    }
 .header__svg {
+    display: none;
     width: $logo-width-header;
 
     .svg {

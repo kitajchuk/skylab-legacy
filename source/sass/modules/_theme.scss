@@ -16,12 +16,12 @@
     width: 12px;
 
     &.is-light {
-        background-color: $white;
+        background-color: $grey;
         border: 2px solid transparent;
         }
     &.is-dark {
-        background-color: $black;
-        border: 2px solid $white;
+        background-color: $charcoal;
+        border: 2px solid $grey;
         margin-left: 12px;
         }
     }

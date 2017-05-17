@@ -24,12 +24,14 @@
 @import "modules/main";
 @import "modules/grid";
 @import "modules/icons";
-@import "modules/intro";
 @import "modules/images";
 @import "modules/header";
-@import "modules/screens";
 @import "modules/animate";
+
+// Screens extended
+@import "modules/screens";
 @import "modules/navi";
+@import "modules/intro";
 
 // Project specific:
 @import "modules/project";
