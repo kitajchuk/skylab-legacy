@@ -31,6 +31,7 @@
     "forever": "^0.15.2",
     "get-image-colors": "^1.8.1",
     "node-watch": "^0.5.3",
-    "prismic.io": "^3.5.0"
+    "prismic.io": "^3.5.0",
+    "shuffle-array": "^1.0.1"
   }
 }

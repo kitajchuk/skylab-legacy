@@ -56,17 +56,15 @@
 
 .tile {}
 .tile__wrap {
-    background-color: $black;
     display: inline-block;
     position: relative;
     width: 100%;
     }
-.tile__photo {
-    &.image {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        }
+.tile__photo,
+.tile__wrap > iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }

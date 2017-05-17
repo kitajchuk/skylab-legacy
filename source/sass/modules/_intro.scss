@@ -1,5 +1,7 @@
 .intro {
+    background-color: $white;
     pointer-events: auto;
+    z-index: $z_layer_infront + 2;
     }
 .intro__logo {
     max-width: 100%;

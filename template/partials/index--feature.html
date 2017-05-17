@@ -1,11 +1,12 @@
 <%
 const image = feature.getImage( 'project.image' );
+const featureBlock = feature.getGroup( 'project.feature' ).value[ 0 ].data;
 %>
-<li class="feature__li -text--<%= feature.getGroup( 'project.feature' ).value[ 0 ].data.layout.value.toLowerCase() %>">
+<li class="feature__li -text--<%= featureBlock.layout.value.toLowerCase() %>">
     <% if ( image ) { %>
         <div class="feature__wrap -column" style="width:<%= image.main.width %>px;max-width:100%;">
-            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap animate-lift animate--slow js-animate" style="padding-bottom:<%= locals.context.getImageAspect( image.main ) %>;">
-                <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap animate-lift animate--slow js-animate" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                <img class="tile__photo image js-lazy-image <% if ( featureBlock.imageclip ) { %>-skyclip<% } %>" data-img-src="<%= image.url %>" />
             </a>
         </div>
     <% } %>

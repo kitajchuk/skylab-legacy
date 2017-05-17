@@ -48,7 +48,7 @@ class ContextObject {
         return `/${item.type}/${item.uid}/`;
     }
 
-    getImageAspect ( image ) {
+    getMediaAspect ( image ) {
         return `${image.height / image.width * 100}%`;
     }
 }

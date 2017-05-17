@@ -6,6 +6,7 @@ const path = require( "path" );
 const file = require( "./core/file" );
 const config = require( "./core/config" );
 const router = require( "./router" );
+const shuffle = require( "shuffle-array" );
 
 
 
@@ -90,9 +91,9 @@ const onContext = function ( context, cache, req ) {
 
     // Add `features` array to the context
     if ( canFeatures( req ) ) {
-        context.set( "features", context.get( "items" ).filter(( doc ) => {
+        context.set( "features", shuffle(context.get( "items" ).filter(( doc ) => {
             return (doc.getText( `${config.skylab.mainType}.type` ) === "Feature");
-        }));
+        })));
     }
 
     // Add `previous` / `next` documents to context

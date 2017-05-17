@@ -6,7 +6,7 @@ const state = item.getText( 'project.state' );
 <li class="index__li animate js-animate -wrap-index -exp-1">
     <div class="index__image index__col -column -column--1of3">
         <% if ( image ) { %>
-            <a href="<%= locals.context.getUrl( item ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getImageAspect( image.main ) %>;">
+            <a href="<%= locals.context.getUrl( item ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
             </a>
         <% } %>

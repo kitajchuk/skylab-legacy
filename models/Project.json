@@ -132,6 +132,22 @@
     "feature" : {
       "config" : {
         "fields" : {
+          "layout" : {
+            "type" : "Select",
+            "config" : {
+              "options" : [ "Left", "Right", "Center" ],
+              "label" : "layout",
+              "placeholder" : "Image Position Horizontally"
+            }
+          },
+          "imageclip" : {
+            "type" : "Select",
+            "config" : {
+              "options" : [ "Clip Image" ],
+              "label" : "imageclip",
+              "placeholder" : "Image Clip Path"
+            }
+          },
           "image" : {
             "type" : "Image",
             "config" : {
@@ -189,16 +205,23 @@
                 "height" : 450
               } ]
             }
+          },
+          "videoEmbed": {
+            "type": "Embed",
+            "fieldset": "Video Embed Block",
+            "config": {
+              "placeholder": "Video Embed Link"
+            }
+          },
+          "videoLink": {
+            "type": "Link",
+            "fieldset": "Media Video Link Block",
+            "config": {
+              "placeholder": "Choose Media Video Link",
+              "select": "media"
+            }
           }
         }
-      }
-    },
-    "video" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "media",
-        "label" : "Video Block",
-        "placeholder" : "Video URL here"
       }
     }
   }
