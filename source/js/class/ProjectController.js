@@ -3,7 +3,7 @@ import Controller from "properjs-controller";
 import ScrollController from "properjs-scrollcontroller";
 import ResizeController from "properjs-resizecontroller";
 import debounce from "properjs-debounce";
-import router from "../router"
+import router from "../router";
 
 
 /**
