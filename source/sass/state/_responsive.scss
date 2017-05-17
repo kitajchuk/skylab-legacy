@@ -109,6 +109,9 @@
     .filter__color + .filter__color {
         margin-left: 5px;
         }
+    .filter__col + .filter__col {
+        padding-top: $expander-mobile;
+        }
     .is-filter-open {
         .main,
         .header {

@@ -55,7 +55,8 @@ const filter = {
 
     deactivate () {
         this.options.removeClass( "is-active" );
-        this.label[ 0 ].innerHTML = "";
+        this.label.addClass( "is-empty" );
+        this.label[ 0 ].innerHTML = "Filter";
     },
 
 
@@ -63,6 +64,7 @@ const filter = {
         this.options.removeClass( "is-active" );
         option.addClass( "is-active" );
 
+        this.label.removeClass( "is-empty" );
         this.label[ 0 ].innerHTML = option.data().value;
     },
 

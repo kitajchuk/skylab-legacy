@@ -1,6 +1,6 @@
 <menu class="filter js-filter -fzero">
     <div class="filter__label ghost">
-        <div class="ghost__child js-filter-label p em"></div>
+        <div class="ghost__child js-filter-label p em is-empty">Filter</div>
     </div>
     <ul class="filter__col">
         <% locals.context.get( 'categories' ).forEach(( category ) => { %>
@@ -32,9 +32,7 @@
     </ul>
     <ul class="filter__col">
         <li class="filter__li">
-            <div class="p">
-                <strong>By <span style="color:#8aacdd;">C</span><span style="color:#95bc6a;">o</span><span style="color:#f3e28c;">l</span><span style="color:#d4a56d;">o</span><span style="color:#d4796f;">r</span></strong>
-            </div>
+            <div class="p">By Color</div>
         </li>
         <li class="filter__li">
             <% locals.context.get( 'colors' ).forEach(( color ) => { %>
