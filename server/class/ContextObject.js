@@ -43,6 +43,10 @@ class ContextObject {
     getTemplate () {
         return `pages/${this.page}.html`;
     }
+
+    getUrl ( item ) {
+        return `/${item.type}/${item.uid}/`;
+    }
 }
 
 
