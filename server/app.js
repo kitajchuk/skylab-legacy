@@ -29,6 +29,12 @@ const canTileset = function ( req ) {
 
 
 
+const canDetail = function ( req ) {
+    return (req.params.uid);
+};
+
+
+
 const getResults = function ( kind, value ) {
     return new Promise(( resolve, reject ) => {
         file.read( path.join( config.template.staticDir, "json", "imageprocess.json" ) ).then(( data ) => {
@@ -87,6 +93,16 @@ const onContext = function ( context, cache, req ) {
         context.set( "features", context.get( "items" ).filter(( doc ) => {
             return (doc.getText( `${config.skylab.mainType}.type` ) === "Feature");
         }));
+    }
+
+    // Add `previous` / `next` documents to context
+    if ( canDetail( req ) ) {
+        const item = context.get( "item" );
+        const items = context.get( "items" );
+        const index = items.indexOf( item );
+
+        context.set( "next", items[ index + 1 ] );
+        context.set( "previous", items[ index - 1 ] );
     }
 
     return context;

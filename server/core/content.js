@@ -31,19 +31,22 @@ const getPage = function ( req, res, listener ) {
 
                 fail( `The template file for this path is missing at "${file}".` );
 
-            } else if ( data.item ) {
-                context.set( "item", data.item );
+            } else {
+                if ( data.item ) {
+                    context.set( "item", data.item );
+                }
 
-            } else if ( data.items ) {
-                context.set( "items", data.items );
+                if ( data.items ) {
+                    context.set( "items", data.items );
+                }
+
+                // context?
+                if ( listener && listener.handlers.context ) {
+                    context = listener.handlers.context( context, core.query.cache, req );
+                }
+
+                done();
             }
-
-            // context?
-            if ( listener && listener.handlers.context ) {
-                context = listener.handlers.context( context, core.query.cache, req );
-            }
-
-            done();
         };
         const fail = function ( error ) {
             context.set({

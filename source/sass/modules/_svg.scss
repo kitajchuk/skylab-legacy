@@ -1,3 +1,10 @@
 .svg {
     transition: fill $fast-duration $ease;
     }
+.svg--keys {
+    display: none;
+    }
+.svg--logo {
+    display: none;
+    transform: translateX( -50% );
+    }

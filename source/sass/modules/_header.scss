@@ -17,10 +17,7 @@
 .header__filter {
     transition: opacity $fast-duration $ease;
     }
-.header__logo {
-    opacity: 0;
-    transform: translateX( -50% );
-    transition: opacity $fast-duration $ease;
+.header__svg {
     width: $logo-width-header;
 
     .svg {

@@ -371,6 +371,9 @@ const getDataForPage = function ( req, listener ) {
                     }
 
                 } else {
+                    // all
+                    data.items = json.results;
+
                     // uid
                     if ( req.params.uid || navi ) {
                         data.item = getDoc( (navi ? navi.uid : req.params.uid), json.results );
@@ -378,9 +381,6 @@ const getDataForPage = function ( req, listener ) {
                         if ( !data.item ) {
                             reject( `The document with UID "${navi ? navi.uid : req.params.uid}" could not be found by Prismic.` );
                         }
-
-                    } else {
-                        data.items = json.results;
                     }
 
                     resolve( data );

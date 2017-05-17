@@ -7,3 +7,9 @@
 .cms + .meta {
     margin-top: $expander-mobile;
     }
+.meta + .paging {
+    margin-top: $expander-one;
+    }
+.paging {
+    margin-left: -20px;
+    }

@@ -73,3 +73,21 @@
         width: $circle / 2;
         }
 }
+.icon--dir {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px;
+    height: 0;
+    margin-bottom: -2px;
+    transition: border-color $fast-duration $ease;
+    width: 0;
+
+    &.icon--left {
+        border-right-color: $white;
+        margin-right: 10px;
+        }
+    &.icon--right {
+        border-left-color: $white;
+        margin-left: 10px;
+        }
+}

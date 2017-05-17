@@ -3,6 +3,7 @@ import Controller from "properjs-controller";
 import ScrollController from "properjs-scrollcontroller";
 import ResizeController from "properjs-resizecontroller";
 import debounce from "properjs-debounce";
+import router from "../router"
 
 
 /**
@@ -21,6 +22,8 @@ class ProjectController extends Controller {
         this.element = element;
         this.info = this.element.find( ".js-project-info" );
         this.body = this.element.find( ".js-project-body" );
+        this.next = this.element.find( ".js-project-next" );
+        this.previous = this.element.find( ".js-project-previous" );
         this.scroller = new ScrollController();
         this.resizer = new ResizeController();
 
@@ -30,6 +33,7 @@ class ProjectController extends Controller {
 
     start () {
         this.checkInfo();
+        this.watchKeys();
         this.watchScroll();
         this.watchWindow();
     }
@@ -67,6 +71,26 @@ class ProjectController extends Controller {
     }
 
 
+    watchKeys () {
+        this.onKeydown = ( e ) => {
+            // Left
+            if ( e.keyCode === 37 && this.previous.length ) {
+                router.route( this.previous[ 0 ].href );
+
+            // Right
+            } else if ( e.keyCode === 39 && this.next.length ) {
+                router.route( this.next[ 0 ].href );
+
+            // Up
+            } else if ( e.keyCode === 38 ) {
+                router.route( "/" );
+            }
+        };
+
+        core.dom.doc.on( "keydown", this.onKeydown );
+    }
+
+
     watchScroll () {
         this.scroller.on( "scroll", () => {
             this.calcMove();
@@ -86,6 +110,7 @@ class ProjectController extends Controller {
     destroy () {
         this.resizer.off( "resize" );
         this.scroller.off( "scroll" );
+        core.dom.doc.off( "keydown", this.onKeydown );
     }
 }
 
