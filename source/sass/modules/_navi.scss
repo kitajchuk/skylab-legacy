@@ -14,7 +14,7 @@
             transform: translateY( 0 );
             }
         .navi__a.is-active:after {
-            top: calc( 50% + (#{$navi-strikethrough} / 2) );
+            top: calc( 50% - #{$navi-strikethrough} );
             }
     }
     &.is-closing {
@@ -55,7 +55,7 @@
         font-size: 20vh;
         line-height: 1.2;
         position: relative;
-        @include font-family-bold();
+        @include font-family-medium();
 
         &:after {
             background-color: $white;

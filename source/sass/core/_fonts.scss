@@ -2,24 +2,31 @@
  * Font Declarations
 *******************************************************************************/
 
-// BrownRegular
+// Theinhardt
 @font-face {
     font-family: $font-family;
-    src: url( "/fonts/Brown-Regular.woff" ) format( "woff" );
+    src: url( "/fonts/Theinhardt.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }
-// BrownBold
+// TheinhardtBold
 @font-face {
     font-family: $font-family-bold;
-    src: url( "/fonts/lineto-brown-bold.woff" ) format( "woff" );
+    src: url( "/fonts/TheinhardtBold.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }
-// BrownBackSlanted
+// TheinhardtMd
 @font-face {
-    font-family: $font-family-backslanted;
-    src: url( "/fonts/Brown-Regular-Backslanted.woff" ) format( "woff" );
+    font-family: $font-family-medium;
+    src: url( "/fonts/Theinhardt-Md.woff" ) format( "woff" );
+    font-style: normal;
+    font-stretch: normal;
+}
+// TheinhardtMdItalic
+@font-face {
+    font-family: $font-family-medium-italic;
+    src: url( "/fonts/Theinhardt-MediumItalic.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }

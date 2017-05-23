@@ -18,8 +18,12 @@
     font-family: $font-family-bold;
     @include font-normal();
 }
-@mixin font-family-backslanted() {
-    font-family: $font-family-backslanted;
+@mixin font-family-medium() {
+    font-family: $font-family-medium;
+    @include font-normal();
+}
+@mixin font-family-medium-italic() {
+    font-family: $font-family-medium-italic;
     @include font-normal();
 }
 
@@ -32,7 +36,7 @@
     line-height: $p-line;
 }
 @mixin em() {
-    @include font-family-backslanted();
+    @include font-family-medium-italic();
 }
 @mixin a() {
     display: inline;
