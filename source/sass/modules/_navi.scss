@@ -52,9 +52,11 @@
 .navi__a {}
 .navi__li--primary {
     .navi__a {
-        font-size: 20vh;
+        font-size: $navi-size;
         line-height: 1.2;
         position: relative;
+        text-transform: lowercase;
+        letter-spacing: $h1-tracking;
         @include font-family-medium();
 
         &:after {

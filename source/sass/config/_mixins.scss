@@ -11,19 +11,19 @@
  * Fonts: Styles
 *******************************************************************************/
 @mixin font-family() {
-    font-family: $font-family;
+    font-family: $font-family, Helvetica;
     @include font-normal();
 }
 @mixin font-family-bold() {
-    font-family: $font-family-bold;
+    font-family: $font-family-bold, Helvetica;
     @include font-normal();
 }
 @mixin font-family-medium() {
-    font-family: $font-family-medium;
+    font-family: $font-family-medium, Helvetica;
     @include font-normal();
 }
 @mixin font-family-medium-italic() {
-    font-family: $font-family-medium-italic;
+    font-family: $font-family-medium-italic, Helvetica;
     @include font-normal();
 }
 
@@ -45,15 +45,20 @@
 @mixin h1() {
     font-size: $h1-size;
     line-height: $h1-line;
-    @include font-family-bold();
+    letter-spacing: $h1-tracking;
+    text-transform: lowercase;
+    @include font-family-medium();
 }
 @mixin h2() {
     font-size: $h2-size;
     line-height: $h2-line;
+    text-transform: lowercase;
+    @include font-family-medium();
 }
 @mixin h3() {
     font-size: $h3-size;
     line-height: $h3-line;
+    @include font-family-medium();
 }
 @mixin h4() {
     font-size: $h4-size;
