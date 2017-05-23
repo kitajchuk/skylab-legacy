@@ -81,22 +81,32 @@ const filter = {
 
 
     open () {
-        this.clearOut();
-        this.isOpen = true;
-        this.element.addClass( "is-active" );
-        core.dom.html.addClass( "is-filter-open" );
+        return new Promise(( resolve ) => {
+            this.clearOut();
+            this.isOpen = true;
+            this.element.addClass( "is-active" );
+            core.dom.html.addClass( "is-filter-open" );
 
-        navi.close();
+            setTimeout( () => resolve(), this.timing );
+
+            navi.close();
+        });
     },
 
 
     close () {
-        this.clearOut();
-        this.isOpen = false;
-        this.element.addClass( "is-closing" ).removeClass( "is-active" );
-        core.dom.html.removeClass( "is-filter-open" );
+        return new Promise(( resolve ) => {
+            this.clearOut();
+            this.isOpen = false;
+            this.element.addClass( "is-closing" ).removeClass( "is-active" );
+            core.dom.html.removeClass( "is-filter-open" );
 
-        this.timeout = setTimeout( () => this.element.removeClass( "is-closing" ), this.timing );
+            this.timeout = setTimeout( () => {
+                this.element.removeClass( "is-closing" );
+                resolve();
+
+            }, this.timing );
+        });
     },
 
 

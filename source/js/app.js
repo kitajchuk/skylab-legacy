@@ -44,11 +44,21 @@ class App {
         });
 
         this.core.emitter.on( "app--activate-cover--feature", () => {
+            navi.homeClass( false );
             navi.openSpecial();
+
+            if ( !this.core.detect.isDevice() ) {
+                filter.close();
+            }
         });
 
         this.core.emitter.on( "app--deactivate-cover--feature", () => {
+            navi.homeClass( true );
             navi.closeSpecial();
+
+            if ( !this.core.detect.isDevice() ) {
+                filter.open();
+            }
         });
     }
 

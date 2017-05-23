@@ -260,6 +260,20 @@ const router = {
      */
     topper () {
         window.scrollTo( 0, 0 );
+    },
+
+
+    /**
+     *
+     * @public
+     * @method isHomepage
+     * @memberof router
+     * @description Determine if we are on the homepage currently.
+     * @returns {boolean}
+     *
+     */
+    isHomepage () {
+        return (this.view === core.config.homepage);
     }
 };
 
