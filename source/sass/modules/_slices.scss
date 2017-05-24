@@ -2,8 +2,10 @@
     width: 100%;
     }
 .slices__content {
-    width: 100%;
+    .project--feature & {
+        width: 100%;
     }
+}
 .slices__slice {
     .project--feature & {
         padding-bottom: $expander-one;
