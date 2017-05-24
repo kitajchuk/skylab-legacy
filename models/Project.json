@@ -199,11 +199,28 @@
       "config" : {
         "choices" : {
           "text" : {
-            "type" : "StructuredText",
-            "fieldset" : "Text Block",
-            "config" : {
-              "placeholder" : "Text Block",
-              "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+            "type": "Group",
+            "fieldset": "Single Text Block",
+            "config": {
+                "repeat": false,
+                "fields": {
+                    "text": {
+                        "type" : "StructuredText",
+                        "fieldset" : "Text Block",
+                        "config" : {
+                          "placeholder" : "Text Block",
+                          "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+                        }
+                    },
+                    "position": {
+                        "type" : "Select",
+                        "config" : {
+                          "options" : [ "Left", "Center", "Right" ],
+                          "label" : "Select Text Block Position",
+                          "placeholder" : "Select Text Block Position"
+                        }
+                    }
+                }
             }
           },
           "image" : {

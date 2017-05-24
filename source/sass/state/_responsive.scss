@@ -8,13 +8,6 @@
     .-wrap-image {
         width: calc( 100vw - #{$break-mobile-medium} );
         }
-    // .navi__li--primary {
-    //     .navi__a {
-    //         &:after {
-    //             height: 20px;
-    //             }
-    //     }
-    // }
 }
 
 
@@ -101,6 +94,21 @@
                 }
         }
     }
+
+    .slices__textImage {
+        .-column {
+            display: block;
+            width: 100%;
+            }
+        .-column + .-column {
+            margin-top: $expander-mobile;
+            }
+        .cms:last-child,
+        .cms:first-child {
+            padding-left: 0;
+            padding-right: 0;
+            }
+    }
 }
 
 
@@ -129,12 +137,6 @@
             width: 100%;
             }
     }
-
-    // Mobile type
-    // .h1,
-    // .cms h1 {
-    //     font-size: $h1-size-small;
-    //     }
 
     .grid {
         display: flex;

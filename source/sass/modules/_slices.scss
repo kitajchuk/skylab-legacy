@@ -14,7 +14,14 @@
         display: inline-block;
         }
 }
-.slices__textImage {}
+.slices__textImage {
+    .cms:first-child {
+        padding-right: $expander-one;
+        }
+    .cms:last-child {
+        padding-left: $expander-one;
+        }
+}
 .slices__videoEmbed {}
 .slices__videoLink {}
 .slices__diptych {}

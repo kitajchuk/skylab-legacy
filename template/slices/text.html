@@ -1,5 +1,10 @@
-<div class="cms -wrap -exp-2">
+<%
+const group = slice.value.toArray()[ 0 ];
+const text = group.getStructuredText( 'text' );
+const textPos = group.getText( 'position' );
+%>
+<div class="cms -wrap -exp-2 -text--<%= textPos.toLowerCase() %>">
     <div class="-wrap-copy -text--left">
-        <%- slice.value.asHtml() %>
+        <%- text.asHtml() %>
     </div>
 </div>

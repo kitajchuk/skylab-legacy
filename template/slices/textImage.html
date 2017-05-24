@@ -4,6 +4,24 @@ const image = group.getImage( 'image' );
 const text = group.getStructuredText( 'text' );
 const textPos = group.getText( 'textPosition' );
 %>
-<script>
-    console.log( <%- JSON.stringify( image ) %>, <%- JSON.stringify( text ) %>, '<%= textPos %>' );
-</script>
+<div class="-wrap -exp-2">
+    <% if ( textPos === 'Left' ) { %>
+        <div class="cms -column -column--2of5">
+            <%- text.asHtml() %>
+        </div>
+        <div class="-column -column--3of5">
+            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                <img class="tile__photo slices__image image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
+            </div>
+        </div>
+    <% } else { %>
+        <div class="-column -column--3of5">
+            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                <img class="tile__photo slices__image image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
+            </div>
+        </div>
+        <div class="cms -column -column--2of5">
+            <%- text.asHtml() %>
+        </div>
+    <% } %>
+</div>
