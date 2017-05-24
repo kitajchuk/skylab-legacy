@@ -5,7 +5,7 @@
     .project__info {
         max-width: $break-mobile-medium;
         }
-    .slices__content {
+    .-wrap-image {
         width: calc( 100vw - #{$break-mobile-medium} );
         }
     // .navi__li--primary {
@@ -48,7 +48,7 @@
             max-width: $wrap-copy;
             }
     }
-    .slices__content {
+    .-wrap-image {
         width: 100%;
         }
 

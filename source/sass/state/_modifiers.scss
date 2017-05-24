@@ -22,6 +22,9 @@
 .-wrap-index {
     @include wrap-index();
     }
+.-wrap-image {
+    @include wrap-image();
+    }
 .-vtop {
     vertical-align: top;
     }

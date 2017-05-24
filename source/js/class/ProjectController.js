@@ -20,10 +20,7 @@ class ProjectController extends Controller {
         super();
 
         this.element = element;
-        this.info = this.element.find( ".js-project-info" );
-        this.body = this.element.find( ".js-project-body" );
-        this.next = this.element.find( ".js-project-next" );
-        this.previous = this.element.find( ".js-project-previous" );
+        this.data = this.element.data();
         this.keys = {
             left: core.dom.body.find( ".js-key-left" ),
             right: core.dom.body.find( ".js-key-right" )
@@ -36,10 +33,34 @@ class ProjectController extends Controller {
 
 
     start () {
-        this.checkInfo();
         this.watchKeys();
-        this.watchScroll();
-        this.watchWindow();
+
+        if ( this.data.type === "standard" ) {
+            this.startStandard();
+
+        } else if ( this.data.type === "feature" ) {
+            this.startFeature();
+        }
+    }
+
+
+    startFeature () {
+        this.cover = this.element.find( ".js-project-cover" );
+        this.coverBackground = this.cover.find( ".js-project-cover-background" );
+        this.coverImage = this.cover.find( ".js-project-cover-image" );
+        this.coverTitle = this.cover.find( ".js-project-cover-title" );
+
+        this.watchScrollCover();
+    }
+
+
+    startStandard () {
+        this.info = this.element.find( ".js-project-info" );
+        this.body = this.element.find( ".js-project-body" );
+
+        this.checkInfo();
+        this.watchScrollInfo();
+        this.watchWindowInfo();
     }
 
 
@@ -50,7 +71,7 @@ class ProjectController extends Controller {
     }
 
 
-    calcMove () {
+    calcInfo () {
         const scrollPos = this.scroller.getScrollY();
         const maxScroll = this.scroller.getScrollMax();
         const offsetPos = scrollPos * (this.infoAmount / maxScroll);
@@ -62,6 +83,26 @@ class ProjectController extends Controller {
         } else {
             this.moveInfo( -offsetPos );
         }
+    }
+
+
+    calcCover () {
+        const scrollPos = this.scroller.getScrollY();
+        // const bounds = this.coverBackground[ 0 ].getBoundingClientRect();
+        //const offset = bounds.top + scrollPos;
+        const speed = 4;
+
+        this.moveCover( scrollPos / speed );
+    }
+
+
+    moveCover ( y ) {
+        core.util.translate3d(
+            this.coverBackground[ 0 ],
+            0,
+            core.util.px( y ),
+            0
+        );
     }
 
 
@@ -85,14 +126,14 @@ class ProjectController extends Controller {
     watchKeys () {
         this.onKeydown = ( e ) => {
             // Left
-            if ( e.keyCode === 37 && this.previous.length ) {
+            if ( e.keyCode === 37 && this.data.previous ) {
                 this.pressKey( this.keys.left );
-                router.route( this.previous[ 0 ].href );
+                router.route( this.data.previous );
 
-            // Right
-            } else if ( e.keyCode === 39 && this.next.length ) {
+                // Right
+            } else if ( e.keyCode === 39 && this.data.next ) {
                 this.pressKey( this.keys.right );
-                router.route( this.next[ 0 ].href );
+                router.route( this.data.next );
             }
         };
 
@@ -100,17 +141,24 @@ class ProjectController extends Controller {
     }
 
 
-    watchScroll () {
+    watchScrollInfo () {
         this.scroller.on( "scroll", () => {
-            this.calcMove();
+            this.calcInfo();
         });
     }
 
 
-    watchWindow () {
+    watchScrollCover () {
+        this.scroller.on( "scroll", () => {
+            this.calcCover();
+        });
+    }
+
+
+    watchWindowInfo () {
         this.resizer.on( "resize", debounce(() => {
             this.checkInfo();
-            this.calcMove();
+            this.calcInfo();
 
         }), 2000 );
     }

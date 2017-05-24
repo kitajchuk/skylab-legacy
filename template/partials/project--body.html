@@ -1,0 +1,13 @@
+<div class="project__body js-project-body">
+    <div class="slices cms">
+        <% if ( item.getSliceZone( 'project.slices' ) ) { %>
+            <% item.getSliceZone( 'project.slices' ).slices.forEach(( slice ) => { %>
+                <div class="slices__slice slices__<%= slice.sliceType %>">
+                    <div class="slices__content -wrap-image">
+                        <%- include( `../slices/${slice.sliceType}.html`, {slice: slice} ) %>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<%
+const image = item.getImage( 'project.image' );
+const city = item.getText( 'project.city' );
+const state = item.getText( 'project.state' );
+const previous = locals.context.get( 'previous' );
+const next = locals.context.get( 'next' );
+%>
+<div class="project__info -wrap js-project-info">
+    <div class="cms">
+        <% if ( item.getText( 'project.title' ) ) { %>
+            <h1><%= item.getText( 'project.title' ) %></h1>
+        <% } %>
+        <% if ( item.getStructuredText( 'project.description' ) ) { %>
+            <%- item.getStructuredText( 'project.description' ).asHtml() %>
+        <% } %>
+    </div>
+    <div class="meta">
+        <% if ( item.getText( 'project.client' ) ) { %>
+            <p><strong>Client</strong>: <em><%- item.getText( 'project.client' ) %></em></p>
+        <% } %>
+        <% if ( city || state ) { %>
+            <p><strong>Location</strong>: <em><% if ( city ) { %><%= city %>, <% } %><%= state %></em></p>
+        <% } %>
+        <% if ( item.getText( 'project.year' ) ) { %>
+            <p><strong>Year</strong>: <em><%- item.getText( 'project.year' ) %></em></p>
+        <% } %>
+        <% if ( item.getText( 'project.size' ) ) { %>
+            <p><strong>Size</strong>: <em><%- item.getText( 'project.size' ) %></em></p>
+        <% } %>
+        <% if ( item.getStructuredText( 'project.awards' ) ) { %>
+            <p><strong>Awards</strong>:</p>
+            <em><%- item.getStructuredText( 'project.awards' ).asHtml() %></em>
+        <% } %>
+    </div>
+    <div class="paging">
+        <div class="paging__navi paging__previous p -column -column--2of4">
+            <% if ( previous ) { %>
+                <a href="<%= locals.context.getUrl( previous ) %>" class="js-project-previous">
+                    <span class="icon icon--dir icon--left"></span><span class="-column">Previous</span>
+                </a>
+            <% } else { %>
+                &nbsp;
+            <% } %>
+        </div>
+        <div class="paging__navi paging__next p -column -column--2of4 -text--right">
+            <% if ( next ) { %>
+                <a href="<%= locals.context.getUrl( next ) %>" class="js-project-next">
+                    <span class="-column">Next</span><span class="icon icon--dir icon--right"></span></span>
+                </a>
+            <% } else { %>
+                &nbsp;
+            <% } %>
+        </div>
+    </div>
+</div>
+<%- include( 'project--body.html', {item: item} ) %>

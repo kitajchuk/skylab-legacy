@@ -90,3 +90,6 @@
     padding-left: $padding-index;
     padding-right: $padding-index;
 }
+@mixin wrap-image {
+    width: calc( 100vw - #{$wrap-copy} );
+}
