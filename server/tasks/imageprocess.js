@@ -107,14 +107,19 @@ const pushTextImage = function ( doc, slice ) {
 const pushParallax = function ( doc, slice ) {
     const group = slice.value.toArray()[ 0 ];
     const image = group.getImage( "image" );
-    const background = group.getImage( "background" );
 
     if ( image ) {
         pushResult( doc, image );
     }
+};
 
-    if ( background ) {
-        pushResult( doc, background );
+
+
+const pushFeature = function ( doc, feature ) {
+    feature = feature.toArray()[ 0 ];
+
+    if ( feature.getImage( "image" ) ) {
+        pushResult( doc, feature.getImage( "image" ) );
     }
 };
 
@@ -214,11 +219,7 @@ const doColorProcess = function () {
 
                     // Feature Images
                     if ( feature ) {
-                        feature = feature.toArray()[ 0 ];
-
-                        if ( feature.getImage( "image" ) ) {
-                            pushResult( doc, feature.getImage( "image" ) );
-                        }
+                        pushFeature( doc, feature );
                     }
 
                     // Content Images

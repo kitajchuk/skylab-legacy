@@ -93,3 +93,6 @@
 @mixin wrap-image {
     width: calc( 100vw - #{$wrap-copy} );
 }
+@mixin wrap-static {
+    width: 62vw;
+}

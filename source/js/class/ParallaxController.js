@@ -17,6 +17,7 @@ class ParallaxController {
 
         if ( !core.detect.isDevice() ) {
             this.bind();
+            this.exec();
         }
     }
 
@@ -24,25 +25,37 @@ class ParallaxController {
     bind () {
         this.scroller = new ScrollController();
         this.scroller.on( "scroll", () => {
-            this.elements.forEach(( element, i ) => {
-                this.handle( this.elements.eq( i ) );
-            });
+            this.exec();
         });
     }
 
 
+    exec () {
+        this.elements.forEach(( element, i ) => {
+            this.handle( this.elements.eq( i ) );
+        });
+    }
+
+
+    move ( elem, val ) {
+        core.util.translate3d(
+            elem[ 0 ],
+            0,
+            core.util.px( val ),
+            0
+        );
+    }
+
+
     handle ( element ) {
-        const anim = element.find( ".js-parallax-image" );
+        const image = element.find( ".js-parallax-image" );
+        const background = element.find( ".js-parallax-background" );
         const bounds = element[ 0 ].getBoundingClientRect();
         const offset = (bounds.top + bounds.height / 2) - (window.innerHeight / 2);
         const speed = 4;
 
-        core.util.translate3d(
-            anim[ 0 ],
-            0,
-            core.util.px( -offset / speed ),
-            0
-        );
+        this.move( image, (offset / speed) );
+        this.move( background, (-offset / speed) );
     }
 
 

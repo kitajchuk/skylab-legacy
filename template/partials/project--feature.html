@@ -1,28 +1,14 @@
 <%
 const cover = item.getGroup( 'project.feature' ).toArray()[ 0 ];
 %>
-<div class="project__feature js-project-feature">
-    <div class="project__cover cover cover--base js-project-cover">
-        <% if ( cover.getImage( 'background' ) ) { %>
-            <div class="cover__fill cover__background js-project-cover-background -cover js-lazy-image" data-img-src="<%= cover.getImage( 'background' ).url %>"></div>
+<div class="project__info -wrap">
+    <div class="cms">
+        <% if ( item.getText( 'project.title' ) ) { %>
+            <h1><%= item.getText( 'project.title' ) %></h1>
         <% } %>
-        <% if ( cover.getImage( 'image' ) ) { %>
-            <div class="cover__image js-project-cover-image -wrap-image">
-                <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( cover.getImage( 'image' ).main ) %>;">
-                    <img class="tile__photo image js-lazy-image" data-img-src="<%= cover.getImage( 'image' ).url %>" />
-                </div>
-            </div>
+        <% if ( cover.getStructuredText( 'text' ) ) { %>
+            <%- cover.getStructuredText( 'text' ).asHtml() %>
         <% } %>
-        <div class="cover__title js-project-cover-title -wrap">
-            <div class="cms">
-                <% if ( item.getText( 'project.title' ) ) { %>
-                    <h1><%= item.getText( 'project.title' ) %></h1>
-                <% } %>
-                <% if ( cover.getStructuredText( 'text' ) ) { %>
-                    <%- cover.getStructuredText( 'text' ).asHtml() %>
-                <% } %>
-            </div>
-        </div>
     </div>
 </div>
 <%- include( 'project--body.html', {item: item} ) %>

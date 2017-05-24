@@ -1,4 +1,5 @@
 .slices__slice {
+    position: relative;
     width: 100%;
     }
 .slices__content {
@@ -7,7 +8,7 @@
     }
 }
 .slices__slice {
-    .project--feature & {
+    .project--feature &:not( .slices__parallax ) {
         padding-bottom: $expander-one;
         padding-top: $expander-one;
     }

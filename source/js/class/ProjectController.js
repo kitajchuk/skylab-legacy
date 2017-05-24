@@ -37,20 +37,7 @@ class ProjectController extends Controller {
 
         if ( this.data.type === "standard" ) {
             this.startStandard();
-
-        } else if ( this.data.type === "feature" ) {
-            this.startFeature();
         }
-    }
-
-
-    startFeature () {
-        this.cover = this.element.find( ".js-project-cover" );
-        this.coverBackground = this.cover.find( ".js-project-cover-background" );
-        this.coverImage = this.cover.find( ".js-project-cover-image" );
-        this.coverTitle = this.cover.find( ".js-project-cover-title" );
-
-        this.watchScrollCover();
     }
 
 
@@ -83,26 +70,6 @@ class ProjectController extends Controller {
         } else {
             this.moveInfo( -offsetPos );
         }
-    }
-
-
-    calcCover () {
-        const scrollPos = this.scroller.getScrollY();
-        // const bounds = this.coverBackground[ 0 ].getBoundingClientRect();
-        //const offset = bounds.top + scrollPos;
-        const speed = 4;
-
-        this.moveCover( scrollPos / speed );
-    }
-
-
-    moveCover ( y ) {
-        core.util.translate3d(
-            this.coverBackground[ 0 ],
-            0,
-            core.util.px( y ),
-            0
-        );
     }
 
 
@@ -144,13 +111,6 @@ class ProjectController extends Controller {
     watchScrollInfo () {
         this.scroller.on( "scroll", () => {
             this.calcInfo();
-        });
-    }
-
-
-    watchScrollCover () {
-        this.scroller.on( "scroll", () => {
-            this.calcCover();
         });
     }
 
