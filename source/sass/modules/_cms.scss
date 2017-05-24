@@ -1,4 +1,4 @@
-.cms {
+.cms:not( .cms--meta ) {
     p + p,
     p + ol,
     p + ul,
@@ -91,13 +91,13 @@
         margin-top: $expander-mobile;
         }
 }
-.cms + .meta {
+.cms + .cms--meta {
     margin-top: $expander-mobile;
     }
-.meta + .paging {
+.cms--meta + .cms--paging {
     margin-top: $expander-one;
     }
-.paging {
+.cms--paging {
     margin-left: -20px;
     margin-right: -20px;
     }

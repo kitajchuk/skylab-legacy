@@ -5,7 +5,7 @@
     const previous = locals.context.get( 'previous' );
     const next = locals.context.get( 'next' );
     %>
-    <div class="project js-project animate js-animate js-animate--intro" data-type="<% if ( ptype ) { %><%= ptype.toLowerCase() %><% } %>" data-previous="<% if ( previous ) { %><%= locals.context.getUrl( previous ) %><% } %>" data-next="<% if ( next ) { %><%= locals.context.getUrl( next ) %><% } %>">
+    <div class="project project--<%= ptype.toLowerCase() %> js-project animate js-animate js-animate--intro" data-type="<% if ( ptype ) { %><%= ptype.toLowerCase() %><% } %>" data-previous="<% if ( previous ) { %><%= locals.context.getUrl( previous ) %><% } %>" data-next="<% if ( next ) { %><%= locals.context.getUrl( next ) %><% } %>">
         <% if ( ptype === 'Feature' ) { %>
             <%- include( '../partials/project--feature.html', {item: item} ) %>
         <% } else { %>

@@ -1,7 +1,17 @@
 .slices__slice {
     width: 100%;
     }
-.slices__content {}
+.slices__content {
+    width: 100%;
+    }
+.slices__slice {
+    .project--feature & {
+        padding-bottom: $expander-one;
+        padding-top: $expander-one;
+    }
+}
+
+// Slice Types...
 .slices__text {
     text-align: center;
 }
@@ -9,6 +19,15 @@
 .slices__videoLink,
 .slices__videoEmbed {
     text-align: right;
+
+    .project--feature & {
+        text-align: center;
+
+        .-wrap-image {
+            @include wrap();
+            width: 100%;
+            }
+    }
 
     .slices__content {
         display: inline-block;
@@ -22,7 +41,14 @@
         padding-left: $expander-one;
         }
 }
+.slices__diptych {
+    .-column:first-child {
+        padding-right: $expander-mobile;
+        }
+    .-column:last-child {
+        padding-left: $expander-mobile;
+        }
+}
 .slices__videoEmbed {}
 .slices__videoLink {}
-.slices__diptych {}
 .slices__parallax {}

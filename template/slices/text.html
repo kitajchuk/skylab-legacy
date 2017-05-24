@@ -2,9 +2,17 @@
 const group = slice.value.toArray()[ 0 ];
 const text = group.getStructuredText( 'text' );
 const textPos = group.getText( 'position' );
+const meta = group.getStructuredText( 'meta' );
 %>
-<div class="cms -wrap -exp-2 -text--<%= textPos.toLowerCase() %>">
+<div class="-wrap -text--<%= textPos.toLowerCase() %>">
     <div class="-wrap-copy -text--left">
-        <%- text.asHtml() %>
+        <div class="cms">
+            <%- text.asHtml() %>
+        </div>
+        <% if ( meta ) { %>
+            <div class="cms cms--meta meta">
+                <%- meta.asHtml() %>
+            </div>
+        <% } %>
     </div>
 </div>

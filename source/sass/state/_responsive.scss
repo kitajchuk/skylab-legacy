@@ -95,6 +95,7 @@
         }
     }
 
+    .slices__diptych,
     .slices__textImage {
         .-column {
             display: block;
@@ -103,8 +104,8 @@
         .-column + .-column {
             margin-top: $expander-mobile;
             }
-        .cms:last-child,
-        .cms:first-child {
+        .-column:last-child,
+        .-column:first-child {
             padding-left: 0;
             padding-right: 0;
             }

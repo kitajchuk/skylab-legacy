@@ -3,10 +3,8 @@
 *******************************************************************************/
 .p,
 .cms p,
-.meta p,
 .li,
-.cms li,
-.meta li {
+.cms li {
     font-size: $p-size;
     line-height: 1.7;
 
@@ -19,17 +17,20 @@
         }
     }
 .li,
-.cms li,
-.meta li {
+.cms li {
     line-height: 1.5;
     }
 .em,
-.cms em,
-.meta em {
+.cms em {
     @include em();
     }
 .strong {
     @include font-family-bold();
+    }
+.meta p,
+.meta li {
+    color: $grey-text;
+    font-size: $m-size;
     }
 
 
@@ -37,8 +38,7 @@
  * Links
 *******************************************************************************/
 .a,
-.cms a,
-.meta a {
+.cms a{
     border-bottom: 1px solid transparent;
     transition: border-bottom-color $fast-duration $ease;
     @include a();

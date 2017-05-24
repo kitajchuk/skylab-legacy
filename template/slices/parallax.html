@@ -1,0 +1,16 @@
+<%
+const group = slice.value.toArray()[ 0 ];
+const image = group.getImage( 'image' );
+const background = group.getImage( 'background' );
+const imagePos = group.getText( 'imagePosition' );
+%>
+<div class="cover cover--base js-parallax -text--<%= imagePos.toLowerCase() %> ghost">
+    <div class="ghost__child -full">
+        <div class="cover__fill cover__background js-parallax-background -cover js-lazy-image" data-img-src="<%= background.url %>"></div>
+        <div class="js-parallax-image -column -column--2of4">
+            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+            </div>
+        </div>
+    </div>
+</div>

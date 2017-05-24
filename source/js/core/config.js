@@ -79,6 +79,17 @@ const config = {
     /**
      *
      * @public
+     * @member parallaxSelector
+     * @memberof core.config
+     * @description The string selector used for <parallax> node.
+     *
+     */
+    parallaxSelector: ".js-parallax",
+
+
+    /**
+     *
+     * @public
      * @member videoSelector
      * @memberof core.config
      * @description The string selector used for <video> node.

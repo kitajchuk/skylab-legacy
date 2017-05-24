@@ -212,6 +212,14 @@
                           "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
                         }
                     },
+                    "meta": {
+                        "type" : "StructuredText",
+                        "fieldset" : "Small Text Block",
+                        "config" : {
+                          "placeholder" : "Small Text Block",
+                          "multi" : "paragraph,hyperlink,strong,em"
+                        }
+                    },
                     "position": {
                         "type" : "Select",
                         "config" : {

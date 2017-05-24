@@ -4,24 +4,28 @@ const image = group.getImage( 'image' );
 const text = group.getStructuredText( 'text' );
 const textPos = group.getText( 'textPosition' );
 %>
-<div class="-wrap -exp-2">
+<div class="-wrap">
     <% if ( textPos === 'Left' ) { %>
-        <div class="cms -column -column--2of5">
-            <%- text.asHtml() %>
+        <div class="cms -column -column--2of4 -text--center">
+            <div class="-wrap-copy -text--left">
+                <%- text.asHtml() %>
+            </div>
         </div>
-        <div class="-column -column--3of5">
+        <div class="-column -column--2of4">
             <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
-                <img class="tile__photo slices__image image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
             </div>
         </div>
     <% } else { %>
-        <div class="-column -column--3of5">
+        <div class="-column -column--2of4">
             <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
-                <img class="tile__photo slices__image image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
             </div>
         </div>
-        <div class="cms -column -column--2of5">
-            <%- text.asHtml() %>
+        <div class="cms -column -column--2of4 -text--center">
+            <div class="-wrap-copy -text--left">
+                <%- text.asHtml() %>
+            </div>
         </div>
     <% } %>
 </div>
