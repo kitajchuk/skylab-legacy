@@ -28,7 +28,10 @@ let results = {
 
 
 const getQueryColors = function ( colors ) {
-    const queryColors = [];
+    const queryColors = {
+        colors: [],
+        deltas: []
+    };
 
     colors.forEach(( color ) => {
         let closestColor = {
@@ -46,8 +49,9 @@ const getQueryColors = function ( colors ) {
             }
         });
 
-        if ( queryColors.indexOf( closestColor.color ) === -1 ) {
-            queryColors.push( closestColor.color );
+        if ( queryColors.colors.indexOf( closestColor.color ) === -1 ) {
+            queryColors.colors.push( closestColor.color );
+            queryColors.deltas.push( closestColor.diff );
         }
     });
 
@@ -69,6 +73,49 @@ const getImageColors = function ( result ) {
 
 const getImageTags = function ( tagString ) {
     return (typeof tagString === "string" ? tagString.replace( /\s/g, "" ).split( "," ) : []);
+};
+
+
+
+const pushDiptych = function ( doc, slice ) {
+    const group = slice.value.toArray()[ 0 ];
+    const left = group.getImage( "left" );
+    const right = group.getImage( "right" );
+
+    if ( left ) {
+        pushResult( doc, left );
+    }
+
+    if ( right ) {
+        pushResult( doc, right );
+    }
+};
+
+
+
+const pushTextImage = function ( doc, slice ) {
+    const group = slice.value.toArray()[ 0 ];
+    const image = group.getImage( "image" );
+
+    if ( image ) {
+        pushResult( doc, image );
+    }
+};
+
+
+
+const pushParallax = function ( doc, slice ) {
+    const group = slice.value.toArray()[ 0 ];
+    const image = group.getImage( "image" );
+    const background = group.getImage( "background" );
+
+    if ( image ) {
+        pushResult( doc, image );
+    }
+
+    if ( background ) {
+        pushResult( doc, background );
+    }
 };
 
 
@@ -99,9 +146,11 @@ const processResult = function ( result ) {
     getImageColors( result ).then(( colors ) => {
         const progress = (total - results.raw.length) / total;
         const jsonPath = path.join( core.config.template.staticDir, "json", "imageprocess.json" );
+        const colorInfo = getQueryColors( colors );
 
-        result.colors = getQueryColors( colors );
+        result.colors = colorInfo.colors;
         result.color = colors[ 0 ].hex();
+        result.deltas = colorInfo.deltas;
 
         results.processed.push( result );
 
@@ -156,23 +205,43 @@ const doColorProcess = function () {
                 json.results.forEach(( doc ) => {
                     const image = doc.getImage( `${core.config.skylab.mainType}.image` );
                     const slices = doc.getSliceZone( `${core.config.skylab.mainType}.slices` );
-                    const feature = doc.getGroup( `${core.config.skylab.mainType}.feature` );
+                    let feature = doc.getGroup( `${core.config.skylab.mainType}.feature` );
 
-                    // Main index Image
+                    // Main Image
                     if ( image ) {
                         pushResult( doc, image );
                     }
 
-                    // Feature image
-                    // if ( feature && feature.value[ 0 ].data.image ) {
-                    //     pushResult( doc, feature.value[ 0 ].data.image.value );
-                    // }
+                    // Feature Images
+                    if ( feature ) {
+                        feature = feature.toArray()[ 0 ];
+
+                        if ( feature.getImage( "image" ) ) {
+                            pushResult( doc, feature.getImage( "image" ) );
+                        }
+                    }
 
                     // Content Images
                     if ( slices ) {
                         slices.value.forEach(( slice ) => {
+                            // image?
                             if ( slice.sliceType === "image" ) {
                                 pushResult( doc, slice.value );
+                            }
+
+                            // diptych?
+                            if ( slice.sliceType === "diptych" ) {
+                                pushDiptych( doc, slice );
+                            }
+
+                            // textImage?
+                            if ( slice.sliceType === "textImage" ) {
+                                pushTextImage( doc, slice );
+                            }
+
+                            // parallax?
+                            if ( slice.sliceType === "parallax" ) {
+                                pushParallax( doc, slice );
                             }
                         });
                     }

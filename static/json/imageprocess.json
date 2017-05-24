@@ -16,6 +16,10 @@
         "colors": [
             "orange",
             "red"
+        ],
+        "deltas": [
+            29.474049825654905,
+            99.21762768436096
         ]
     },
     {
@@ -37,6 +41,10 @@
         "colors": [
             "orange",
             "green"
+        ],
+        "deltas": [
+            38.35540023374747,
+            114.43050833698942
         ]
     },
     {
@@ -57,6 +65,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            56.25898293212691,
+            27.853441338276124,
+            23.36031734672948
         ]
     },
     {
@@ -78,6 +91,10 @@
         "colors": [
             "green",
             "orange"
+        ],
+        "deltas": [
+            66.07924421487846,
+            50.14455547816335
         ]
     },
     {
@@ -98,6 +115,10 @@
         "colors": [
             "orange",
             "green"
+        ],
+        "deltas": [
+            36.09358047580694,
+            93.84784623243488
         ]
     },
     {
@@ -120,6 +141,12 @@
             "green",
             "red",
             "violet"
+        ],
+        "deltas": [
+            68.29744503556584,
+            103.60390627982552,
+            85.2144973727827,
+            90.05289903642522
         ]
     },
     {
@@ -142,6 +169,10 @@
         "colors": [
             "orange",
             "green"
+        ],
+        "deltas": [
+            49.0224627547961,
+            104.48906937714416
         ]
     },
     {
@@ -161,6 +192,10 @@
         "colors": [
             "green",
             "orange"
+        ],
+        "deltas": [
+            114.34256237899763,
+            41.31296642239522
         ]
     },
     {
@@ -180,6 +215,10 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            107.07066175262453,
+            107.31408675046899
         ]
     },
     {
@@ -197,6 +236,10 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            142.45870696744387,
+            82.71397496297048
         ]
     },
     {
@@ -218,6 +261,37 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            90.54787728160746,
+            50.21358154430895,
+            55.73229932213555
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a0d70859c53b30d5e7a30a0009291d73e8d6c232_skylab_wseattle01.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Office",
+            "Boardroom",
+            "MeetingRoom",
+            "Interior",
+            "Lighting"
+        ],
+        "color": "#71594c",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            64.94621053873412,
+            121.14524372571483,
+            42.475607068155426
         ]
     },
     {
@@ -239,6 +313,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            96.31891213827346,
+            48.08632998234815,
+            54.90923723775697
         ]
     },
     {
@@ -257,6 +336,10 @@
         "colors": [
             "violet",
             "green"
+        ],
+        "deltas": [
+            107.27593004310235,
+            124.1693848175054
         ]
     },
     {
@@ -272,6 +355,11 @@
             "orange",
             "violet",
             "red"
+        ],
+        "deltas": [
+            24.856388323539996,
+            81.68281646859774,
+            66.63486095852984
         ]
     },
     {
@@ -287,6 +375,31 @@
             "orange",
             "green",
             "violet"
+        ],
+        "deltas": [
+            40.35578480858818,
+            76.37537033601181,
+            80.6846066603641
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fa566becd73f949822a3fab01fbcf7ad11787188_skylab_nau03.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#6c5d4b",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            61.776550000755904,
+            38.81964833700761,
+            90.94930713015121
         ]
     },
     {
@@ -305,6 +418,11 @@
             "orange",
             "violet",
             "red"
+        ],
+        "deltas": [
+            25.54636633454487,
+            83.5310342055108,
+            62.64194162333941
         ]
     },
     {
@@ -320,6 +438,11 @@
             "orange",
             "violet",
             "green"
+        ],
+        "deltas": [
+            52.20067141679701,
+            74.1352501372037,
+            104.33673544324971
         ]
     },
     {
@@ -334,6 +457,28 @@
         "colors": [
             "blue",
             "violet"
+        ],
+        "deltas": [
+            70.48279139348377,
+            60.15338476321885
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1a87a31c6e7012668ec239441ca5f2fbc81262cc_sinju_07-1620x1080.jpg",
+            "doc": "/project/sinju/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#d42c1c",
+        "colors": [
+            "red",
+            "orange"
+        ],
+        "deltas": [
+            9.926586473011424,
+            55.11135054774657
         ]
     },
     {
@@ -348,6 +493,10 @@
         "colors": [
             "red",
             "orange"
+        ],
+        "deltas": [
+            9.435073571795826,
+            29.54964110785624
         ]
     },
     {
@@ -363,6 +512,11 @@
             "green",
             "violet",
             "orange"
+        ],
+        "deltas": [
+            85.1297337139696,
+            37.40817425403846,
+            30.287590553715923
         ]
     },
     {
@@ -378,6 +532,11 @@
             "green",
             "violet",
             "orange"
+        ],
+        "deltas": [
+            99.94560873864685,
+            56.31479346205154,
+            52.154151899354325
         ]
     },
     {
@@ -393,6 +552,11 @@
             "green",
             "violet",
             "orange"
+        ],
+        "deltas": [
+            84.69520339213341,
+            78.84645763003486,
+            41.49829083441445
         ]
     },
     {
@@ -408,6 +572,11 @@
             "orange",
             "green",
             "violet"
+        ],
+        "deltas": [
+            57.9628723026805,
+            102.7505482936423,
+            73.0146998430163
         ]
     },
     {
@@ -428,6 +597,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            117.77651722581602,
+            38.80095316992364,
+            39.851629163515526
         ]
     },
     {
@@ -448,6 +622,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            79.1614321339135,
+            45.77002115392361,
+            65.66671508270146
         ]
     },
     {
@@ -466,6 +645,37 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            135.08766690858238,
+            62.439555268873676
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/617fb3c71710f9265705ca142359a12dde99c6a6_skylab_hokehouse00.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Wood",
+            "Glass",
+            "Window",
+            "Shelving",
+            "Office",
+            "Interior"
+        ],
+        "color": "#c4bfb7",
+        "colors": [
+            "green",
+            "red",
+            "orange"
+        ],
+        "deltas": [
+            79.59607897267162,
+            91.96761472318252,
+            39.44869588748522
         ]
     },
     {
@@ -488,353 +698,11 @@
             "green",
             "red",
             "orange"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/41d3ea486983e87e07d04949370777ecca12c4d3_skylab_columbiabuilding14.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1754
-        },
-        "tags": [],
-        "color": "#858592",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/1ffd105b3d3e73b332c6804e887ad7114347c960_skylab_columbiabuilding18.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#423d37",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/d056b9c53ff1e4a6a005b3581bcee7a5265bbaa2_skylab_columbiabuilding13.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 3136
-        },
-        "tags": [],
-        "color": "#b3c7d4",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/8aa4350aebd69901ff2ec2c2799e62b4d600d584_skylab_columbiabuilding15_lg.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1618
-        },
-        "tags": [],
-        "color": "#bfc2c2",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/791c1a49b1ac204f5b3898e81759ed63ecc2409b_skylab_columbiabuilding24.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1800
-        },
-        "tags": [],
-        "color": "#d2d0d5",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/650c313fbe87a3a178c890cdb704cb2998c3b5a2_skylab_columbiabuilding26_lg.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1613
-        },
-        "tags": [],
-        "color": "#c5c8c3",
-        "colors": [
-            "violet",
-            "green",
-            "orange"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/fbc008cbd0d35d5c79749bcc9a966003d56c2efb_skylab_columbiabuilding22.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 2430
-        },
-        "tags": [],
-        "color": "#8f8d82",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/9e5a650eaca555c5a0808248c033434b59e07cf3_skylab_columbiabuilding23.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 2699
-        },
-        "tags": [],
-        "color": "#978e80",
-        "colors": [
-            "green",
-            "violet",
-            "orange",
-            "red"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/1a7646b808cf9f27c93a2e1dc8afbc5eb56937a2_skylab_columbiabuilding16.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 3600
-        },
-        "tags": [],
-        "color": "#393d3c",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/8297f0295b40550b614421b1653ee329dad5f4b4_skylab_columbiabuilding17.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1614
-        },
-        "tags": [],
-        "color": "#7a746c",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/03d59bf61f5f1a160ead60a9c29c9e1220f66b5c_skylab_columbiabuilding25.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#969088",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/b6ba80541e4e3843284b38b4e8788e8cce5e7652_skylab_columbiabuilding12_lg.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 960
-        },
-        "tags": [],
-        "color": "#3d3729",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/109c0700d65f06249785c4b2e2e2e00657108e68_skylab_columbiabuilding10_lg.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1350
-        },
-        "tags": [
-            "Aerial",
-            "Landscape",
-            "Planning"
         ],
-        "color": "#6d6c54",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/28d5846945926c06efac0fcf87a5ce0323bf2cb8_skylab_columbiabuilding07.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1058
-        },
-        "tags": [
-            "Elevation",
-            "Study"
-        ],
-        "color": "#f8fafa",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/8b0456e04c7d7c260f7eae1456b84acb62c645a2_skylab_columbiabuilding04.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 859
-        },
-        "tags": [
-            "Elevation",
-            "Study"
-        ],
-        "color": "#f7f7f7",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/0d8a5639098e9411e5c4cb1e2e2e4ff12529e23f_skylab_columbiabuilding05.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1070
-        },
-        "tags": [
-            "Elevation",
-            "Study"
-        ],
-        "color": "#faf9f2",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/a8c30a66d3c3399eef3bcd64be09dc6227460e13_skylab_columbiabuilding02.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1570
-        },
-        "tags": [
-            "Elevation",
-            "Study"
-        ],
-        "color": "#f7f7f7",
-        "colors": [
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/5ff7422df304a0f30419d47af2bd744eab41d794_skylab_columbiabuilding06.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 2022
-        },
-        "tags": [],
-        "color": "#050505",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/554f954ecc4f9e2b1af1d3001f9b94a84f8e1471_skylab_columbiabuilding08-lg.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1448
-        },
-        "tags": [
-            "Aerial",
-            "Landscape",
-            "Planning"
-        ],
-        "color": "#83837e",
-        "colors": [
-            "green",
-            "violet"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/862f4cd2f31849e224967f55410cd6b3830b7ba2_skylab_columbiabuilding09.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1499
-        },
-        "tags": [],
-        "color": "#dadada",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/c1fc42f90ae94a479321ae2a2cd856d7f55e3d2b_skylab_columbiabuilding03.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1443
-        },
-        "tags": [],
-        "color": "#dbdbdb",
-        "colors": [
-            "violet",
-            "green"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/118e638848da8452b86ceef9512d557bf50d70b3_skylab_columbiabuilding11_lg.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 1398
-        },
-        "tags": [],
-        "color": "#3e3920",
-        "colors": [
-            "green",
-            "violet",
-            "orange"
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/8142e7578bc4b2dc57c86965a449a2f89db7042c_skylab_columbiabuilding01.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2500,
-            "height": 1614
-        },
-        "tags": [],
-        "color": "#090807",
-        "colors": [
-            "green",
-            "violet"
+        "deltas": [
+            79.89455015518058,
+            95.28414509810433,
+            38.513891777906295
         ]
     },
     {
@@ -850,6 +718,11 @@
             "violet",
             "green",
             "red"
+        ],
+        "deltas": [
+            67.61618037557574,
+            108.17767027824907,
+            67.22313460221349
         ]
     },
     {
@@ -866,6 +739,12 @@
             "green",
             "orange",
             "red"
+        ],
+        "deltas": [
+            50.560256909760945,
+            81.32587762718461,
+            33.104063475404644,
+            53.33151195327962
         ]
     },
     {
@@ -880,6 +759,10 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            63.19223875283257,
+            88.902875273628
         ]
     },
     {
@@ -894,6 +777,10 @@
         "colors": [
             "violet",
             "green"
+        ],
+        "deltas": [
+            52.17847132653625,
+            112.64656418195021
         ]
     },
     {
@@ -913,6 +800,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            84.87172729461852,
+            60.952632417592035,
+            54.64655578726596
         ]
     },
     {
@@ -932,6 +824,31 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            78.94700142575411,
+            62.01058456459148,
+            54.33901561178609
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/d30d71af532baba4ebf09617c0959641ed249031_missingimage01.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 2400,
+            "height": 1754
+        },
+        "tags": [
+            "MissingImage"
+        ],
+        "color": "#a20e64",
+        "colors": [
+            "violet",
+            "blue"
+        ],
+        "deltas": [
+            40.15286306559701,
+            50.99660763263211
         ]
     },
     {
@@ -948,6 +865,10 @@
         "colors": [
             "violet",
             "blue"
+        ],
+        "deltas": [
+            39.980317640034514,
+            51.4867883133186
         ]
     },
     {
@@ -969,6 +890,10 @@
         "colors": [
             "green",
             "orange"
+        ],
+        "deltas": [
+            79.11851380010262,
+            55.454525714030844
         ]
     },
     {
@@ -988,6 +913,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            94.90323432327182,
+            37.254039589313166,
+            48.734363405390596
         ]
     },
     {
@@ -1006,6 +936,9 @@
         "color": "#758982",
         "colors": [
             "green"
+        ],
+        "deltas": [
+            58.433284327517256
         ]
     },
     {
@@ -1028,6 +961,38 @@
             "orange",
             "green",
             "violet"
+        ],
+        "deltas": [
+            87.16678494302097,
+            43.567331365355024,
+            86.12752510684729,
+            87.62892926918171
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/44c1cc1938815c640b1a45d514dcd9090f314be8_skylab_skylodge00.jpg",
+            "doc": "/project/skylodge/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Wood",
+            "Lodge",
+            "Exterior"
+        ],
+        "color": "#322f33",
+        "colors": [
+            "green",
+            "violet",
+            "orange",
+            "red"
+        ],
+        "deltas": [
+            101.66265563155126,
+            60.571720719766375,
+            22.79635470452886,
+            42.073386226854296
         ]
     },
     {
@@ -1048,6 +1013,36 @@
             "orange",
             "red",
             "violet"
+        ],
+        "deltas": [
+            94.22849408207334,
+            23.626049790856953,
+            40.46539825325364,
+            63.113281724283134
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/5d9e5ab5faf559e7ab48cd2ab9c5c298207de0b6_skylab_north00.jpg",
+            "doc": "/project/northhq/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Paper",
+            "Interior",
+            "Office"
+        ],
+        "color": "#bfa133",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            16.814026830162845,
+            114.08659403708488,
+            86.06971498959709
         ]
     },
     {
@@ -1067,6 +1062,11 @@
             "orange",
             "green",
             "violet"
+        ],
+        "deltas": [
+            16.7549471474181,
+            111.9829757641709,
+            52.41276111086422
         ]
     },
     {
@@ -1081,6 +1081,10 @@
         "colors": [
             "violet",
             "red"
+        ],
+        "deltas": [
+            107.2380649348305,
+            35.61361649006299
         ]
     },
     {
@@ -1096,6 +1100,11 @@
             "violet",
             "green",
             "orange"
+        ],
+        "deltas": [
+            88.70363505279765,
+            64.49120239660755,
+            34.07229174569549
         ]
     },
     {
@@ -1111,6 +1120,11 @@
             "violet",
             "green",
             "orange"
+        ],
+        "deltas": [
+            101.5323420472702,
+            109.18177665330589,
+            52.98802433592113
         ]
     },
     {
@@ -1126,6 +1140,11 @@
             "red",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            107.29972163011318,
+            53.72840241976611,
+            55.8742859195036
         ]
     },
     {
@@ -1140,6 +1159,10 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            73.050422519709,
+            64.77560883872381
         ]
     },
     {
@@ -1154,6 +1177,10 @@
         "colors": [
             "violet",
             "blue"
+        ],
+        "deltas": [
+            67.65834880139671,
+            81.35500748057966
         ]
     },
     {
@@ -1168,6 +1195,10 @@
         "colors": [
             "violet",
             "green"
+        ],
+        "deltas": [
+            38.66973642953145,
+            104.28798413660044
         ]
     },
     {
@@ -1185,6 +1216,30 @@
         "colors": [
             "violet",
             "green"
+        ],
+        "deltas": [
+            93.24643789620387,
+            76.95299969589853
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f91464ed24a870760bb5f69c61f76c8002bef825_skylab_nikeolympictrials01.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1587
+        },
+        "tags": [],
+        "color": "#baadb2",
+        "colors": [
+            "violet",
+            "green",
+            "red"
+        ],
+        "deltas": [
+            64.30266142064619,
+            94.66647067911632,
+            46.48879491882661
         ]
     },
     {
@@ -1200,6 +1255,11 @@
             "violet",
             "green",
             "red"
+        ],
+        "deltas": [
+            64.3370402368599,
+            96.58993294900841,
+            66.74735504505564
         ]
     },
     {
@@ -1214,6 +1274,10 @@
         "colors": [
             "orange",
             "red"
+        ],
+        "deltas": [
+            7.14877941141038,
+            93.87927593648517
         ]
     },
     {
@@ -1234,6 +1298,10 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            105.69629467250994,
+            80.12893050475341
         ]
     },
     {
@@ -1257,6 +1325,12 @@
             "orange",
             "violet",
             "red"
+        ],
+        "deltas": [
+            105.93414590462677,
+            40.33318694825463,
+            43.096045968362226,
+            45.42788601074382
         ]
     },
     {
@@ -1272,6 +1346,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            120.67174786946957,
+            13.18425134850996,
+            54.15266276046979
         ]
     },
     {
@@ -1287,6 +1366,11 @@
             "orange",
             "green",
             "violet"
+        ],
+        "deltas": [
+            61.86353639954396,
+            101.35448258074042,
+            48.341878317370394
         ]
     },
     {
@@ -1302,6 +1386,11 @@
             "orange",
             "green",
             "violet"
+        ],
+        "deltas": [
+            53.62319576623888,
+            98.23883569316123,
+            65.04349232879011
         ]
     },
     {
@@ -1317,6 +1406,11 @@
             "green",
             "orange",
             "red"
+        ],
+        "deltas": [
+            75.6883463411772,
+            35.421793679823075,
+            55.65673312333386
         ]
     },
     {
@@ -1332,6 +1426,31 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            95.71380061815537,
+            33.26029246294136,
+            38.21410386911859
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f90d986c54a04741cdfd04549807705c187f5144_skylab_12thalder00.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 2941
+        },
+        "tags": [],
+        "color": "#23221f",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            111.31085029757581,
+            13.381645314044311,
+            57.78804324942984
         ]
     },
     {
@@ -1347,6 +1466,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            114.88260116039184,
+            13.662520493192849,
+            65.04511050558298
         ]
     },
     {
@@ -1363,6 +1487,12 @@
             "orange",
             "red",
             "violet"
+        ],
+        "deltas": [
+            94.05233022882715,
+            65.46037592402475,
+            51.64062055223731,
+            59.162420531134366
         ]
     },
     {
@@ -1377,6 +1507,10 @@
         "colors": [
             "violet",
             "green"
+        ],
+        "deltas": [
+            67.66705570094499,
+            65.13475829765802
         ]
     },
     {
@@ -1391,6 +1525,10 @@
         "colors": [
             "green",
             "violet"
+        ],
+        "deltas": [
+            75.3705447674902,
+            106.60961831348881
         ]
     },
     {
@@ -1410,6 +1548,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            74.47235437321788,
+            65.86454927875761,
+            63.540225548467994
         ]
     },
     {
@@ -1430,6 +1573,11 @@
             "violet",
             "green",
             "yellow"
+        ],
+        "deltas": [
+            102.8006377390679,
+            99.07321578103442,
+            21.447964452041333
         ]
     },
     {
@@ -1449,6 +1597,10 @@
         "colors": [
             "blue",
             "violet"
+        ],
+        "deltas": [
+            105.10585718612393,
+            70.27803155793846
         ]
     },
     {
@@ -1464,6 +1616,31 @@
             "violet",
             "green",
             "orange"
+        ],
+        "deltas": [
+            79.49522612522222,
+            90.52522546079604,
+            75.61978941669157
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/cf83a14e1b8ef3f391eb02fa86f78ef8526bdeec_missingimage00.jpg",
+            "doc": "/project/eugenecivicpark/",
+            "width": 2400,
+            "height": 1754
+        },
+        "tags": [
+            "MissingImage"
+        ],
+        "color": "#16829e",
+        "colors": [
+            "green",
+            "blue"
+        ],
+        "deltas": [
+            52.39819437167999,
+            46.82606582566708
         ]
     },
     {
@@ -1480,6 +1657,10 @@
         "colors": [
             "green",
             "blue"
+        ],
+        "deltas": [
+            51.75385207729741,
+            47.33777237714609
         ]
     },
     {
@@ -1495,6 +1676,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            63.714966323585,
+            43.05878797422227,
+            65.79168105778312
         ]
     },
     {
@@ -1510,6 +1696,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            111.98162693021484,
+            50.41257115953172,
+            52.0897995502764
         ]
     },
     {
@@ -1525,6 +1716,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            110.31452172993656,
+            36.937809937812574,
+            71.23958675966915
         ]
     },
     {
@@ -1540,6 +1736,11 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            111.68883566888879,
+            36.29266078526467,
+            66.46816797085101
         ]
     },
     {
@@ -1555,6 +1756,183 @@
             "green",
             "orange",
             "violet"
+        ],
+        "deltas": [
+            114.64921844476508,
+            35.23245292561537,
+            79.77842901190884
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/e43a71ba4de235bae0eae3934d40830e1b3fcbbd_skylab_columbiabuilding01.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1549
+        },
+        "tags": [],
+        "color": "#cecac7",
+        "colors": [
+            "violet",
+            "green"
+        ],
+        "deltas": [
+            88.60328938478698,
+            137.3953950980107
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/e4c75d18e7e9a10c3d0fa4d7d4552a795f9cbe25_skylab_columbiabuilding19.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#756965",
+        "colors": [
+            "violet",
+            "orange",
+            "green"
+        ],
+        "deltas": [
+            77.55457272275433,
+            65.93137138567764,
+            128.34368690268127
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/51cf5c0779a717f034381ba81f7ffcc43883315c_skylab_columbiabuilding21.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1606
+        },
+        "tags": [],
+        "color": "#999db1",
+        "colors": [
+            "violet",
+            "green",
+            "orange"
+        ],
+        "deltas": [
+            52.20351563913265,
+            109.92813372060947,
+            57.710543331260475
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/1ffd105b3d3e73b332c6804e887ad7114347c960_skylab_columbiabuilding18.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#423d37",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            82.29868881111817,
+            93.8903090977253
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9e5a650eaca555c5a0808248c033434b59e07cf3_skylab_columbiabuilding23.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 2699
+        },
+        "tags": [],
+        "color": "#978e80",
+        "colors": [
+            "green",
+            "violet",
+            "orange",
+            "red"
+        ],
+        "deltas": [
+            64.68688637010943,
+            85.53702608735188,
+            39.72480242603281,
+            57.0942852497453
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/5ff7422df304a0f30419d47af2bd744eab41d794_skylab_columbiabuilding06.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 2022
+        },
+        "tags": [],
+        "color": "#050505",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            142.7879325451936,
+            105.5865198397557
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8aa4350aebd69901ff2ec2c2799e62b4d600d584_skylab_columbiabuilding15_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1618
+        },
+        "tags": [],
+        "color": "#bfc2c2",
+        "colors": [
+            "violet",
+            "green"
+        ],
+        "deltas": [
+            96.39443197826944,
+            55.783433155618766
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/030887c998a8b3aca8a8550f27223723d9cd3e45_skylab_columbiabuilding00_lg.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#4b4228",
+        "colors": [
+            "green",
+            "violet",
+            "orange"
+        ],
+        "deltas": [
+            51.37750745315698,
+            87.52859776651763,
+            37.89886321916534
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/8142e7578bc4b2dc57c86965a449a2f89db7042c_skylab_columbiabuilding01.jpg",
+            "doc": "/project/columbiaplant/",
+            "width": 2500,
+            "height": 1614
+        },
+        "tags": [],
+        "color": "#090807",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            137.3953950980107,
+            86.69679400154762
         ]
     }
 ]

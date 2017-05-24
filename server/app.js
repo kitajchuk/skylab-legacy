@@ -36,15 +36,37 @@ const canDetail = function ( req ) {
 
 
 
+const getColorSort = function ( results ) {
+    return results.sort(( a, b ) => {
+        const minA = Math.min.apply( Math, a.deltas );
+        const minB = Math.min.apply( Math, b.deltas );
+
+        if ( minA < minB ) {
+            return -1;
+
+        } else {
+            return 1;
+        }
+    });
+};
+
+
+
 const getResults = function ( kind, value ) {
     return new Promise(( resolve, reject ) => {
         file.read( path.join( config.template.staticDir, "json", "imageprocess.json" ) ).then(( data ) => {
             const json = JSON.parse( String( data ) );
+            let results = json.filter(( result ) => {
+                return (result[ kind ].indexOf( value ) !== -1 );
+            });
+
+            // Filters...?
+            if ( kind === "colors" ) {
+                results = getColorSort( results );
+            }
 
             resolve({
-                results: json.filter(( result ) => {
-                    return (result[ kind ].indexOf( value ) !== -1 );
-                })
+                results: results
             });
 
         }).catch(( error ) => {
