@@ -4,7 +4,7 @@ import AnimateController from "./AnimateController";
 import ProjectController from "./ProjectController";
 import CoverController from "./CoverController";
 import QueryController from "./QueryController";
-// import OffsetController from "./OffsetController";
+import VideoController from "./VideoController";
 
 
 /**
@@ -24,7 +24,7 @@ class Controllers {
         this.animates = core.dom.main.find( core.config.animSelector );
         this.project = core.dom.main.find( core.config.projectSelector );
         this.cover = core.dom.main.find( core.config.coverSelector );
-        this.offsets = core.dom.main.find( ".js-offset" );
+        this.videos = core.dom.main.find( core.config.videoSelector );
 
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
@@ -40,11 +40,11 @@ class Controllers {
                 this.coverController = new CoverController( this.cover );
             }
 
-            this.queryController = new QueryController();
+            if ( this.videos.length ) {
+                this.videoController = new VideoController( this.videos );
+            }
 
-            // if ( this.offsets.length ) {
-            //     this.offsetController = new OffsetController( this.offsets );
-            // }
+            this.queryController = new QueryController();
 
             core.emitter.fire( "app--intro-teardown" );
         });
@@ -77,10 +77,10 @@ class Controllers {
             this.queryController = null;
         }
 
-        // if ( this.offsetController ) {
-        //     this.offsetController.destroy();
-        //     this.offsetController = null;
-        // }
+        if ( this.videoController ) {
+            this.videoController.destroy();
+            this.videoController = null;
+        }
     }
 }
 

@@ -224,15 +224,12 @@
                     "label" : "Navigation Slug"
                   }
                 },
-                "style": {
-                  "type": "Select",
-                  "config": {
-                    "options": [
-                      "Primary",
-                      "Tertiary"
-                    ],
-                    "label": "Select Style",
-                    "placeholder": "Select Style"
+                "style" : {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Primary", "Tertiary" ],
+                    "label" : "Select Style",
+                    "placeholder" : "Select Style"
                   }
                 },
                 "page" : {

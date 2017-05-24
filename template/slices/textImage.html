@@ -1,0 +1,9 @@
+<%
+const group = slice.value.toArray()[ 0 ];
+const image = group.getImage( 'image' );
+const text = group.getStructuredText( 'text' );
+const textPos = group.getText( 'textPosition' );
+%>
+<script>
+    console.log( <%- JSON.stringify( image ) %>, <%- JSON.stringify( text ) %>, '<%= textPos %>' );
+</script>

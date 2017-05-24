@@ -1,0 +1,121 @@
+.video,
+.video__wrap {
+    position: relative;
+    }
+.video.is-playing {
+    .video__play {
+        opacity: 0;
+        }
+    .video__scrubber {
+        opacity: 1;
+        }
+}
+.video.is-playback {
+    .video__poster {
+        opacity: 0;
+        }
+}
+.video__mobile {
+    max-width: 100%;
+    width: 100%;
+    }
+.video__node {
+    cursor: pointer;
+    max-width: 100%;
+    width: 100%;
+    }
+.video__poster {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    transition: opacity $base-duration $ease;
+    width: 100%;
+    }
+.video__auto {
+    cursor: default;
+    }
+.video__scrubber {
+    bottom: 0;
+    height: $scrub;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity $base-duration $ease;
+    width: 100%;
+    }
+.video__bar {
+    background-color: $grey-fill;
+    cursor: col-resize;
+    height: $stroke;
+    left: 0;
+    position: absolute;
+    top: -$stroke;
+    width: 100%;
+    }
+.video__fill {
+    background-color: $white;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    &.is-transition {
+        transition: width $long-duration $ease;
+        }
+    }
+.video__info {
+    width: 100%;
+    }
+.video__meta {
+    color: $white;
+    font-size: 18px;
+    width: 50%;
+    }
+.video__fs,
+.video__title {
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+.video__controls {
+    width: 50%;
+    }
+.video__box {
+    display: inline-block;
+    vertical-align: middle;
+    }
+.video__duration {
+    &:before {
+        background-color: $grey-fill;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        vertical-align: middle;
+        width: 1px;
+        }
+    }
+.video__duration {
+    color: $grey-fill;
+    }
+.video__play {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: opacity $base-duration $ease;
+    width: 100%;
+    }
+.video__play__btn {
+    border: $stroke solid $white;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    }
+.video__play__btn__icon {
+    padding-left: 6px;
+    }

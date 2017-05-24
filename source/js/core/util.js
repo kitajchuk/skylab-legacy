@@ -228,6 +228,30 @@ const getTransformValues = function ( el ) {
 
 
 
+/**
+ *
+ * @method getDefaultHammerOptions
+ * @memberof core.util
+ * @description The default options for Hammer JS.
+ *              Disables cssProps for non-touch experiences.
+ * @returns {object}
+ *
+ */
+const getDefaultHammerOptions = function () {
+    return detect.isDevice() ? {} : {
+        cssProps: {
+            contentZoomingString: false,
+            tapHighlightColorString: false,
+            touchCalloutString: false,
+            touchSelectString: false,
+            userDragString: false,
+            userSelectString: false
+        }
+    };
+};
+
+
+
 /******************************************************************************
  * Export
 *******************************************************************************/
@@ -240,5 +264,6 @@ export {
     isElementVisible,
     getElementsInView,
     getTransformValues,
-    getTransitionDuration
+    getTransitionDuration,
+    getDefaultHammerOptions
 };

@@ -79,6 +79,17 @@ const config = {
     /**
      *
      * @public
+     * @member videoSelector
+     * @memberof core.config
+     * @description The string selector used for <video> node.
+     *
+     */
+    videoSelector: ".js-video",
+
+
+    /**
+     *
+     * @public
      * @member introSelector
      * @memberof core.config
      * @description The string selector used for <intro> node.

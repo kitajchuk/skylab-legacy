@@ -166,3 +166,23 @@
             }
     }
 }
+
+// Video SVG Icons...
+.icon--play {
+    svg {
+        fill: $white;
+        width: 23px;
+        }
+}
+.icon--sound {
+    svg {
+        fill: $white;
+        width: 20px;
+        }
+}
+.icon--fs {
+    svg {
+        fill: $white;
+        width: 17px;
+        }
+}

@@ -1,9 +1,19 @@
 .slices__slice {
     width: 100%;
     }
-.slices__text {
-    text-align: left;
-    }
-.slices__content {
-    display: inline-block;
-    }
+.slices__content {}
+.slices__text {}
+.slices__image,
+.slices__videoLink,
+.slices__videoEmbed {
+    text-align: right;
+
+    .slices__content {
+        display: inline-block;
+        }
+}
+.slices__textImage {}
+.slices__videoEmbed {}
+.slices__videoLink {}
+.slices__diptych {}
+.slices__parallax {}

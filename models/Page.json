@@ -16,10 +16,10 @@
     },
     "description" : {
       "type" : "StructuredText",
-      "fieldset" : "Page Description",
       "config" : {
-        "placeholder" : "Page Description",
-        "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+        "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+        "label" : "Page Description",
+        "placeholder" : "Page Description"
       }
     },
     "image" : {

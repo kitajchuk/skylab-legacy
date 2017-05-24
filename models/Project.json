@@ -37,10 +37,10 @@
     },
     "description" : {
       "type" : "StructuredText",
-      "fieldset" : "Project Description",
       "config" : {
-        "placeholder" : "Project Description",
-        "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+        "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+        "label" : "Project Description",
+        "placeholder" : "Project Description"
       }
     },
     "city" : {
@@ -140,12 +140,31 @@
               "placeholder" : "Image Position Horizontally"
             }
           },
-          "imageclip" : {
-            "type" : "Select",
+          "background" : {
+            "type" : "Image",
             "config" : {
-              "options" : [ "Clip Image" ],
-              "label" : "imageclip",
-              "placeholder" : "Image Clip Path"
+              "constraint" : {
+                "width" : 2400,
+                "height" : null
+              },
+              "thumbnails" : [ {
+                "name" : "tablet",
+                "width" : 1600,
+                "height" : 900
+              }, {
+                "name" : "mobile",
+                "width" : 800,
+                "height" : 450
+              } ],
+              "label" : "Background"
+            }
+          },
+          "text" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+              "label" : "text",
+              "placeholder" : "Copy Text"
             }
           },
           "image" : {
@@ -206,19 +225,193 @@
               } ]
             }
           },
-          "videoEmbed": {
-            "type": "Embed",
-            "fieldset": "Video Embed Block",
-            "config": {
-              "placeholder": "Video Embed Link"
+          "videoEmbed" : {
+            "type" : "Embed",
+            "fieldset" : "Video Embed Block",
+            "config" : {
+              "placeholder" : "Video Embed Link"
             }
           },
-          "videoLink": {
-            "type": "Link",
+          "videoLink" : {
+            "type": "Group",
             "fieldset": "Media Video Link Block",
             "config": {
-              "placeholder": "Choose Media Video Link",
-              "select": "media"
+                "repeat": false,
+                "fields": {
+                    "video": {
+                        "type" : "Link",
+                        "fieldset" : "Media Video Link",
+                        "config" : {
+                          "placeholder" : "Choose Media Video",
+                          "select" : "media"
+                        }
+                    },
+                    "poster": {
+                        "type": "Image",
+                        "fieldset": "Video Placeholder Image",
+                        "config": {
+                          "placeholder" : "Video Placeholder Image",
+                          "constraint" : {
+                            "width" : 2400
+                          },
+                          "thumbnails" : [ {
+                            "name" : "tablet",
+                            "width" : 1600,
+                            "height" : 900
+                          }, {
+                            "name" : "mobile",
+                            "width" : 800,
+                            "height" : 450
+                          } ]
+                        }
+                    }
+                }
+            }
+          },
+          "parallax": {
+            "type": "Group",
+            "fieldset": "Parallax Images Block",
+            "config": {
+              "repeat": false,
+              "fields": {
+                "background": {
+                  "type": "Image",
+                  "fieldset": "Background Image",
+                  "config": {
+                    "placeholder" : "Background Image",
+                    "constraint" : {
+                      "width" : 2400
+                    },
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "fieldset": "Foreground Image",
+                  "config": {
+                    "placeholder" : "Foreground Image",
+                    "constraint" : {
+                      "width" : 2400
+                    },
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
+                  }
+                },
+                "imagePosition": {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Left", "Right" ],
+                    "label" : "Select Foreground Image Position",
+                    "placeholder" : "Select Foreground Image Position"
+                  }
+                }
+              }
+            }
+          },
+          "diptych": {
+            "type": "Group",
+            "fieldset": "Diptych Images Block",
+            "config": {
+              "repeat": false,
+              "fields": {
+                "left": {
+                  "type": "Image",
+                  "fieldset": "Left Image",
+                  "config": {
+                    "placeholder" : "Left Image",
+                    "constraint" : {
+                      "width" : 2400
+                    },
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
+                  }
+                },
+                "right": {
+                  "type": "Image",
+                  "fieldset": "Right Image",
+                  "config": {
+                    "placeholder" : "Right Image",
+                    "constraint" : {
+                      "width" : 2400
+                    },
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
+                  }
+                }
+              }
+            }
+          },
+          "textImage": {
+            "type": "Group",
+            "fieldset": "Text with Image Block",
+            "config": {
+              "repeat": false,
+              "fields": {
+                "image": {
+                  "type": "Image",
+                  "fieldset": "Left Image",
+                  "config": {
+                    "placeholder" : "Left Image",
+                    "constraint" : {
+                      "width" : 2400
+                    },
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
+                  }
+                },
+                "text": {
+                  "type" : "StructuredText",
+                  "fieldset" : "Text Block",
+                  "config" : {
+                    "placeholder" : "Text Block",
+                    "multi" : "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+                  }
+                },
+                "textPosition": {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Left", "Right" ],
+                    "label" : "Select Text Position",
+                    "placeholder" : "Select Text Position"
+                  }
+                }
+              }
             }
           }
         }
