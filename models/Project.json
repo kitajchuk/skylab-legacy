@@ -158,6 +158,14 @@
               } ],
               "label" : "Image"
             }
+          },
+          "imageclip" : {
+            "type" : "Select",
+            "config" : {
+              "options" : [ "Clip Image" ],
+              "label" : "imageclip",
+              "placeholder" : "Image Clip Path"
+            }
           }
         },
         "repeat" : false,
@@ -401,6 +409,14 @@
                     } ]
                   }
                 },
+                "imageclip" : {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Clip Image" ],
+                    "label" : "imageclip",
+                    "placeholder" : "Image Clip Path"
+                  }
+                },
                 "text" : {
                   "type" : "StructuredText",
                   "fieldset" : "Text Block",
@@ -415,6 +431,14 @@
                     "options" : [ "Left", "Right" ],
                     "label" : "Select Text Position",
                     "placeholder" : "Select Text Position"
+                  }
+                },
+                "meta" : {
+                  "type" : "StructuredText",
+                  "fieldset" : "Small Text Block",
+                  "config" : {
+                    "placeholder" : "Small Text Block",
+                    "multi" : "paragraph,hyperlink,strong,em"
                   }
                 }
               }

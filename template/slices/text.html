@@ -6,7 +6,7 @@ const meta = group.getStructuredText( 'meta' );
 const style = group.getText( 'style' );
 %>
 <div class="<%= style ? '' : '-wrap' %> -text--<%= textPos.toLowerCase() %>">
-    <div class="<%= style ? '-wrap-static' : '-wrap-copy' %> -column -text--left">
+    <div class="<%= style ? '-wrap-static' : '-wrap-copy' %> -text--left">
         <div class="cms">
             <%- text.asHtml() %>
         </div>

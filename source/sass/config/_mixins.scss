@@ -91,8 +91,10 @@
     padding-right: $padding-index;
 }
 @mixin wrap-image {
+    display: inline-block;
     width: calc( 100vw - #{$wrap-copy} );
 }
 @mixin wrap-static {
-    width: 62vw;
+    display: inline-block;
+    width: $wrap-static;
 }

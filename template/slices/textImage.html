@@ -3,28 +3,44 @@ const group = slice.value.toArray()[ 0 ];
 const image = group.getImage( 'image' );
 const text = group.getStructuredText( 'text' );
 const textPos = group.getText( 'textPosition' );
+const imageClip = group.getText( 'imageclip' );
+const meta = group.getStructuredText( 'meta' );
 %>
 <div class="-wrap">
     <% if ( textPos === 'Left' ) { %>
-        <div class="cms -column -column--2of4 -text--center">
+        <div class="-column -column--2of4 -text--center">
             <div class="-wrap-copy -text--left">
-                <%- text.asHtml() %>
+                <div class="cms">
+                    <%- text.asHtml() %>
+                </div>
+                <% if ( meta ) { %>
+                    <div class="cms cms--meta meta">
+                        <%- meta.asHtml() %>
+                    </div>
+                <% } %>
             </div>
         </div>
         <div class="-column -column--2of4">
             <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
-                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.main.url %>" />
             </div>
         </div>
     <% } else { %>
         <div class="-column -column--2of4">
             <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
-                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.main.url %>" />
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.main.url %>" />
             </div>
         </div>
-        <div class="cms -column -column--2of4 -text--center">
+        <div class="-column -column--2of4 -text--center">
             <div class="-wrap-copy -text--left">
-                <%- text.asHtml() %>
+                <div class="cms">
+                    <%- text.asHtml() %>
+                </div>
+                <% if ( meta ) { %>
+                    <div class="cms cms--meta meta">
+                        <%- meta.asHtml() %>
+                    </div>
+                <% } %>
             </div>
         </div>
     <% } %>

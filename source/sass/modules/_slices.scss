@@ -3,10 +3,8 @@
     width: 100%;
     }
 .slices__content {
-    .project--feature & {
-        width: 100%;
+    width: 100%;
     }
-}
 .slices__slice {
     .project--feature &:not( .slices__parallax ) {
         padding-bottom: $expander-one;
@@ -48,10 +46,10 @@
         }
 }
 .slices__textImage {
-    .cms:first-child {
+    .-text--center:first-child {
         padding-right: $expander-one;
         }
-    .cms:last-child {
+    .-text--center:last-child {
         padding-left: $expander-one;
         }
 }
