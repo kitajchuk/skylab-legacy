@@ -27,7 +27,7 @@ const navi = {
         this.items = this.element.find( ".js-navi-a" );
         this.home = this.items.filter( ".js-navi--home" );
         this.trigger = core.dom.body.find( ".js-controller--navi" );
-        this.timing = core.util.getTransitionDuration( this.element[ 0 ] );
+        this.timing = core.util.getElementDuration( this.element[ 0 ] );
         this.timeout = null;
         this.isHome = false;
         this.bind();
@@ -72,18 +72,6 @@ const navi = {
             core.dom.html.removeClass( "is-navi-open" );
 
             this.timeout = setTimeout( () => this.element.removeClass( "is-closing" ), this.timing );
-        }
-    },
-
-
-    openSpecial () {
-        if ( !this.isOpen ) {
-            this.clearOut();
-            this.isOpen = true;
-            this.element.addClass( "is-active is-special" );
-            core.dom.html.addClass( "is-navi-open" );
-
-            this.timeout = setTimeout( () => this.element.removeClass( "is-special" ), this.timing );
         }
     },
 

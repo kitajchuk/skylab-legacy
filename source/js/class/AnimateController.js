@@ -29,7 +29,7 @@ class AnimateController extends Controller {
             this.intros.addClass( "is-animate" );
         };
 
-        core.emitter.on( "app--intro-teardown", this._onIntroTeardown );
+        core.emitter.on( "app--page-teardown", this._onIntroTeardown );
     }
 
 
@@ -68,7 +68,7 @@ class AnimateController extends Controller {
         this.stop();
 
         if ( this._onIntroTeardown ) {
-            core.emitter.off( "app--intro-teardown", this._onIntroTeardown );
+            core.emitter.off( "app--page-teardown", this._onIntroTeardown );
         }
     }
 }

@@ -58,7 +58,7 @@ class Controllers {
 
             this.queryController = new QueryController();
 
-            core.emitter.fire( "app--intro-teardown" );
+            core.emitter.fire( "app--page-teardown" );
         });
     }
 

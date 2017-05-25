@@ -27,7 +27,7 @@ const filter = {
         this.options = this.element.find( ".js-filter-option" );
         this.label = this.element.find( ".js-filter-label" );
         this.trigger = core.dom.body.find( ".js-controller--filter" );
-        this.timing = core.util.getTransitionDuration( this.element[ 0 ] );
+        this.timing = core.util.getElementDuration( this.element[ 0 ] );
         this.timeout = null;
 
         this.bind();

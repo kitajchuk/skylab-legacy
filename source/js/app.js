@@ -25,12 +25,12 @@ class App {
         this.router = router;
         this.filter = filter;
 
-        this.bindEvents();
-        this.initModules();
+        this.bind();
+        this.init();
     }
 
 
-    bindEvents () {
+    bind () {
         this.core.dom.html.on( "click", ".js-theme-spot", ( e ) => {
             const $spot = $( e.target );
             const data = $spot.data();
@@ -43,40 +43,52 @@ class App {
             }
         });
 
-        this.core.emitter.on( "app--activate-cover--feature", () => {
+        this.core.emitter.on( "app--intro-teardown", () => {
+            this.bindLate();
+
             if ( router.isHomepage() ) {
-                navi.homeClass( false );
-                navi.openSpecial();
-
-                if ( !this.core.detect.isDevice() ) {
-                    filter.close();
-                }
-            }
-        });
-
-        this.core.emitter.on( "app--deactivate-cover--feature", () => {
-            if ( router.isHomepage() ) {
-                navi.homeClass( true );
-                navi.closeSpecial();
-
-                if ( !this.core.detect.isDevice() ) {
-                    filter.open();
-                }
+                navi.open();
             }
         });
     }
 
 
-    /**
-     *
-     * @public
-     * @instance
-     * @method initModules
-     * @memberof App
-     * @description Initialize application modules.
-     *
-     */
-    initModules () {
+    bindLate () {
+        this.core.emitter.on( "app--activate-cover--feature", () => {
+            this.onActivateCover();
+        });
+
+        this.core.emitter.on( "app--deactivate-cover--feature", () => {
+            this.onDeactivateCover();
+        });
+    }
+
+
+    onActivateCover () {
+        if ( router.isHomepage() ) {
+            navi.homeClass( false );
+            navi.open();
+
+            if ( !this.core.detect.isDevice() ) {
+                filter.close();
+            }
+        }
+    }
+
+
+    onDeactivateCover () {
+        if ( router.isHomepage() ) {
+            navi.homeClass( true );
+            navi.closeSpecial();
+
+            if ( !this.core.detect.isDevice() ) {
+                filter.open();
+            }
+        }
+    }
+
+
+    init () {
         // Core
         this.core.detect.init();
 

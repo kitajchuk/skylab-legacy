@@ -6,7 +6,7 @@ const imageClip = featureBlock.getText( 'imageclip' );
 <li class="feature__li -text--<%= featureBlock.getText( 'layout' ).toLowerCase() %>">
     <% if ( image ) { %>
         <div class="feature__wrap -column" style="width:<%= image.main.width %>px;max-width:100%;">
-            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap animate-lift animate--slow js-animate" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap animate-lift animate--slow js-animate is-animate" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.url %>" />
             </a>
         </div>

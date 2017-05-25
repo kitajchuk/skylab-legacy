@@ -1,5 +1,6 @@
 .navi {
     background-color: transparent;
+    overflow: hidden;
     transform-origin: $padding-wrap $expander-mobile;
     transition: opacity $fast-duration $ease,
                 z-index $fast-duration $ease,
