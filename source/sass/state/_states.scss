@@ -66,6 +66,11 @@
     .filter {
         background-color: rgba( 138, 138, 138, 0.05 );
         }
+    .slices__map {
+        .mapboxgl-marker {
+            background-color: $black;
+            }
+    }
 }
 .is-studio-page,
 .is-project-page.is-uid-page,

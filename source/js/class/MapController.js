@@ -1,5 +1,4 @@
-// import * as core from "../core";
-// import paramalama from "paramalama";
+import * as core from "../core";
 import loadJS from "fg-loadjs";
 import loadCSS from "fg-loadcss";
 
@@ -21,6 +20,10 @@ class MapController {
     constructor ( element ) {
         this.element = element;
         this.data = this.element.data();
+        this.lnglat = this.data.latlng.reverse();
+        this.theme = core.dom.html.is( ".is-theme--light" ) ? "light" : "dark";
+        this.map = null;
+        this.marker = null;
 
         if ( window.mapboxgl ) {
             this.onReady();
@@ -39,25 +42,44 @@ class MapController {
 
 
     onReady () {
-        const longLat = this.data.latlong.reverse();
-
+        // Set public access token...
         window.mapboxgl.accessToken = apiToken;
 
+        this.bind();
+        this.init();
+    }
+
+
+    init () {
         this.map = new window.mapboxgl.Map({
             container: this.element[ 0 ],
-            style: "mapbox://styles/mapbox/dark-v9",
             zoom: 13,
-            center: longLat,
-            scrollZoom: false
+            center: this.lnglat,
+            scrollZoom: false,
+            style: `mapbox://styles/mapbox/${this.theme}-v9`
         });
+
         this.marker = new window.mapboxgl.Marker();
-        this.marker.setLngLat( longLat );
+        this.marker.setLngLat( this.lnglat );
         this.marker.addTo( this.map );
     }
 
 
-    destroy () {
+    bind () {
+        this.onThemeChange = ( theme ) => {
+            if ( this.map ) {
+                this.theme = theme;
+                this.map.setStyle( `mapbox://styles/mapbox/${this.theme}-v9` );
+            }
+        };
 
+        core.emitter.on( "app--theme-change", this.onThemeChange );
+    }
+
+
+    destroy () {
+        this.map = null;
+        core.emitter.off( "app--theme-change", this.onThemeChange );
     }
 }
 

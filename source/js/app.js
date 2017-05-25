@@ -41,6 +41,8 @@ class App {
             } else {
                 core.dom.html.removeClass( "is-theme--light" );
             }
+
+            this.core.emitter.fire( "app--theme-change", data.theme );
         });
 
         this.core.emitter.on( "app--intro-teardown", () => {
