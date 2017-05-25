@@ -46,7 +46,67 @@
       "type" : "Slices",
       "fieldset" : "Dynamic Page Content",
       "config" : {
-        "choices" : { }
+        "choices" : {
+          "map": {
+            "type": "GeoPoint",
+            "fieldset": "Map Location"
+          },
+          "parallax" : {
+             "type" : "Group",
+             "fieldset" : "Parallax Images Block",
+             "config" : {
+               "repeat" : false,
+               "fields" : {
+                 "background" : {
+                   "type" : "Image",
+                   "fieldset" : "Background Image",
+                   "config" : {
+                     "placeholder" : "Background Image",
+                     "constraint" : {
+                       "width" : 2400
+                     },
+                     "thumbnails" : [ {
+                       "name" : "tablet",
+                       "width" : 1600,
+                       "height" : 900
+                     }, {
+                       "name" : "mobile",
+                       "width" : 800,
+                       "height" : 450
+                     } ]
+                   }
+                 },
+                 "image" : {
+                   "type" : "Image",
+                   "fieldset" : "Foreground Image",
+                   "config" : {
+                     "placeholder" : "Foreground Image",
+                     "constraint" : {
+                       "width" : 2400
+                     },
+                     "thumbnails" : [ {
+                       "name" : "tablet",
+                       "width" : 1600,
+                       "height" : 900
+                     }, {
+                       "name" : "mobile",
+                       "width" : 800,
+                       "height" : 450
+                     } ]
+                   }
+                 },
+                 "imagePosition" : {
+                   "type" : "Select",
+                   "config" : {
+                     "options" : [ "Left", "Right" ],
+                     "label" : "Select Foreground Image Position",
+                     "placeholder" : "Select Foreground Image Position"
+                   }
+                 }
+               }
+             }
+           }
+        }
       }
     }
   }

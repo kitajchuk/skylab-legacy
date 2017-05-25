@@ -1,0 +1,4 @@
+.page {}
+.page__cover {
+    @include page-cover();
+    }

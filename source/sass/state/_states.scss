@@ -67,22 +67,18 @@
         background-color: rgba( 138, 138, 138, 0.05 );
         }
 }
+.is-studio-page,
+.is-project-page.is-uid-page,
 .is-home-page:not( .is-query ) {
     .main {
         padding-top: 0;
         }
 }
 .is-project-page.is-uid-page {
-    .main {
-        padding-top: 0;
-        }
     .header__keys {
         display: inline-block;
         transform: translateX( -100% );
         }
-    // .header__filter {
-    //     display: none;
-    //     }
 }
 .is-cover {}
 .is-cover--feature {

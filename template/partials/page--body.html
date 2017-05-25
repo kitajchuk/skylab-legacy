@@ -1,0 +1,13 @@
+<div class="page__body js-page-body">
+    <div class="slices">
+        <% if ( item.getSliceZone( 'page.slices' ) ) { %>
+            <% item.getSliceZone( 'page.slices' ).slices.forEach(( slice ) => { %>
+                <div class="slices__slice slices__<%= slice.sliceType %>">
+                    <div class="slices__content">
+                        <%- include( `../slices/${slice.sliceType}.html`, {slice: slice} ) %>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</div>

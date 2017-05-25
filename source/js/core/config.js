@@ -79,6 +79,17 @@ const config = {
     /**
      *
      * @public
+     * @member mapSelector
+     * @memberof core.config
+     * @description The string selector used for <map> node.
+     *
+     */
+    mapSelector: ".js-map",
+
+
+    /**
+     *
+     * @public
      * @member parallaxSelector
      * @memberof core.config
      * @description The string selector used for <parallax> node.

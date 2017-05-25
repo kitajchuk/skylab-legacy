@@ -6,6 +6,7 @@ import CoverController from "./CoverController";
 import QueryController from "./QueryController";
 import VideoController from "./VideoController";
 import ParallaxController from "./ParallaxController";
+import MapController from "./MapController";
 
 
 /**
@@ -27,6 +28,7 @@ class Controllers {
         this.cover = core.dom.main.find( core.config.coverSelector );
         this.videos = core.dom.main.find( core.config.videoSelector );
         this.parallax = core.dom.main.find( core.config.parallaxSelector );
+        this.map = core.dom.main.find( core.config.mapSelector );
 
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
@@ -48,6 +50,10 @@ class Controllers {
 
             if ( this.parallax.length ) {
                 this.parallaxController = new ParallaxController( this.parallax );
+            }
+
+            if ( this.map.length ) {
+                this.mapController = new MapController( this.map );
             }
 
             this.queryController = new QueryController();
@@ -91,6 +97,11 @@ class Controllers {
         if ( this.parallaxController ) {
             this.parallaxController.destroy();
             this.parallaxController = null;
+        }
+
+        if ( this.mapController ) {
+            this.mapController.destroy();
+            this.mapController = null;
         }
     }
 }

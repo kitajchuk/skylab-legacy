@@ -1,0 +1,13 @@
+<%
+const item = locals.context.get( 'item' );
+%>
+<div class="page js-page">
+    <div class="page__cover -wrap">
+        <div class="cms">
+            <% if ( item.getText( 'page.title' ) ) { %>
+                <h1><%= item.getText( 'page.title' ) %></h1>
+            <% } %>
+        </div>
+    </div>
+    <%- include( 'page--body.html', {item: item} ) %>
+</div>
