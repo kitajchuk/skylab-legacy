@@ -1,4 +1,5 @@
 .page {}
 .page__cover {
+    transition: opacity $fast-duration $ease;
     @include page-cover();
     }

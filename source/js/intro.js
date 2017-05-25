@@ -21,7 +21,10 @@ const intro = {
     init () {
         this.element = core.dom.intro;
         this.logo = this.element.find( ".js-intro-logo" );
-        this.duration = core.util.getElementDuration( this.logo[ 0 ], "animation" );
+        this.durations = {
+            animation: core.util.getElementDuration( this.logo[ 0 ], "animation" ),
+            transition: core.util.getElementDuration( this.element[ 0 ] )
+        };
         core.emitter.on( "app--page-teardown", this.teardown );
     },
 
@@ -32,9 +35,12 @@ const intro = {
         setTimeout( () => {
             intro.element.removeClass( "is-active" );
 
+        }, intro.durations.animation );
+
+        setTimeout( () => {
             core.emitter.fire( "app--intro-teardown" );
 
-        }, intro.duration );
+        }, (intro.durations.animation + intro.durations.transition) );
     }
 };
 
