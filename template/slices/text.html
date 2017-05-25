@@ -3,9 +3,10 @@ const group = slice.value.toArray()[ 0 ];
 const text = group.getStructuredText( 'text' );
 const textPos = group.getText( 'position' );
 const meta = group.getStructuredText( 'meta' );
+const style = group.getText( 'style' );
 %>
-<div class="-wrap -text--<%= textPos.toLowerCase() %>">
-    <div class="-wrap-copy -text--left">
+<div class="<%= style ? '' : '-wrap' %> -text--<%= textPos.toLowerCase() %>">
+    <div class="<%= style ? '-wrap-static' : '-wrap-copy' %> -column -text--left">
         <div class="cms">
             <%- text.asHtml() %>
         </div>

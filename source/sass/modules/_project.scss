@@ -2,7 +2,7 @@
 .project__info {
     left: 0;
     padding-bottom: $header-height;
-    padding-top: $header-height;
+    padding-top: $header-height + $expander-one;
     position: fixed;
     top: 0;
     transition: opacity $fast-duration $ease;

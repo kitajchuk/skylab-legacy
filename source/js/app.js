@@ -61,7 +61,6 @@ class App {
 
                 if ( !this.core.detect.isDevice() ) {
                     filter.open();
-                    console.log( "opening feature..." );
                 }
             }
         });

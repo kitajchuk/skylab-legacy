@@ -109,8 +109,9 @@ const navi = {
 
 
     activate ( view ) {
+        this.items.removeClass( "is-active" );
+
         if ( view !== core.config.homepage ) {
-            this.items.removeClass( "is-active" );
             this.items.filter( `.js-navi--${view}` ).addClass( "is-active" );
         }
     },

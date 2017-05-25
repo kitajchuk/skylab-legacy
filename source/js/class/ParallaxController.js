@@ -38,12 +38,14 @@ class ParallaxController {
 
 
     move ( elem, val ) {
-        core.util.translate3d(
-            elem[ 0 ],
-            0,
-            core.util.px( val ),
-            0
-        );
+        if ( elem.length ) {
+            core.util.translate3d(
+                elem[ 0 ],
+                0,
+                core.util.px( val ),
+                0
+            );
+        }
     }
 
 
