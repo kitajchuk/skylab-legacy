@@ -6,9 +6,6 @@ const cover = item.getGroup( 'project.feature' ).toArray()[ 0 ];
         <% if ( item.getText( 'project.title' ) ) { %>
             <h1><%= item.getText( 'project.title' ) %></h1>
         <% } %>
-        <% if ( cover.getStructuredText( 'text' ) ) { %>
-            <%- cover.getStructuredText( 'text' ).asHtml() %>
-        <% } %>
     </div>
 </div>
 <%- include( 'project--body.html', {item: item} ) %>

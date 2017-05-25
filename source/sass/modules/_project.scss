@@ -10,7 +10,12 @@
     z-index: $z_layer_02;
 
     .project--feature & {
+        max-width: 60%;
+        padding-bottom: 0;
+        padding-top: 0;
         position: absolute;
+        top: 50%;
+        transform: translateY( -50% );
     }
 }
 .project__body {
