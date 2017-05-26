@@ -38,6 +38,8 @@ const intro = {
         }, intro.durations.animation );
 
         setTimeout( () => {
+            intro.element.remove();
+
             core.emitter.fire( "app--intro-teardown" );
 
         }, (intro.durations.animation + intro.durations.transition) );

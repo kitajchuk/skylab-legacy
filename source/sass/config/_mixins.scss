@@ -98,11 +98,3 @@
     display: inline-block;
     width: $wrap-static;
 }
-@mixin page-cover {
-    max-width: 60%;
-    padding-bottom: 0;
-    padding-top: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY( -50% );
-}

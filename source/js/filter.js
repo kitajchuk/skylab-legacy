@@ -1,7 +1,7 @@
 import * as core from "./core";
 import paramalama from "paramalama";
 import $ from "properjs-hobo";
-import navi from "./navi";
+// import navi from "./navi";
 
 
 /**
@@ -29,6 +29,7 @@ const filter = {
         this.trigger = core.dom.body.find( ".js-controller--filter" );
         this.timing = core.util.getElementDuration( this.element[ 0 ] );
         this.timeout = null;
+        this.screen = $( "<div />" ).addClass( "filter-screen screen is-active" );
 
         this.bind();
         this.query();
@@ -74,6 +75,10 @@ const filter = {
             this.toggle();
         });
 
+        this.screen.on( "click", () => {
+            this.toggle();
+        });
+
         this.options.on( "click", ( e ) => {
             this.activate( $( e.target ) );
         });
@@ -86,10 +91,11 @@ const filter = {
             this.isOpen = true;
             this.element.addClass( "is-active" );
             core.dom.html.addClass( "is-filter-open" );
+            core.dom.body.append( this.screen );
 
             setTimeout( () => resolve(), this.timing );
 
-            navi.close();
+            // navi.close();
         });
     },
 
@@ -100,6 +106,7 @@ const filter = {
             this.isOpen = false;
             this.element.addClass( "is-closing" ).removeClass( "is-active" );
             core.dom.html.removeClass( "is-filter-open" );
+            this.screen.detach();
 
             this.timeout = setTimeout( () => {
                 this.element.removeClass( "is-closing" );

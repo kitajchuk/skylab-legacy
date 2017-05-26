@@ -39,11 +39,11 @@ const navi = {
             this.toggle();
         });
 
-        this.element.on( "click", ( e ) => {
-            if ( !/js-navi-a/.test( e.target.className ) ) {
-                this.close();
-            }
-        });
+        // this.element.on( "click", ( e ) => {
+        //     if ( !/js-navi-a/.test( e.target.className ) ) {
+        //         this.close();
+        //     }
+        // });
 
         this.home.on( "click", () => {
             if ( router.isHomepage() && !this.isHomepage() ) {

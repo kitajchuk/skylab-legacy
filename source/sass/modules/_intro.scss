@@ -1,10 +1,10 @@
 .intro {
     background-color: $white;
     pointer-events: auto;
-    z-index: $z_layer_infront + 2;
+    z-index: $z_layer_intro;
 
     &.is-active {
-        z-index: $z_layer_infront + 2;
+        z-index: $z_layer_intro;
         }
 }
 .intro__logo {

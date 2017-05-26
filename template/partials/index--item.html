@@ -13,9 +13,7 @@ const state = item.getText( 'project.state' );
     </div>
     <div class="index__title index__col -column -column--1of3">
         <% if ( item.getText( 'project.title' ) ) { %>
-            <div class="p">
-                <strong><%= item.getText( 'project.title' ) %></strong>
-            </div>
+            <a href="<%= locals.context.getUrl( item ) %>" class="p a strong"><%= item.getText( 'project.title' ) %></a>
         <% } %>
         <% if ( city || state ) { %>
             <div class="p">
@@ -32,7 +30,7 @@ const state = item.getText( 'project.state' );
         <% if ( item.getGroup( 'project.categories' ) ) { %>
             <% item.getGroup( 'project.categories' ).toArray().forEach(function ( item ) { %>
                 <div class="p">
-                    <a class="em" href="?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                    <a class="a" href="?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
                 </div>
             <% }) %>
         <% } %>

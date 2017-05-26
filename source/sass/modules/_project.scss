@@ -1,4 +1,6 @@
-.project {}
+.project {
+    position: relative;
+    }
 .project__info {
     left: 0;
     padding-bottom: $header-height;
@@ -7,13 +9,19 @@
     top: 0;
     transition: opacity $fast-duration $ease;
     @include wrap-copy();
-    z-index: $z_layer_02;
-
-    .project--feature & {
-        @include page-cover();
-    }
+    z-index: 2;
 }
 .project__body {
     position: relative;
-    z-index: $z_layer_01;
+    z-index: 1;
     }
+
+
+
+.paging__navi {
+    line-height: 1;
+
+    .icon--dir {
+        margin-top: -4px;
+        }
+}

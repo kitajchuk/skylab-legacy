@@ -1,6 +1,10 @@
+$filter-background: rgba( 138, 138, 138, 0.15 );
+
+
+
 // Menu...
 .filter {
-    background-color: rgba( 138, 138, 138, 0.15 );
+    background-color: $filter-background;
     height: 100%;
     overflow: hidden;
     padding-bottom: $expander-one;
@@ -13,21 +17,26 @@
                 transform $fast-duration $ease;
     width: $filter-width;
     -webkit-overflow-scrolling: touch;
+    z-index: $z_layer_menu;
     }
+// Click/Tap Screen...
+.filter-screen {
+    background-color: $filter-background;
+    cursor: pointer;
+    display: none;
+    pointer-events: auto;
+}
 .filter__label {
     height: $header-height;
-
-    .is-empty {
-        color: $grey-text;
-        }
-}
+    text-transform: capitalize;
+    }
 .filter__a {
     cursor: pointer;
     position: relative;
     transition: color $fast-duration $ease;
 
     &.is-active:before {
-        background-color: $white;
+        background-color: $gold;
         border-radius: 6px;
         content: "";
         height: 6px;
@@ -47,8 +56,13 @@
     display: inline-block;
     height: 20px;
     margin-top: 10px;
+    transition: transform $fast-duration $ease;
     width: 20px;
-    }
+
+    &.is-active {
+        transform: scale( 1.2 );
+        }
+}
 .filter__color + .filter__color {
     margin-left: 10px;
     }

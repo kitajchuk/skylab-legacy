@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: $z_layer_infront + 2;
+    z-index: $z_layer_header;
     transition: width $fast-duration $ease,
                 transform $fast-duration $ease;
 

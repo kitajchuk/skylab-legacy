@@ -142,6 +142,13 @@
             transform: translateX( -50% ) translateY( 100% );
             }
     }
+    .a:hover,
+    .cms a:not( [data-ignore="hover"] ):hover {
+        color: $gold;
+        }
+    .filter__color:hover {
+        transform: scale( 1.2 );
+        }
 }
 .is-touchable {
     .header__keys {

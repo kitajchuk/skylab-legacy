@@ -8,12 +8,8 @@
     font-size: $p-size;
     line-height: 1.7;
 
-    a {
-        border-bottom: 1px solid inherit;
-        @include font-family-bold();
-        }
     strong {
-        @include font-family-bold();
+        @include font-family-medium();
         }
     }
 .li,
@@ -25,7 +21,7 @@
     @include em();
     }
 .strong {
-    @include font-family-bold();
+    @include font-family-medium();
     }
 .meta p,
 .meta li {
@@ -38,15 +34,13 @@
  * Links
 *******************************************************************************/
 .a,
-.cms a{
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color $fast-duration $ease;
-    @include a();
+.cms a:not( [data-ignore="hover"] ) {
+    transition: color $fast-duration $ease;
 
-    &:hover {
-        border-bottom-color: $black;
+    &.is-active {
+        color: $gold;
         }
-    }
+}
 
 
 /******************************************************************************

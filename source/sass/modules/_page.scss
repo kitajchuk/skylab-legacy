@@ -1,5 +1,22 @@
-.page {}
-.page__cover {
-    transition: opacity $fast-duration $ease;
-    @include page-cover();
+.page {
+    position: relative;
     }
+.page__cover {
+    height: 100vh;
+    left: 0;
+    max-width: 60%;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity $fast-duration $ease;
+    width: 60%;
+    z-index: 3;
+
+    .cms {
+        left: auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY( -50% );
+        }
+}
