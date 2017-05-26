@@ -1,1 +1,5 @@
-<div class="map js-map" data-latlng="[<%= `${slice.value.latitude},${slice.value.longitude}` %>]"></div>
+<div class="map js-map" data-latlng="[<%= `${slice.value.latitude},${slice.value.longitude}` %>]">
+    <div class="map__marker js-map-marker">
+        <%- include( '../partials/svg--monogram.html' ) %>
+    </div>
+</div>

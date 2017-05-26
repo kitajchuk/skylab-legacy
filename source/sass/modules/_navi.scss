@@ -65,12 +65,13 @@
             content: "";
             display: inline-block;
             height: $navi-strikethrough;
-            left: 0;
+            left: 50%;
             position: absolute;
             top: 80%;
+            transform: translateX( -50% );
             transition: top $long-duration $ease-bounce,
                         transform $fast-duration $ease-bounce;
-            width: 100%;
+            width: 110%;
             }
     }
 }

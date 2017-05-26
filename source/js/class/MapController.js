@@ -19,11 +19,12 @@ const apiToken = "pk.eyJ1Ijoia2l0YWpjaHVrIiwiYSI6ImNqMzRxOXhnYzAxbG8ycHA2ZW9keXZ
 class MapController {
     constructor ( element ) {
         this.element = element;
+        this.marker = this.element.find( ".js-map-marker" ).detach();
         this.data = this.element.data();
         this.lnglat = this.data.latlng.reverse();
         this.theme = core.dom.html.is( ".is-theme--light" ) ? "light" : "dark";
         this.map = null;
-        this.marker = null;
+        this.mapMarker = null;
 
         if ( window.mapboxgl ) {
             this.onReady();
@@ -53,15 +54,19 @@ class MapController {
     init () {
         this.map = new window.mapboxgl.Map({
             container: this.element[ 0 ],
-            zoom: 13,
             center: this.lnglat,
             scrollZoom: false,
-            style: `mapbox://styles/mapbox/${this.theme}-v9`
+            style: `mapbox://styles/mapbox/${this.theme}-v9`,
+            zoom: 16
         });
 
-        this.marker = new window.mapboxgl.Marker();
-        this.marker.setLngLat( this.lnglat );
-        this.marker.addTo( this.map );
+        // this.mapMarker = new window.mapboxgl.Marker();
+        // this.mapMarker.setLngLat( this.lnglat );
+        // this.mapMarker.addTo( this.map );
+
+        this.fooMarker = new window.mapboxgl.Marker( this.marker[ 0 ] );
+        this.fooMarker.setLngLat( this.lnglat );
+        this.fooMarker.addTo( this.map );
     }
 
 
@@ -79,6 +84,7 @@ class MapController {
 
     destroy () {
         this.map = null;
+        this.mapMarker = null;
         core.emitter.off( "app--theme-change", this.onThemeChange );
     }
 }
