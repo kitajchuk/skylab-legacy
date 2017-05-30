@@ -2,7 +2,7 @@
 <html lang="en" class="">
     <head>
         <meta charset="utf-8" />
-        <title><%= locals.context.get( 'site' ).data.title %></title>
+        <title><%= locals.context.getPageTitle() %></title>
         <meta name="description" content="<%= locals.context.get( 'site' ).data.description %>" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="<%= locals.context.get( 'site' ).data.googleVerify %>" />
@@ -31,19 +31,19 @@
         <meta property="og:url" content="<%= locals.context.get( 'site' ).data.url %>" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="<%= locals.context.get( 'site' ).data.description %>" />
-        <meta property="og:image" content="<%= locals.context.get( 'site' ).data.appImage %>" />
+        <meta property="og:image" content="<%= locals.context.getPageImage() %>" />
         <meta itemprop="name" content="<%= locals.context.get( 'site' ).data.title %>" />
         <meta itemprop="description" content="<%= locals.context.get( 'site' ).data.description %>" />
         <meta itemprop="url" content="<%= locals.context.get( 'site' ).data.url %>" />
-        <meta itemprop="thumbnailUrl" content="<%= locals.context.get( 'site' ).data.appImage %>" />
-        <meta itemprop="image" content="<%= locals.context.get( 'site' ).data.appImage %>" />
+        <meta itemprop="thumbnailUrl" content="<%= locals.context.getPageImage() %>" />
+        <meta itemprop="image" content="<%= locals.context.getPageImage() %>" />
         <link href="<%= locals.context.get( 'stylesheet' ) + '?v=' + locals.context.get( 'timestamp' ) %>" rel="stylesheet" />
     </head>
     <body>
         <%- include( 'site/header.html' ) %>
         <%- include( 'site/navi.html' ) %>
         <%- include( 'site/filter.html' ) %>
-        <main class="main js-main -fzero">
+        <main class="main js-main -fzero" data-title="<%= locals.context.getPageTitle() %>">
             <%- include( locals.context.getTemplate() ) %>
         </main>
         <%- include( 'site/theme.html' ) %>
