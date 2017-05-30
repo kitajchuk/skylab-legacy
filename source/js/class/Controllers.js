@@ -7,6 +7,7 @@ import QueryController from "./QueryController";
 import VideoController from "./VideoController";
 import ParallaxController from "./ParallaxController";
 import MapController from "./MapController";
+import HoverController from "./HoverController";
 
 
 /**
@@ -29,6 +30,7 @@ class Controllers {
         this.videos = core.dom.main.find( core.config.videoSelector );
         this.parallax = core.dom.main.find( core.config.parallaxSelector );
         this.map = core.dom.main.find( core.config.mapSelector );
+        this.hovers = core.dom.main.find( core.config.hoverSelector );
 
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
@@ -54,6 +56,10 @@ class Controllers {
 
             if ( this.map.length ) {
                 this.mapController = new MapController( this.map );
+            }
+
+            if ( this.hovers.length && !core.detect.isDevice() ) {
+                this.hoverController = new HoverController( this.hovers );
             }
 
             this.queryController = new QueryController();
@@ -102,6 +108,11 @@ class Controllers {
         if ( this.mapController ) {
             this.mapController.destroy();
             this.mapController = null;
+        }
+
+        if ( this.hoverController ) {
+            this.hoverController.destroy();
+            this.hoverController = null;
         }
     }
 }

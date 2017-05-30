@@ -90,6 +90,17 @@ const config = {
     /**
      *
      * @public
+     * @member hoverSelector
+     * @memberof core.config
+     * @description The string selector used for <hover> node.
+     *
+     */
+    hoverSelector: ".js-hover",
+
+
+    /**
+     *
+     * @public
      * @member parallaxSelector
      * @memberof core.config
      * @description The string selector used for <parallax> node.
