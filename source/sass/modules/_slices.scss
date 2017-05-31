@@ -15,17 +15,6 @@
 // Slice Types...
 .slices__text {
     text-align: center;
-
-    .-text--right {
-        .-wrap-static {
-            padding-right: $padding-wrap;
-            }
-    }
-    .-text--left {
-        .-wrap-static {
-            padding-left: $padding-wrap;
-            }
-    }
 }
 .slices__image,
 .slices__videoLink,
@@ -34,12 +23,7 @@
 
     .project--feature & {
         text-align: center;
-
-        .-wrap-image {
-            @include wrap();
-            width: 100%;
-            }
-    }
+        }
 
     .slices__content {
         display: inline-block;

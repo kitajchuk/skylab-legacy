@@ -143,7 +143,7 @@
             }
     }
     .a:hover,
-    .cms a:not( [data-ignore="hover"] ):hover {
+    .cms a:not( [data-ignore-style="hover"] ):hover {
         color: $gold;
         }
     .filter__color:hover {

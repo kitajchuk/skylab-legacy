@@ -80,6 +80,7 @@
 @mixin wrap() {
     padding-left: $padding-wrap;
     padding-right: $padding-wrap;
+    // width: 100%;
 }
 @mixin wrap-copy() {
     display: inline-block;
@@ -89,10 +90,18 @@
 @mixin wrap-index() {
     padding-left: $padding-index;
     padding-right: $padding-index;
+    // width: 100%;
+}
+@mixin wrap-media {
+    padding-left: $padding-media;
+    padding-right: $padding-media;
+    // width: 100%;
 }
 @mixin wrap-image {
     display: inline-block;
-    width: calc( 100vw - #{$wrap-copy} );
+    padding-left: 0;
+    padding-right: 0;
+    width: $project-body-width;
 }
 @mixin wrap-static {
     display: inline-block;

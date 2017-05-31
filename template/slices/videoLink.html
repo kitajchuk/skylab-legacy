@@ -3,7 +3,7 @@ const group = slice.value.toArray()[ 0 ];
 const poster = group.getImage( 'poster' );
 const video = group.getLink( 'video' );
 %>
-<div class="video js-video -wrap-image -text--center">
+<div class="video js-video -wrap-media -text--center">
     <div class="video__wrap tile__wrap js-video-wrap">
         <video class="video__node js-video-node" data-src="<%= video.value.file.url %>"></video>
         <div class="video__poster js-video-poster js-lazy-image -cover" data-img-src="<%= poster.url %>"></div>

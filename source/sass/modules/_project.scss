@@ -9,13 +9,29 @@
     position: fixed;
     top: 0;
     transition: opacity $fast-duration $ease;
-    @include wrap-copy();
     z-index: 2;
+
+    .project--standard & {
+        text-align: left;
+        width: $project-body-width;
+        }
 }
 .project__body {
     position: relative;
     z-index: 1;
-    }
+
+    .project--standard & {
+        display: inline-block;
+        text-align: left;
+        width: $project-body-width;
+        }
+}
+
+
+
+.project--standard {
+    text-align: right;
+}
 
 
 

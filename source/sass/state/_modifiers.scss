@@ -13,20 +13,30 @@
     padding-bottom: $expander-mobile;
     padding-top: $expander-mobile;
     }
-.-wrap {
+.-wrap,
+// Wrap Media uses min-width media query to increase padding above a certain size: ./_responsive.scss
+.-wrap-media {
     @include wrap();
     }
+.-wrap-media {
+    .project--standard & {
+        padding: 0;
+        }
+}
 .-wrap-copy {
     @include wrap-copy();
     }
 .-wrap-index {
     @include wrap-index();
     }
-.-wrap-image {
-    @include wrap-image();
-    }
 .-wrap-static {
     @include wrap-static();
+    }
+.-wrap-static--right {
+    padding-right: $padding-wrap;
+    }
+.-wrap-static--left {
+    padding-left: $padding-wrap;
     }
 .-vtop {
     vertical-align: top;

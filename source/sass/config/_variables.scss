@@ -38,16 +38,20 @@ $expander-one: 80px;
 $expander-two: 160px;
 $expander-three: 240px;
 $expander-mobile: 40px;
-$padding-index: 10vw;
-$padding-wrap: 5vw;
+$padding-index: 12vw;
+$padding-wrap: 6vw;
+$padding-media: 12vw;
+$wrap-copy: 600px;
+$wrap-static: 64vw;
+$project-body-width: 50vw;
+$project-info-max-width: 900px;
+$project-width-min: $project-info-max-width * 2;
 
 
 
 /******************************************************************************
  * Sizes
 *******************************************************************************/
-$wrap-copy: 700px;
-$wrap-static: 62vw;
 $logo-width: 100px;
 $logo-width-header: 80px;
 $header-height: 160px;

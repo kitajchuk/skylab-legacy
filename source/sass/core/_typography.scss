@@ -34,7 +34,7 @@
  * Links
 *******************************************************************************/
 .a,
-.cms a:not( [data-ignore="hover"] ) {
+.cms a:not( [data-ignore-style="hover"] ) {
     transition: color $fast-duration $ease;
 
     &.is-active {

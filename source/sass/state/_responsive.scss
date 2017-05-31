@@ -2,12 +2,6 @@
     .-wrap-index {
         @include wrap();
         }
-    .project__info {
-        max-width: $break-mobile-medium;
-        }
-    .-wrap-image {
-        width: calc( 100vw - #{$break-mobile-medium} );
-        }
 }
 
 
@@ -65,10 +59,10 @@
         }
     .project__info {
         .project--standard & {
-            max-width: 100%;
             padding-bottom: $expander-one;
             padding-top: $expander-two;
             position: relative;
+            width: 100%;
 
             .cms {
                 max-width: $wrap-copy;
@@ -79,8 +73,13 @@
                 }
         }
     }
-    .-wrap-image {
-        padding: 0 !important;
+    .project__body {
+        .project--standard & {
+            width: 100%;
+        }
+    }
+    .-wrap-media:not( [data-ignore-style="nopad"] ) {
+        padding: 0;
         width: 100%;
         }
 
@@ -124,9 +123,9 @@
     .main {
         padding-top: $header-height;
         }
-    .project__info {
-        padding-bottom: $expander-one;
-        }
+    // .project__info {
+    //     padding-bottom: $expander-one;
+    //     }
     .project__body {
         padding-bottom: $expander-mobile;
         }
@@ -258,6 +257,38 @@
 
     .paging {
         display: none;
+        }
+}
+
+
+
+@media only screen and ( min-width: $project-width-min ) {
+    .project__info {
+        .project--standard & {
+            width: $project-info-max-width;
+        }
+    }
+    .project__body {
+        .project--standard & {
+            width: calc( 100vw - #{$project-info-max-width} );
+        }
+    }
+}
+
+
+
+@media only screen and ( min-width: $break-laptop-full ) {
+    .grid__item {
+        width: 25%;
+        }
+    .-wrap-media {
+        @include wrap-media();
+        }
+    .-wrap-static--right {
+        padding-right: $padding-media;
+        }
+    .-wrap-static--left {
+        padding-left: $padding-media;
         }
 }
 

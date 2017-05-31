@@ -3,15 +3,23 @@ const group = slice.value.toArray()[ 0 ];
 const left = group.getImage( 'left' );
 const right = group.getImage( 'right' );
 %>
-<div class="-wrap">
+<div class="-wrap-media" data-ignore-style="nopad">
     <div class="-column -column--2of4">
-        <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( left.main ) %>;">
-            <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= left.main.url %>" />
-        </div>
+        <% if ( left && left.main ) { %>
+            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( left.main ) %>;">
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= left.main.url %>" />
+            </div>
+        <% } else { %>
+            &nbsp;
+        <% } %>
     </div>
     <div class="-column -column--2of4">
-        <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( right.main ) %>;">
-            <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= right.main.url %>" />
-        </div>
+        <% if ( right && right.main ) { %>
+            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( right.main ) %>;">
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= right.main.url %>" />
+            </div>
+        <% } else { %>
+            &nbsp;
+        <% } %>
     </div>
 </div>
