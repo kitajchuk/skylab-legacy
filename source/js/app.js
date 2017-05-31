@@ -35,11 +35,11 @@ class App {
             const $spot = $( e.target );
             const data = $spot.data();
 
-            if ( data.theme === "light" ) {
-                core.dom.html.addClass( "is-theme--light" );
+            if ( data.theme === this.core.config.themes.light.id ) {
+                core.dom.html.addClass( this.core.config.themes.light.css );
 
             } else {
-                core.dom.html.removeClass( "is-theme--light" );
+                core.dom.html.removeClass( this.core.config.themes.light.css );
             }
 
             this.core.emitter.fire( "app--theme-change", data.theme );

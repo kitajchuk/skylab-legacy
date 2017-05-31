@@ -12,417 +12,14 @@
             "Wood",
             "Lighting"
         ],
-        "color": "#a87a4e",
+        "color": "#aa7d51",
         "colors": [
             "orange",
             "red"
         ],
         "deltas": [
-            29.474049825654905,
-            99.21762768436096
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/e4c7814420dcba62109003dbdbe20b6fb0353acb_skylab_wseattle03.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Tile",
-            "Wood",
-            "Molded",
-            "Bar",
-            "Interior",
-            "Mirror"
-        ],
-        "color": "#895e31",
-        "colors": [
-            "orange",
-            "green"
-        ],
-        "deltas": [
-            38.35540023374747,
-            114.43050833698942
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/206f74d31c897e46f000a732059cd40be9e57ba2_skylab_wseattle04.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Bar",
-            "Interior",
-            "Lighting",
-            "Fabric"
-        ],
-        "color": "#614520",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            56.25898293212691,
-            27.853441338276124,
-            23.36031734672948
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/48430c3469cc0139f77665cd8ad57ce93af90e84_skylab_wseattle10.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Tile",
-            "Wood",
-            "Molded",
-            "Bar",
-            "Interior",
-            "Lighting"
-        ],
-        "color": "#564029",
-        "colors": [
-            "green",
-            "orange"
-        ],
-        "deltas": [
-            66.07924421487846,
-            50.14455547816335
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/6eed9f08774f81f86e5d49ab4f79057196de55fe_skylab_wseattle09.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Tile",
-            "Wood",
-            "Molded",
-            "Bar",
-            "Interior"
-        ],
-        "color": "#d6bc99",
-        "colors": [
-            "orange",
-            "green"
-        ],
-        "deltas": [
-            36.09358047580694,
-            93.84784623243488
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/c18464548c32f0baa2b655b3ff7841013425e6b8_skylab_wseattle11.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Tile",
-            "Wood",
-            "Molded",
-            "Bar",
-            "Interior"
-        ],
-        "color": "#897d71",
-        "colors": [
-            "orange",
-            "green",
-            "red",
-            "violet"
-        ],
-        "deltas": [
-            68.29744503556584,
-            103.60390627982552,
-            85.2144973727827,
-            90.05289903642522
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/24a46c7c5440c74e06f3cfc536e80198c8b930fb_skylab_wseattle12.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Tile",
-            "Wood",
-            "Molded",
-            "Bar",
-            "Interior",
-            "Lighting",
-            "Mirror"
-        ],
-        "color": "#7a6347",
-        "colors": [
-            "orange",
-            "green"
-        ],
-        "deltas": [
-            49.0224627547961,
-            104.48906937714416
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/67c9a238ad5ffc649a6bc91a189266c9ef7a3042_skylab_wseattle08.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 3600
-        },
-        "tags": [
-            "Wood",
-            "Light",
-            "Molded",
-            "Interior"
-        ],
-        "color": "#19100b",
-        "colors": [
-            "green",
-            "orange"
-        ],
-        "deltas": [
-            114.34256237899763,
-            41.31296642239522
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/fd8fbb7d3806669ac248b5a1ebb20c304df3cb68_skylab_wseattle05.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Molded",
-            "Rendering",
-            "Wood",
-            "Model"
-        ],
-        "color": "#464645",
-        "colors": [
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            107.07066175262453,
-            107.31408675046899
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/f458484289f2a97024984766287eef1cefa99bd5_skylab_wseattle02.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Elevation",
-            "Study"
-        ],
-        "color": "#060606",
-        "colors": [
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            142.45870696744387,
-            82.71397496297048
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/887b9f77c5219ffe15404e2421209d518ad2d20a_skylab_wseattle06.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Lobby",
-            "Interior",
-            "Lighting",
-            "Fabric",
-            "Furniture"
-        ],
-        "color": "#3d302e",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            90.54787728160746,
-            50.21358154430895,
-            55.73229932213555
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/a0d70859c53b30d5e7a30a0009291d73e8d6c232_skylab_wseattle01.jpg",
-            "doc": "/project/wseattle/",
-            "width": 2400,
-            "height": 3600
-        },
-        "tags": [
-            "Office",
-            "Boardroom",
-            "MeetingRoom",
-            "Interior",
-            "Lighting"
-        ],
-        "color": "#71594c",
-        "colors": [
-            "orange",
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            64.94621053873412,
-            121.14524372571483,
-            42.475607068155426
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/a9bce0032b514e8a3b6d0a7900ac1e36651fa21f_skylab_wseattle06.jpg",
-            "doc": "/project/wseattle/",
-            "width": 1500,
-            "height": 1000
-        },
-        "tags": [
-            "Lobby",
-            "Interior",
-            "Lighting",
-            "Fabric",
-            "Furniture"
-        ],
-        "color": "#352a2b",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            96.31891213827346,
-            48.08632998234815,
-            54.90923723775697
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/63c86c4f960840f62e8a7ce3512adb3b8e39fdb4_skylab_nau04.jpg",
-            "doc": "/project/nau/",
-            "width": 2400,
-            "height": 1598
-        },
-        "tags": [
-            "Sketches",
-            "Planning",
-            "Study"
-        ],
-        "color": "#fafafa",
-        "colors": [
-            "violet",
-            "green"
-        ],
-        "deltas": [
-            107.27593004310235,
-            124.1693848175054
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/29e77c5c2942a159dda639bdf0dce4bb859e448f_skylab_nau01.jpg",
-            "doc": "/project/nau/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#b86c29",
-        "colors": [
-            "orange",
-            "violet",
-            "red"
-        ],
-        "deltas": [
-            24.856388323539996,
-            81.68281646859774,
-            66.63486095852984
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/a45dc587ec98ba32d895474d00fddd9bcee5509b_skylab_nau02.jpg",
-            "doc": "/project/nau/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#8d7250",
-        "colors": [
-            "orange",
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            40.35578480858818,
-            76.37537033601181,
-            80.6846066603641
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/fa566becd73f949822a3fab01fbcf7ad11787188_skylab_nau03.jpg",
-            "doc": "/project/nau/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#6c5d4b",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            61.776550000755904,
-            38.81964833700761,
-            90.94930713015121
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/da44f7bd7cdfad832d6d5a600029ea4c8853c606_skylab_nau00.jpg",
-            "doc": "/project/nau/",
-            "width": 550,
-            "height": 367
-        },
-        "tags": [
-            "Wood",
-            "Signage"
-        ],
-        "color": "#b46924",
-        "colors": [
-            "orange",
-            "violet",
-            "red"
-        ],
-        "deltas": [
-            25.54636633454487,
-            83.5310342055108,
-            62.64194162333941
+            29.050668850524836,
+            103.72715683539366
         ]
     },
     {
@@ -433,16 +30,16 @@
             "height": 1600
         },
         "tags": [],
-        "color": "#725f43",
+        "color": "#715d42",
         "colors": [
             "orange",
             "violet",
             "green"
         ],
         "deltas": [
-            52.20067141679701,
-            74.1352501372037,
-            104.33673544324971
+            53.010348476091096,
+            71.03582941009597,
+            106.72077267119184
         ]
     },
     {
@@ -453,14 +50,16 @@
             "height": 1800
         },
         "tags": [],
-        "color": "#07254a",
+        "color": "#0a3664",
         "colors": [
             "blue",
-            "violet"
+            "violet",
+            "green"
         ],
         "deltas": [
-            70.48279139348377,
-            60.15338476321885
+            58.190155257487476,
+            59.93945639887708,
+            122.59004092528042
         ]
     },
     {
@@ -471,14 +70,16 @@
             "height": 1600
         },
         "tags": [],
-        "color": "#d42c1c",
+        "color": "#410804",
         "colors": [
             "red",
-            "orange"
+            "orange",
+            "green"
         ],
         "deltas": [
-            9.926586473011424,
-            55.11135054774657
+            89.93837494100777,
+            34.355078055014275,
+            85.21086024427595
         ]
     },
     {
@@ -489,14 +90,16 @@
             "height": 1200
         },
         "tags": [],
-        "color": "#db2320",
+        "color": "#411007",
         "colors": [
             "red",
-            "orange"
+            "orange",
+            "blue"
         ],
         "deltas": [
-            9.435073571795826,
-            29.54964110785624
+            88.44243265656694,
+            28.66484984119018,
+            25.603688307078087
         ]
     },
     {
@@ -507,16 +110,16 @@
             "height": 1710
         },
         "tags": [],
-        "color": "#463c37",
+        "color": "#463e38",
         "colors": [
             "green",
             "violet",
             "orange"
         ],
         "deltas": [
-            85.1297337139696,
-            37.40817425403846,
-            30.287590553715923
+            81.60237293711428,
+            37.75348851555214,
+            30.202486289842017
         ]
     },
     {
@@ -527,16 +130,16 @@
             "height": 3538
         },
         "tags": [],
-        "color": "#31322f",
+        "color": "#30312e",
         "colors": [
             "green",
             "violet",
             "orange"
         ],
         "deltas": [
-            99.94560873864685,
-            56.31479346205154,
-            52.154151899354325
+            100.50626476116352,
+            56.24992852432592,
+            55.10520863177039
         ]
     },
     {
@@ -547,16 +150,16 @@
             "height": 3662
         },
         "tags": [],
-        "color": "#47372c",
+        "color": "#45372e",
         "colors": [
             "green",
             "violet",
             "orange"
         ],
         "deltas": [
-            84.69520339213341,
-            78.84645763003486,
-            41.49829083441445
+            85.92998291380411,
+            90.62370985645596,
+            47.12799575952855
         ]
     },
     {
@@ -567,16 +170,16 @@
             "height": 1614
         },
         "tags": [],
-        "color": "#847563",
+        "color": "#857563",
         "colors": [
             "orange",
             "green",
             "violet"
         ],
         "deltas": [
-            57.9628723026805,
-            102.7505482936423,
-            73.0146998430163
+            57.27389838010555,
+            100.84031964633617,
+            79.47023413455719
         ]
     },
     {
@@ -592,16 +195,16 @@
             "Concrete",
             "Steel"
         ],
-        "color": "#373737",
+        "color": "#373634",
         "colors": [
             "green",
             "orange",
             "violet"
         ],
         "deltas": [
-            117.77651722581602,
-            38.80095316992364,
-            39.851629163515526
+            103.87573793641494,
+            39.452783720520664,
+            36.56674464632223
         ]
     },
     {
@@ -617,16 +220,16 @@
             "Concrete",
             "Steel"
         ],
-        "color": "#3a372f",
+        "color": "#3b3930",
         "colors": [
             "green",
             "orange",
             "violet"
         ],
         "deltas": [
-            79.1614321339135,
-            45.77002115392361,
-            65.66671508270146
+            75.67288799452484,
+            48.15118390657588,
+            70.72408666385034
         ]
     },
     {
@@ -641,68 +244,14 @@
             "Glass",
             "Steel"
         ],
-        "color": "#0f0e0f",
+        "color": "#101011",
         "colors": [
             "green",
             "violet"
         ],
         "deltas": [
-            135.08766690858238,
-            62.439555268873676
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/617fb3c71710f9265705ca142359a12dde99c6a6_skylab_hokehouse00.jpg",
-            "doc": "/project/hokehouse/",
-            "width": 2400,
-            "height": 3600
-        },
-        "tags": [
-            "Wood",
-            "Glass",
-            "Window",
-            "Shelving",
-            "Office",
-            "Interior"
-        ],
-        "color": "#c4bfb7",
-        "colors": [
-            "green",
-            "red",
-            "orange"
-        ],
-        "deltas": [
-            79.59607897267162,
-            91.96761472318252,
-            39.44869588748522
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/84add8987c62d32a7655b97e98afbf68a8bc7552_skylab_hokehouse00.jpg",
-            "doc": "/project/hokehouse/",
-            "width": 720,
-            "height": 1080
-        },
-        "tags": [
-            "Wood",
-            "Glass",
-            "Window",
-            "Shelving",
-            "Office",
-            "Interior"
-        ],
-        "color": "#c5c1b9",
-        "colors": [
-            "green",
-            "red",
-            "orange"
-        ],
-        "deltas": [
-            79.89455015518058,
-            95.28414509810433,
-            38.513891777906295
+            134.68669221378437,
+            65.03754896327082
         ]
     },
     {
@@ -713,16 +262,14 @@
             "height": 1715
         },
         "tags": [],
-        "color": "#858c96",
+        "color": "#6e6960",
         "colors": [
-            "violet",
             "green",
-            "red"
+            "violet"
         ],
         "deltas": [
-            67.61618037557574,
-            108.17767027824907,
-            67.22313460221349
+            71.23944910815092,
+            87.40065908382506
         ]
     },
     {
@@ -733,7 +280,7 @@
             "height": 1715
         },
         "tags": [],
-        "color": "#98a7c0",
+        "color": "#98a8c0",
         "colors": [
             "violet",
             "green",
@@ -741,10 +288,10 @@
             "red"
         ],
         "deltas": [
-            50.560256909760945,
-            81.32587762718461,
-            33.104063475404644,
-            53.33151195327962
+            51.604138378861535,
+            81.25672242659004,
+            33.59194327576312,
+            52.4750863950583
         ]
     },
     {
@@ -755,14 +302,14 @@
             "height": 1715
         },
         "tags": [],
-        "color": "#3f3e30",
+        "color": "#444334",
         "colors": [
             "green",
             "violet"
         ],
         "deltas": [
-            63.19223875283257,
-            88.902875273628
+            59.98036091056055,
+            43.408848710972244
         ]
     },
     {
@@ -773,14 +320,14 @@
             "height": 1350
         },
         "tags": [],
-        "color": "#b4c2da",
+        "color": "#b4c2d9",
         "colors": [
             "violet",
             "green"
         ],
         "deltas": [
-            52.17847132653625,
-            112.64656418195021
+            53.06989976274084,
+            117.7849905525334
         ]
     },
     {
@@ -795,16 +342,16 @@
             "Landscape",
             "Planning"
         ],
-        "color": "#423c37",
+        "color": "#464039",
         "colors": [
             "green",
             "orange",
             "violet"
         ],
         "deltas": [
-            84.87172729461852,
-            60.952632417592035,
-            54.64655578726596
+            78.71608048072278,
+            61.971980080722425,
+            57.418430343183985
         ]
     },
     {
@@ -819,56 +366,16 @@
             "Landscape",
             "Planning"
         ],
-        "color": "#453f38",
+        "color": "#423c36",
         "colors": [
             "green",
             "orange",
             "violet"
         ],
         "deltas": [
-            78.94700142575411,
-            62.01058456459148,
-            54.33901561178609
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/d30d71af532baba4ebf09617c0959641ed249031_missingimage01.jpg",
-            "doc": "/project/owlcreek/",
-            "width": 2400,
-            "height": 1754
-        },
-        "tags": [
-            "MissingImage"
-        ],
-        "color": "#a20e64",
-        "colors": [
-            "violet",
-            "blue"
-        ],
-        "deltas": [
-            40.15286306559701,
-            50.99660763263211
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/2666eb5ff271b23d1fc9031ce18d0a3088fc6d96_missingimage01.jpg",
-            "doc": "/project/owlcreek/",
-            "width": 1000,
-            "height": 731
-        },
-        "tags": [
-            "MissingImage"
-        ],
-        "color": "#a20e65",
-        "colors": [
-            "violet",
-            "blue"
-        ],
-        "deltas": [
-            39.980317640034514,
-            51.4867883133186
+            82.23736584975231,
+            61.01878552041393,
+            54.64655578726596
         ]
     },
     {
@@ -888,12 +395,10 @@
         ],
         "color": "#bcb8b0",
         "colors": [
-            "green",
-            "orange"
+            "green"
         ],
         "deltas": [
-            79.11851380010262,
-            55.454525714030844
+            79.11851380010262
         ]
     },
     {
@@ -916,8 +421,8 @@
         ],
         "deltas": [
             94.90323432327182,
-            37.254039589313166,
-            48.734363405390596
+            36.59767622801803,
+            49.35459043870563
         ]
     },
     {
@@ -933,92 +438,12 @@
             "Concrete",
             "Steel"
         ],
-        "color": "#758982",
+        "color": "#738780",
         "colors": [
             "green"
         ],
         "deltas": [
-            58.433284327517256
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/fc0d559029985120767371364fc7a6ae1b7fd137_skylab_skylodge01.jpg",
-            "doc": "/project/skylodge/",
-            "width": 2400,
-            "height": 1599
-        },
-        "tags": [
-            "Wood",
-            "Glass",
-            "Lodge",
-            "Interior",
-            "Mountain"
-        ],
-        "color": "#412c21",
-        "colors": [
-            "red",
-            "orange",
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            87.16678494302097,
-            43.567331365355024,
-            86.12752510684729,
-            87.62892926918171
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/44c1cc1938815c640b1a45d514dcd9090f314be8_skylab_skylodge00.jpg",
-            "doc": "/project/skylodge/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Wood",
-            "Lodge",
-            "Exterior"
-        ],
-        "color": "#322f33",
-        "colors": [
-            "green",
-            "violet",
-            "orange",
-            "red"
-        ],
-        "deltas": [
-            101.66265563155126,
-            60.571720719766375,
-            22.79635470452886,
-            42.073386226854296
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/2c51c2c2ae7a96f4cb9a25eee8a84b44122a10e5_skylab_skylodge00.jpg",
-            "doc": "/project/skylodge/",
-            "width": 900,
-            "height": 600
-        },
-        "tags": [
-            "Wood",
-            "Lodge",
-            "Exterior"
-        ],
-        "color": "#34343c",
-        "colors": [
-            "green",
-            "orange",
-            "red",
-            "violet"
-        ],
-        "deltas": [
-            94.22849408207334,
-            23.626049790856953,
-            40.46539825325364,
-            63.113281724283134
+            58.28102340032548
         ]
     },
     {
@@ -1033,16 +458,16 @@
             "Interior",
             "Office"
         ],
-        "color": "#bfa133",
+        "color": "#bfa132",
         "colors": [
             "orange",
             "green",
             "violet"
         ],
         "deltas": [
-            16.814026830162845,
-            114.08659403708488,
-            86.06971498959709
+            16.7549471474181,
+            113.0146004040417,
+            99.58550263445534
         ]
     },
     {
@@ -1065,8 +490,8 @@
         ],
         "deltas": [
             16.7549471474181,
-            111.9829757641709,
-            52.41276111086422
+            113.0146004040417,
+            44.92066559623083
         ]
     },
     {
@@ -1079,12 +504,10 @@
         "tags": [],
         "color": "#f9f9f9",
         "colors": [
-            "violet",
-            "red"
+            "violet"
         ],
         "deltas": [
-            107.2380649348305,
-            35.61361649006299
+            107.2380649348305
         ]
     },
     {
@@ -1095,16 +518,16 @@
             "height": 1440
         },
         "tags": [],
-        "color": "#f9f5f1",
+        "color": "#f9f5f0",
         "colors": [
             "violet",
             "green",
             "orange"
         ],
         "deltas": [
-            88.70363505279765,
-            64.49120239660755,
-            34.07229174569549
+            86.89344671755381,
+            66.94791777716665,
+            33.35450612195794
         ]
     },
     {
@@ -1123,8 +546,8 @@
         ],
         "deltas": [
             101.5323420472702,
-            109.18177665330589,
-            52.98802433592113
+            104.2624210507197,
+            53.03150032066938
         ]
     },
     {
@@ -1135,131 +558,16 @@
             "height": 800
         },
         "tags": [],
-        "color": "#301f16",
+        "color": "#38251b",
         "colors": [
             "red",
             "orange",
             "violet"
         ],
         "deltas": [
-            107.29972163011318,
-            53.72840241976611,
-            55.8742859195036
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/d6d6642d1527191c5bea61cb988f7f0dc0f8f90b_skylab_nikeolympictrials02.jpg",
-            "doc": "/project/nikeolympictrials/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#363a31",
-        "colors": [
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            73.050422519709,
-            64.77560883872381
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/15c41bd80334b7d51c78e59d840eb0a5b6c886a4_skylab_nikeolympictrials03.jpg",
-            "doc": "/project/nikeolympictrials/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#d0ccd5",
-        "colors": [
-            "violet",
-            "blue"
-        ],
-        "deltas": [
-            67.65834880139671,
-            81.35500748057966
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/c78fe558953b6a0d2727230f2de1f18e14e74a51_skylab_nikeolympictrials05.jpg",
-            "doc": "/project/nikeolympictrials/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#658fc9",
-        "colors": [
-            "violet",
-            "green"
-        ],
-        "deltas": [
-            38.66973642953145,
-            104.28798413660044
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/aee2ac4957fae1203b5fbf4ca78ec777205bf119_skylab_nikeolympictrials04.jpg",
-            "doc": "/project/nikeolympictrials/",
-            "width": 2400,
-            "height": 3600
-        },
-        "tags": [
-            "Exterior",
-            "Composite"
-        ],
-        "color": "#2d3243",
-        "colors": [
-            "violet",
-            "green"
-        ],
-        "deltas": [
-            93.24643789620387,
-            76.95299969589853
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/f91464ed24a870760bb5f69c61f76c8002bef825_skylab_nikeolympictrials01.jpg",
-            "doc": "/project/nikeolympictrials/",
-            "width": 2400,
-            "height": 1587
-        },
-        "tags": [],
-        "color": "#baadb2",
-        "colors": [
-            "violet",
-            "green",
-            "red"
-        ],
-        "deltas": [
-            64.30266142064619,
-            94.66647067911632,
-            46.48879491882661
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/b3556fee20e3a151c0fb170b47e7a33c3b491a01_skylab_nikeolympictrials01.jpg",
-            "doc": "/project/nikeolympictrials/",
-            "width": 1500,
-            "height": 992
-        },
-        "tags": [],
-        "color": "#bbaeb3",
-        "colors": [
-            "violet",
-            "green",
-            "red"
-        ],
-        "deltas": [
-            64.3370402368599,
-            96.58993294900841,
-            66.74735504505564
+            99.02933511297515,
+            53.83978792688312,
+            55.342318674183545
         ]
     },
     {
@@ -1270,207 +578,16 @@
             "height": 600
         },
         "tags": [],
-        "color": "#e39009",
+        "color": "#e2900d",
         "colors": [
             "orange",
-            "red"
-        ],
-        "deltas": [
-            7.14877941141038,
-            93.87927593648517
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/9985bde6951ad7e2e69ccdd028d22e127c1a1273_skylab_12thalder01.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Exterior",
-            "Glass",
-            "Concrete",
-            "Brick",
-            "Steel"
-        ],
-        "color": "#4c4a4a",
-        "colors": [
-            "green",
+            "red",
             "violet"
         ],
         "deltas": [
-            105.69629467250994,
-            80.12893050475341
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/6d2f3403f827f98c907ca1a5216b5c0a7a46660a_skylab_12thalder04.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [
-            "Exterior",
-            "Glass",
-            "Concrete",
-            "Steel",
-            "Lounge",
-            "Furniture"
-        ],
-        "color": "#2b2523",
-        "colors": [
-            "green",
-            "orange",
-            "violet",
-            "red"
-        ],
-        "deltas": [
-            105.93414590462677,
-            40.33318694825463,
-            43.096045968362226,
-            45.42788601074382
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/4c3504b1696b772ac64a380b8a1dbad1851a39f2_skylab_12thalder05.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 3600
-        },
-        "tags": [],
-        "color": "#252423",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            120.67174786946957,
-            13.18425134850996,
-            54.15266276046979
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/4eef952a65d150be3d8fb54ced743bd8e4bd4cd8_skylab_12thalder02.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#6d5c4a",
-        "colors": [
-            "orange",
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            61.86353639954396,
-            101.35448258074042,
-            48.341878317370394
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/f34d9f71bd4abf4628ebd77f163ed682b1bee370_skylab_12thalder06.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#cec0ab",
-        "colors": [
-            "orange",
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            53.62319576623888,
-            98.23883569316123,
-            65.04349232879011
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/5ef67047da7af301e69a6664e1b29ce90fcf1d0c_skylab_12thalder03.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 1600
-        },
-        "tags": [],
-        "color": "#bac0b8",
-        "colors": [
-            "green",
-            "orange",
-            "red"
-        ],
-        "deltas": [
-            75.6883463411772,
-            35.421793679823075,
-            55.65673312333386
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/bba98a2b652b64fe38c329164313e95750ecbede_skylab_12thalder07.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 1814
-        },
-        "tags": [],
-        "color": "#322d39",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            95.71380061815537,
-            33.26029246294136,
-            38.21410386911859
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/f90d986c54a04741cdfd04549807705c187f5144_skylab_12thalder00.jpg",
-            "doc": "/project/12thalder/",
-            "width": 2400,
-            "height": 2941
-        },
-        "tags": [],
-        "color": "#23221f",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            111.31085029757581,
-            13.381645314044311,
-            57.78804324942984
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/6f4aa0c4d73f56f6235c13b4401cd89959ea7a78_skylab_12thalder00.jpg",
-            "doc": "/project/12thalder/",
-            "width": 1500,
-            "height": 1838
-        },
-        "tags": [],
-        "color": "#242220",
-        "colors": [
-            "green",
-            "orange",
-            "violet"
-        ],
-        "deltas": [
-            114.88260116039184,
-            13.662520493192849,
-            65.04511050558298
+            7.324291258011585,
+            93.9651120251059,
+            68.88422714601793
         ]
     },
     {
@@ -1481,7 +598,7 @@
             "height": 1200
         },
         "tags": [],
-        "color": "#392b28",
+        "color": "#382a26",
         "colors": [
             "green",
             "orange",
@@ -1489,10 +606,10 @@
             "violet"
         ],
         "deltas": [
-            94.05233022882715,
-            65.46037592402475,
-            51.64062055223731,
-            59.162420531134366
+            95.3288996492716,
+            67.80476425108411,
+            50.826769503925554,
+            60.3729582865351
         ]
     },
     {
@@ -1503,14 +620,14 @@
             "height": 1200
         },
         "tags": [],
-        "color": "#505463",
+        "color": "#505462",
         "colors": [
             "violet",
             "green"
         ],
         "deltas": [
-            67.66705570094499,
-            65.13475829765802
+            68.9656862095315,
+            65.74053093616928
         ]
     },
     {
@@ -1521,14 +638,14 @@
             "height": 1298
         },
         "tags": [],
-        "color": "#a89e95",
+        "color": "#a89e96",
         "colors": [
             "green",
             "violet"
         ],
         "deltas": [
-            75.3705447674902,
-            106.60961831348881
+            77.23197731914375,
+            102.0919554582623
         ]
     },
     {
@@ -1551,8 +668,8 @@
         ],
         "deltas": [
             74.47235437321788,
-            65.86454927875761,
-            63.540225548467994
+            67.59916711021287,
+            34.94415090323638
         ]
     },
     {
@@ -1576,8 +693,8 @@
         ],
         "deltas": [
             102.8006377390679,
-            99.07321578103442,
-            21.447964452041333
+            87.99542298853498,
+            20.942275065153492
         ]
     },
     {
@@ -1593,14 +710,14 @@
             "Concrete",
             "Steel"
         ],
-        "color": "#1a2030",
+        "color": "#1b2130",
         "colors": [
             "blue",
             "violet"
         ],
         "deltas": [
-            105.10585718612393,
-            70.27803155793846
+            107.9282001007961,
+            71.32109734349719
         ]
     },
     {
@@ -1611,16 +728,16 @@
             "height": 1096
         },
         "tags": [],
-        "color": "#c2bbb4",
+        "color": "#c3bdb6",
         "colors": [
             "violet",
             "green",
             "orange"
         ],
         "deltas": [
-            79.49522612522222,
-            90.52522546079604,
-            75.61978941669157
+            80.15542779652603,
+            91.3987561979906,
+            78.19725694173516
         ]
     },
     {
@@ -1636,11 +753,13 @@
         "color": "#16829e",
         "colors": [
             "green",
-            "blue"
+            "blue",
+            "violet"
         ],
         "deltas": [
             52.39819437167999,
-            46.82606582566708
+            47.11016035508789,
+            67.6251862471132
         ]
     },
     {
@@ -1653,14 +772,16 @@
         "tags": [
             "MissingImage"
         ],
-        "color": "#16839e",
+        "color": "#16819d",
         "colors": [
             "green",
-            "blue"
+            "blue",
+            "violet"
         ],
         "deltas": [
-            51.75385207729741,
-            47.33777237714609
+            52.54551823960865,
+            47.11016035508789,
+            73.43059046363258
         ]
     },
     {
@@ -1679,8 +800,8 @@
         ],
         "deltas": [
             63.714966323585,
-            43.05878797422227,
-            65.79168105778312
+            40.91546336548952,
+            72.01255128196807
         ]
     },
     {
@@ -1699,8 +820,8 @@
         ],
         "deltas": [
             111.98162693021484,
-            50.41257115953172,
-            52.0897995502764
+            50.46195316044643,
+            51.85087321317965
         ]
     },
     {
@@ -1711,16 +832,16 @@
             "height": 1602
         },
         "tags": [],
-        "color": "#1c140e",
+        "color": "#1a130d",
         "colors": [
             "green",
             "orange",
             "violet"
         ],
         "deltas": [
-            110.31452172993656,
-            36.937809937812574,
-            71.23958675966915
+            111.27369322801785,
+            36.50920473618412,
+            66.84234472600156
         ]
     },
     {
@@ -1731,16 +852,16 @@
             "height": 1387
         },
         "tags": [],
-        "color": "#1c130d",
+        "color": "#1d140d",
         "colors": [
             "green",
             "orange",
             "violet"
         ],
         "deltas": [
-            111.68883566888879,
-            36.29266078526467,
-            66.46816797085101
+            109.84866228770102,
+            34.35378796501157,
+            64.81057150494418
         ]
     },
     {
@@ -1759,8 +880,575 @@
         ],
         "deltas": [
             114.64921844476508,
-            35.23245292561537,
-            79.77842901190884
+            36.35976229395396,
+            58.92857699246662
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/e4c7814420dcba62109003dbdbe20b6fb0353acb_skylab_wseattle03.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior",
+            "Mirror"
+        ],
+        "color": "#865c2f",
+        "colors": [
+            "orange",
+            "green"
+        ],
+        "deltas": [
+            39.451121609372635,
+            114.86478710738018
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/206f74d31c897e46f000a732059cd40be9e57ba2_skylab_wseattle04.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Bar",
+            "Interior",
+            "Lighting",
+            "Fabric"
+        ],
+        "color": "#493113",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            67.52880486128562,
+            26.62111133419303,
+            20.416647100436876
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/48430c3469cc0139f77665cd8ad57ce93af90e84_skylab_wseattle10.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior",
+            "Lighting"
+        ],
+        "color": "#7e6445",
+        "colors": [
+            "orange",
+            "green"
+        ],
+        "deltas": [
+            45.888028083885345,
+            95.12099632854056
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6eed9f08774f81f86e5d49ab4f79057196de55fe_skylab_wseattle09.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior"
+        ],
+        "color": "#d6bd99",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            35.93724609221818,
+            93.84784623243488,
+            65.77263451463101
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c18464548c32f0baa2b655b3ff7841013425e6b8_skylab_wseattle11.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior"
+        ],
+        "color": "#776a5e",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            69.4206327051022,
+            110.25321474745606,
+            89.88030176278488
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/24a46c7c5440c74e06f3cfc536e80198c8b930fb_skylab_wseattle12.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Tile",
+            "Wood",
+            "Molded",
+            "Bar",
+            "Interior",
+            "Lighting",
+            "Mirror"
+        ],
+        "color": "#786147",
+        "colors": [
+            "orange",
+            "green"
+        ],
+        "deltas": [
+            50.824542151332686,
+            106.96657880458964
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/67c9a238ad5ffc649a6bc91a189266c9ef7a3042_skylab_wseattle08.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Wood",
+            "Light",
+            "Molded",
+            "Interior"
+        ],
+        "color": "#19100b",
+        "colors": [
+            "green",
+            "orange"
+        ],
+        "deltas": [
+            114.34256237899763,
+            40.80952272254296
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fd8fbb7d3806669ac248b5a1ebb20c304df3cb68_skylab_wseattle05.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Molded",
+            "Rendering",
+            "Wood",
+            "Model"
+        ],
+        "color": "#3b3b3a",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            109.1193347500079,
+            107.31408675046899
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f458484289f2a97024984766287eef1cefa99bd5_skylab_wseattle02.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Elevation",
+            "Study"
+        ],
+        "color": "#060606",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            142.45870696744387,
+            81.21914994048198
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/887b9f77c5219ffe15404e2421209d518ad2d20a_skylab_wseattle06.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Lobby",
+            "Interior",
+            "Lighting",
+            "Fabric",
+            "Furniture"
+        ],
+        "color": "#3d302f",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            90.56953557466159,
+            47.57729734992925,
+            56.29649631150131
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/02b441532dc736ae548688ef98ebb436ad05dce3_skylab_wseattle00.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Lobby",
+            "Interior",
+            "Lighting",
+            "Fabric",
+            "Furniture",
+            "Steel"
+        ],
+        "color": "#41352e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            87.41344880149086,
+            43.004595676049746,
+            72.74366572643677
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a0d70859c53b30d5e7a30a0009291d73e8d6c232_skylab_wseattle01.jpg",
+            "doc": "/project/wseattle/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Office",
+            "Boardroom",
+            "MeetingRoom",
+            "Interior",
+            "Lighting"
+        ],
+        "color": "#735a4d",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            64.219878858866,
+            122.07097242243854,
+            42.02455649539882
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a9bce0032b514e8a3b6d0a7900ac1e36651fa21f_skylab_wseattle06.jpg",
+            "doc": "/project/wseattle/",
+            "width": 1500,
+            "height": 1000
+        },
+        "tags": [
+            "Lobby",
+            "Interior",
+            "Lighting",
+            "Fabric",
+            "Furniture"
+        ],
+        "color": "#3d302e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            90.54787728160746,
+            47.584969785854355,
+            59.33385913335336
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/63c86c4f960840f62e8a7ce3512adb3b8e39fdb4_skylab_nau04.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1598
+        },
+        "tags": [
+            "Sketches",
+            "Planning",
+            "Study"
+        ],
+        "color": "#fafafa",
+        "colors": [
+            "violet",
+            "green"
+        ],
+        "deltas": [
+            107.27593004310235,
+            120.2828228644581
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/29e77c5c2942a159dda639bdf0dce4bb859e448f_skylab_nau01.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#b36725",
+        "colors": [
+            "orange",
+            "violet",
+            "red"
+        ],
+        "deltas": [
+            26.80550843474369,
+            81.63390553427854,
+            71.69919888020581
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a45dc587ec98ba32d895474d00fddd9bcee5509b_skylab_nau02.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#8e7351",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            40.13992944846598,
+            83.2596714866739,
+            86.94513055878035
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/a3e52fc81ee0924316080a6b1846c2aab6bc1c31_skylab_nau00.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1601
+        },
+        "tags": [
+            "Wood",
+            "Signage"
+        ],
+        "color": "#b26725",
+        "colors": [
+            "orange",
+            "violet",
+            "red"
+        ],
+        "deltas": [
+            26.822314723311997,
+            82.57894378000287,
+            83.24079221020773
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fa566becd73f949822a3fab01fbcf7ad11787188_skylab_nau03.jpg",
+            "doc": "/project/nau/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#514639",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            68.56489274675981,
+            35.523979811857764,
+            88.86879381680092
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/da44f7bd7cdfad832d6d5a600029ea4c8853c606_skylab_nau00.jpg",
+            "doc": "/project/nau/",
+            "width": 550,
+            "height": 367
+        },
+        "tags": [
+            "Wood",
+            "Signage"
+        ],
+        "color": "#b26725",
+        "colors": [
+            "orange",
+            "violet",
+            "red"
+        ],
+        "deltas": [
+            26.822314723311997,
+            82.57894378000287,
+            83.8373952587112
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/7c626bf8729a2175d2c77d3c828e13042bd58715_hokehouse-diptych2.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [],
+        "color": "#858580",
+        "colors": [
+            "green",
+            "violet",
+            "red"
+        ],
+        "deltas": [
+            85.55569170161824,
+            83.09908979718479,
+            88.19452329688305
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/4df7d302c00dccef457c2bdd4ee61fc4a8eaa359_hokehouse-diptych1.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [],
+        "color": "#c5b39a",
+        "colors": [
+            "orange",
+            "green",
+            "red",
+            "violet"
+        ],
+        "deltas": [
+            46.69158953616749,
+            60.05252912399312,
+            45.24752939158017,
+            93.02095576439093
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9c7c48d46f42c4acfa28e701a809fbe45f51076c_hokehouse-test.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 2400,
+            "height": 1602
+        },
+        "tags": [],
+        "color": "#756a5e",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            68.20120911150964,
+            81.29785475944485
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/617fb3c71710f9265705ca142359a12dde99c6a6_skylab_hokehouse00.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Wood",
+            "Glass",
+            "Window",
+            "Shelving",
+            "Office",
+            "Interior"
+        ],
+        "color": "#c3bfb6",
+        "colors": [
+            "green",
+            "red",
+            "orange"
+        ],
+        "deltas": [
+            77.18082847213554,
+            92.47324986699451,
+            39.75208633971017
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/84add8987c62d32a7655b97e98afbf68a8bc7552_skylab_hokehouse00.jpg",
+            "doc": "/project/hokehouse/",
+            "width": 720,
+            "height": 1080
+        },
+        "tags": [
+            "Wood",
+            "Glass",
+            "Window",
+            "Shelving",
+            "Office",
+            "Interior"
+        ],
+        "color": "#c4bfb7",
+        "colors": [
+            "green",
+            "red",
+            "orange"
+        ],
+        "deltas": [
+            79.59607897267162,
+            95.28414509810433,
+            39.00879167677034
         ]
     },
     {
@@ -1771,14 +1459,14 @@
             "height": 1549
         },
         "tags": [],
-        "color": "#cecac7",
+        "color": "#090807",
         "colors": [
-            "violet",
-            "green"
+            "green",
+            "violet"
         ],
         "deltas": [
-            88.60328938478698,
-            137.3953950980107
+            137.3953950980107,
+            88.53129323343317
         ]
     },
     {
@@ -1789,16 +1477,14 @@
             "height": 1600
         },
         "tags": [],
-        "color": "#756965",
+        "color": "#766a66",
         "colors": [
             "violet",
-            "orange",
             "green"
         ],
         "deltas": [
-            77.55457272275433,
-            65.93137138567764,
-            128.34368690268127
+            77.41552618637722,
+            65.86954476305141
         ]
     },
     {
@@ -1809,16 +1495,16 @@
             "height": 1606
         },
         "tags": [],
-        "color": "#999db1",
+        "color": "#9a9eb1",
         "colors": [
             "violet",
             "green",
             "orange"
         ],
         "deltas": [
-            52.20351563913265,
-            109.92813372060947,
-            57.710543331260475
+            53.437237432146745,
+            109.63067963826285,
+            54.78082547626738
         ]
     },
     {
@@ -1829,14 +1515,14 @@
             "height": 1600
         },
         "tags": [],
-        "color": "#423d37",
+        "color": "#423c36",
         "colors": [
             "green",
             "violet"
         ],
         "deltas": [
-            82.29868881111817,
-            93.8903090977253
+            82.23736584975231,
+            68.56640516687712
         ]
     },
     {
@@ -1847,36 +1533,16 @@
             "height": 2699
         },
         "tags": [],
-        "color": "#978e80",
+        "color": "#988e80",
         "colors": [
             "green",
-            "violet",
             "orange",
             "red"
         ],
         "deltas": [
-            64.68688637010943,
-            85.53702608735188,
-            39.72480242603281,
-            57.0942852497453
-        ]
-    },
-    {
-        "image": {
-            "url": "https://skylab.cdn.prismic.io/skylab/5ff7422df304a0f30419d47af2bd744eab41d794_skylab_columbiabuilding06.jpg",
-            "doc": "/project/columbiaplant/",
-            "width": 2400,
-            "height": 2022
-        },
-        "tags": [],
-        "color": "#050505",
-        "colors": [
-            "green",
-            "violet"
-        ],
-        "deltas": [
-            142.7879325451936,
-            105.5865198397557
+            65.33994799161675,
+            43.26326298852024,
+            58.70902944866009
         ]
     },
     {
@@ -1887,14 +1553,14 @@
             "height": 1618
         },
         "tags": [],
-        "color": "#bfc2c2",
+        "color": "#c0c3c4",
         "colors": [
             "violet",
             "green"
         ],
         "deltas": [
-            96.39443197826944,
-            55.783433155618766
+            94.88562024106866,
+            56.434115807293516
         ]
     },
     {
@@ -1905,15 +1571,15 @@
             "height": 1600
         },
         "tags": [],
-        "color": "#4b4228",
+        "color": "#4c4228",
         "colors": [
             "green",
             "violet",
             "orange"
         ],
         "deltas": [
-            51.37750745315698,
-            87.52859776651763,
+            51.95058853289423,
+            85.24505525026203,
             37.89886321916534
         ]
     },
@@ -1932,7 +1598,499 @@
         ],
         "deltas": [
             137.3953950980107,
-            86.69679400154762
+            88.64005842499145
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9708c13f194db6ec1a213aa94c17bf7875c5b52d_skylab_owlcreek02.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 2400,
+            "height": 3198
+        },
+        "tags": [],
+        "color": "#44382e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            79.68212183097764,
+            65.81451297197529,
+            60.955089454685954
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/329b2c6d10be50c75e72046e075a1f1f9ae2bbf7_skylab_owlcreek05.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 2400,
+            "height": 3200
+        },
+        "tags": [],
+        "color": "#836b5b",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            56.50271617923371,
+            105.40651657413454,
+            97.66832883899102
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/e7594dbc4d7db177f2df66bd36507b1d7602b254_skylab_owlcreek06.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 2400,
+            "height": 3200
+        },
+        "tags": [],
+        "color": "#c0b69f",
+        "colors": [
+            "orange",
+            "green"
+        ],
+        "deltas": [
+            53.141375747990516,
+            102.05799405275468
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/3d55903a4f0f91784c1460e88189180f467b56ba_skylab_owlcreek00.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 2400,
+            "height": 1536
+        },
+        "tags": [],
+        "color": "#714f43",
+        "colors": [
+            "red",
+            "violet",
+            "green",
+            "orange"
+        ],
+        "deltas": [
+            58.426934429241804,
+            72.67073842215262,
+            108.31536695712857,
+            29.35699835526277
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6799329332f8e79f6b1caa2561d3f41a8136dbd7_skylab_owlcreek00.jpg",
+            "doc": "/project/owlcreek/",
+            "width": 2500,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#714f43",
+        "colors": [
+            "red",
+            "violet",
+            "green",
+            "orange"
+        ],
+        "deltas": [
+            58.426934429241804,
+            72.67073842215262,
+            108.28085103589962,
+            30.244082647748733
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/fc0d559029985120767371364fc7a6ae1b7fd137_skylab_skylodge01.jpg",
+            "doc": "/project/skylodge/",
+            "width": 2400,
+            "height": 1599
+        },
+        "tags": [
+            "Wood",
+            "Glass",
+            "Lodge",
+            "Interior",
+            "Mountain"
+        ],
+        "color": "#3d291e",
+        "colors": [
+            "red",
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            91.81423991026962,
+            43.10365647120412,
+            80.75019848056216,
+            76.96742960226109
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/44c1cc1938815c640b1a45d514dcd9090f314be8_skylab_skylodge00.jpg",
+            "doc": "/project/skylodge/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Wood",
+            "Lodge",
+            "Exterior"
+        ],
+        "color": "#35353d",
+        "colors": [
+            "green",
+            "orange",
+            "red",
+            "violet"
+        ],
+        "deltas": [
+            93.7557726467125,
+            19.996251472588746,
+            44.52684881602013,
+            60.565265870563195
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/2c51c2c2ae7a96f4cb9a25eee8a84b44122a10e5_skylab_skylodge00.jpg",
+            "doc": "/project/skylodge/",
+            "width": 900,
+            "height": 600
+        },
+        "tags": [
+            "Wood",
+            "Lodge",
+            "Exterior"
+        ],
+        "color": "#35353c",
+        "colors": [
+            "green",
+            "orange",
+            "red",
+            "violet"
+        ],
+        "deltas": [
+            94.4560441059084,
+            19.65182734914555,
+            44.12465535888397,
+            64.10407198201071
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/c78fe558953b6a0d2727230f2de1f18e14e74a51_skylab_nikeolympictrials05.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#628bc5",
+        "colors": [
+            "violet",
+            "green",
+            "blue"
+        ],
+        "deltas": [
+            38.78460852637545,
+            92.19164202380338,
+            58.31646121072086
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/d6d6642d1527191c5bea61cb988f7f0dc0f8f90b_skylab_nikeolympictrials02.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#363a32",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            75.60761816735572,
+            64.77560883872381
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/aee2ac4957fae1203b5fbf4ca78ec777205bf119_skylab_nikeolympictrials04.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [
+            "Exterior",
+            "Composite"
+        ],
+        "color": "#2d3243",
+        "colors": [
+            "violet",
+            "green"
+        ],
+        "deltas": [
+            93.24643789620387,
+            79.1554410693489
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/15c41bd80334b7d51c78e59d840eb0a5b6c886a4_skylab_nikeolympictrials03.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#d0ccd5",
+        "colors": [
+            "violet",
+            "blue"
+        ],
+        "deltas": [
+            67.65834880139671,
+            104.67325830943224
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f91464ed24a870760bb5f69c61f76c8002bef825_skylab_nikeolympictrials01.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 2400,
+            "height": 1587
+        },
+        "tags": [],
+        "color": "#b8abb0",
+        "colors": [
+            "violet",
+            "green",
+            "red"
+        ],
+        "deltas": [
+            64.23702571954381,
+            97.64889833698834,
+            64.44320142762778
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/b3556fee20e3a151c0fb170b47e7a33c3b491a01_skylab_nikeolympictrials01.jpg",
+            "doc": "/project/nikeolympictrials/",
+            "width": 1500,
+            "height": 992
+        },
+        "tags": [],
+        "color": "#b9abb0",
+        "colors": [
+            "violet",
+            "green",
+            "red"
+        ],
+        "deltas": [
+            62.91318913762543,
+            99.37859125134281,
+            64.96208088575571
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6d2f3403f827f98c907ca1a5216b5c0a7a46660a_skylab_12thalder04.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Steel",
+            "Lounge",
+            "Furniture"
+        ],
+        "color": "#292523",
+        "colors": [
+            "green",
+            "orange",
+            "violet",
+            "red"
+        ],
+        "deltas": [
+            109.66382893007429,
+            43.15242143086803,
+            43.096045968362226,
+            47.05092592275675
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/4c3504b1696b772ac64a380b8a1dbad1851a39f2_skylab_12thalder05.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 3600
+        },
+        "tags": [],
+        "color": "#252423",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            120.67174786946957,
+            14.914790864269488,
+            54.15266276046979
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/4eef952a65d150be3d8fb54ced743bd8e4bd4cd8_skylab_12thalder02.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#6e5d4b",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            61.55358591469122,
+            104.64370854315936,
+            48.08911717702449
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f34d9f71bd4abf4628ebd77f163ed682b1bee370_skylab_12thalder06.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#d0c2ad",
+        "colors": [
+            "orange",
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            53.71856726668718,
+            97.0366635441636,
+            65.22232184058595
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/bba98a2b652b64fe38c329164313e95750ecbede_skylab_12thalder07.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1814
+        },
+        "tags": [],
+        "color": "#332e3a",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            95.00501066543725,
+            27.326568686946928,
+            39.64986182319898
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/5ef67047da7af301e69a6664e1b29ce90fcf1d0c_skylab_12thalder03.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [],
+        "color": "#bcc1ba",
+        "colors": [
+            "green",
+            "orange",
+            "red"
+        ],
+        "deltas": [
+            79.3479229309255,
+            36.42637125045394,
+            55.30791734858193
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/9985bde6951ad7e2e69ccdd028d22e127c1a1273_skylab_12thalder01.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 1600
+        },
+        "tags": [
+            "Exterior",
+            "Glass",
+            "Concrete",
+            "Brick",
+            "Steel"
+        ],
+        "color": "#4b494a",
+        "colors": [
+            "green",
+            "violet"
+        ],
+        "deltas": [
+            104.70922629069177,
+            83.71869074590788
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/f90d986c54a04741cdfd04549807705c187f5144_skylab_12thalder00.jpg",
+            "doc": "/project/12thalder/",
+            "width": 2400,
+            "height": 2941
+        },
+        "tags": [],
+        "color": "#24211e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            109.88866952527924,
+            14.56407593279767,
+            60.50639050727035
+        ]
+    },
+    {
+        "image": {
+            "url": "https://skylab.cdn.prismic.io/skylab/6f4aa0c4d73f56f6235c13b4401cd89959ea7a78_skylab_12thalder00.jpg",
+            "doc": "/project/12thalder/",
+            "width": 1500,
+            "height": 1838
+        },
+        "tags": [],
+        "color": "#23211e",
+        "colors": [
+            "green",
+            "orange",
+            "violet"
+        ],
+        "deltas": [
+            111.05349929698416,
+            14.66988090442215,
+            60.50639050727035
         ]
     }
 ]

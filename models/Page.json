@@ -102,12 +102,20 @@
                      "label" : "Select Foreground Image Position",
                      "placeholder" : "Select Foreground Image Position"
                    }
+                 },
+                 "coverStyle" : {
+                   "type" : "Select",
+                   "config" : {
+                     "options" : [ "Light", "Dark" ],
+                     "label" : "Select Color Style",
+                     "placeholder" : "Select Color Style"
+                   }
                  }
                }
              }
            },
           "columns": {
-            
+
           }
         }
       }

@@ -13,6 +13,26 @@ const config = {
     /**
      *
      * @public
+     * @member themes
+     * @memberof core.config
+     * @description The built-in themes.
+     *
+     */
+    themes: {
+        dark: {
+            id: "dark",
+            css: "is-theme--dark",
+            default: true
+        },
+        light: {
+            id: "light",
+            css: "is-theme--light"
+        }
+    },
+
+    /**
+     *
+     * @public
      * @member homepage
      * @memberof core.config
      * @description The default homepage slug.

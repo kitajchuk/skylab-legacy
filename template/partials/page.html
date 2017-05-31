@@ -1,7 +1,7 @@
 <%
 const item = locals.context.get( 'item' );
 %>
-<div class="page js-page">
+<div class="page page--<%= item.uid %> js-page">
     <div class="page__cover -wrap">
         <div class="cms">
             <% if ( item.getText( 'page.title' ) ) { %>
