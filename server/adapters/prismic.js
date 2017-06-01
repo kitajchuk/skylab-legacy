@@ -336,13 +336,7 @@ const getDataForApi = function ( req, listener ) {
             });
         };
 
-        // if ( req.params.type === core.config.skylab.mainType ) {
-            // console.log( `getApi::cache::${core.config.skylab.mainType}` );
-            // resolve( cache.docs[ core.config.skylab.mainType ] );
-
-        // } else {
-            doQuery( req.params.type );
-        // }
+        doQuery( req.params.type );
     });
 };
 
@@ -430,17 +424,6 @@ const getDataForPage = function ( req, listener ) {
 
             if ( !type ) {
                 resolve( data );
-
-            // } else if ( type === core.config.skylab.mainType ) {
-            //     if ( uid ) {
-            //         data.item = getDoc( uid, cache.docs[ core.config.skylab.mainType ] );
-            //
-            //     } else {
-            //         data.items = cache.docs[ core.config.skylab.mainType ];
-            //     }
-            //
-            //     console.log( `getPage::cache::${core.config.skylab.mainType}` );
-            //     resolve( data );
 
             } else {
                 doQuery( type );

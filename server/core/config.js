@@ -17,15 +17,11 @@ const config = {
     api: {
         // Prismic
         access: "https://skylab.cdn.prismic.io/api",
-        adapter: "prismic",
-        // Contentful
-        // space: "",
-        // access: "",
-        // adapter: "contentful"
+        adapter: "prismic"
     },
     // Deployment config ( AWS etc... )
     deploy: {
-        cdnURL: "",
+        cdnURL: "https://s3-us-west-2.amazonaws.com/skylabarchitecture/static",
     },
     // Templating config
     template: {
@@ -57,8 +53,6 @@ const config = {
         level: 9,
         threshold: 0
     },
-    // Console log prefix
-    logger: "[@clutch]",
 
     // Skylab-www specific ( Prismic )
     skylab: {
@@ -92,8 +86,9 @@ const config = {
 
 
 // Serves assets from either CDN or App Server...
-config.static.js = (config.env.production && config.deploy.cdnURL) ? `${config.deploy.cdnURL}${config.static.endJS}` : config.static.endJS;
-config.static.css = (config.env.production && config.deploy.cdnURL) ? `${config.deploy.cdURLL}${config.static.endCSS}` : config.static.endCSS;
+config.deploy.cdnEnabled = (!config.env.sandbox && config.deploy.cdnURL);
+config.static.js = config.deploy.cdnEnabled ? `${config.deploy.cdnURL}${config.static.endJS}` : config.static.endJS;
+config.static.css = config.deploy.cdnEnabled ? `${config.deploy.cdnURL}${config.static.endCSS}` : config.static.endCSS;
 
 
 

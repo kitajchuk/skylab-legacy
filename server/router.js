@@ -6,6 +6,7 @@ const express = require( "express" );
 const expressApp = express();
 const compression = require( "compression" );
 const cookieParser = require( "cookie-parser" );
+const lager = require( "properjs-lager" );
 const listeners = {};
 const core = {
     watch: require( "./core/watch" ),
@@ -69,7 +70,8 @@ const getPreview = function ( req, res ) {
 };
 const getWebhook = function ( req, res ) {
     core.query.getWebhook( req, res ).then(( data ) => {
-        console.log( core.config.logger, "Webhook data", data );
+        lager.info( "Webhook data:" );
+        lager.info( data );
     });
 };
 
@@ -127,8 +129,8 @@ module.exports = {
 
             expressApp.listen( core.config.express.port );
 
-            console.log( core.config.logger, `Express server started` );
-            console.log( core.config.logger, `Access URL — http://localhost:${core.config.browser.port}` );
+            lager.server( `Express server started` );
+            lager.server( `Access URL — http://localhost:${core.config.browser.port}` );
         });
     }
 };

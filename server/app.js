@@ -7,6 +7,7 @@ const file = require( "./core/file" );
 const config = require( "./core/config" );
 const router = require( "./router" );
 const shuffle = require( "shuffle-array" );
+const lager = require( "properjs-lager" );
 
 
 
@@ -82,22 +83,22 @@ const onQuery = function ( client, api, query, cache, req ) {
 
     if ( req.query.status ) {
         ret.push( client.Predicates.at( `my.${config.skylab.mainType}.status`, req.query.status ) );
-        console.log( config.logger, `Querying by Status ${req.query.status}` );
+        lager.info( `Querying by Status ${req.query.status}` );
     }
 
     if ( req.query.category ) {
         ret.push( client.Predicates.at( `my.${config.skylab.mainType}.categories.category`, req.query.category ) );
-        console.log( config.logger, `Querying by Category ${req.query.category}` );
+        lager.info( `Querying by Category ${req.query.category}` );
     }
 
     if ( req.query.color ) {
         ret = getResults( "colors", req.query.color );
-        console.log( config.logger, `Querying by Color ${req.query.color}` );
+        lager.info( `Querying by Color ${req.query.color}` );
     }
 
     if ( req.query.material || req.query.space ) {
         ret = getResults( "tags", req.query.material || req.query.space );
-        console.log( config.logger, `Querying by Tag ${req.query.material || req.query.space}` );
+        lager.info( `Querying by Tag ${req.query.material || req.query.space}` );
     }
 
     return ret;

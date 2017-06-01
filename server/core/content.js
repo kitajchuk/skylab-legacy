@@ -3,6 +3,7 @@
 
 
 const path = require( "path" );
+const lager = require( "properjs-lager" );
 const core = {
     watch: require( "./watch" ),
     query: require( "./query" ),
@@ -82,7 +83,7 @@ const getPage = function ( req, res, listener ) {
                 callback( (context.page === core.config.notfound ? 404 : 200), html );
 
             }).catch(( error ) => {
-                console.log( core.config.logger, error );
+                lager.error( error );
             });
         };
 

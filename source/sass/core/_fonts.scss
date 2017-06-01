@@ -5,28 +5,28 @@
 // Theinhardt
 @font-face {
     font-family: $font-family;
-    src: url( "/fonts/Theinhardt.woff" ) format( "woff" );
+    src: url( "#{$font-path}Theinhardt.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }
 // TheinhardtBold
 @font-face {
     font-family: $font-family-bold;
-    src: url( "/fonts/TheinhardtBold.woff" ) format( "woff" );
+    src: url( "#{$font-path}TheinhardtBold.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }
 // TheinhardtMd
 @font-face {
     font-family: $font-family-medium;
-    src: url( "/fonts/Theinhardt-Md.woff" ) format( "woff" );
+    src: url( "#{$font-path}Theinhardt-Md.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }
 // TheinhardtMdItalic
 @font-face {
     font-family: $font-family-medium-italic;
-    src: url( "/fonts/Theinhardt-MediumItalic.woff" ) format( "woff" );
+    src: url( "#{$font-path}Theinhardt-MediumItalic.woff" ) format( "woff" );
     font-style: normal;
     font-stretch: normal;
 }
