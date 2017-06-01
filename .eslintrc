@@ -192,7 +192,7 @@
                 "min": 2,
                 "max": 37,
                 "properties": "never",
-                "exceptions": ["$", "e", "i", "j", "x", "y", "z"]
+                "exceptions": ["$", "e", "i", "j", "x", "y", "z", "n"]
             }
         ],
         //"id-match": [2, "^[a-z]+([A-Z][a-z]+)*$", {"properties": false}],

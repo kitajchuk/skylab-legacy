@@ -1,0 +1,23 @@
+<%
+const items = locals.context.get( 'items' );
+%>
+<% items.forEach(( item ) => { %>
+    <%
+    const portrait = item.getImage( 'person.portrait' );
+    const craft = item.getImage( 'person.craft' );
+    const desk = item.getImage( 'person.desk' );
+    const info = item.getStructuredText( 'person.description' );
+    %>
+    <div class="person -column -column--1of4">
+        <div class="person__wrap -square">
+            <div class="portrait person__tile -cover js-lazy-image" data-img-src="<%= portrait.url %>"></div>
+            <div class="information person__tile -text--center ghost">
+                <div class="ghost__child cms cms--meta">
+                    <%- info.asHtml() %>
+                </div>
+            </div>
+            <div class="craft person__tile -cover js-lazy-image" data-img-src="<%= craft.url %>"></div>
+            <div class="desk person__tile -cover js-lazy-image" data-img-src="<%= desk.url %>"></div>
+        </div>
+    </div>
+<% }) %>

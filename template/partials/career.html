@@ -1,0 +1,15 @@
+<%
+const items = locals.context.get( 'items' );
+%>
+<% items.forEach(( item ) => { %>
+    <%
+    const title = item.getText( 'career.title' );
+    const excerpt = item.getStructuredText( 'career.excerpt' );
+    %>
+    <div class="career -column -column--2of4 -vtop">
+        <div class="career__wrap cms">
+            <p><strong><%= title %></strong></p>
+            <%- excerpt.asHtml() %>
+        </div>
+    </div>
+<% }) %>

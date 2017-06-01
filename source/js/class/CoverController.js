@@ -39,22 +39,10 @@ class CoverController extends Controller {
                 core.dom.html.addClass( `is-cover is-cover--${this.coverType}` );
                 core.emitter.fire( `app--activate-cover--${this.coverType}` );
 
-                if ( core.config.themes[ this.coverType ] ) {
-                    core.emitter.fire( "app--theme-change", this.coverType );
-
-                    core.dom.html.addClass( core.config.themes[ this.coverType ].css );
-                }
-
             } else if ( !core.util.isElementVisible( this.element[ 0 ] ) && this.isActive ) {
                 this.isActive = false;
                 core.dom.html.removeClass( `is-cover is-cover--${this.coverType}` );
                 core.emitter.fire( `app--deactivate-cover--${this.coverType}` );
-
-                if ( core.config.themes[ this.coverType ] ) {
-                    core.emitter.fire( "app--theme-change", (this.coverType === core.config.themes.light.id ? core.config.themes.dark.id : core.config.themes.light.id) );
-
-                    core.dom.html.removeClass( core.config.themes[ this.coverType ].css );
-                }
             }
         });
     }

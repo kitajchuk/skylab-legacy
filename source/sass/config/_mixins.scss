@@ -53,7 +53,7 @@
     font-size: $h2-size;
     line-height: $h2-line;
     text-transform: lowercase;
-    @include font-family-medium();
+    @include font-family();
 }
 @mixin h3() {
     font-size: $h3-size;

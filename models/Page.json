@@ -103,7 +103,7 @@
                      "placeholder" : "Select Foreground Image Position"
                    }
                  },
-                 "coverStyle" : {
+                 "colorStyle" : {
                    "type" : "Select",
                    "config" : {
                      "options" : [ "Light", "Dark" ],
@@ -114,9 +114,47 @@
                }
              }
            },
-          "columns": {
-
-          }
+           "labeledSection": {
+             "type": "Group",
+             "fieldset": "Labeled Section Block",
+             "config": {
+               "repeat": false,
+               "fields": {
+                 "label": {
+                   "type" : "StructuredText",
+                   "config" : {
+                     "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+                     "label" : "Section Label",
+                     "placeholder" : "Section Label"
+                   }
+                 },
+                 "text": {
+                   "type" : "StructuredText",
+                   "config" : {
+                     "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+                     "label" : "Section Text",
+                     "placeholder" : "Section Text"
+                   }
+                 },
+                 "contentType": {
+                   "type" : "Select",
+                   "config" : {
+                     "options" : [ "Person", "Career" ],
+                     "label" : "Select Content Type to Display",
+                     "placeholder" : "Select Content Type to Display"
+                   }
+                 },
+                 "colorStyle": {
+                   "type" : "Select",
+                   "config" : {
+                     "options" : [ "Light", "Dark" ],
+                     "label" : "Select Color Style",
+                     "placeholder" : "Select Color Style"
+                   }
+                 }
+               }
+             }
+           }
         }
       }
     }

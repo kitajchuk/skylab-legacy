@@ -38,6 +38,9 @@
 .-wrap-static--left {
     padding-left: $padding-wrap;
     }
+.-wrap-heading {
+    max-width: $wrap-heading;
+    }
 .-vtop {
     vertical-align: top;
     }
@@ -55,6 +58,21 @@
     }
 .-skyclip {
     clip-path: polygon( 0 0, 100% 0, 70% 100%, 0 100% );
+    }
+.-theme--dark {
+    background-color: $black;
+    color: $white;
+    }
+.-theme--light {
+    background-color: $white;
+    color: $black;
+    }
+.-square {
+    padding-bottom: 100%;
+    width: 100%;
+    }
+.-btn {
+    cursor: pointer;
     }
 
 
@@ -105,4 +123,7 @@
     }
 .-fzero {
     font-size: 0;
+    }
+.-caps {
+    text-transform: uppercase;
     }

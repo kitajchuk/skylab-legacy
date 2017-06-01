@@ -3,9 +3,9 @@ const group = slice.value.toArray()[ 0 ];
 const image = group.getImage( 'image' );
 const background = group.getImage( 'background' );
 const imagePos = group.getText( 'imagePosition' );
-const coverStyle = group.getText( 'coverStyle' );
+const colorStyle = group.getText( 'colorStyle' );
 %>
-<div class="cover cover--base <%= coverStyle ? 'js-cover' : '' %> js-parallax -text--<%= imagePos.toLowerCase() %> ghost" data-cover="<%= coverStyle ? coverStyle.toLowerCase() : '' %>">
+<div class="cover cover--base <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %> js-parallax -text--<%= imagePos.toLowerCase() %> ghost" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
     <div class="ghost__child -full">
         <% if ( background ) { %>
             <div class="cover__fill cover__background js-parallax-background -cover js-lazy-image" data-img-src="<%= background.url %>"></div>

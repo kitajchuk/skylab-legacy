@@ -91,6 +91,17 @@ const dom = {
     /**
      *
      * @public
+     * @member header
+     * @memberof core.dom
+     * @description The cached <header> nodes.
+     *
+     */
+    header: $( config.headerSelector ),
+
+
+    /**
+     *
+     * @public
      * @member filter
      * @memberof core.dom
      * @description The cached <filter> node.

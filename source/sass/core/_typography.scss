@@ -12,9 +12,13 @@
         @include font-family-medium();
         }
     }
-.li,
-.cms li {
-    line-height: 1.5;
+.ul .li,
+.cms ul li {
+    list-style: disc;
+    }
+.ol .li,
+.cms ol li {
+    list-style: decimal;
     }
 .em,
 .cms em {

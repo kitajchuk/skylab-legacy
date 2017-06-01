@@ -23,6 +23,100 @@
 
 
 
-.page--studio {
-    
+.section__label {
+    padding-left: $padding-wrap;
+    width: $wrap-astatic;
+    }
+.section__content {
+    width: $wrap-static;
+    }
+
+
+
+.career {
+    padding-right: $expander-one;
+}
+
+
+
+.view--person {
+    margin-right: -$expander-mobile;
+    }
+
+
+
+.person {
+    margin-bottom: $expander-mobile;
+    padding-right: $expander-mobile;
+    }
+.person__wrap {
+    position: relative;
+    }
+.person__tile {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 0 $expander-mobile;
+    position: absolute;
+    top: 0;
+    transition: opacity $fast-duration $ease,
+                z-index $fast-duration $ease;
+    width: 100%;
+    z-index: 1;
+}
+
+
+
+.toggler__btn {
+    position: relative;
+    transition: padding-left $fast-duration $ease;
+
+    &.is-active {
+        padding-left: 30px;
+        }
+    &.is-active:before {
+        opacity: 1;
+        transform: translateX( 0 ) translateY( -70% ) scale( 1 );
+        }
+    &:before {
+        border: 2px solid $white;
+        border-radius: 8px;
+        content: "";
+        height: 8px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateX( 30px ) translateY( -70% ) scale( 0 );
+        transition: opacity $fast-duration $ease,
+                    transform $fast-duration $ease;
+        width: 8px;
+        }
+}
+.toggler.is-n1 {
+    .person__tile:nth-child( 1 ) {
+        opacity: 1;
+        z-index: 2;
+        }
+}
+.toggler.is-n2 {
+    .person__tile:nth-child( 1 ) {
+        opacity: 0.3;
+        }
+    .person__tile:nth-child( 2 ) {
+        opacity: 1;
+        z-index: 2;
+        }
+}
+.toggler.is-n3 {
+    .person__tile:nth-child( 3 ) {
+        opacity: 1;
+        z-index: 2;
+        }
+}
+.toggler.is-n4 {
+    .person__tile:nth-child( 4 ) {
+        opacity: 1;
+        z-index: 2;
+        }
 }

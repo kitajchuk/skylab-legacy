@@ -1,0 +1,61 @@
+{
+  "Person Information": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Person Name",
+        "placeholder": "Person Name"
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Person Slug",
+        "placeholder": "Person Slug"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, o-list-item",
+        "label": "Person Description",
+        "placeholder": "Person Description"
+      }
+    }
+  },
+  "Person Photos": {
+    "portrait": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": null
+        },
+        "thumbnails": [],
+        "label": "Portrait"
+      }
+    },
+    "craft": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": null
+        },
+        "thumbnails": [],
+        "label": "Craft"
+      }
+    },
+    "desk": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": null
+        },
+        "thumbnails": [],
+        "label": "Desk"
+      }
+    }
+  }
+}

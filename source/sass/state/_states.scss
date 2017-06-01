@@ -67,6 +67,11 @@
         background-color: rgba( 138, 138, 138, 0.05 );
         }
 }
+.is-studio-page {
+    .theme {
+        display: none;
+        }
+}
 .is-studio-page,
 .is-project-page.is-uid-page,
 .is-home-page:not( .is-query ) {

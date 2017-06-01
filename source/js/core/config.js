@@ -99,6 +99,28 @@ const config = {
     /**
      *
      * @public
+     * @member togglerSelector
+     * @memberof core.config
+     * @description The string selector used for <toggler> node.
+     *
+     */
+    togglerSelector: ".js-toggler",
+
+
+    /**
+     *
+     * @public
+     * @member colorSelector
+     * @memberof core.config
+     * @description The string selector used for <color> node.
+     *
+     */
+    colorSelector: ".js-color",
+
+
+    /**
+     *
+     * @public
      * @member mapSelector
      * @memberof core.config
      * @description The string selector used for <map> node.
@@ -171,6 +193,17 @@ const config = {
      *
      */
     naviSelector: ".js-navi",
+
+
+    /**
+     *
+     * @public
+     * @member headerSelector
+     * @memberof core.config
+     * @description The string selector used for <header> node.
+     *
+     */
+    headerSelector: ".js-header",
 
 
     /**

@@ -8,6 +8,8 @@ import VideoController from "./VideoController";
 import ParallaxController from "./ParallaxController";
 import MapController from "./MapController";
 import HoverController from "./HoverController";
+import ColorController from "./ColorController";
+import TogglerController from "./TogglerController";
 
 
 /**
@@ -19,50 +21,60 @@ import HoverController from "./HoverController";
  *
  */
 class Controllers {
-    constructor () {}
+    constructor () {
+        this.controllers = [];
+    }
+
+
+    push ( id, elements, controller, conditions ) {
+        this.controllers.push({
+            id: id,
+            elements: elements,
+            instance: null,
+            Controller: controller,
+            conditions: conditions
+        });
+    }
+
+
+    init () {
+        this.controllers.forEach(( controller ) => {
+            if ( controller.elements.length && controller.conditions ) {
+                controller.instance = new controller.Controller( controller.elements );
+            }
+        });
+    }
+
+
+    kill () {
+        this.controllers.forEach(( controller ) => {
+            if ( controller.instance ) {
+                controller.instance.destroy();
+            }
+        });
+
+        this.controllers = [];
+    }
 
 
     exec () {
-        this.images = core.dom.main.find( core.config.lazyImageSelector );
-        this.animates = core.dom.main.find( core.config.animSelector );
-        this.project = core.dom.main.find( core.config.projectSelector );
-        this.cover = core.dom.main.find( core.config.coverSelector );
-        this.videos = core.dom.main.find( core.config.videoSelector );
-        this.parallax = core.dom.main.find( core.config.parallaxSelector );
-        this.map = core.dom.main.find( core.config.mapSelector );
-        this.hovers = core.dom.main.find( core.config.hoverSelector );
+        this.controllers = [];
 
+        this.push( "animates", core.dom.main.find( core.config.animSelector ), AnimateController, true );
+        this.push( "project", core.dom.main.find( core.config.projectSelector ), ProjectController, true );
+        this.push( "cover", core.dom.main.find( core.config.coverSelector ), CoverController, true );
+        this.push( "colors", core.dom.main.find( core.config.colorSelector ), ColorController, true );
+        this.push( "videos", core.dom.main.find( core.config.videoSelector ), VideoController, true );
+        this.push( "parallax", core.dom.main.find( core.config.parallaxSelector ), ParallaxController, true );
+        this.push( "map", core.dom.main.find( core.config.mapSelector ), MapController, true );
+        this.push( "hovers", core.dom.main.find( core.config.hoverSelector ), HoverController, !core.detect.isDevice() );
+        this.push( "toggler", core.dom.main.find( core.config.togglerSelector ), TogglerController, true );
+        this.push( "query", ["q"], QueryController, true );
+
+        this.images = core.dom.main.find( core.config.lazyImageSelector );
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
-            if ( this.animates.length ) {
-                this.animateController = new AnimateController( this.animates );
-            }
-
-            if ( this.project.length ) {
-                this.projectController = new ProjectController( this.project );
-            }
-
-            if ( this.cover.length ) {
-                this.coverController = new CoverController( this.cover );
-            }
-
-            if ( this.videos.length ) {
-                this.videoController = new VideoController( this.videos );
-            }
-
-            if ( this.parallax.length ) {
-                this.parallaxController = new ParallaxController( this.parallax );
-            }
-
-            if ( this.map.length ) {
-                this.mapController = new MapController( this.map );
-            }
-
-            if ( this.hovers.length && !core.detect.isDevice() ) {
-                this.hoverController = new HoverController( this.hovers );
-            }
-
-            this.queryController = new QueryController();
+            this.init();
 
             core.emitter.fire( "app--page-teardown" );
         });
@@ -72,48 +84,9 @@ class Controllers {
     destroy () {
         if ( this.imageController ) {
             this.imageController.destroy();
-            this.imageController = null;
         }
 
-        if ( this.animateController ) {
-            this.animateController.destroy();
-            this.animateController = null;
-        }
-
-        if ( this.projectController ) {
-            this.projectController.destroy();
-            this.projectController = null;
-        }
-
-        if ( this.coverController ) {
-            this.coverController.destroy();
-            this.coverController = null;
-        }
-
-        if ( this.queryController ) {
-            this.queryController.destroy();
-            this.queryController = null;
-        }
-
-        if ( this.videoController ) {
-            this.videoController.destroy();
-            this.videoController = null;
-        }
-
-        if ( this.parallaxController ) {
-            this.parallaxController.destroy();
-            this.parallaxController = null;
-        }
-
-        if ( this.mapController ) {
-            this.mapController.destroy();
-            this.mapController = null;
-        }
-
-        if ( this.hoverController ) {
-            this.hoverController.destroy();
-            this.hoverController = null;
-        }
+        this.kill();
     }
 }
 
