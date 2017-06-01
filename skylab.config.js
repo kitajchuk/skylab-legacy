@@ -26,7 +26,6 @@ const config = {
     // Templating config
     template: {
         module: "ejs",
-        require: require( "ejs" ),
         dir: path.join( root, "template" ),
         layout: path.join( root, "template/index.html" ),
         pagesDir: path.join( root, "template", "pages" ),
@@ -63,10 +62,10 @@ const config = {
         colors: [
             { background: "red", query: "red" },
             { background: "#ff7b2b", query: "orange" },
-            { background: "#ffee00", query: "yellow" },
             { background: "#85e042", query: "green" },
             { background: "#2ae0ff", query: "blue" },
-            { background: "violet", query: "violet" }
+            { background: "black", query: "black" },
+            { background: "white", query: "white" }
         ],
         materials: [
             "Wood",

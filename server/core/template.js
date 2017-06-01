@@ -8,7 +8,7 @@ const consolidate = require( "consolidate" );
  * Template adapter setup.
  *
  */
-consolidate.requires[ config.template.module ] = config.template.require;
+consolidate.requires[ config.template.module ] = require( `${config.template.module}` );
 
 
 
