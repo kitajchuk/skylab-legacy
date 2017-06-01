@@ -2,19 +2,20 @@
 
 
 
-const path = require( "path" );
-const prismic = require( "prismic.io" );
-const core = {
-    file: require( "../core/file" ),
-    config: require( "../core/config" )
-};
-const slackbot = require( "./slackbot" );
+const fs = require( "fs" );
 const cli = require( "cli" );
+const path = require( "path" );
+const lager = require( "properjs-lager" );
 const chroma = require( "chroma-js" );
+const prismic = require( "prismic.io" );
+const slacker = require( "properjs-slacker" );
+const core = {
+    config: require( "../skylab.config" )
+};
 const colorLibs = {
     default: require( "get-image-colors" )
 };
-const context = "imageprocess-task";
+const context = "skylab-imageprocess";
 let token = null;
 let webhook = null;
 let channel = null;
@@ -166,16 +167,15 @@ const processResult = function ( result ) {
         message.push( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
 
         if ( !results.raw.length ) {
-            core.file.write( jsonPath, JSON.stringify( results.processed, null, 4 ) ).then(() => {
-                message.push( `Image processing JSON saved to ${jsonPath}.` );
+            fs.writeFile( jsonPath, JSON.stringify( results.processed, null, 4 ), "utf8", ( error ) => {
+                if ( error ) {
+                    message = [error];
 
-                slackbot.ping({
-                    token,
-                    webhook,
-                    channel,
-                    message,
-                    context
-                });
+                } else {
+                    message.push( `Image processing JSON saved to ${jsonPath}.` );
+                }
+
+                slacker( token, webhook, channel, context, message );
             });
 
         } else {
@@ -196,10 +196,10 @@ const doColorProcess = function () {
     webhook = cli.options.webhook;
     channel = cli.options.channel;
 
-    console.log( core.config.logger, `Connecting to Prismic.io API...` );
+    lager.info( `Connecting to Prismic.io API...` );
 
     prismic.api( core.config.api.access, null ).then(( api ) => {
-        console.log( core.config.logger, `Loading all documents for content-type ${core.config.skylab.mainType}...` );
+        lager.info( `Loading all documents for content-type ${core.config.skylab.mainType}...` );
 
         api.form( core.config.skylab.mainForm )
             .pageSize( 100 )
@@ -250,7 +250,7 @@ const doColorProcess = function () {
 
             total = results.raw.length;
 
-            console.log( core.config.logger, `Image processing for ${total} images.` );
+            lager.info( `Image processing for ${total} images.` );
                 message.push( `Image processing for ${total} images.` );
 
             processResult( results.raw.pop() );
@@ -260,7 +260,13 @@ const doColorProcess = function () {
 
 
 
-cli.setApp( "colorprocess", "0.1.0" );
+const doWebhookHandler = function () {
+
+};
+
+
+
+cli.setApp( context, "0.1.0" );
 
 
 
@@ -273,9 +279,10 @@ cli.parse({
 
 if ( cli.options.token && cli.options.webhook && cli.options.channel ) {
     doColorProcess();
+    doWebhookHandler();
 
 } else {
-    console.log( "Requires Slack token, webhook URL and channel to ping." );
+    lager.error( "Requires Slack token, webhook URL and channel to ping." );
 
     process.exit( 1 );
 }

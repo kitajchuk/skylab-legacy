@@ -1,5 +1,5 @@
 const fs = require( "fs" );
-const config = require( "./config" );
+const config = require( "../../skylab.config" );
 const watch = require( "node-watch" );
 const cache = {
     pages: null

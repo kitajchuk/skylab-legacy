@@ -1,0 +1,24 @@
+{
+  "title": "Skylab Tasks",
+  "name": "skylab-tasks",
+  "version": "0.1.0",
+  "description": "Node.js task server.",
+  "private": true,
+  "contributors": [
+    {
+      "name": "Brandon Kitajchuk",
+      "email": "kitajchuk@gmail.com",
+      "url": "http://kitajchuk.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chroma-js": "^1.3.3",
+    "cli": "^1.0.1",
+    "forever": "^0.15.2",
+    "get-image-colors": "^1.8.1",
+    "prismic.io": "^3.5.0",
+    "properjs-lager": "^0.1.0",
+    "properjs-slacker": "^0.1.4"
+  }
+}

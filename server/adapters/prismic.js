@@ -29,7 +29,7 @@ const cache = {
 };
 const core = {
     watch: require( "../core/watch" ),
-    config: require( "../core/config" ),
+    config: require( "../../skylab.config" ),
     template: require( "../core/template" )
 };
 const ContextObject = require( "../class/ContextObject" );

@@ -2,12 +2,13 @@
 
 
 
+const fs = require( "fs" );
 const path = require( "path" );
-const file = require( "./core/file" );
-const config = require( "./core/config" );
+const config = require( "../skylab.config" );
 const router = require( "./router" );
 const shuffle = require( "shuffle-array" );
 const lager = require( "properjs-lager" );
+const imageJSON = path.join( config.template.staticDir, "json", "imageprocess.json" );
 
 
 
@@ -55,7 +56,7 @@ const getColorSort = function ( results ) {
 
 const getResults = function ( kind, value ) {
     return new Promise(( resolve, reject ) => {
-        file.read( path.join( config.template.staticDir, "json", "imageprocess.json" ) ).then(( data ) => {
+        fs.readFile( imageJSON, ( error, data ) => {
             const json = JSON.parse( String( data ) );
             let results = json.filter(( result ) => {
                 return (result[ kind ].indexOf( value ) !== -1 );
@@ -70,9 +71,9 @@ const getResults = function ( kind, value ) {
                 results: results
             });
 
-        }).catch(( error ) => {
+        })/*.catch(( error ) => {
             reject( error );
-        });
+        })*/;
     });
 };
 

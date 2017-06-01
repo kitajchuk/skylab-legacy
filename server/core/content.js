@@ -7,7 +7,7 @@ const lager = require( "properjs-lager" );
 const core = {
     watch: require( "./watch" ),
     query: require( "./query" ),
-    config: require( "./config" ),
+    config: require( "../../skylab.config" ),
     template: require( "./template" )
 };
 const ContextObject = require( "../class/ContextObject" );
