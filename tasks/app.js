@@ -10,55 +10,35 @@ const bodyParser = require( "body-parser" );
 const spawn = require( "child_process" ).spawn;
 const slacker = require( "properjs-slacker" );
 const context = "skylab-taskrunner";
-let taskRunner = null;
+let taskRunner = false;
 
 
 
 const doTaskRunner = function () {
+    taskRunner = true;
+
     // Reverse order since we use `tasks.pop()`
     const tasks = [
         {
-            cmd: "./node_modules/.bin/properjs-s3",
-            args: [
-                "--key",
-                cli.options.key,
-                "--secret",
-                cli.options.secret,
-                "--region",
-                cli.options.region,
-                "--bucket",
-                cli.options.bucket,
-                "--prefix",
-                cli.options.prefix,
-                "--directory",
-                cli.options.directory
-            ]
-        },
-        {
-            cmd: "node",
-            args: [
-                "imageprocess.js",
-                "--token",
-                cli.options.token,
-                "--webhook",
-                cli.options.webhook,
-                "--channel",
-                cli.options.channel
-            ]
+            cmd: "./task-img ; ./task-s3",
+            args: []
         }
     ];
     const onData = function ( data ) {
         console.log( data.toString() );
     };
     const doTask = function ( task ) {
-        taskRunner = spawn( task.cmd, task.args );
-        taskRunner.stdout.on( "data", onData );
-        taskRunner.on( "exit", () => {
+        const child = spawn( task.cmd, task.args, {
+            shell: true
+        });
+
+        child.stdout.on( "data", onData );
+        child.on( "close", () => {
             if ( tasks.length ) {
                 doTask( tasks.pop );
 
             } else {
-                taskRunner = null;
+                taskRunner = false;
 
                 slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
                     "Task Runner S3 Uploaded!"
@@ -105,6 +85,8 @@ const startTaskServer = function () {
         // 2xx required by Prismic.io
         res.status( 200 ).send( "Thanks" );
     });
+
+    lager.server( "Task Runner Listening for Updates..." );
 
     expressApp.listen( expressPort );
 };

@@ -27,7 +27,7 @@
     "get-image-colors": "^1.8.1",
     "prismic.io": "^3.5.0",
     "properjs-lager": "^0.1.0",
-    "properjs-s3": "^0.1.4",
+    "properjs-s3": "^0.1.5",
     "properjs-slacker": "^0.1.4"
   }
 }

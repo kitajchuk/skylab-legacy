@@ -168,6 +168,7 @@ const processResult = function ( result ) {
 
         if ( !results.raw.length ) {
             fs.writeFile( jsonPath, JSON.stringify( results.processed, null, 4 ), "utf8", ( error ) => {
+                // Slack Error so we are aware ;-P
                 if ( error ) {
                     message = [error];
 
@@ -252,6 +253,9 @@ const doImageProcess = function () {
 
             lager.info( `Image processing for ${total} images.` );
                 message.push( `Image processing for ${total} images.` );
+
+            // lager.info( `Slicing off 1 image for testing.` );
+            // results.raw = results.raw.slice( 0, 1 );
 
             processResult( results.raw.pop() );
         });
