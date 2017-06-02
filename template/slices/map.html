@@ -1,5 +1,10 @@
-<div class="map js-map" data-latlng="[<%= `${slice.value.latitude},${slice.value.longitude}` %>]">
+<%
+const group = slice.value.toArray()[ 0 ];
+const url = group.getLink( 'url' );
+const map = group.getGeoPoint( 'map' );
+%>
+<a href="<%= url.url() %>" target="_blank" class="map js-map" data-latlng="[<%= `${map.latitude},${map.longitude}` %>]">
     <div class="map__marker js-map-marker">
         <%- include( '../partials/svg--monogram.html' ) %>
     </div>
-</div>
+</a>

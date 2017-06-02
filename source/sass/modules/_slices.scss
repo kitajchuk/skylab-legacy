@@ -47,7 +47,9 @@
 }
 .slices__map {
     .map {
+        display: block;
         padding-bottom: 48.611111111%;
+        width: 100%;
         }
     .map__marker {
         width: 50px;

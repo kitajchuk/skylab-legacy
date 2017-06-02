@@ -42,6 +42,15 @@
 
 .career {
     padding-right: $expander-one;
+    }
+.career__info {
+    padding-bottom: $header-height;
+    padding-top: $header-height + $expander-one;
+    transition: opacity $fast-duration $ease;
+
+    .cms a {
+        color: $gold;
+        }
 }
 
 

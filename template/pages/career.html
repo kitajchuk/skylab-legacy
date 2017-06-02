@@ -1,0 +1,15 @@
+<% if ( locals.context.get( 'item' ) ) { %>
+    <%
+    const item = locals.context.get( 'item' );
+    const title = item.getText( 'career.title' );
+    const description = item.getStructuredText( 'career.description' );
+    %>
+    <div class="career">
+        <div class="career__info -wrap">
+            <div class="cms -wrap-copy">
+                <h1><%= title %></h1>
+                <%- description.asHtml() %>
+            </div>
+        </div>
+    </div>
+<% } %>

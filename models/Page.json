@@ -48,8 +48,25 @@
       "config" : {
         "choices" : {
           "map": {
-            "type": "GeoPoint",
-            "fieldset": "Map Location"
+            "type": "Group",
+            "fieldset": "Map Location Block",
+            "config": {
+              "repeat": false,
+              "fields": {
+                "map": {
+                  "type": "GeoPoint",
+                  "fieldset": "Map Location"
+                },
+                "url": {
+                  "type": "Link",
+                  "fieldset": "Google Maps Link",
+                  "config": {
+                    "placeholder": "Google Maps Link",
+                    "select": "web"
+                  }
+                }
+              }
+            }
           },
           "parallax" : {
              "type" : "Group",

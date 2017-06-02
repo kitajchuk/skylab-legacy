@@ -10,6 +10,7 @@ const items = locals.context.get( 'items' );
         <div class="career__wrap cms">
             <p><strong><%= title %></strong></p>
             <%- excerpt.asHtml() %>
+            <p><a class="-grey" href="<%= locals.context.getUrl( item )%>">Learn More</a></p>
         </div>
     </div>
 <% }) %>

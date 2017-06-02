@@ -1,6 +1,7 @@
 const fs = require( "fs" );
 const config = require( "../../skylab.config" );
 const watch = require( "node-watch" );
+const lager = require( "properjs-lager" );
 const cache = {
     pages: null
 };
