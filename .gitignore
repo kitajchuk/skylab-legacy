@@ -16,6 +16,10 @@ tmp
 local
 static/js
 static/css
+static/json
+static/svg
+static/touch
+tasks/static
 
 
 # Node / NPM

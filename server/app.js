@@ -8,7 +8,8 @@ const config = require( "../skylab.config" );
 const router = require( "./router" );
 const shuffle = require( "shuffle-array" );
 const lager = require( "properjs-lager" );
-const imageJSON = path.join( config.template.staticDir, "json", "imageprocess.json" );
+const request = require( "request" );
+const imageJSON = `${config.deply.cdnURL}/json/imageprocess.json`;
 
 
 
@@ -56,24 +57,30 @@ const getColorSort = function ( results ) {
 
 const getResults = function ( kind, value ) {
     return new Promise(( resolve, reject ) => {
-        fs.readFile( imageJSON, ( error, data ) => {
-            const json = JSON.parse( String( data ) );
-            let results = json.filter(( result ) => {
-                return (result[ kind ].indexOf( value ) !== -1 );
-            });
+        request({
+            url: imageJSON,
+            json: true,
+            method: "GET"
 
-            // Filters...?
-            if ( kind === "colors" ) {
-                results = getColorSort( results );
+        }, function ( error, response, json ) {
+            if ( error ) {
+                reject( error );
+
+            } else {
+                let results = json.filter(( result ) => {
+                    return (result[ kind ].indexOf( value ) !== -1 );
+                });
+
+                // Filters...?
+                if ( kind === "colors" ) {
+                    results = getColorSort( results );
+                }
+
+                resolve({
+                    results: results
+                });
             }
-
-            resolve({
-                results: results
-            });
-
-        })/*.catch(( error ) => {
-            reject( error );
-        })*/;
+        });
     });
 };
 

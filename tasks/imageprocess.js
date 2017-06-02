@@ -151,7 +151,7 @@ const pushResult = function ( doc, image ) {
 const processResult = function ( result ) {
     getImageColors( result ).then(( colors ) => {
         const progress = (total - results.raw.length) / total;
-        const jsonPath = path.join( core.config.template.staticDir, "json", "imageprocess.json" );
+        const jsonPath = path.join( __dirname, "static", "json", "imageprocess.json" );
         const colorInfo = getQueryColors( colors );
 
         result.colors = colorInfo.colors;
@@ -186,7 +186,7 @@ const processResult = function ( result ) {
 
 
 
-const doColorProcess = function () {
+const doImageProcess = function () {
     results = {
         raw: [],
         processed: []
@@ -260,12 +260,6 @@ const doColorProcess = function () {
 
 
 
-const doWebhookHandler = function () {
-
-};
-
-
-
 cli.setApp( context, "0.1.0" );
 
 
@@ -277,12 +271,12 @@ cli.parse({
 });
 
 
+
 if ( cli.options.token && cli.options.webhook && cli.options.channel ) {
-    doColorProcess();
-    doWebhookHandler();
+    doImageProcess();
 
 } else {
-    lager.error( "Requires Slack token, webhook URL and channel to ping." );
+    lager.error( "Requires Slack token, webhook URL, channel to ping." );
 
     process.exit( 1 );
 }
