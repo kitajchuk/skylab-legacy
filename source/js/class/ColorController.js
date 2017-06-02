@@ -27,17 +27,17 @@ class ColorController extends Controller {
         // Call on parent cycle
         this.go(() => {
             const elem = this.getElement();
-            const data = elem.data();
+            const data = elem ? elem.data() : null;
 
             if ( elem && this.active !== elem[ 0 ] ) {
-                console.log( "activate color", data.color );
+                // console.log( "activate color", data.color );
                 this.active = elem[ 0 ];
                 core.dom.html
                     .removeClass( `is-theme--${core.config.themes.dark.id} is-theme--${core.config.themes.light.id}` )
                     .addClass( `is-theme--${data.color}` );
 
             } else if ( !elem && this.active ) {
-                console.log( "deactivate color" );
+                // console.log( "deactivate color" );
                 this.active = null;
                 core.dom.html.removeClass( `is-theme--${core.config.themes.dark.id} is-theme--${core.config.themes.light.id}` );
             }

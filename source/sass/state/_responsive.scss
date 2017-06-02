@@ -110,8 +110,11 @@
         padding-right: $padding-wrap;
         width: 100%;
         }
+    .career + .career {
+        margin-top: $expander-one;
+        }
     .person {
-        width: 50%;
+        width: 33.333333%;
         }
 }
 
@@ -260,6 +263,9 @@
         }
     .paging {
         display: none;
+        }
+    .person {
+        width: 50%;
         }
 }
 

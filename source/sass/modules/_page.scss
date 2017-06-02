@@ -26,10 +26,17 @@
 .section__label {
     padding-left: $padding-wrap;
     width: $wrap-astatic;
-    }
+}
 .section__content {
     width: $wrap-static;
     }
+.section.-theme--dark {
+    .section__label {
+        p {
+            color: $white;
+            }
+    }
+}
 
 
 
