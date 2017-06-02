@@ -8,6 +8,8 @@ const express = require( "express" );
 const expressPort = 8000;
 const bodyParser = require( "body-parser" );
 const spawn = require( "child_process" ).spawn;
+const slacker = require( "properjs-slacker" );
+const context = "skylab-taskrunner";
 let taskRunner = null;
 
 
@@ -57,6 +59,10 @@ const doTaskRunner = function () {
 
             } else {
                 taskRunner = null;
+
+                slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
+                    "Task Runner S3 Uploaded!"
+                ]);
 
                 lager.server( "Task Runner Complete!" );
             }
