@@ -179,6 +179,14 @@
       "fieldset" : "Dynamic Content",
       "config" : {
         "choices" : {
+          "lead": {
+            "type": "StructuredText",
+            "fieldset": "Lead Project Info Block",
+            "config": {
+              "placeholder": "Lead Project Info Block",
+              "multi": "heading1,heading2,heading3,heading4,heading5,heading6,paragraph,hyperlink,strong,em"
+            }
+          },
           "text" : {
             "type" : "Group",
             "fieldset" : "Single Text Block",

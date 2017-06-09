@@ -1,0 +1,22 @@
+<%
+const city = item.getText( 'project.city' );
+const state = item.getText( 'project.state' );
+%>
+<div class="cms cms--meta">
+    <% if ( item.getText( 'project.client' ) ) { %>
+        <p><strong>Client</strong>: <em><%- item.getText( 'project.client' ) %></em></p>
+    <% } %>
+    <% if ( city || state ) { %>
+        <p><strong>Location</strong>: <em><% if ( city ) { %><%= city %>, <% } %><%= state %></em></p>
+    <% } %>
+    <% if ( item.getText( 'project.year' ) ) { %>
+        <p><strong>Year</strong>: <em><%- item.getText( 'project.year' ) %></em></p>
+    <% } %>
+    <% if ( item.getText( 'project.size' ) ) { %>
+        <p><strong>Size</strong>: <em><%- item.getText( 'project.size' ) %></em></p>
+    <% } %>
+    <% if ( item.getStructuredText( 'project.awards' ) ) { %>
+        <p><strong>Awards</strong>:</p>
+        <em><%- item.getStructuredText( 'project.awards' ).asHtml() %></em>
+    <% } %>
+</div>

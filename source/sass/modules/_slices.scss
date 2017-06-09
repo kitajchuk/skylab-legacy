@@ -10,9 +10,18 @@
         padding-bottom: $expander-one;
         padding-top: $expander-one;
     }
+
+    .project--feature &.slices__lead {
+        padding-top: 0;
+        }
 }
 
 // Slice Types...
+.slices__lead {
+    .section__label {
+        padding-right: $padding-wrap;
+        }
+}
 .slices__text {
     text-align: center;
 }

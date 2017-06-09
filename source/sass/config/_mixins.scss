@@ -58,7 +58,7 @@
 @mixin h3() {
     font-size: $h3-size;
     line-height: $h3-line;
-    @include font-family-medium();
+    @include font-family();
 }
 @mixin h4() {
     font-size: $h4-size;
