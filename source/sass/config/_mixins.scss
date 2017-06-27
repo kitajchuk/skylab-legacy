@@ -18,14 +18,14 @@
     font-family: $font-family-bold, Helvetica;
     @include font-normal();
 }
-@mixin font-family-medium() {
-    font-family: $font-family-medium, Helvetica;
-    @include font-normal();
-}
-@mixin font-family-medium-italic() {
-    font-family: $font-family-medium-italic, Helvetica;
-    @include font-normal();
-}
+// @mixin font-family-medium() {
+//     font-family: $font-family-medium, Helvetica;
+//     @include font-normal();
+// }
+// @mixin font-family-medium-italic() {
+//     font-family: $font-family-medium-italic, Helvetica;
+//     @include font-normal();
+// }
 
 
 /******************************************************************************
@@ -36,7 +36,8 @@
     line-height: $p-line;
 }
 @mixin em() {
-    @include font-family-medium-italic();
+    // @include font-family-medium-italic();
+    font-style: italic;
 }
 @mixin a() {
     display: inline;
@@ -47,12 +48,12 @@
     line-height: $h1-line;
     letter-spacing: $h1-tracking;
     text-transform: lowercase;
-    @include font-family-medium();
+    @include font-family-bold();
 }
 @mixin h2() {
     font-size: $h2-size;
     line-height: $h2-line;
-    text-transform: lowercase;
+    // text-transform: lowercase;
     @include font-family();
 }
 @mixin h3() {

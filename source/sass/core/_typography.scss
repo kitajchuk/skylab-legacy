@@ -9,7 +9,7 @@
     line-height: 1.7;
 
     strong {
-        @include font-family-medium();
+        @include font-family-bold();
         }
     }
 .ul .li,
@@ -25,7 +25,7 @@
     @include em();
     }
 .strong {
-    @include font-family-medium();
+    @include font-family-bold();
     }
 .meta p,
 .meta li {

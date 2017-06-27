@@ -58,7 +58,7 @@
         position: relative;
         text-transform: lowercase;
         letter-spacing: $h1-tracking;
-        @include font-family-medium();
+        @include font-family-bold();
 
         &:after {
             background-color: $white;
