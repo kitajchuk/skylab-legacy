@@ -11,9 +11,9 @@
     border-radius: 100%;
     cursor: pointer;
     display: inline-block;
-    height: 12px;
+    height: $dot-size;
     pointer-events: auto;
-    width: 12px;
+    width: $dot-size;
 
     &.is-light {
         background-color: $grey;
