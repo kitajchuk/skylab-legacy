@@ -61,11 +61,12 @@
         width: 100%;
         }
     .map__marker {
-        width: 50px;
+        width: 160px;
 
         .svg {
-            fill: $gold;
+            fill: $black;
             transform: translateX( -50% ) translateY( -50% );
+            transition: fill $fast-duration $ease;
             }
     }
     .mapboxgl-ctrl-logo {

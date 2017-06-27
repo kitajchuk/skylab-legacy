@@ -22,7 +22,7 @@ class MapController {
         this.marker = this.element.find( ".js-map-marker" ).detach();
         this.data = this.element.data();
         this.lnglat = this.data.latlng.reverse();
-        this.theme = core.dom.html.is( ".is-theme--light" ) ? "light" : "dark";
+        this.theme = core.config.themes.light.id;
         this.map = null;
         this.mapMarker = null;
 
@@ -46,7 +46,7 @@ class MapController {
         // Set public access token...
         window.mapboxgl.accessToken = apiToken;
 
-        this.bind();
+        // this.bind();
         this.init();
     }
 
@@ -59,10 +59,6 @@ class MapController {
             style: `mapbox://styles/mapbox/${this.theme}-v9`,
             zoom: 16
         });
-
-        // this.mapMarker = new window.mapboxgl.Marker();
-        // this.mapMarker.setLngLat( this.lnglat );
-        // this.mapMarker.addTo( this.map );
 
         this.fooMarker = new window.mapboxgl.Marker( this.marker[ 0 ] );
         this.fooMarker.setLngLat( this.lnglat );
