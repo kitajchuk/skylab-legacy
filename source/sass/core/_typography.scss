@@ -12,6 +12,10 @@
         @include font-family-bold();
         }
     }
+.p--meta {
+    font-size: $m-size;
+    line-height: 2;
+    }
 .ul .li,
 .cms ul li {
     list-style: disc;
@@ -27,6 +31,7 @@
 .strong {
     @include font-family-bold();
     }
+.meta,
 .meta p,
 .meta li {
     color: $grey-text;

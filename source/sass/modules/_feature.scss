@@ -3,13 +3,15 @@
     margin-top: -$expander-one;
     }
 .feature__li {
+    pointer-events: none;
     position: relative;
     }
+.feature__wrap {
+    pointer-events: auto;
+    }
 .feature__li:nth-child( 1n ) {
-    opacity: 0.8;
     }
 .feature__li:nth-child( 2n ) {
-    opacity: 0.5;
     z-index: $z_layer_menu;
     }
 .feature__li:nth-child( 3n ) {

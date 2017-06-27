@@ -54,10 +54,14 @@ $filter-background: rgba( 138, 138, 138, 0.15 );
     background-color: $white;
     border-radius: 100%;
     display: inline-block;
-    height: 20px;
+    height: $dot-size;
     margin-top: 10px;
     transition: transform $fast-duration $ease;
-    width: 20px;
+    width: $dot-size;
+
+    &[data-value="black"] {
+        border: 2px solid $white;
+        }
 
     &.is-active {
         transform: scale( 1.2 );
