@@ -34,8 +34,7 @@
 .meta,
 .meta p,
 .meta li {
-    color: $grey-text;
-    font-size: $m-size;
+    @include meta();
     }
 
 

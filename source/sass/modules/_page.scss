@@ -26,13 +26,17 @@
 .section__label {
     padding-left: $padding-wrap;
     width: $wrap-astatic;
+
+    .page & > .cms > p:first-child {
+        @include meta();
+        }
 }
 .section__content {
     width: $wrap-static;
     }
 .section.-theme--dark {
     .section__label {
-        p {
+        .cms {
             color: $white;
             }
     }

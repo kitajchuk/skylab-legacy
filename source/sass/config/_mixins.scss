@@ -35,6 +35,10 @@
     font-size: $p-size;
     line-height: $p-line;
 }
+@mixin meta () {
+    color: $grey-text;
+    font-size: $m-size;
+}
 @mixin em() {
     // @include font-family-medium-italic();
     font-style: italic;
