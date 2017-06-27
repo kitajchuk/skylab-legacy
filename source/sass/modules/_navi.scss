@@ -8,14 +8,15 @@
                 transform $fast-duration $ease;
 
     &.is-active {
-        pointer-events: auto;
-
+        .navi__a {
+            pointer-events: auto;
+            }
         .navi__li {
             opacity: 1;
             transform: translateY( 0 );
             }
         .navi__a.is-active:after {
-            top: calc( 50% - #{$navi-strikethrough} );
+            top: calc( 58% - #{$navi-strikethrough} );
             }
     }
     &.is-closing {
@@ -67,24 +68,11 @@
             height: $navi-strikethrough;
             left: 50%;
             position: absolute;
-            top: 80%;
+            top: 95%;
             transform: translateX( -50% );
             transition: top $long-duration $ease-bounce,
                         transform $fast-duration $ease-bounce;
             width: 110%;
             }
     }
-}
-.navi__li--tertiary {
-    margin-top: $expander-mobile;
-        display: none;
-
-    & + .navi__li--tertiary {
-        margin-top: 10px;
-        }
-
-    .navi__a {
-        font-size: 24px;
-        @include em();
-        }
 }
