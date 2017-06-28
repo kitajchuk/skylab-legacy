@@ -10,10 +10,12 @@ const colorStyle = group.getText( 'colorStyle' );
         <% if ( background ) { %>
             <div class="cover__fill cover__background js-parallax-background -cover js-lazy-image" data-img-src="<%= background.url %>"></div>
         <% } %>
-        <div class="js-parallax-image -wrap-static">
-            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
-                <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+        <% if ( image ) { %>
+            <div class="js-parallax-image -wrap-static">
+                <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                    <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+                </div>
             </div>
-        </div>
+        <% } %>
     </div>
 </div>
