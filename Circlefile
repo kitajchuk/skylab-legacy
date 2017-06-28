@@ -62,11 +62,15 @@
 # Deploy to all AWS instances.
 
 
+deploy_task:
+		########################################################################
+		## Rsync + Restart Task Server
+		########################################################################
+		@rsync -av -e "ssh" --rsync-path "sudo rsync" --exclude "tasks/node_modules" tasks skylab.config.js $(AWS_USER)@$(AWS_TASK_HOST):$(AWS_DEST)
+		@ssh $(AWS_USER)@$(AWS_TASK_HOST) 'cd $(AWS_DEST)tasks/ ; sudo npm install ; sudo ./node_modules/.bin/forever stop app.js ; sudo ./node_modules/.bin/forever start app.js --token "$(SLACK_TOKEN)" --webhook "$(SLACK_WEBHOOK)" --channel "$(SLACK_CHANNEL)" --key $(S3_ACCESS_KEY) --secret $(S3_SECRET_KEY) --region "$(S3_REGION)" --bucket "$(S3_BUCKET)" --prefix "static" --directory "static"'
+
+
 deploy_staging:
-		########################################################################
-		## Run Image Processing Task ( Temporary Solution here )
-		########################################################################
-		#node ./tasks/imageprocess.js --token "$(SLACK_TOKEN)" --webhook "$(SLACK_WEBHOOK)" --channel "$(SLACK_CHANNEL)"
 		########################################################################
 		## S3 Bucket Sync
 		########################################################################
@@ -76,14 +80,15 @@ deploy_staging:
 		########################################################################
 		@rsync -av -e "ssh" --rsync-path "sudo rsync" --exclude "server/node_modules" server static template skylab.config.js $(AWS_USER)@$(AWS_STAGING_HOST):$(AWS_DEST)
 		@ssh $(AWS_USER)@$(AWS_STAGING_HOST) 'cd $(AWS_DEST)server/ ; sudo npm install ; sudo npm run stop ; sudo npm run start:staging'
-		########################################################################
-		## Rsync + Restart Task Server
-		########################################################################
-		@rsync -av -e "ssh" --rsync-path "sudo rsync" --exclude "tasks/node_modules" tasks skylab.config.js $(AWS_USER)@$(AWS_TASK_HOST):$(AWS_DEST)
-		@ssh $(AWS_USER)@$(AWS_TASK_HOST) 'cd $(AWS_DEST)tasks/ ; sudo npm install ; sudo ./node_modules/.bin/forever stop app.js ; sudo ./node_modules/.bin/forever start app.js --token "$(SLACK_TOKEN)" --webhook "$(SLACK_WEBHOOK)" --channel "$(SLACK_CHANNEL)" --key $(S3_ACCESS_KEY) --secret $(S3_SECRET_KEY) --region "$(S3_REGION)" --bucket "$(S3_BUCKET)" --prefix "static" --directory "static"'
 
 
 deploy_production:
-	########################################################################
-	## Mirror deploy_staging with AWS_PRODUCTION_HOST
-	########################################################################
+		########################################################################
+		## S3 Bucket Sync
+		########################################################################
+		./node_modules/.bin/properjs-s3 --key $(S3_ACCESS_KEY) --secret $(S3_SECRET_KEY) --region "$(S3_REGION)" --bucket "$(S3_BUCKET)" --prefix "static" --directory "static"
+		########################################################################
+		## Rsync + Restart App Server
+		########################################################################
+		@rsync -av -e "ssh" --rsync-path "sudo rsync" --exclude "server/node_modules" server static template skylab.config.js $(AWS_USER)@$(AWS_PRODUCTION_HOST):$(AWS_DEST)
+		@ssh $(AWS_USER)@$(AWS_PRODUCTION_HOST) 'cd $(AWS_DEST)server/ ; sudo npm install ; sudo npm run stop ; sudo npm run start:staging'
