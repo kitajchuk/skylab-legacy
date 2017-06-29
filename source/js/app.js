@@ -45,48 +45,27 @@ class App {
             this.core.emitter.fire( "app--theme-change", data.theme );
         });
 
-        this.core.emitter.on( "app--intro-teardown", () => {
-            this.bindLate();
+        this.bindIntro();
+    }
 
+
+    bindIntro () {
+        this.core.emitter.on( "app--intro-teardown", () => {
+            if ( router.isHomepage() ) {
+                navi.open();
+            }
+
+            this.bindPage();
+        });
+    }
+
+
+    bindPage () {
+        this.core.emitter.on( "app--page-teardown", () => {
             if ( router.isHomepage() ) {
                 navi.open();
             }
         });
-    }
-
-
-    bindLate () {
-        this.core.emitter.on( "app--activate-cover--feature", () => {
-            this.onActivateCover();
-        });
-
-        this.core.emitter.on( "app--deactivate-cover--feature", () => {
-            this.onDeactivateCover();
-        });
-    }
-
-
-    onActivateCover () {
-        if ( router.isHomepage() ) {
-            navi.homeClass( false );
-            navi.open();
-
-            if ( !this.core.detect.isDevice() ) {
-                filter.close();
-            }
-        }
-    }
-
-
-    onDeactivateCover () {
-        if ( router.isHomepage() ) {
-            navi.homeClass( true );
-            navi.closeSpecial();
-
-            if ( !this.core.detect.isDevice() ) {
-                filter.open();
-            }
-        }
     }
 
 

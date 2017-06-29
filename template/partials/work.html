@@ -1,7 +1,6 @@
 <%
 const items = locals.context.get( 'items' );
 const tileset = locals.context.get( 'tileset' );
-const features = locals.context.get( 'features' );
 %>
 <% if ( tileset ) { %>
     <div class="tileset js-tileset">
@@ -12,16 +11,7 @@ const features = locals.context.get( 'features' );
         </ul>
     </div>
 <% } else { %>
-    <% if ( features ) { %>
-        <div class="feature js-feature js-cover" data-cover="feature">
-            <ul class="feature__ul">
-                <% features.forEach(( feature ) => { %>
-                    <%- include( 'index--feature.html', {feature: feature} ) %>
-                <% }) %>
-            </ul>
-        </div>
-    <% } %>
-    <div class="index js-index js-home--target">
+    <div class="index js-index">
         <ul class="index__ul">
             <% items.forEach(( item ) => { %>
                 <%- include( 'index--item.html', {item: item} ) %>

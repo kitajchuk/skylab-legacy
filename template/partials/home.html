@@ -1,0 +1,12 @@
+<%
+const features = locals.context.get( 'features' );
+%>
+<% if ( features ) { %>
+    <div class="feature js-feature js-cover" data-cover="feature">
+        <ul class="feature__ul">
+            <% features.forEach(( feature ) => { %>
+                <%- include( 'index--feature.html', {feature: feature} ) %>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>

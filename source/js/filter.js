@@ -30,6 +30,8 @@ const filter = {
         this.timing = core.util.getElementDuration( this.element[ 0 ] );
         this.timeout = null;
         this.screen = $( "<div />" ).addClass( "filter-screen screen is-active" );
+        this.labelText = "Filter";
+        this.skipLabel = "All";
 
         this.bind();
         this.query();
@@ -39,15 +41,14 @@ const filter = {
     query () {
         this.params = paramalama( window.location.search );
 
+        this.deactivate();
+
         for ( const prop in this.params ) {
             if ( this.params.hasOwnProperty( prop ) ) {
                 const option = this.options.filter( `.js-filter-${prop}[data-value='${this.params[ prop ]}']` );
 
                 if ( option.length ) {
                     this.activate( option );
-
-                } else {
-                    this.deactivate();
                 }
             }
         }
@@ -57,16 +58,19 @@ const filter = {
     deactivate () {
         this.options.removeClass( "is-active" );
         this.label.addClass( "is-empty" );
-        this.label[ 0 ].innerHTML = "Filter";
+        this.label[ 0 ].innerHTML = this.labelText;
     },
 
 
     activate ( option ) {
-        this.options.removeClass( "is-active" );
+        const value = option.data().value;
+
         option.addClass( "is-active" );
 
-        this.label.removeClass( "is-empty" );
-        this.label[ 0 ].innerHTML = option.data().value;
+        if ( value !== this.skipLabel ) {
+            this.label.removeClass( "is-empty" );
+            this.label[ 0 ].innerHTML = value;
+        }
     },
 
 
@@ -77,10 +81,6 @@ const filter = {
 
         this.screen.on( "click", () => {
             this.toggle();
-        });
-
-        this.options.on( "click", ( e ) => {
-            this.activate( $( e.target ) );
         });
     },
 
@@ -94,8 +94,6 @@ const filter = {
             core.dom.body.append( this.screen );
 
             setTimeout( () => resolve(), this.timing );
-
-            // navi.close();
         });
     },
 
