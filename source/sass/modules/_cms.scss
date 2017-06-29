@@ -29,16 +29,6 @@
     ul + h5,
     ul + h6,
 
-    h1 + p,
-    h1 + ol,
-    h1 + ul,
-    h1 + h1,
-    h1 + h2,
-    h1 + h3,
-    h1 + h4,
-    h1 + h5,
-    h1 + h6,
-
     h2 + p,
     h2 + ol,
     h2 + ul,
@@ -89,6 +79,18 @@
     h6 + h5,
     h6 + h6 {
         margin-top: $expander-mobile;
+        }
+
+    h1 + p,
+    h1 + ol,
+    h1 + ul,
+    h1 + h1,
+    h1 + h2,
+    h1 + h3,
+    h1 + h4,
+    h1 + h5,
+    h1 + h6 {
+        margin-top: $expander-one;
         }
 }
 .cms + .cms--meta {
