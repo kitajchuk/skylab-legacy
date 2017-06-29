@@ -18,10 +18,12 @@ import TogglerController from "./TogglerController";
  * @global
  * @class Controllers
  * @classdesc Handle controller functions.
+ * @param {object} options Optional config
  *
  */
 class Controllers {
-    constructor () {
+    constructor ( options ) {
+        this.options = options || {};
         this.controllers = [];
     }
 
@@ -76,7 +78,9 @@ class Controllers {
         this.imageController.on( "preloaded", () => {
             this.init();
 
-            core.emitter.fire( "app--page-teardown" );
+            if ( this.options.onPreloaded ) {
+                this.options.onPreloaded();
+            }
         });
     }
 

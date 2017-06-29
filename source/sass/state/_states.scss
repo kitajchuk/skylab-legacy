@@ -67,6 +67,11 @@
         background-color: rgba( 138, 138, 138, 0.05 );
         }
 }
+.is-home-page {
+    .header__svg {
+        display: inline-block;
+        }
+}
 .is-studio-page {
     .theme {
         display: none;
@@ -87,9 +92,6 @@
 }
 .is-cover {}
 .is-cover--feature {
-    .header__list {
-        opacity: 0;
-        }
     .header__svg {
         display: inline-block;
         }

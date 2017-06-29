@@ -30,7 +30,7 @@ const state = item.getText( 'project.state' );
         <% if ( item.getGroup( 'project.categories' ) ) { %>
             <% item.getGroup( 'project.categories' ).toArray().forEach(function ( item ) { %>
                 <div class="p">
-                    <a class="a" href="?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                    <a class="a" href="/work/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
                 </div>
             <% }) %>
         <% } %>

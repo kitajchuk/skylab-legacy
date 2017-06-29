@@ -14,15 +14,7 @@ const imageJSON = `${config.deploy.cdnURL}/json/imageprocess.json`;
 
 
 const canFeatures = function ( req ) {
-    return (
-        req.params.type === config.skylab.mainType &&
-        !req.params.uid &&
-        !req.query.category &&
-        !req.query.status &&
-        !req.query.color &&
-        !req.query.material &&
-        !req.query.space
-    );
+    return (req.query.template === config.homepage);
 };
 
 

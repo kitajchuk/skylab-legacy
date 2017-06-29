@@ -21,10 +21,13 @@
     display: none;
     }
 .header__svg {
-    display: none;
+    display: inline-block;
     width: $logo-width-header;
 
     .svg {
         fill: $white;
         }
 }
+.header__svg + .header__keys {
+    margin-left: $expander-mobile / 2;
+    }
