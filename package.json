@@ -15,7 +15,6 @@
     "deploy:task": "rsync -av -e 'ssh -i ./local/skylab.pem' --rsync-path 'sudo rsync' --exclude 'tasks/node_modules' tasks skylab.config.js ec2-user@35.160.15.151:/var/www/html/",
     "deploy:staging": "npm run build:staging ; rsync -av -e 'ssh -i ./local/skylab.pem' --rsync-path 'sudo rsync' --exclude 'server/node_modules' server static template skylab.config.js ec2-user@35.161.152.178:/var/www/html/",
     "deploy:production": "npm run build:production ; rsync -av -e 'ssh -i ./local/skylab.pem' --rsync-path 'sudo rsync' --exclude 'server/node_modules' server static template skylab.config.js ec2-user@35.162.151.95:/var/www/html/",
-    "deploy:task": "rsync -av -e 'ssh -i ./local/skylab.pem' --rsync-path 'sudo rsync' --exclude 'tasks/node_modules' tasks skylab.config.js ec2-user@35.160.15.151:/var/www/html/",
     "connect:staging": "ssh ec2-user@35.161.152.178 -i ./local/skylab.pem",
     "connect:production": "ssh ec2-user@35.162.151.95 -i ./local/skylab.pem",
     "connect:task": "ssh ec2-user@35.160.15.151 -i ./local/skylab.pem",

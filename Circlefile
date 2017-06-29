@@ -67,7 +67,7 @@ deploy_task:
 		## Rsync + Restart Task Server
 		########################################################################
 		@rsync -av -e "ssh" --rsync-path "sudo rsync" --exclude "tasks/node_modules" tasks skylab.config.js $(AWS_USER)@$(AWS_TASK_HOST):$(AWS_DEST)
-		@ssh $(AWS_USER)@$(AWS_TASK_HOST) 'cd $(AWS_DEST)tasks/ ; sudo npm run install ; sudo ./node_modules/.bin/forever -a start app.js --token "$(SLACK_TOKEN)" --webhook "$(SLACK_WEBHOOK)" --channel "$(SLACK_CHANNEL)" --key $(S3_ACCESS_KEY) --secret $(S3_SECRET_KEY) --region "$(S3_REGION)" --bucket "$(S3_BUCKET)" --prefix "static" --directory "static"'
+		@ssh $(AWS_USER)@$(AWS_TASK_HOST) 'cd $(AWS_DEST)tasks/ ; sudo npm run install:task ; sudo ./node_modules/.bin/forever -a start app.js --token "$(SLACK_TOKEN)" --webhook "$(SLACK_WEBHOOK)" --channel "$(SLACK_CHANNEL)" --key $(S3_ACCESS_KEY) --secret $(S3_SECRET_KEY) --region "$(S3_REGION)" --bucket "$(S3_BUCKET)" --prefix "static" --directory "static"'
 
 
 deploy_staging:
