@@ -55,6 +55,7 @@ const config = {
 
     // Skylab-www specific ( Prismic )
     skylab: {
+        hoboBuild: "is eq not attr index filter detach remove append toggleClass",
         mainForm: "sitewide",
         naviFrag: "site.navi",
         siteType: "site",
