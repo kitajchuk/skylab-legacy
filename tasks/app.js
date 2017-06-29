@@ -20,7 +20,7 @@ const doTaskRunner = function () {
     // Reverse order since we use `tasks.pop()`
     const tasks = [
         {
-            cmd: "./task-img ; ./task-s3",
+            cmd: "../task-img ; ../task-s3",
             args: []
         }
     ];

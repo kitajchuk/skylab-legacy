@@ -6,9 +6,8 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "./node_modules/.bin/forever start app.js",
-    "stop": "./node_modules/.bin/forever stop app.js",
-    "postinstall": "mkdir static ; mkdir static/json"
+    "stop": "./node_modules/.bin/forever stopall",
+    "install": "node install.js"
   },
   "contributors": [
     {

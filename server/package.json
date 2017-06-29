@@ -6,9 +6,11 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start:staging": "export NODE_ENV=staging ; ./node_modules/.bin/forever start app.js",
-    "start:production": "export NODE_ENV=production ; ./node_modules/.bin/forever start app.js",
-    "stop": "./node_modules/.bin/forever stop app.js"
+    "start:staging": "export NODE_ENV=staging ; ./node_modules/.bin/forever -a start app.js",
+    "start:production": "export NODE_ENV=production ; ./node_modules/.bin/forever -a start app.js",
+    "stop": "./node_modules/.bin/forever stopall",
+    "install:staging": "export NODE_ENV=staging ; node install.js",
+    "install:production": "export NODE_ENV=production ; node install.js"
   },
   "contributors": [
     {
