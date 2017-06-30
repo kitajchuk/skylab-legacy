@@ -1,9 +1,12 @@
 .slices__slice {
-    padding-bottom: $expander-one;
-    padding-top: $expander-one;
     position: relative;
     width: 100%;
-    }
+
+    .project--feature & {
+        padding-bottom: $expander-one;
+        padding-top: $expander-one;
+        }
+}
 .slices__content {
     width: 100%;
     }
