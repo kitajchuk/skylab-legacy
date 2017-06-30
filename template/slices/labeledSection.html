@@ -15,7 +15,7 @@ if ( contentType === 'NewBiz' ) {
     wrapClass = '-wrap-static--right';
 }
 %>
-<div class="section <%= isPerson ? 'toggler js-toggler' : '' %> -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+<div class="section <%= isPerson ? 'toggler js-toggler' : '' %> -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>" <% if ( isPerson ) { %>data-type="center"<% } %>>
     <div class="section__label -column -vtop -grey">
         <div class="cms">
             <%- label.asHtml() %>

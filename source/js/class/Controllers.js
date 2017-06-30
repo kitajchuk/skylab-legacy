@@ -10,6 +10,7 @@ import MapController from "./MapController";
 import HoverController from "./HoverController";
 import ColorController from "./ColorController";
 import TogglerController from "./TogglerController";
+import ScrollNinja from "./ScrollNinja";
 
 
 /**
@@ -64,6 +65,7 @@ class Controllers {
 
         this.push( "animates", core.dom.main.find( core.config.animSelector ), AnimateController, true );
         this.push( "project", core.dom.main.find( core.config.projectSelector ), ProjectController, true );
+        this.push( "scrollninja", core.dom.main.find( core.config.scrollNinjaSelector ), ScrollNinja, true );
         this.push( "cover", core.dom.main.find( core.config.coverSelector ), CoverController, true );
         this.push( "colors", core.dom.main.find( core.config.colorSelector ), ColorController, true );
         this.push( "videos", core.dom.main.find( core.config.videoSelector ), VideoController, true );

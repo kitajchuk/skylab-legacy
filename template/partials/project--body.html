@@ -1,4 +1,9 @@
-<div class="project__body js-project-body">
+<%
+const ptype = item.getText( 'project.type' );
+const isStandard = (ptype === 'Standard');
+%>
+
+<div class="project__body <%= isStandard ? 'js-scrollninja-body' : '' %>">
     <div class="slices">
         <% if ( item.getSliceZone( 'project.slices' ) ) { %>
             <% item.getSliceZone( 'project.slices' ).slices.forEach(( slice ) => { %>

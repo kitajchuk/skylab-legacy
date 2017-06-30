@@ -264,6 +264,17 @@ const config = {
     /**
      *
      * @public
+     * @member scrollNinjaSelector
+     * @memberof core.config
+     * @description The string selector used for <scrollninja> node.
+     *
+     */
+    scrollNinjaSelector: ".js-scrollninja",
+
+
+    /**
+     *
+     * @public
      * @member lazyImageAttr
      * @memberof core.config
      * @description The string attribute for lazy image source URLs.
