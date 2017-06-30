@@ -167,7 +167,7 @@ const processResult = function ( result ) {
         message.push( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
 
         if ( !results.raw.length ) {
-            fs.writeFile( jsonPath, JSON.stringify( results.processed, null, 4 ), "utf8", ( error ) => {
+            fs.writeFile( jsonPath, JSON.stringify( results.processed ), "utf8", ( error ) => {
                 // Slack Error so we are aware ;-P
                 if ( error ) {
                     message = [error];

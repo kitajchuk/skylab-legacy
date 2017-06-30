@@ -2,14 +2,17 @@
 
 
 
+const path = require( "path" );
 const cli = require( "cli" );
 const lager = require( "properjs-lager" );
 const express = require( "express" );
 const expressPort = 8000;
 const bodyParser = require( "body-parser" );
-const spawn = require( "child_process" ).spawn;
+const child_process = require( "child_process" );
 const slacker = require( "properjs-slacker" );
 const context = "skylab-taskrunner";
+const taskImg = path.join( __dirname, "../task-img" );
+const tasks3 = path.join( __dirname, "../task-s3" );
 let taskRunner = false;
 
 
@@ -19,34 +22,24 @@ const doTaskRunner = function () {
 
     // Reverse order since we use `tasks.pop()`
     const tasks = [
-        {
-            cmd: "../task-img ; ../task-s3",
-            args: []
-        }
+        tasks3,
+        taskImg
     ];
-    const onData = function ( data ) {
-        console.log( data.toString() );
-    };
     const doTask = function ( task ) {
-        const child = spawn( task.cmd, task.args, {
-            shell: true
-        });
+        child_process.execSync( task );
 
-        child.stdout.on( "data", onData );
-        child.on( "close", () => {
-            if ( tasks.length ) {
-                doTask( tasks.pop );
+        if ( tasks.length ) {
+            doTask( tasks.pop() );
 
-            } else {
-                taskRunner = false;
+        } else {
+            taskRunner = false;
 
-                slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
-                    "Task Runner S3 Uploaded!"
-                ]);
+            slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
+                "Task Runner S3 Uploaded!"
+            ]);
 
-                lager.server( "Task Runner Complete!" );
-            }
-        });
+            lager.server( "Task Runner Complete!" );
+        }
     };
 
     doTask( tasks.pop() );
