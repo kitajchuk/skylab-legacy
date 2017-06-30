@@ -4,11 +4,24 @@
     const title = item.getText( 'career.title' );
     const description = item.getStructuredText( 'career.description' );
     %>
-    <div class="career">
-        <div class="career__info -wrap">
+    <div class="career project project--standard js-scrollninja">
+        <div class="career__info project__info -wrap js-scrollninja-info">
             <div class="cms -wrap-copy">
                 <h1><%= title %></h1>
                 <%- description.asHtml() %>
+            </div>
+        </div>
+        <div class="project__body js-scrollninja-body">
+            <div class="slices">
+                <% if ( item.getSliceZone( 'career.slices' ) ) { %>
+                    <% item.getSliceZone( 'career.slices' ).slices.forEach(( slice ) => { %>
+                        <div class="slices__slice slices__<%= slice.sliceType %>">
+                            <div class="slices__content">
+                                <%- include( `../slices/${slice.sliceType}.html`, {slice: slice, item: item} ) %>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
             </div>
         </div>
     </div>

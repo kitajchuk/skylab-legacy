@@ -106,11 +106,11 @@
         padding-left: $padding-wrap;
         padding-top: $expander-mobile;
         }
-    .career {
+    .view--career .career {
         padding-right: $padding-wrap;
         width: 100%;
         }
-    .career + .career {
+    .view--career .career + .career {
         margin-top: $expander-one;
         }
     .person {

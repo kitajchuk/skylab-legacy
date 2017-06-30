@@ -48,9 +48,10 @@
 
 
 
-.career {
+.view--career .career {
     padding-right: $expander-one;
     }
+.career {}
 .career__info {
     padding-bottom: $header-height;
     padding-top: $header-height + $expander-one;
@@ -66,9 +67,6 @@
 .view--person {
     margin-right: -$expander-mobile;
     }
-
-
-
 .person {
     margin-bottom: $expander-mobile;
     padding-right: $expander-mobile;
