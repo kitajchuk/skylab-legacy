@@ -57,5 +57,37 @@
         "label": "Desk"
       }
     }
-  }
+  },
+  "Person Page Photos": {
+     "slices": {
+       "type": "Slices",
+       "fieldset": "Dynamic Content",
+       "config": {
+         "choices": {
+           "image": {
+             "type": "Image",
+             "fieldset": "Single Image Block",
+             "config": {
+               "placeholder": "Single Image Block",
+               "constraint": {
+                 "width": 2400
+               },
+               "thumbnails": [
+                 {
+                   "name": "tablet",
+                   "width": 1600,
+                   "height": 900
+                 },
+                 {
+                   "name": "mobile",
+                   "width": 800,
+                   "height": 450
+                 }
+               ]
+             }
+           }
+         }
+       }
+     }
+   }
 }
