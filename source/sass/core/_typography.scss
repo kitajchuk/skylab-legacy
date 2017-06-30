@@ -12,7 +12,8 @@
         @include font-family-bold();
         }
     }
-.p--meta {
+.p--meta,
+.p--meta p {
     font-size: $m-size;
     line-height: 2;
     }

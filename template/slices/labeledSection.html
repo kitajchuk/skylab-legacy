@@ -5,6 +5,15 @@ const text = group.getStructuredText( 'text' );
 const contentType = group.getText( 'contentType' );
 const colorStyle = group.getText( 'colorStyle' );
 const isPerson = contentType && contentType === 'Person';
+
+let wrapClass = '';
+
+if ( contentType === 'NewBiz' ) {
+    wrapClass = '-wrap--right';
+
+} else if ( !contentType ) {
+    wrapClass = '-wrap-static--right';
+}
 %>
 <div class="section <%= isPerson ? 'toggler js-toggler' : '' %> -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
     <div class="section__label -column -vtop -grey">
@@ -20,13 +29,13 @@ const isPerson = contentType && contentType === 'Person';
             </ul>
         <% } %>
     </div>
-    <div class="section__content -column -vtop -wrap-static <%= text ? '-wrap-static--right' : '' %>">
-        <% if ( text ) { %>
+    <div class="section__content -column -vtop -wrap-static <%= wrapClass %>">
+        <% if ( contentType ) { %>
+            <div class="view view--<%= contentType.toLowerCase() %> js-view" data-uid="<%= contentType.toLowerCase() %>" data-api="/api/<%= contentType.toLowerCase() %>"></div>
+        <% } else if ( text ) { %>
             <div class="cms -wrap-heading">
                 <%- text.asHtml() %>
             </div>
-        <% } else if ( contentType ) { %>
-            <div class="view view--<%= contentType.toLowerCase() %> js-view" data-uid="<%= contentType.toLowerCase() %>" data-api="/api/<%= contentType.toLowerCase() %>"></div>
         <% } %>
     </div>
 </div>

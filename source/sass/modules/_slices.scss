@@ -1,20 +1,24 @@
 .slices__slice {
+    padding-bottom: $expander-one;
+    padding-top: $expander-one;
     position: relative;
     width: 100%;
     }
 .slices__content {
     width: 100%;
     }
-.slices__slice {
-    .project--feature &:not( .slices__parallax ) {
-        padding-bottom: $expander-one;
-        padding-top: $expander-one;
-    }
 
-    .project--feature &.slices__lead {
-        padding-top: 0;
-        }
-}
+// Slices with no padding
+.slices__map,
+.slices__parallax,
+.slices__labeledSection {
+    padding-bottom: 0;
+    padding-top: 0;
+    }
+.slices__parallax + .slices__lead,
+.slices__parallax + .slices__labeledSection .section {
+    padding-top: 0;
+    }
 
 // Slice Types...
 .slices__lead {
@@ -75,4 +79,3 @@
 }
 .slices__videoEmbed {}
 .slices__videoLink {}
-.slices__parallax {}
