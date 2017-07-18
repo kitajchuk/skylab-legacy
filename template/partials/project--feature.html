@@ -1,11 +1,5 @@
 <%
 const cover = item.getGroup( 'project.feature' ).toArray()[ 0 ];
 %>
-<div class="project__info page__cover -wrap">
-    <div class="cms">
-        <% if ( item.getText( 'project.title' ) ) { %>
-            <h1><%= item.getText( 'project.title' ) %></h1>
-        <% } %>
-    </div>
-</div>
-<%- include( 'project--body.html', {item: item} ) %>
+
+<%- include( 'project--body.html', {item: item, coverType: 'project'} ) %>

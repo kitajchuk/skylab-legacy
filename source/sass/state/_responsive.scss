@@ -29,6 +29,49 @@
     .cms li {
         font-size: $p-size-medium;
         }
+
+    // Feature project, page covers ( like studio )
+    .project--feature .page__cover {
+        position: relative;
+
+        .cms {
+            position: relative;
+            top: auto;
+            transform: translateY( -19% );
+        }
+    }
+    .project--feature .slices__slice:first-child .project__cover {
+        height: auto;
+
+        .page__parallax {
+            transform: none !important;
+            width: 100%;
+        }
+    }
+    .page--studio .page__cover {
+        position: relative;
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+        padding-top: $expander-two;
+        background: white;
+        padding-bottom: $expander-mobile;
+
+        .cms {
+            position: relative;
+            top: auto;
+            transform: none;
+        }
+    }
+    .page--studio .slices__slice:first-child .project__cover {
+        height: auto;
+
+        .page__parallax {
+            width: 100%;
+            margin-bottom: $expander-mobile;
+            transform: none !important;
+        }
+    }
 }
 
 
@@ -142,7 +185,7 @@
     .main {
         padding-top: $header-height;
         }
-    .project__info {
+    .project--standard .project__info {
         padding-bottom: $expander-one;
         }
     .project__body {
@@ -237,10 +280,6 @@
             background-color: $white;
             }
     }
-    .page__cover,
-    .slices__slice:first-child .cover {
-        height: 70vh;
-        }
     .grid {
         display: flex;
         flex-wrap: wrap;
@@ -270,6 +309,27 @@
     .person {
         width: 50%;
         }
+
+
+    // Project / Page tightening
+    .slices__map .map__marker {
+        width: 120px;
+    }
+
+    .-exp-1,
+    .-exp-2 {
+        padding-bottom: $expander-mobile;
+        padding-top: $expander-mobile;
+    }
+
+    .slices__diptych .-column + .-column {
+        margin-top: $expander-mobile / 2;
+    }
+
+    .person {
+        margin-bottom: $expander-mobile / 2;
+        padding-right: $expander-mobile / 2;
+    }
 }
 
 

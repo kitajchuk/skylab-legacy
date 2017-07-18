@@ -5,15 +5,33 @@ const background = group.getImage( 'background' );
 const imagePos = group.getText( 'imagePosition' );
 const colorStyle = group.getText( 'colorStyle' );
 %>
-<div class="cover cover--base <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %> js-parallax -text--<%= imagePos.toLowerCase() %> ghost" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+<div class="project__cover cover cover--base <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %> js-parallax -text--<%= imagePos.toLowerCase() %> ghost" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
     <div class="ghost__child -full">
+        <% if ( coverType === 'page' ) { %>
+            <div class="page__cover -wrap <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+                <div class="cms">
+                    <% if ( item.getText( 'page.title' ) ) { %>
+                        <h1><%= item.getText( 'page.title' ) %></h1>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
         <% if ( background ) { %>
             <div class="cover__fill cover__background js-parallax-background -cover js-lazy-image" data-img-src="<%= background.url %>"></div>
         <% } %>
         <% if ( image ) { %>
-            <div class="js-parallax-image -wrap-static">
+            <div class="page__parallax js-parallax-image -wrap-static">
                 <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                     <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+                </div>
+            </div>
+        <% } %>
+        <% if ( coverType === 'project' ) { %>
+            <div class="project__info page__cover -wrap">
+                <div class="cms">
+                    <% if ( item.getText( 'project.title' ) ) { %>
+                        <h1><%= item.getText( 'project.title' ) %></h1>
+                    <% } %>
                 </div>
             </div>
         <% } %>

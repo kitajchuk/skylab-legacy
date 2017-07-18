@@ -14,7 +14,8 @@
 // Slices with no padding
 .slices__map,
 .slices__parallax,
-.slices__labeledSection {
+.slices__labeledSection,
+.project--feature .slices__parallax {
     padding-bottom: 0;
     padding-top: 0;
     }
