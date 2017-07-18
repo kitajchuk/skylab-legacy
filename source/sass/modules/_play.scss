@@ -1,0 +1,27 @@
+.reader__cover {
+    position: relative;
+}
+.reader__li {
+    margin-bottom: $expander-two;
+    }
+.reader__li--standard {
+    .reader__body,
+    .reader__info {
+        width: $reader-body-width;
+        }
+    .-wrap-media {
+        padding: 0;
+        }
+}
+.reader__li--feature {
+    .reader__title {
+        position: relative;
+        z-index: 1;
+    }
+    .reader__image {
+        position: relative;
+    }
+}
+.reader__body__wrap {
+    transform: translateX( -10vw );
+    }

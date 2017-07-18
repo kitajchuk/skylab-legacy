@@ -1,194 +1,173 @@
 {
-  "Page Information": {
-    "title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label": "Page Title",
-        "placeholder": "Page Title"
+  "Page Information" : {
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label" : "Page Title",
+        "placeholder" : "Page Title"
       }
     },
-    "uid": {
-      "type": "UID",
-      "config": {
-        "placeholder": "Page Slug",
-        "label": "Page Slug"
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "placeholder" : "Page Slug",
+        "label" : "Page Slug"
       }
     },
-    "description": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
-        "label": "Page Description",
-        "placeholder": "Page Description"
+    "description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+        "label" : "Page Description",
+        "placeholder" : "Page Description"
       }
     },
-    "image": {
-      "type": "Image",
-      "config": {
-        "constraint": {
-          "width": 2400
+    "image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 2400
         },
-        "thumbnails": [
-          {
-            "name": "tablet",
-            "width": 1600,
-            "height": 900
-          },
-          {
-            "name": "mobile",
-            "width": 800,
-            "height": 450
-          }
-        ],
-        "label": "Page Image"
+        "thumbnails" : [ {
+          "name" : "tablet",
+          "width" : 1600,
+          "height" : 900
+        }, {
+          "name" : "mobile",
+          "width" : 800,
+          "height" : 450
+        } ],
+        "label" : "Page Image"
       }
     }
   },
-  "Page Content": {
-    "slices": {
-      "type": "Slices",
-      "fieldset": "Dynamic Page Content",
-      "config": {
-        "choices": {
-          "map": {
-            "type": "Group",
-            "fieldset": "Map Location Block",
-            "config": {
-              "repeat": false,
-              "fields": {
-                "map": {
-                  "type": "GeoPoint",
-                  "fieldset": "Map Location"
+  "Page Content" : {
+    "slices" : {
+      "type" : "Slices",
+      "fieldset" : "Dynamic Page Content",
+      "config" : {
+        "choices" : {
+          "map" : {
+            "type" : "Group",
+            "fieldset" : "Map Location Block",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "map" : {
+                  "type" : "GeoPoint",
+                  "fieldset" : "Map Location"
                 },
-                "url": {
-                  "type": "Link",
-                  "fieldset": "Google Maps Link",
-                  "config": {
-                    "placeholder": "Google Maps Link",
-                    "select": "web"
+                "url" : {
+                  "type" : "Link",
+                  "fieldset" : "Google Maps Link",
+                  "config" : {
+                    "placeholder" : "Google Maps Link",
+                    "select" : "web"
                   }
                 }
               }
             }
           },
-          "parallax": {
-            "type": "Group",
-            "fieldset": "Parallax Images Block",
-            "config": {
-              "repeat": false,
-              "fields": {
-                "background": {
-                  "type": "Image",
-                  "fieldset": "Background Image",
-                  "config": {
-                    "placeholder": "Background Image",
-                    "constraint": {
-                      "width": 2400
+          "parallax" : {
+            "type" : "Group",
+            "fieldset" : "Parallax Images Block",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "background" : {
+                  "type" : "Image",
+                  "fieldset" : "Background Image",
+                  "config" : {
+                    "placeholder" : "Background Image",
+                    "constraint" : {
+                      "width" : 2400
                     },
-                    "thumbnails": [
-                      {
-                        "name": "tablet",
-                        "width": 1600,
-                        "height": 900
-                      },
-                      {
-                        "name": "mobile",
-                        "width": 800,
-                        "height": 450
-                      }
-                    ]
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
                   }
                 },
-                "image": {
-                  "type": "Image",
-                  "fieldset": "Foreground Image",
-                  "config": {
-                    "placeholder": "Foreground Image",
-                    "constraint": {
-                      "width": 2400
+                "image" : {
+                  "type" : "Image",
+                  "fieldset" : "Foreground Image",
+                  "config" : {
+                    "placeholder" : "Foreground Image",
+                    "constraint" : {
+                      "width" : 2400
                     },
-                    "thumbnails": [
-                      {
-                        "name": "tablet",
-                        "width": 1600,
-                        "height": 900
-                      },
-                      {
-                        "name": "mobile",
-                        "width": 800,
-                        "height": 450
-                      }
-                    ]
+                    "thumbnails" : [ {
+                      "name" : "tablet",
+                      "width" : 1600,
+                      "height" : 900
+                    }, {
+                      "name" : "mobile",
+                      "width" : 800,
+                      "height" : 450
+                    } ]
                   }
                 },
-                "imagePosition": {
-                  "type": "Select",
-                  "config": {
-                    "options": [
-                      "Left",
-                      "Right"
-                    ],
-                    "label": "Select Foreground Image Position",
-                    "placeholder": "Select Foreground Image Position"
+                "imagePosition" : {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Left", "Right" ],
+                    "label" : "Select Foreground Image Position",
+                    "placeholder" : "Select Foreground Image Position"
                   }
                 },
-                "colorStyle": {
-                  "type": "Select",
-                  "config": {
-                    "options": [
-                      "Light",
-                      "Dark"
-                    ],
-                    "label": "Select Color Style",
-                    "placeholder": "Select Color Style"
+                "colorStyle" : {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Light", "Dark" ],
+                    "label" : "Select Color Style",
+                    "placeholder" : "Select Color Style"
                   }
                 }
               }
             }
           },
-          "labeledSection": {
-            "type": "Group",
-            "fieldset": "Labeled Section Block",
-            "config": {
-              "repeat": false,
-              "fields": {
-                "label": {
-                  "type": "StructuredText",
-                  "config": {
-                    "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
-                    "label": "Section Label",
-                    "placeholder": "Section Label"
+          "labeledSection" : {
+            "type" : "Group",
+            "fieldset" : "Labeled Section Block",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "label" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+                    "label" : "Section Label",
+                    "placeholder" : "Section Label"
                   }
                 },
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
-                    "label": "Section Text",
-                    "placeholder": "Section Text"
+                "text" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+                    "label" : "Section Text",
+                    "placeholder" : "Section Text"
                   }
                 },
-                "contentType": {
-                  "type": "Select",
-                  "config": {
-                    "options": [
-                      "Person",
-                      "Career"
-                    ],
-                    "label": "Select Content Type to Display",
-                    "placeholder": "Select Content Type to Display"
+                "contentType" : {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Person", "Career", "NewBiz" ],
+                    "label" : "Select Content Type to Display",
+                    "placeholder" : "Select Content Type to Display"
                   }
                 },
-                "colorStyle": {
-                  "type": "Select",
-                  "config": {
-                    "options": [
-                      "Light",
-                      "Dark"
-                    ],
-                    "label": "Select Color Style",
-                    "placeholder": "Select Color Style"
+                "colorStyle" : {
+                  "type" : "Select",
+                  "config" : {
+                    "options" : [ "Light", "Dark" ],
+                    "label" : "Select Color Style",
+                    "placeholder" : "Select Color Style"
                   }
                 }
               }

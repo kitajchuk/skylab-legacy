@@ -60,6 +60,7 @@ const config = {
         naviFrag: "site.navi",
         siteType: "site",
         mainType: "project",
+        blogType: "blog",
         colors: [
             { background: "red", query: "red" },
             { background: "#ff7b2b", query: "orange" },

@@ -68,18 +68,11 @@ const getPreview = function ( req, res ) {
         res.redirect( url );
     });
 };
-const getWebhook = function ( req, res ) {
-    core.query.getWebhook( req, res ).then(( data ) => {
-        lager.info( "Webhook data:" );
-        lager.info( data );
-    });
-};
 
 
 
 // SYSTEM
 expressApp.get( "/preview", getPreview );
-expressApp.post( "/webhook", getWebhook );
 
 // API => JSON
 expressApp.get( "/api/:type", getApi );

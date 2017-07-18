@@ -1,93 +1,90 @@
 {
-  "Person Information": {
-    "title": {
-      "type": "Text",
-      "config": {
-        "label": "Person Name",
-        "placeholder": "Person Name"
+  "Person Information" : {
+    "title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Person Name",
+        "placeholder" : "Person Name"
       }
     },
-    "uid": {
-      "type": "UID",
-      "config": {
-        "label": "Person Slug",
-        "placeholder": "Person Slug"
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Person Slug",
+        "placeholder" : "Person Slug"
       }
     },
-    "description": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, o-list-item",
-        "label": "Person Description",
-        "placeholder": "Person Description"
+    "description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, o-list-item",
+        "label" : "Person Description",
+        "placeholder" : "Person Description"
       }
     }
   },
-  "Person Photos": {
-    "portrait": {
-      "type": "Image",
-      "config": {
-        "constraint": {
-          "width": 1200,
-          "height": null
+  "Person Studio Photos" : {
+    "portrait" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 1200,
+          "height" : null
         },
-        "thumbnails": [],
-        "label": "Portrait"
+        "thumbnails" : [ ],
+        "label" : "Portrait"
       }
     },
-    "craft": {
-      "type": "Image",
-      "config": {
-        "constraint": {
-          "width": 1200,
-          "height": null
+    "craft" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 1200,
+          "height" : null
         },
-        "thumbnails": [],
-        "label": "Craft"
+        "thumbnails" : [ ],
+        "label" : "Craft"
       }
     },
-    "desk": {
-      "type": "Image",
-      "config": {
-        "constraint": {
-          "width": 1200,
-          "height": null
+    "desk" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 1200,
+          "height" : null
         },
-        "thumbnails": [],
-        "label": "Desk"
+        "thumbnails" : [ ],
+        "label" : "Desk"
       }
     }
   },
-  "Person Page Photos": {
-     "slices": {
-       "type": "Slices",
-       "fieldset": "Dynamic Content",
-       "config": {
-         "choices": {
-           "image": {
-             "type": "Image",
-             "fieldset": "Single Image Block",
-             "config": {
-               "placeholder": "Single Image Block",
-               "constraint": {
-                 "width": 2400
-               },
-               "thumbnails": [
-                 {
-                   "name": "tablet",
-                   "width": 1600,
-                   "height": 900
-                 },
-                 {
-                   "name": "mobile",
-                   "width": 800,
-                   "height": 450
-                 }
-               ]
-             }
-           }
-         }
-       }
-     }
-   }
+  "Person Page Photos" : {
+    "slices" : {
+      "type" : "Slices",
+      "fieldset" : "Dynamic Content",
+      "config" : {
+        "choices" : {
+          "image" : {
+            "type" : "Image",
+            "fieldset" : "Single Image Block",
+            "config" : {
+              "placeholder" : "Single Image Block",
+              "constraint" : {
+                "width" : 2400
+              },
+              "thumbnails" : [ {
+                "name" : "tablet",
+                "width" : 1600,
+                "height" : 900
+              }, {
+                "name" : "mobile",
+                "width" : 800,
+                "height" : 450
+              } ]
+            }
+          }
+        }
+      }
+    }
+  }
 }

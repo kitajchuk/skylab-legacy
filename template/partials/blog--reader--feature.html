@@ -1,0 +1,43 @@
+<%
+const title = item.getText( 'blog.title' );
+const image = item.getImage( 'blog.image' );
+const description = item.getStructuredText( 'blog.description' );
+const blurb = item.getStructuredText( 'blog.blurb' );
+%>
+<div class="reader__cover">
+    <div class="reader__title -wrap -column -column--2of4">
+        <div class="cms">
+            <h1><%= title %></h1>
+        </div>
+    </div>
+    <div class="reader__body -column -column--2of4">
+        <div class="reader__body__wrap -wrap-static">
+            <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.url %>" />
+            </div>
+        </div>
+    </div>
+    <div class="reader__info section -exp-1">
+        <div class="section__label -column -vtop -text--left">
+            <div class="cms cms--meta">
+                <% if ( item.getGroup( 'blog.categories' ) ) { %>
+                    <% item.getGroup( 'blog.categories' ).toArray().forEach(function ( item ) { %>
+                        <p>
+                            <a href="/play/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                        </p>
+                    <% }) %>
+                <% } %>
+                <div class="meta">
+                    <% if ( blurb ) { %>
+                        <%- blurb.asHtml() %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="section__content -column -vtop -wrap-static -wrap--right -text--left">
+            <div class="cms">
+                <%- description.asHtml() %>
+            </div>
+        </div>
+    </div>
+</div>

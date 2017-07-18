@@ -1,0 +1,36 @@
+<%
+const title = item.getText( 'blog.title' );
+const image = item.getImage( 'blog.image' );
+const description = item.getStructuredText( 'blog.description' );
+const blurb = item.getStructuredText( 'blog.blurb' );
+%>
+<div class="reader__cover">
+    <div class="reader__body -column -vtop">
+        <div class="slices">
+            <% if ( item.getSliceZone( 'blog.slices' ) ) { %>
+                <% item.getSliceZone( 'blog.slices' ).slices.forEach(( slice ) => { %>
+                    <div class="slices__slice slices__<%= slice.sliceType %>">
+                        <div class="slices__content">
+                            <%- include( `../slices/${slice.sliceType}.html`, {slice: slice, item: item, coverType: null} ) %>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+    <div class="reader__info -column -vtop -wrap">
+        <div class="cms -text--left">
+            <div>
+                <% if ( item.getGroup( 'blog.categories' ) ) { %>
+                    <% item.getGroup( 'blog.categories' ).toArray().forEach(function ( item ) { %>
+                        <p>
+                            <a href="/play/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                        </p>
+                    <% }) %>
+                <% } %>
+            </div>
+            <h1><%= title %></h1>
+            <%- description.asHtml() %>
+        </div>
+    </div>
+</div>

@@ -87,7 +87,7 @@ const onQuery = function ( client, api, query, cache, req ) {
     }
 
     if ( req.query.category ) {
-        ret.push( client.Predicates.at( `my.${config.skylab.mainType}.categories.category`, req.query.category ) );
+        ret.push( client.Predicates.at( `my.${req.params.type === config.skylab.mainType ? config.skylab.mainType : config.skylab.blogType}.categories.category`, req.query.category ) );
         lager.info( `Querying by Category ${req.query.category}` );
     }
 
@@ -137,6 +137,7 @@ const onContext = function ( context, cache, req ) {
 // :type, :handlers
 router.on( config.homepage, { query: onQuery, context: onContext } );
 router.on( config.skylab.mainType, { query: onQuery, context: onContext } );
+router.on( config.skylab.blogType, { query: onQuery, context: onContext } );
 
 
 

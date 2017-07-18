@@ -13,7 +13,6 @@
  * getNavi: Function
  * getPreview: Function
  * getPartial: Function
- * getWebhook: Function
  *
  * Different Headless CMS will require slightly different internal approaches
  * Whatever means necessary is A-OK as long as the data resolves to the ORM format
@@ -33,6 +32,7 @@ const core = {
     template: require( "../core/template" )
 };
 const ContextObject = require( "../class/ContextObject" );
+const lager = require( "properjs-lager" );
 
 
 
@@ -122,17 +122,6 @@ const getPreview = function ( req, res ) {
 
 /**
  *
- * Handle webhook POST URLs from Prismic for content changes.
- *
- */
-const getWebhook = function ( req, res ) {
-
-};
-
-
-
-/**
- *
  * Handle partial rendering.
  *
  */
@@ -179,6 +168,8 @@ const getSite = function ( req ) {
         prismic.api( core.config.api.access, null ).then(( api ) => {
             const form = api.form( core.config.skylab.mainForm ).pageSize( 100 ).ref( getRef( req, api ) );
 
+            // console.log( api );
+
             form.submit().then(( json ) => {
                 const docs = {
                     [core.config.skylab.siteType]: json.results.find(( doc ) => {
@@ -186,6 +177,9 @@ const getSite = function ( req ) {
                     }),
                     [core.config.skylab.mainType]: json.results.filter(( doc ) => {
                         return (doc.type === core.config.skylab.mainType);
+                    }),
+                    [core.config.skylab.blogType]: json.results.filter(( doc ) => {
+                        return (doc.type === core.config.skylab.blogType);
                     })
                 };
                 const navi = {
@@ -309,7 +303,7 @@ const getDataForApi = function ( req, listener ) {
                         error: error
                     });
                 };
-                const form = getForm( req, api );
+                const form = getForm( req, api, type );
                 let query = [];
 
                 // query: type?
@@ -384,7 +378,7 @@ const getDataForPage = function ( req, listener ) {
                 reject( error );
             };
             const navi = getNavi( type );
-            const form = getForm( req, cache.api );
+            const form = getForm( req, cache.api, type );
             let query = [];
 
             // query: type?
@@ -469,8 +463,10 @@ const getDoc = function ( uid, documents ) {
  * Get the stub of the search form.
  *
  */
-const getForm = function ( req, api ) {
-    return api.form( "everything" ).pageSize( 100 ).ref( getRef( req, api ) );
+const getForm = function ( req, api, collection ) {
+    const form = api.data.forms[ collection ] ? collection : "everything";
+
+    return api.form( form ).pageSize( 100 ).ref( getRef( req, api ) );
 };
 
 
@@ -479,6 +475,5 @@ module.exports = {
     cache,
     getApi,
     getPage,
-    getPreview,
-    getWebhook
+    getPreview
 };

@@ -49,13 +49,12 @@
         }
     }
     .page--studio .page__cover {
-        position: relative;
         height: auto;
         max-width: 100%;
-        width: 100%;
-        padding-top: $expander-two;
-        background: white;
         padding-bottom: $expander-mobile;
+        padding-top: $expander-two;
+        position: relative;
+        width: 100%;
 
         .cms {
             position: relative;
@@ -67,9 +66,26 @@
         height: auto;
 
         .page__parallax {
-            width: 100%;
             margin-bottom: $expander-mobile;
             transform: none !important;
+            width: 100%;
+        }
+    }
+
+    // Blog...
+    .reader__li--feature {
+        .reader__title {
+            position: absolute;
+            top: 50%;
+            transform: translateY( -50% );
+        }
+        .reader__body,
+        .reader__body__wrap {
+            position: relative;
+            width: 100%;
+        }
+        .reader__body__wrap {
+            transform: none;
         }
     }
 }
@@ -117,6 +133,16 @@
     }
     .project__body {
         .project--standard & {
+            width: 100%;
+        }
+    }
+    .reader__li--standard {
+        .reader__info {
+            padding-top: $expander-one;
+            position: relative;
+            width: 100%;
+        }
+        .reader__body {
             width: 100%;
         }
     }
@@ -343,6 +369,14 @@
     .project__body {
         .project--standard & {
             width: calc( 100vw - #{$project-info-max-width} );
+        }
+    }
+    .reader__li--standard {
+        .reader__info {
+            width: $project-info-max-width
+        }
+        .reader__body {
+            width: calc( 100% - #{$project-info-max-width} );
         }
     }
 }

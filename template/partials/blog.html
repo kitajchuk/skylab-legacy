@@ -1,0 +1,20 @@
+<%
+const items = locals.context.get( 'items' );
+%>
+<div class="reader js-reader">
+    <ul class="reader__ul">
+        <% items.forEach(( item ) => { %>
+            <%
+            const btype = item.getText( 'blog.type' );
+            const isStandard = (btype === 'Standard');
+            %>
+            <li class="reader__li reader__li--<%= btype ? btype.toLowerCase() : 'standard' %>">
+                <% if ( btype === 'Feature' ) { %>
+                    <%- include( '../partials/blog--reader--feature.html', {item: item} ) %>
+                <% } else { %>
+                    <%- include( '../partials/blog--reader--standard.html', {item: item} ) %>
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>
+</div>

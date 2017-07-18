@@ -35,5 +35,14 @@ const colorStyle = group.getText( 'colorStyle' );
                 </div>
             </div>
         <% } %>
+        <% if ( coverType === 'blog' ) { %>
+            <div class="project__info page__cover -wrap">
+                <div class="cms">
+                    <% if ( item.getText( 'blog.title' ) ) { %>
+                        <h1><%= item.getText( 'blog.title' ) %></h1>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
     </div>
 </div>

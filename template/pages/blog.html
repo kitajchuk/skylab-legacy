@@ -1,0 +1,16 @@
+<% if ( locals.context.get( 'item' ) ) { %>
+    <%
+    const item = locals.context.get( 'item' );
+    const btype = item.getText( 'blog.type' );
+    const previous = locals.context.get( 'previous' );
+    const next = locals.context.get( 'next' );
+    const isStandard = (btype === 'Standard');
+    %>
+    <div class="project project--<%= btype ? btype.toLowerCase() : 'standard' %> js-project <%= isStandard ? 'js-scrollninja' : '' %>" data-type="<%= btype ? btype.toLowerCase() : 'standard' %>" data-previous="<% if ( previous ) { %><%= locals.context.getUrl( previous ) %><% } %>" data-next="<% if ( next ) { %><%= locals.context.getUrl( next ) %><% } %>">
+        <% if ( btype === 'Feature' ) { %>
+            <%- include( '../partials/blog--feature.html', {item: item} ) %>
+        <% } else { %>
+            <%- include( '../partials/blog--standard.html', {item: item} ) %>
+        <% } %>
+    </div>
+<% } %>
