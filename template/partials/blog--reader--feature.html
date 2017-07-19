@@ -17,27 +17,27 @@ const blurb = item.getStructuredText( 'blog.blurb' );
             </div>
         </div>
     </div>
-    <div class="reader__info section -exp-1">
-        <div class="section__label -column -vtop -text--left">
-            <div class="cms cms--meta">
-                <% if ( item.getGroup( 'blog.categories' ) ) { %>
-                    <% item.getGroup( 'blog.categories' ).toArray().forEach(function ( item ) { %>
-                        <p>
-                            <a href="/play/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
-                        </p>
-                    <% }) %>
+</div>
+<div class="reader__info section -exp-1">
+    <div class="section__label -column -vtop -text--left">
+        <div class="cms cms--meta">
+            <% if ( item.getGroup( 'blog.categories' ) ) { %>
+                <% item.getGroup( 'blog.categories' ).toArray().forEach(function ( item ) { %>
+                    <p>
+                        <a href="/play/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                    </p>
+                <% }) %>
+            <% } %>
+            <div class="meta">
+                <% if ( blurb ) { %>
+                    <%- blurb.asHtml() %>
                 <% } %>
-                <div class="meta">
-                    <% if ( blurb ) { %>
-                        <%- blurb.asHtml() %>
-                    <% } %>
-                </div>
             </div>
         </div>
-        <div class="section__content -column -vtop -wrap-static -wrap--right -text--left">
-            <div class="cms">
-                <%- description.asHtml() %>
-            </div>
+    </div>
+    <div class="section__content -column -vtop -wrap-static -wrap--right -text--left">
+        <div class="cms">
+            <%- description.asHtml() %>
         </div>
     </div>
 </div>
