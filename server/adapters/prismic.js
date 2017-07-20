@@ -192,6 +192,7 @@ const getSite = function ( req ) {
                 const categories = [];
 
                 // Normalize filter criteria ( category, status etc... )
+                // These are generated dynamically from what is ACTUALLY attached to documents.
                 docs[ core.config.skylab.mainType ].forEach(( doc ) => {
                     const cats = doc.getGroup( `${core.config.skylab.mainType}.categories` );
                     const status = doc.getText( `${core.config.skylab.mainType}.status` );

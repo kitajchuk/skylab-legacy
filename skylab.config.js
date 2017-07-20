@@ -70,11 +70,13 @@ const config = {
             { background: "white", query: "white" }
         ],
         materials: [
-            "Wood",
-            "Steel",
-            "Concrete",
-            "Glass",
-            "Brick",
+            "Green Roofs",
+            "Fireplaces",
+            "Bathrooms",
+            "Kitchens",
+            "Built in Furnishings",
+            "Bars",
+            "Cantilevers",
             "Lighting"
         ],
         spaces: [
