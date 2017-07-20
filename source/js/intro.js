@@ -22,7 +22,7 @@ const intro = {
         this.element = core.dom.intro;
         this.logo = this.element.find( ".js-intro-logo" );
         this.durations = {
-            animation: core.util.getElementDuration( this.logo[ 0 ], "animation" ),
+            animation: 3500,
             transition: core.util.getElementDuration( this.element[ 0 ] )
         };
         core.emitter.on( "app--page-teardown", this.teardown );
@@ -32,6 +32,11 @@ const intro = {
     teardown () {
         core.emitter.off( "app--page-teardown", intro.teardown );
 
+        core.util.loadImages( intro.logo, core.util.noop ).on( "done", intro.loaded );
+    },
+
+
+    loaded () {
         setTimeout( () => {
             intro.element.removeClass( "is-active" );
 
