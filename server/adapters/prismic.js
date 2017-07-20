@@ -308,7 +308,10 @@ const getDataForApi = function ( req, listener ) {
                 let query = [];
 
                 // query: type?
-                query.push( prismic.Predicates.at( "document.type", type ) );
+                if ( !api.data.forms[ type ] ) {
+                    // Only if type? is NOT a search form collection
+                    query.push( prismic.Predicates.at( "document.type", type ) );
+                }
 
                 // query: pubsub?
                 if ( listener && listener.handlers.query ) {
@@ -387,7 +390,8 @@ const getDataForPage = function ( req, listener ) {
                 query.push( prismic.Predicates.at( "document.type", navi.type ) );
                 query.push( prismic.Predicates.at( "document.id", navi.id ) );
 
-            } else {
+            } else if ( !cache.api.data.forms[ type ] ) {
+                // Only if type? is NOT a search form collection
                 query.push( prismic.Predicates.at( "document.type", type ) );
             }
 

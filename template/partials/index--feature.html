@@ -1,14 +1,37 @@
 <%
-const image = feature.getImage( 'project.image' );
-const featureBlock = feature.getGroup( 'project.feature' ).toArray()[ 0 ];
+const image = (feature.getImage( 'project.image' ) || feature.getImage( 'blog.image' ));
+const featureBlock = (feature.getGroup( 'project.feature' ) || feature.getGroup( 'blog.feature' )).toArray()[ 0 ];
 const imageClip = featureBlock.getText( 'imageclip' );
+const title = (feature.getText( 'project.title' ) || feature.getText( 'blog.title' ));
+const year = (feature.getText( 'project.year' ) || feature.getText( 'blog.year' ));
+const city = (feature.getText( 'project.city' ) || feature.getText( 'blog.city' ));
+const state = (feature.getText( 'project.state' ) || feature.getText( 'blog.city' ));
 %>
 <li class="feature__li -text--<%= featureBlock.getText( 'layout' ).toLowerCase() %>">
     <% if ( image ) { %>
-        <div class="feature__wrap -column" style="width:<%= image.main.width %>px;">
-            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap animate-lift animate--slow js-animate is-animate" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+        <div class="feature__wrap -column animate-lift animate--slow js-animate is-animate" style="width:<%= image.main.width %>px;">
+            <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.url %>" />
             </a>
+            <div class="feature__info <%= featureBlock.getText( 'layout' ).toLowerCase() %>">
+                <div class="feature__icon icon icon--plus cms">
+                    <span class="vert"></span>
+                    <span class="horz"></span>
+                </div>
+                <div class="feature__text cms p--meta -grey">
+                    <p>
+                        <% if ( title ) { %>
+                            <strong><%= title %></strong><br />
+                        <% } %>
+                        <% if ( city || state ) { %>
+                            <% if ( city ) { %><%= city %>, <% } %><%= state %><br />
+                        <% } %>
+                        <% if ( year ) { %>
+                            <%= year %>
+                        <% } %>
+                    </p>
+                </div>
+            </div>
         </div>
     <% } %>
 </li>

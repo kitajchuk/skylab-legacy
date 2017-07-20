@@ -61,6 +61,7 @@ const config = {
         siteType: "site",
         mainType: "project",
         blogType: "blog",
+        feedType: "feed",
         colors: [
             { background: "red", query: "red" },
             { background: "#ff7b2b", query: "orange" },
@@ -70,6 +71,15 @@ const config = {
             { background: "white", query: "white" }
         ],
         materials: [
+            // Old
+            "Wood",
+            "Steel",
+            "Concrete",
+            "Glass",
+            "Brick",
+            "Lighting",
+
+            // New
             "Green Roofs",
             "Fireplaces",
             "Bathrooms",

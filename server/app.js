@@ -115,7 +115,9 @@ const onContext = function ( context, cache, req ) {
     // Add `features` array to the context
     if ( canFeatures( req ) ) {
         context.set( "features", shuffle(context.get( "items" ).filter(( doc ) => {
-            return (doc.getText( `${config.skylab.mainType}.type` ) === "Feature");
+            const type = doc.getText( `${config.skylab.mainType}.type` ) || doc.getText( `${config.skylab.blogType}.type` );
+
+            return (type === "Feature");
         })));
     }
 
@@ -138,6 +140,7 @@ const onContext = function ( context, cache, req ) {
 router.on( config.homepage, { query: onQuery, context: onContext } );
 router.on( config.skylab.mainType, { query: onQuery, context: onContext } );
 router.on( config.skylab.blogType, { query: onQuery, context: onContext } );
+router.on( config.skylab.feedType, { query: onQuery, context: onContext } );
 
 
 

@@ -40,6 +40,12 @@
             border-left-color: $white;
             }
     }
+    .icon--plus {
+        .vert,
+        .horz {
+            background-color: $charcoal;
+        }
+    }
     .index__li {
         border-top-color: $grey;
         }
@@ -77,12 +83,12 @@
         display: none;
         }
 }
+//.is-home-page:not( .is-query ),
 .is-person-page,
 .is-career-page,
 .is-studio-page,
 .is-project-page.is-uid-page,
-.is-blog-page.is-uid-page,
-.is-home-page:not( .is-query ) {
+.is-blog-page.is-uid-page {
     .main {
         padding-top: 0;
         }
@@ -166,6 +172,9 @@
                 fill: $gold;
                 }
         }
+    }
+    .feature__li:hover {
+        z-index: $z_layer_menu + 1;
     }
 }
 .is-touchable {

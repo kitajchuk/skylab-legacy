@@ -19,6 +19,29 @@
         display: inline-block;
         }
 }
+.icon--plus {
+    height: 32px;
+    width: 32px;
+
+    .vert {
+        background-color: $white;
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX( -50% );
+        width: 2px;
+        }
+    .horz {
+        background-color: $white;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY( -50% );
+        width: 100%;
+        }
+}
 .icon--list {
     height: 18px;
     width: 32px;
