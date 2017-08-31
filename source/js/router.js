@@ -27,7 +27,8 @@ const router = {
         this.pageClass = "";
         this.pageDuration = core.util.getElementDuration( core.dom.main[ 0 ] );
         this.controllers = new Controllers({
-            onPreloaded: () => {
+            el: core.dom.main,
+            cb: () => {
                 core.emitter.fire( "app--page-teardown" );
             }
         });

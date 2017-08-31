@@ -24,7 +24,8 @@ import ScrollNinja from "./ScrollNinja";
  */
 class Controllers {
     constructor ( options ) {
-        this.options = options || {};
+        this.element = options.el;
+        this.callback = options.cb;
         this.controllers = [];
     }
 
@@ -63,25 +64,25 @@ class Controllers {
     exec () {
         this.controllers = [];
 
-        this.push( "animates", core.dom.main.find( core.config.animSelector ), AnimateController, true );
-        this.push( "project", core.dom.main.find( core.config.projectSelector ), ProjectController, true );
-        this.push( "scrollninja", core.dom.main.find( core.config.scrollNinjaSelector ), ScrollNinja, true );
-        this.push( "cover", core.dom.main.find( core.config.coverSelector ), CoverController, true );
-        this.push( "colors", core.dom.main.find( core.config.colorSelector ), ColorController, true );
-        this.push( "videos", core.dom.main.find( core.config.videoSelector ), VideoController, true );
-        this.push( "parallax", core.dom.main.find( core.config.parallaxSelector ), ParallaxController, true );
-        this.push( "map", core.dom.main.find( core.config.mapSelector ), MapController, true );
-        this.push( "hovers", core.dom.main.find( core.config.hoverSelector ), HoverController, !core.detect.isDevice() );
-        this.push( "toggler", core.dom.main.find( core.config.togglerSelector ), TogglerController, true );
+        this.push( "animates", this.element.find( core.config.animSelector ), AnimateController, true );
+        this.push( "project", this.element.find( core.config.projectSelector ), ProjectController, true );
+        this.push( "scrollninja", this.element.find( core.config.scrollNinjaSelector ), ScrollNinja, true );
+        this.push( "cover", this.element.find( core.config.coverSelector ), CoverController, true );
+        this.push( "colors", this.element.find( core.config.colorSelector ), ColorController, true );
+        this.push( "videos", this.element.find( core.config.videoSelector ), VideoController, true );
+        this.push( "parallax", this.element.find( core.config.parallaxSelector ), ParallaxController, true );
+        this.push( "map", this.element.find( core.config.mapSelector ), MapController, true );
+        this.push( "hovers", this.element.find( core.config.hoverSelector ), HoverController, !core.detect.isDevice() );
+        this.push( "toggler", this.element.find( core.config.togglerSelector ), TogglerController, true );
         this.push( "query", ["q"], QueryController, true );
 
-        this.images = core.dom.main.find( core.config.lazyImageSelector );
+        this.images = this.element.find( core.config.lazyImageSelector );
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
             this.init();
 
-            if ( this.options.onPreloaded ) {
-                this.options.onPreloaded();
+            if ( this.callback ) {
+                this.callback();
             }
         });
     }

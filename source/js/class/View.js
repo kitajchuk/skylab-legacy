@@ -23,7 +23,9 @@ class View {
         this.query = args.qs;
         this.response = "";
         this.data = {};
-        this.controllers = new Controllers();
+        this.controllers = new Controllers({
+            el: this.element
+        });
 
         this.init();
     }
