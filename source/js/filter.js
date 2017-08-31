@@ -1,7 +1,7 @@
 import * as core from "./core";
 import paramalama from "paramalama";
 import $ from "properjs-hobo";
-// import navi from "./navi";
+import router from "./router";
 
 
 /**
@@ -24,9 +24,11 @@ const filter = {
     init () {
         this.isOpen = false;
         this.element = core.dom.filter;
+        this.data = this.element.data();
         this.options = this.element.find( ".js-filter-option" );
         this.label = this.element.find( ".js-filter-label" );
         this.trigger = core.dom.body.find( ".js-controller--filter" );
+        this.all = this.element.find( ".js-filter-all" );
         this.timing = core.util.getElementDuration( this.element[ 0 ] );
         this.timeout = null;
         this.screen = $( "<div />" ).addClass( "filter-screen screen is-active" );
@@ -39,23 +41,34 @@ const filter = {
 
 
     query () {
-        this.params = paramalama( window.location.search );
+        // query?
+        if ( window.location.search ) {
+            this.params = paramalama( window.location.search );
 
-        this.deactivate();
+            this.deactivate();
 
-        for ( const prop in this.params ) {
-            if ( this.params.hasOwnProperty( prop ) ) {
-                const option = this.options.filter( `.js-filter-${prop}[data-value='${this.params[ prop ]}']` );
+            for ( const prop in this.params ) {
+                if ( this.params.hasOwnProperty( prop ) ) {
+                    const option = this.options.filter( `.js-filter-${prop}[data-value='${this.params[ prop ]}']` );
 
-                if ( option.length ) {
-                    this.activate( option );
+                    if ( option.length ) {
+                        this.activate( option );
+                    }
                 }
+            }
+
+        } else {
+            this.deactivate();
+
+            if ( router.view === this.data.view ) {
+                this.activate( this.all );
             }
         }
     },
 
 
     deactivate () {
+        this.all.removeClass( "is-active" );
         this.options.removeClass( "is-active" );
         this.label.addClass( "is-empty" );
         this.label[ 0 ].innerHTML = this.labelText;
