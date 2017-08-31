@@ -1,51 +1,7 @@
-<%
-const filters = locals.context.get( 'filters' );
-%>
 <menu class="filter js-filter -fzero">
     <div class="filter__label ghost">
         <div class="ghost__child js-filter-label p strong is-empty">Filter</div>
     </div>
-    <ul class="filter__col">
-        <li class="filter__li">
-            <a class="filter__a js-filter-all p p--meta a" data-value="All" href="/work/">All Projects</a>
-        </li>
-    </ul>
-    <ul class="filter__col">
-        <% filters.categories.forEach(( category ) => { %>
-            <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-category p p--meta a" data-value="<%= category %>" href="/work/?category=<%= category %>"><%= category %></a>
-            </li>
-        <% }) %>
-    </ul>
-    <ul class="filter__col">
-        <% filters.statuses.forEach(( status ) => { %>
-            <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-status p p--meta a" data-value="<%= status %>" href="/work/?status=<%= status %>"><%= status %></a>
-            </li>
-        <% }) %>
-    </ul>
-    <ul class="filter__col">
-        <% filters.materials.forEach(( material ) => { %>
-            <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-material p p--meta a" data-value="<%= material %>" href="/work/?material=<%= material %>"><%= material %></a>
-            </li>
-        <% }) %>
-    </ul>
-    <ul class="filter__col">
-        <% filters.spaces.forEach(( space ) => { %>
-            <li class="filter__li">
-                <a class="filter__a js-filter-option js-filter-space p p--meta a" data-value="<%= space %>" href="/work/?space=<%= space %>"><%= space %></a>
-            </li>
-        <% }) %>
-    </ul>
-    <ul class="filter__col">
-        <li class="filter__li">
-            <div class="p p--meta strong">By Color</div>
-        </li>
-        <li class="filter__li">
-            <% locals.context.get( 'colors' ).forEach(( color ) => { %>
-                <a class="filter__color js-filter-option js-filter-color" style="background-color:<%= color.background %>;" data-value="<%= color.query %>" href="/work/?color=<%= color.query %>"></a>
-            <% }) %>
-        </li>
-    </ul>
+    <div class="filter__set filter__work js-filterset" data-scope="work" data-uid="filter--project" data-api="/api/project"></div>
+    <div class="filter__set filter__play js-filterset" data-scope="play" data-uid="filter--blog" data-api="/api/blog"></div>
 </menu>

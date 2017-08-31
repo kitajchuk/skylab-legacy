@@ -2,6 +2,7 @@ import * as core from "./core";
 import paramalama from "paramalama";
 import $ from "properjs-hobo";
 import router from "./router";
+import View from "./class/View";
 
 
 /**
@@ -24,19 +25,45 @@ const filter = {
     init () {
         this.isOpen = false;
         this.element = core.dom.filter;
-        this.data = this.element.data();
-        this.options = this.element.find( ".js-filter-option" );
-        this.label = this.element.find( ".js-filter-label" );
         this.trigger = core.dom.body.find( ".js-controller--filter" );
-        this.all = this.element.find( ".js-filter-all" );
         this.timing = core.util.getElementDuration( this.element[ 0 ] );
-        this.timeout = null;
         this.screen = $( "<div />" ).addClass( "filter-screen screen is-active" );
+        this.filterSets = this.element.find( ".js-filterset" );
+        this.timeout = null;
         this.labelText = "Filter";
         this.skipLabel = "All";
+        this.filterViews = [];
 
-        this.bind();
-        this.query();
+        this.setup();
+    },
+
+
+    setup () {
+        let done = 0;
+
+        this.filterSets.forEach(( node, i ) => {
+            const filterEl = this.filterSets.eq( i );
+            const filterData = filterEl.data();
+
+            this.filterViews.push(new View({
+                id: filterData.uid,
+                el: filterEl,
+                url: filterData.api,
+                qs: false,
+                cb: () => {
+                    done++;
+
+                    if ( done === this.filterSets.length ) {
+                        this.options = this.element.find( ".js-filter-option" );
+                        this.label = this.element.find( ".js-filter-label" );
+                        this.alls = this.element.find( ".js-filter-all" );
+
+                        this.bind();
+                        this.query();
+                    }
+                }
+            }));
+        });
     },
 
 
@@ -60,15 +87,17 @@ const filter = {
         } else {
             this.deactivate();
 
-            if ( router.view === this.data.view ) {
-                this.activate( this.all );
+            const option = this.filterSets.filter( `[data-scope='${router.view}']` ).find( ".js-filter-all" );
+
+            if ( option.length ) {
+                this.activate( option );
             }
         }
     },
 
 
     deactivate () {
-        this.all.removeClass( "is-active" );
+        this.alls.removeClass( "is-active" );
         this.options.removeClass( "is-active" );
         this.label.addClass( "is-empty" );
         this.label[ 0 ].innerHTML = this.labelText;

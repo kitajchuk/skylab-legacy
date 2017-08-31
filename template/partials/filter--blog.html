@@ -1,0 +1,25 @@
+<%
+const filters = {
+    categories: []
+};
+const items = locals.context.get( 'items' );
+
+items.forEach(( doc ) => {
+    const cats = doc.getGroup( 'blog.categories' );
+
+    if ( cats ) {
+        cats.value.forEach(( cat ) => {
+            if ( filters.categories.indexOf( cat.data.category.value ) === -1 ) {
+                filters.categories.push( cat.data.category.value );
+            }
+        });
+    }
+});
+%>
+<ul class="filter__col">
+    <% filters.categories.forEach(( category ) => { %>
+        <li class="filter__li">
+            <a class="filter__a js-filter-option js-filter-category p p--meta a" data-value="<%= category %>" href="/play/?category=<%= category %>"><%= category %></a>
+        </li>
+    <% }) %>
+</ul>

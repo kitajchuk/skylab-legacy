@@ -1,5 +1,6 @@
 import * as core from "./core";
 import View from "./class/View";
+import paramalama from "paramalama";
 
 
 /**
@@ -56,7 +57,8 @@ const views = {
         this.views[ data.uid ] = new View({
             id: data.uid,
             el: element,
-            url: data.api
+            url: data.api,
+            qs: paramalama( window.location.search )
         });
     }
 };

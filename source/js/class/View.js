@@ -1,7 +1,6 @@
 import * as core from "../core";
 import $ from "properjs-hobo";
 import Controllers from "./Controllers";
-import paramalama from "paramalama";
 
 
 /**
@@ -21,6 +20,7 @@ class View {
         this.element = args.el;
         this.endpoint = args.url;
         this.callback = args.cb;
+        this.query = args.qs;
         this.response = "";
         this.data = {};
         this.controllers = new Controllers();
@@ -95,7 +95,7 @@ class View {
     load () {
         return new Promise(( resolve ) => {
             const cache = core.cache.get( `partial--${this.id}` );
-            const query = paramalama( window.location.search );
+            const query = this.query || {};
 
             // Set these for Clutch API partial rendering
             query.format = "html";

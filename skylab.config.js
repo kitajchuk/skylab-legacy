@@ -62,6 +62,7 @@ const config = {
         mainType: "project",
         blogType: "blog",
         feedType: "feed",
+        playType: "play",
         colors: [
             { background: "red", query: "red" },
             { background: "#ff7b2b", query: "orange" },

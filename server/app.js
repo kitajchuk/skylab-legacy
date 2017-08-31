@@ -141,6 +141,7 @@ router.on( config.homepage, { query: onQuery, context: onContext } );
 router.on( config.skylab.mainType, { query: onQuery, context: onContext } );
 router.on( config.skylab.blogType, { query: onQuery, context: onContext } );
 router.on( config.skylab.feedType, { query: onQuery, context: onContext } );
+router.on( config.skylab.playType, { query: onQuery, context: onContext } );
 
 
 
