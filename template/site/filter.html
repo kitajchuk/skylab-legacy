@@ -1,7 +1,12 @@
-<menu class="filter js-filter -fzero">
+<menu class="filter js-filter -fzero" data-view="work">
     <div class="filter__label ghost">
         <div class="ghost__child js-filter-label p strong is-empty">Filter</div>
     </div>
+    <ul class="filter__col">
+        <li class="filter__li">
+            <a class="filter__a js-filter-all p p--meta a" data-value="All" href="/work/">All Projects</a>
+        </li>
+    </ul>
     <ul class="filter__col">
         <% locals.context.get( 'categories' ).forEach(( category ) => { %>
             <li class="filter__li">
