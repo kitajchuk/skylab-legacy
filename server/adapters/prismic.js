@@ -188,8 +188,12 @@ const getSite = function ( req ) {
                 const site = {
                     data: {}
                 };
-                const statuses = [];
-                const categories = [];
+                const filters = {
+                    spaces: [],
+                    materials: [],
+                    categories: [],
+                    statuses: []
+                };
 
                 // Normalize filter criteria ( category, status etc... )
                 // These are generated dynamically from what is ACTUALLY attached to documents.
@@ -197,14 +201,14 @@ const getSite = function ( req ) {
                     const cats = doc.getGroup( `${core.config.skylab.mainType}.categories` );
                     const status = doc.getText( `${core.config.skylab.mainType}.status` );
 
-                    if ( status && statuses.indexOf( status ) === -1 ) {
-                        statuses.push( status );
+                    if ( status && filters.statuses.indexOf( status ) === -1 ) {
+                        filters.statuses.push( status );
                     }
 
                     if ( cats ) {
                         cats.value.forEach(( cat ) => {
-                            if ( categories.indexOf( cat.data.category.value ) === -1 ) {
-                                categories.push( cat.data.category.value );
+                            if ( filters.categories.indexOf( cat.data.category.value ) === -1 ) {
+                                filters.categories.push( cat.data.category.value );
                             }
                         });
                     }
@@ -216,6 +220,12 @@ const getSite = function ( req ) {
                         const key = i.replace( /^site\./, "" );
 
                         site.data[ key ] = docs.site.fragments[ i ].value || docs.site.fragments[ i ].url;
+
+                        if ( key === "spaces" || key === "materials" ) {
+                            docs.site.fragments[ i ].value.forEach(( frag ) => {
+                                filters[ key ].push( frag.data[ key.replace( /s$/, "" ) ].value );
+                            });
+                        }
                     }
                 }
 
@@ -257,8 +267,7 @@ const getSite = function ( req ) {
                 cache.site = site;
                 cache.navi = navi;
                 cache.docs = docs;
-                cache.statuses = statuses;
-                cache.categories = categories;
+                cache.filters = filters;
 
                 resolve();
             });

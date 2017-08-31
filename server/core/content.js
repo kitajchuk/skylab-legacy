@@ -61,13 +61,10 @@ const getPage = function ( req, res, listener ) {
             context.set({
                 navi: core.query.cache.navi,
                 site: core.query.cache.site,
+                filters: core.query.cache.filters,
 
                 // Find a better way for this maybe...?
-                spaces: core.config.skylab.spaces,
-                colors: core.config.skylab.colors,
-                statuses: core.query.cache.statuses,
-                materials: core.config.skylab.materials,
-                categories: core.query.cache.categories
+                colors: core.config.skylab.colors
             });
 
             resolve(( callback ) => {
