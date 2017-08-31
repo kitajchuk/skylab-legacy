@@ -10,9 +10,9 @@ const items = locals.context.get( 'items' );
             %>
             <li class="reader__li reader__li--<%= btype ? btype.toLowerCase() : 'standard' %>">
                 <% if ( btype === 'Feature' ) { %>
-                    <%- include( '../partials/blog--reader--feature.html', {item: item} ) %>
+                    <%- include( '../partials/blog--feature.html', {item: item} ) %>
                 <% } else { %>
-                    <%- include( '../partials/blog--reader--standard.html', {item: item} ) %>
+                    <%- include( '../partials/blog--standard.html', {item: item} ) %>
                 <% } %>
             </li>
         <% }) %>

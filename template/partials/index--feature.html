@@ -7,7 +7,7 @@ const year = (feature.getText( 'project.year' ) || feature.getText( 'blog.year' 
 const city = (feature.getText( 'project.city' ) || feature.getText( 'blog.city' ));
 const state = (feature.getText( 'project.state' ) || feature.getText( 'blog.city' ));
 const categories = (feature.getGroup( 'project.categories' ) || feature.getGroup( 'blog.categories' ));
-const baseSlug = feature.type === 'project' ? 'work' : 'blog';
+const baseSlug = feature.type === 'project' ? 'work' : 'play';
 %>
 <li class="feature__li -text--<%= featureBlock.getText( 'layout' ).toLowerCase() %>">
     <% if ( image ) { %>
