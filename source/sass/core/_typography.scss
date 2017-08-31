@@ -44,7 +44,8 @@
 *******************************************************************************/
 .a,
 .cms a:not( [data-ignore-style="hover"] ) {
-    transition: color $fast-duration $ease;
+    transition: color $fast-duration $ease,
+                border-bottom-color $fast-duration $ease;
 
     &.is-active {
         color: $gold;

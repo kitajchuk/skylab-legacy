@@ -20,8 +20,10 @@
         }
 }
 .icon--plus {
-    height: 32px;
-    width: 32px;
+    height: 16px;
+    transition: height $fast-duration $ease,
+                width $fast-duration $ease;
+    width: 16px;
 
     .vert {
         background-color: $white;
@@ -30,6 +32,7 @@
         position: absolute;
         top: 0;
         transform: translateX( -50% );
+
         width: 2px;
         }
     .horz {

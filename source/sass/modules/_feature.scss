@@ -14,9 +14,7 @@
 .feature__li:nth-child( 2n ) {
     z-index: $z_layer_menu;
     }
-.feature__li:nth-child( 3n ) {
-    opacity: 1;
-    }
+.feature__li:nth-child( 3n ) {}
 .feature__info {
     left: 0;
     position: absolute;
@@ -30,6 +28,11 @@
     &.center {
         text-align: left;
     }
+
+    a {
+        font-style: italic;
+        border-bottom: 1px solid $white;
+        }
 }
 .feature__icon {
     left: 0;
@@ -39,4 +42,6 @@
 }
 .feature__text {
     padding-top: $expander-mobile;
+    opacity: 0;
+    transition: opacity $fast-duration $ease;
 }
