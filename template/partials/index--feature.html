@@ -6,6 +6,8 @@ const title = (feature.getText( 'project.title' ) || feature.getText( 'blog.titl
 const year = (feature.getText( 'project.year' ) || feature.getText( 'blog.year' ));
 const city = (feature.getText( 'project.city' ) || feature.getText( 'blog.city' ));
 const state = (feature.getText( 'project.state' ) || feature.getText( 'blog.city' ));
+const categories = (feature.getGroup( 'project.categories' ) || feature.getGroup( 'blog.categories' ));
+const baseSlug = feature.type === 'project' ? 'work' : 'blog';
 %>
 <li class="feature__li -text--<%= featureBlock.getText( 'layout' ).toLowerCase() %>">
     <% if ( image ) { %>
@@ -14,20 +16,27 @@ const state = (feature.getText( 'project.state' ) || feature.getText( 'blog.city
                 <img class="tile__photo image js-lazy-image <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.url %>" />
             </a>
             <div class="feature__info <%= featureBlock.getText( 'layout' ).toLowerCase() %>">
-                <div class="feature__icon icon icon--plus cms">
+                <div class="feature__icon icon icon--plus">
                     <span class="vert"></span>
                     <span class="horz"></span>
                 </div>
-                <div class="feature__text cms p--meta -grey">
+                <div class="feature__text p--meta -light">
                     <p>
                         <% if ( title ) { %>
-                            <strong><%= title %></strong><br />
-                        <% } %>
-                        <% if ( city || state ) { %>
-                            <% if ( city ) { %><%= city %>, <% } %><%= state %><br />
+                            <strong><%= title %></strong>
                         <% } %>
                         <% if ( year ) { %>
-                            <%= year %>
+                            <span><%= year %></span>
+                        <% } %>
+                        <br />
+                        <% if ( city || state ) { %>
+                            <% if ( city ) { %><%= city %>, <% } %><%= state %>
+                            <br />
+                        <% } %>
+                        <% if ( categories ) { %>
+                            <% categories.toArray().forEach(function ( item ) { %>
+                                <a class="a" href="/<%= baseSlug %>/?category=<%= item.data.category.value %>"><%= item.data.category.value %></a>
+                            <% }) %>
                         <% } %>
                     </p>
                 </div>
