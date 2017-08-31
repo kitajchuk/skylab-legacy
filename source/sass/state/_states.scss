@@ -70,7 +70,7 @@
             }
     }
     .filter {
-        background-color: rgba( 138, 138, 138, 0.05 );
+        background-color: $filter-light;
         }
 }
 .is-home-page {
@@ -129,9 +129,7 @@
         }
 }
 .is-filter-open {
-    .main,
-    .header {
-        // width: calc( 100vw - #{$filter-width} );
+    .header__utility {
         transform: translate3d( -$filter-width, 0, 0 );
         }
     .header__svg,
