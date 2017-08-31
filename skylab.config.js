@@ -77,7 +77,6 @@ const config = {
             "Concrete",
             "Glass",
             "Brick",
-            "Lighting",
 
             // New
             "Green Roofs",
