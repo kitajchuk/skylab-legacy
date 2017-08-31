@@ -69,28 +69,6 @@ const config = {
             { background: "#2ae0ff", query: "blue" },
             { background: "black", query: "black" },
             { background: "white", query: "white" }
-        ],
-        materials: [
-            // Old
-            "Wood",
-            "Steel",
-            "Concrete",
-            "Glass",
-            "Brick",
-
-            // New
-            "Green Roofs",
-            "Fireplaces",
-            "Bathrooms",
-            "Kitchens",
-            "Built in Furnishings",
-            "Bars",
-            "Cantilevers",
-            "Lighting"
-        ],
-        spaces: [
-            "Interior",
-            "Exterior"
         ]
     }
 };

@@ -1,4 +1,7 @@
-<menu class="filter js-filter -fzero" data-view="work">
+<%
+const filters = locals.context.get( 'filters' );
+%>
+<menu class="filter js-filter -fzero">
     <div class="filter__label ghost">
         <div class="ghost__child js-filter-label p strong is-empty">Filter</div>
     </div>
@@ -8,28 +11,28 @@
         </li>
     </ul>
     <ul class="filter__col">
-        <% locals.context.get( 'categories' ).forEach(( category ) => { %>
+        <% filters.categories.forEach(( category ) => { %>
             <li class="filter__li">
                 <a class="filter__a js-filter-option js-filter-category p p--meta a" data-value="<%= category %>" href="/work/?category=<%= category %>"><%= category %></a>
             </li>
         <% }) %>
     </ul>
     <ul class="filter__col">
-        <% locals.context.get( 'statuses' ).forEach(( status ) => { %>
+        <% filters.statuses.forEach(( status ) => { %>
             <li class="filter__li">
                 <a class="filter__a js-filter-option js-filter-status p p--meta a" data-value="<%= status %>" href="/work/?status=<%= status %>"><%= status %></a>
             </li>
         <% }) %>
     </ul>
     <ul class="filter__col">
-        <% locals.context.get( 'materials' ).forEach(( material ) => { %>
+        <% filters.materials.forEach(( material ) => { %>
             <li class="filter__li">
                 <a class="filter__a js-filter-option js-filter-material p p--meta a" data-value="<%= material %>" href="/work/?material=<%= material %>"><%= material %></a>
             </li>
         <% }) %>
     </ul>
     <ul class="filter__col">
-        <% locals.context.get( 'spaces' ).forEach(( space ) => { %>
+        <% filters.spaces.forEach(( space ) => { %>
             <li class="filter__li">
                 <a class="filter__a js-filter-option js-filter-space p p--meta a" data-value="<%= space %>" href="/work/?space=<%= space %>"><%= space %></a>
             </li>
