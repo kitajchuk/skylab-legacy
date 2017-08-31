@@ -33,6 +33,7 @@
     // Feature project, page covers ( like studio )
     .project--feature .page__cover {
         position: relative;
+        padding-top: $expander-one;
 
         .cms {
             position: relative;
@@ -46,6 +47,10 @@
         .page__parallax {
             transform: none !important;
             width: 100%;
+        }
+
+        .cover__background {
+            display: none;
         }
     }
     .page--studio .page__cover {
@@ -183,15 +188,6 @@
 
 
 @media only screen and ( max-width: $break-tablet-small ) {
-    // .-wrap,
-    // .-wrap-index,
-    // .slices__text .-wrap-static,
-    // .slices__text .-text--left .-wrap-static,
-    // .slices__text .-text--right .-wrap-static {
-    //     padding-left: $expander-mobile;
-    //     padding-right: $expander-mobile;
-    //     }
-
     $header-height: 100px;
     .header,
     .theme,
@@ -218,10 +214,6 @@
     .navi__li--primary {
         .navi__a {
             font-size: 12vh;
-
-            &:after {
-                height: 1.5vh;
-                }
         }
     }
     .slices__diptych,
@@ -272,11 +264,14 @@
     .h2,
     .cms h2,
     .h3,
-    .cms h3 {
+    .cms h3,
+    .h4,
+    .cms h4 {
         font-size: $h2-h3-size-small;
         }
     .filter {
         width: $filter-width;
+        padding-left: 60px;
         }
     .filter__color {
         height: 16px;
