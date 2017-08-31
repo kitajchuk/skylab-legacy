@@ -151,16 +151,6 @@
         width: 100%;
         }
 
-    .filter-screen {
-        display: block;
-        }
-    .is-filter-open {
-        .main,
-        .header {
-            transform: translate3d( -$filter-width, 0, 0 );
-            width: 100%;
-            }
-    }
     .slices__text {
         .-wrap-static {
             @include wrap();
@@ -260,7 +250,13 @@
 
 
 @media only screen and ( max-width: $break-mobile-full ) {
-    $filter-width: 75%;
+    $filter-width: 60vw;
+
+    .is-filter-open {
+        .header__utility {
+            transform: translate3d( -$filter-width, 0, 0 );
+            }
+    }
 
     // Type
     .p,
@@ -280,7 +276,6 @@
         font-size: $h2-h3-size-small;
         }
     .filter {
-        background-color: $black;
         width: $filter-width;
         }
     .filter__color {
@@ -294,18 +289,6 @@
     .filter__col + .filter__col {
         padding-top: $expander-mobile / 2;
         }
-    .is-filter-open {
-        .main,
-        .header {
-            transform: translate3d( -$filter-width, 0, 0 );
-            width: 100%;
-            }
-    }
-    .is-theme--light {
-        .filter {
-            background-color: $white;
-            }
-    }
     .grid {
         display: flex;
         flex-wrap: wrap;

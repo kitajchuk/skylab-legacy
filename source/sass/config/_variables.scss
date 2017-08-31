@@ -22,6 +22,8 @@ $grey: #eee;
 $grey-text: #959595;
 $grey-fill: rgba( 189, 189, 189, 0.5 );
 $gold: #907f53;
+$filter-dark: #151515;
+$filter-light: #f9f9f9;
 
 
 
@@ -130,6 +132,6 @@ $fast-duration: 200ms;
 *******************************************************************************/
 $z_layer_behind: -1;
 $z_layer_screen: 1000;
-$z_layer_menu: 1001;
-$z_layer_header: 1002;
+$z_layer_menu: 1002;
+$z_layer_header: 1001;
 $z_layer_intro: 1003;
