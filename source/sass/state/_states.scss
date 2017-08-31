@@ -83,6 +83,14 @@
         display: none;
         }
 }
+.is-play-page {
+    .filter__work {
+        display: none;
+        }
+    .filter__play {
+        display: block;
+        }
+}
 //.is-home-page:not( .is-query ),
 .is-person-page,
 .is-career-page,

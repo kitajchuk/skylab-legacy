@@ -133,6 +133,12 @@ const getPartial = function ( req, data, listener ) {
         };
         const template = path.join( core.config.template.partialsDir, `${partial}.html` );
 
+        localObject.context.set({
+            site: cache.site,
+            navi: cache.navi,
+            colors: core.config.skylab.colors
+        });
+
         if ( data.document ) {
             localObject.context.set( "item", data.document );
         }
@@ -168,69 +174,25 @@ const getSite = function ( req ) {
         prismic.api( core.config.api.access, null ).then(( api ) => {
             const form = api.form( core.config.skylab.mainForm ).pageSize( 100 ).ref( getRef( req, api ) );
 
-            // console.log( api );
-
             form.submit().then(( json ) => {
-                const docs = {
-                    [core.config.skylab.siteType]: json.results.find(( doc ) => {
-                        return (doc.type === core.config.skylab.siteType);
-                    }),
-                    [core.config.skylab.mainType]: json.results.filter(( doc ) => {
-                        return (doc.type === core.config.skylab.mainType);
-                    }),
-                    [core.config.skylab.blogType]: json.results.filter(( doc ) => {
-                        return (doc.type === core.config.skylab.blogType);
-                    })
-                };
                 const navi = {
                     items: []
                 };
                 const site = {
                     data: {}
                 };
-                const filters = {
-                    spaces: [],
-                    materials: [],
-                    categories: [],
-                    statuses: []
-                };
-
-                // Normalize filter criteria ( category, status etc... )
-                // These are generated dynamically from what is ACTUALLY attached to documents.
-                docs[ core.config.skylab.mainType ].forEach(( doc ) => {
-                    const cats = doc.getGroup( `${core.config.skylab.mainType}.categories` );
-                    const status = doc.getText( `${core.config.skylab.mainType}.status` );
-
-                    if ( status && filters.statuses.indexOf( status ) === -1 ) {
-                        filters.statuses.push( status );
-                    }
-
-                    if ( cats ) {
-                        cats.value.forEach(( cat ) => {
-                            if ( filters.categories.indexOf( cat.data.category.value ) === -1 ) {
-                                filters.categories.push( cat.data.category.value );
-                            }
-                        });
-                    }
-                });
 
                 // Normalize site context
-                for ( let i in docs.site.fragments ) {
+                for ( let i in json.results[ 0 ].fragments ) {
                     if ( i !== core.config.skylab.naviFrag ) {
                         const key = i.replace( /^site\./, "" );
 
-                        site.data[ key ] = docs.site.fragments[ i ].value || docs.site.fragments[ i ].url;
-
-                        if ( key === "spaces" || key === "materials" ) {
-                            docs.site.fragments[ i ].value.forEach(( frag ) => {
-                                filters[ key ].push( frag.data[ key.replace( /s$/, "" ) ].value );
-                            });
-                        }
+                        site.data[ key ] = json.results[ 0 ].fragments[ i ].value || json.results[ 0 ].fragments[ i ].url;
                     }
                 }
 
                 // Normalize navi context
-                docs.site.getSliceZone( core.config.skylab.naviFrag ).value.forEach(( slice ) => {
+                json.results[ 0 ].getSliceZone( core.config.skylab.naviFrag ).value.forEach(( slice ) => {
                     let id = null;
                     let uid = null;
                     let type = null;
@@ -266,8 +228,6 @@ const getSite = function ( req ) {
                 cache.api = api;
                 cache.site = site;
                 cache.navi = navi;
-                cache.docs = docs;
-                cache.filters = filters;
 
                 resolve();
             });
