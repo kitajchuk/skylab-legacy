@@ -13,11 +13,20 @@ const child_process = require( "child_process" );
 const config = require( "./skylab.config" );
 
 
+
 // Note that with `npm@5` there have been some hiccups
 // The ultimate resolve was to trash the `.npm` cache
 
 
-// 0.0 Create sandbox
+
+// 0.0: Fresh `node_modules`
+console.log( "Installing node_modules..." );
+
+child_process.execSync( `rm -rf ${rootNodeModules}` );
+child_process.execSync( "npm install" );
+
+
+// 1.0 Create sandbox
 console.log( "Creating sandbox..." );
 
 if ( !fs.existsSync( rootSandbox ) ) {
@@ -25,7 +34,7 @@ if ( !fs.existsSync( rootSandbox ) ) {
 }
 
 
-// 1.0 Create template partials
+// 2.0 Create template partials
 console.log( "Creating template partials..." );
 
 if ( !fs.existsSync( rootTemplatePartials ) ) {
@@ -33,7 +42,7 @@ if ( !fs.existsSync( rootTemplatePartials ) ) {
 }
 
 
-// 2.0 Create notes
+// 3.0 Create notes
 console.log( "Creating notes..." );
 
 if ( !fs.existsSync( rootNotes ) ) {
@@ -41,19 +50,19 @@ if ( !fs.existsSync( rootNotes ) ) {
 }
 
 
-// 3.0 Hobo.js build
+// 4.0 Hobo.js build
 console.log( "Building properjs-hobo..." );
 
 child_process.execSync( `cd ${rootHobo} && npm install && npm run build -- '${config.skylab.hoboBuild}'` );
 
 
-// 4.0 server install
+// 5.0 server install
 console.log( "Installing server node_modules..." );
 
 child_process.execSync( `cd ${rootServer} && npm install` );
 
 
-// 4.0 tasks install
+// 6.0 tasks install
 console.log( "Installing tasks node_modules..." );
 
 child_process.execSync( `cd ${rootTasks} && npm install` );
