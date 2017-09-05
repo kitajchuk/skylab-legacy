@@ -78,6 +78,20 @@
         display: inline-block;
         }
 }
+.is-work-page {
+    .feature__li {
+        .image {
+            opacity: 0.8;
+            }
+        .feature__text {
+            opacity: 1;
+            }
+        .icon--plus {
+            height: 32px;
+            width: 32px;
+            }
+    }
+}
 .is-studio-page {
     .theme {
         display: none;

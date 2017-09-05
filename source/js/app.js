@@ -51,8 +51,12 @@ class App {
 
     bindIntro () {
         this.core.emitter.on( "app--intro-teardown", () => {
-            if ( router.isHomepage() ) {
+            if ( router.is( core.config.homepage ) ) {
                 navi.open();
+            }
+
+            if ( router.is( "work" ) ) {
+                filter.open();
             }
 
             this.bindPage();
@@ -62,8 +66,12 @@ class App {
 
     bindPage () {
         this.core.emitter.on( "app--page-teardown", () => {
-            if ( router.isHomepage() ) {
+            if ( router.is( core.config.homepage ) ) {
                 navi.open();
+            }
+
+            if ( router.is( "work" ) ) {
+                filter.open();
             }
         });
     }
