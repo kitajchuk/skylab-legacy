@@ -28,25 +28,20 @@ console.log( "Installing node_modules..." );
 
 
 // 1.0: No `node_modules`
-if ( !fs.existsSync( rootNodeModules ) ) {
-    child_process.execSync( "npm install" );
-
-// 2.0 Reset `node_modules` cache
-} else {
-    child_process.execSync( `rm -rf ${rootNodeModules}` );
-    child_process.execSync( "npm install" );
-}
-
-
-console.log( "Removing package-lock.json..." );
-
-// 3.0 Remove `package-lock.json` for now
 child_process.execSync( `rm -rf ${rootPackageLock}` );
+child_process.execSync( `rm -rf ${rootNodeModules}` );
+child_process.execSync( "npm install" );
+
+
+console.log( `Forwarding port 80 to port 8000...` );
+
+// 2.0 Make sure ports are forwarded for node
+child_process.execSync( "iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000" );
 
 
 console.log( `Stopping task server` );
 
-// 4.0 Stop `environment` server
+// 3.0 Stop `environment` server
 child_process.execSync( "npm run stop" );
 
 

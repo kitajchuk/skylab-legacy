@@ -58,6 +58,11 @@ const startTaskServer = function () {
         extended: true
     }));
 
+    expressApp.get( "/", ( req, res ) => {
+        // 2xx required by Prismic.io
+        res.status( 200 ).send( "Running" );
+    });
+
     expressApp.post( "/webhook", ( req, res ) => {
         lager.server( "Webhook Post Request" );
         lager.data( req.body );
@@ -73,6 +78,9 @@ const startTaskServer = function () {
             } else {
                 lager.warn( "Task Runner Running..." );
             }
+
+        } else if ( req.body.type === "test-trigger" ) {
+            lager.info( "Test trigger received..." );
         }
 
         // 2xx required by Prismic.io
