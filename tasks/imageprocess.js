@@ -207,6 +207,10 @@ const doImageProcess = function () {
     webhook = cli.options.webhook;
     channel = cli.options.channel;
 
+    slacker( token, webhook, channel, context, [
+        `Initializing ${context}`
+    ]);
+
     lager.info( `Connecting to Prismic.io API...` );
 
     prismic.api( core.config.api.access, null ).then(( api ) => {
