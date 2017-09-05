@@ -78,20 +78,7 @@
         display: inline-block;
         }
 }
-.is-work-page {
-    .feature__li {
-        .image {
-            opacity: 0.8;
-            }
-        .index__text {
-            opacity: 1;
-            }
-        .icon--plus {
-            height: 32px;
-            width: 32px;
-            }
-    }
-}
+.is-work-page {}
 .is-studio-page {
     .theme {
         display: none;
@@ -196,9 +183,6 @@
     .feature__li:hover {
         z-index: $z_layer_menu + 1;
 
-        .image {
-            opacity: 0.8;
-            }
         .index__text {
             opacity: 1;
             }

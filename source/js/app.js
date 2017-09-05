@@ -56,6 +56,7 @@ class App {
             }
 
             if ( router.is( "work" ) ) {
+                filter.query();
                 filter.open();
             }
 
@@ -68,10 +69,6 @@ class App {
         this.core.emitter.on( "app--page-teardown", () => {
             if ( router.is( core.config.homepage ) ) {
                 navi.open();
-            }
-
-            if ( router.is( "work" ) ) {
-                filter.open();
             }
         });
     }

@@ -1,21 +1,14 @@
-.feature {}
+.feature {
+    padding-bottom: $header-height;
+    }
 .feature__li + .feature__li {
     margin-top: -$expander-one;
     }
 .feature__li {
     pointer-events: none;
     position: relative;
-
-    .image {
-        transition: opacity $fast-duration $ease;
-        }
 }
 .feature__wrap {
     max-width: 40%;
     pointer-events: auto;
     }
-.feature__li:nth-child( 1n ) {}
-.feature__li:nth-child( 2n ) {
-    z-index: $z_layer_menu - 1;
-    }
-.feature__li:nth-child( 3n ) {}
