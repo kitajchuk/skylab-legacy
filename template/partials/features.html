@@ -1,0 +1,19 @@
+<%
+let position = "left";
+let lastPosition = position;
+const positions = ["left", "center", "right"];
+%>
+<div class="feature js-feature js-cover" data-cover="feature">
+    <ul class="feature__ul">
+        <% features.forEach(( feature ) => { %>
+            <%
+            while ( position === lastPosition ) {
+                position = positions[ Math.floor( Math.random() * positions.length ) ];
+            }
+
+            lastPosition = position;
+            %>
+            <%- include( 'index--feature.html', {feature: feature, position: position} ) %>
+        <% }) %>
+    </ul>
+</div>

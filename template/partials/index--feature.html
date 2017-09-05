@@ -9,16 +9,15 @@ const baseSlug = feature.type === 'project' ? 'work' : 'play';
 
 let featureBlock = (feature.getGroup( 'project.feature' ) || feature.getGroup( 'blog.feature' ));
     featureBlock = featureBlock ? featureBlock.toArray()[ 0 ] : null;
-const featureBlockLayout = (featureBlock && featureBlock.getText( 'layout' )) ? featureBlock.getText( 'layout' ).toLowerCase() : 'center';
 const imageClip = featureBlock ? featureBlock.getText( 'imageclip' ) : null;
 %>
-<li class="feature__li -text--<%= featureBlockLayout %>">
+<li class="feature__li -text--<%= position %>">
     <% if ( image ) { %>
         <div class="feature__wrap -column animate-lift animate--slow js-animate is-animate" style="width:<%= image.main.width %>px;">
             <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.url %>" />
             </a>
-            <div class="index__info <%= featureBlockLayout %>">
+            <div class="index__info <%= position %>">
                 <div class="index__icon icon icon--plus">
                     <span class="vert"></span>
                     <span class="horz"></span>

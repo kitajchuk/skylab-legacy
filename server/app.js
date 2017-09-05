@@ -20,7 +20,11 @@ const canFeatures = function ( req ) {
 
 
 const canTileset = function ( req ) {
-    return (req.query.color || req.query.material || req.query.space);
+    return (
+        req.query.color ||
+        req.query.material ||
+        req.query.space
+    );
 };
 
 

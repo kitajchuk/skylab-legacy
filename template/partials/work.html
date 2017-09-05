@@ -11,11 +11,5 @@ const tileset = locals.context.get( 'tileset' );
         </ul>
     </div>
 <% } else { %>
-    <div class="feature js-feature js-cover" data-cover="feature">
-        <ul class="feature__ul">
-            <% items.forEach(( item ) => { %>
-                <%- include( 'index--feature.html', {feature: item} ) %>
-            <% }) %>
-        </ul>
-    </div>
+    <%- include( 'features.html', {features: items} ) %>
 <% } %>
