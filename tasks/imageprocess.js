@@ -3,7 +3,7 @@
 
 
 const fs = require( "fs" );
-const cli = require( "cli" );
+const yargs = require( "yargs" );
 const path = require( "path" );
 const lager = require( "properjs-lager" );
 const chroma = require( "chroma-js" );
@@ -170,8 +170,7 @@ const processResult = function ( result ) {
 
         results.processed.push( result );
 
-        // Output progress bar to console
-        cli.progress( progress );
+        // Output progress bar to console ?
 
         // Push slack entry
         message.push( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
@@ -203,9 +202,9 @@ const doImageProcess = function () {
         processed: []
     };
     message = [];
-    token = cli.options.token;
-    webhook = cli.options.webhook;
-    channel = cli.options.channel;
+    token = yargs.argv.token;
+    webhook = yargs.argv.webhook;
+    channel = yargs.argv.channel;
 
     slacker( token, webhook, channel, context, [
         `Initializing ${context}`
@@ -278,19 +277,7 @@ const doImageProcess = function () {
 
 
 
-cli.setApp( context, "0.1.0" );
-
-
-
-cli.parse({
-    token: ["token", "The Slack app integration token.", "string", ""],
-    webhook: ["webhook", "The Slack app integration webhook URL.", "string", ""],
-    channel: ["channel", "The Slack channel to ping.", "string", ""]
-});
-
-
-
-if ( cli.options.token && cli.options.webhook && cli.options.channel ) {
+if ( yargs.argv.token && yargs.argv.webhook && yargs.argv.channel ) {
     doImageProcess();
 
 } else {
