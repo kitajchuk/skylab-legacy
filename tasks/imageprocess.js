@@ -132,12 +132,22 @@ const pushResult = function ( doc, image ) {
     });
 
     if ( !found ) {
+        let cats = doc.getGroup( "project.categories" );
+            cats = cats ? cats.toArray().map(( cat ) => cat.data.category.value ) : [];
+
         results.raw.push({
             image: {
                 url: image.url,
                 doc: `/${doc.type}/${doc.uid}/`,
                 width: image.main.width,
                 height: image.main.height
+            },
+            doc: {
+                title: doc.getText( "project.title" ),
+                year: doc.getText( "project.year" ),
+                city: doc.getText( "project.city" ),
+                state: doc.getText( "project.state" ),
+                categories: cats
             },
             tags: getImageTags( image.main.alt ),
             color: "#000000",
@@ -202,7 +212,7 @@ const doImageProcess = function () {
     prismic.api( core.config.api.access, null ).then(( api ) => {
         lager.info( `Loading all documents for content-type ${core.config.skylab.mainType}...` );
 
-        api.form( core.config.skylab.mainForm )
+        api.form( core.config.skylab.mainType )
             .pageSize( 100 )
             .ref( api.master() )
             .query( [prismic.Predicates.at( "document.type", core.config.skylab.mainType )] )
