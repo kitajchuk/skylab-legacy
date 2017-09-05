@@ -5,6 +5,10 @@
 .feature__li {
     pointer-events: none;
     position: relative;
+
+    .image {
+        transition: opacity $fast-duration $ease;
+        }
 }
 .feature__wrap {
     max-width: 40%;
@@ -12,7 +16,7 @@
     }
 .feature__li:nth-child( 1n ) {}
 .feature__li:nth-child( 2n ) {
-    z-index: $z_layer_menu;
+    z-index: $z_layer_menu - 1;
     }
 .feature__li:nth-child( 3n ) {}
 .feature__info {

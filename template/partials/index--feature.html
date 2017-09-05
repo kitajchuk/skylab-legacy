@@ -1,21 +1,26 @@
 <%
 const image = (feature.getImage( 'project.image' ) || feature.getImage( 'blog.image' ));
-const featureBlock = (feature.getGroup( 'project.feature' ) || feature.getGroup( 'blog.feature' )).toArray()[ 0 ];
-const imageClip = featureBlock.getText( 'imageclip' );
 const title = (feature.getText( 'project.title' ) || feature.getText( 'blog.title' ));
 const year = (feature.getText( 'project.year' ) || feature.getText( 'blog.year' ));
 const city = (feature.getText( 'project.city' ) || feature.getText( 'blog.city' ));
 const state = (feature.getText( 'project.state' ) || feature.getText( 'blog.city' ));
 const categories = (feature.getGroup( 'project.categories' ) || feature.getGroup( 'blog.categories' ));
 const baseSlug = feature.type === 'project' ? 'work' : 'play';
+
+let featureBlock = (feature.getGroup( 'project.feature' ) || feature.getGroup( 'blog.feature' ));
+    featureBlock = featureBlock ? featureBlock.toArray()[ 0 ] : null;
+const featureBlockLayout = (featureBlock && featureBlock.getText( 'layout' )) ? featureBlock.getText( 'layout' ).toLowerCase() : 'center';
+const imageClip = featureBlock ? featureBlock.getText( 'imageclip' ) : null;
+
+
 %>
-<li class="feature__li -text--<%= featureBlock.getText( 'layout' ).toLowerCase() %>">
+<li class="feature__li -text--<%= featureBlockLayout %>">
     <% if ( image ) { %>
         <div class="feature__wrap -column animate-lift animate--slow js-animate is-animate" style="width:<%= image.main.width %>px;">
             <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.url %>" />
             </a>
-            <div class="feature__info <%= featureBlock.getText( 'layout' ).toLowerCase() %>">
+            <div class="feature__info <%= featureBlockLayout %>">
                 <div class="feature__icon icon icon--plus">
                     <span class="vert"></span>
                     <span class="horz"></span>

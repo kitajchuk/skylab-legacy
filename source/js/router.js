@@ -272,14 +272,15 @@ const router = {
     /**
      *
      * @public
-     * @method isHomepage
+     * @method is
      * @memberof router
-     * @description Determine if we are on the homepage currently.
+     * @param {string} view The test view
+     * @description Determine if we are on a specific page.
      * @returns {boolean}
      *
      */
-    isHomepage () {
-        return (this.view === core.config.homepage);
+    is ( view ) {
+        return (this.view === view);
     }
 };
 

@@ -11,10 +11,10 @@ const tileset = locals.context.get( 'tileset' );
         </ul>
     </div>
 <% } else { %>
-    <div class="index js-index">
-        <ul class="index__ul">
+    <div class="feature js-feature js-cover" data-cover="feature">
+        <ul class="feature__ul">
             <% items.forEach(( item ) => { %>
-                <%- include( 'index--item.html', {item: item} ) %>
+                <%- include( 'index--feature.html', {feature: item} ) %>
             <% }) %>
         </ul>
     </div>
