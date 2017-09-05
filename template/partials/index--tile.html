@@ -1,5 +1,33 @@
 <li class="tileset__li tile -column -column--1of3 grid__item">
-    <a href="<%= tile.image.doc %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( tile.image ) %>;background-color:<%= tile.color %>;">
-        <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= tile.image.url %>" data-img-size="[<%= tile.image.width %>,<%= tile.image.height %>]" />
-    </a>
+    <div class="tile__wrap">
+        <a href="<%= tile.image.doc %>" class="-block" style="padding-bottom:<%= locals.context.getMediaAspect( tile.image ) %>;background-color:<%= tile.color %>;">
+            <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= tile.image.url %>" data-img-size="[<%= tile.image.width %>,<%= tile.image.height %>]" />
+        </a>
+        <div class="index__info center">
+            <div class="index__icon icon icon--plus">
+                <span class="vert"></span>
+                <span class="horz"></span>
+            </div>
+            <div class="index__text p--meta -light">
+                <p>
+                    <% if ( tile.doc.title ) { %>
+                        <strong><%= tile.doc.title %></strong>
+                    <% } %>
+                    <% if ( tile.doc.year ) { %>
+                        <span><%= tile.doc.year %></span>
+                    <% } %>
+                    <br />
+                    <% if ( tile.doc.city || tile.doc.state ) { %>
+                        <% if ( tile.doc.city ) { %><%= tile.doc.city %>, <% } %><%= tile.doc.state %>
+                        <br />
+                    <% } %>
+                    <% if ( tile.doc.categories ) { %>
+                        <% tile.doc.categories.forEach(( cat ) => { %>
+                            <a class="a" href="/work/?category=<%= cat %>"><%= cat %></a>
+                        <% }) %>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+    </div>
 </li>

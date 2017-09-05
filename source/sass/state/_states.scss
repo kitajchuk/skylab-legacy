@@ -83,7 +83,7 @@
         .image {
             opacity: 0.8;
             }
-        .feature__text {
+        .index__text {
             opacity: 1;
             }
         .icon--plus {
@@ -199,7 +199,7 @@
         .image {
             opacity: 0.8;
             }
-        .feature__text {
+        .index__text {
             opacity: 1;
             }
         .icon--plus {
@@ -207,7 +207,18 @@
             width: 32px;
             }
     }
-    .feature__info a:hover {
+    .tileset__li:hover {
+        z-index: 2;
+
+        .index__text {
+            opacity: 1;
+            }
+        .icon--plus {
+            height: 32px;
+            width: 32px;
+            }
+    }
+    .index__info a:hover {
         border-bottom-color: $gold;
         }
 }

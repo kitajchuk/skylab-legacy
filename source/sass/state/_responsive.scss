@@ -318,22 +318,26 @@
     // Project / Page tightening
     .slices__map .map__marker {
         width: 120px;
-    }
+        }
 
     .-exp-1,
     .-exp-2 {
         padding-bottom: $expander-mobile;
         padding-top: $expander-mobile;
-    }
+        }
 
     .slices__diptych .-column + .-column {
         margin-top: $expander-mobile / 2;
-    }
+        }
 
     .person {
         margin-bottom: $expander-mobile / 2;
         padding-right: $expander-mobile / 2;
-    }
+        }
+
+    .index__info {
+        display: none;
+        }
 }
 
 

@@ -1,6 +1,36 @@
 .index__col + .index__col {
     padding-left: $padding-index;
     }
-.feature + .index {
-    padding-top: $expander-two;
+
+
+
+.index__info {
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+
+    &.left {
+        transform: translateX( 100% );
     }
+    &.right,
+    &.center {
+        text-align: left;
+    }
+
+    a {
+        font-style: italic;
+        border-bottom: 1px solid $white;
+        }
+}
+.index__icon {
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX( -50% ) translateY( -50% );
+}
+.index__text {
+    padding-top: $expander-mobile;
+    opacity: 0;
+    transition: opacity $fast-duration $ease;
+}

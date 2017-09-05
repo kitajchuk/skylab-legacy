@@ -1,0 +1,21 @@
+.tile {}
+.tile__wrap {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    }
+.tile__photo,
+.tile__wrap > iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+
+.tileset__li {
+    position: relative;
+    z-index: 1;
+    }

@@ -11,8 +11,6 @@ let featureBlock = (feature.getGroup( 'project.feature' ) || feature.getGroup( '
     featureBlock = featureBlock ? featureBlock.toArray()[ 0 ] : null;
 const featureBlockLayout = (featureBlock && featureBlock.getText( 'layout' )) ? featureBlock.getText( 'layout' ).toLowerCase() : 'center';
 const imageClip = featureBlock ? featureBlock.getText( 'imageclip' ) : null;
-
-
 %>
 <li class="feature__li -text--<%= featureBlockLayout %>">
     <% if ( image ) { %>
@@ -20,12 +18,12 @@ const imageClip = featureBlock ? featureBlock.getText( 'imageclip' ) : null;
             <a href="<%= locals.context.getUrl( feature ) %>" class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image <%= imageClip ? '-skyclip' : '' %>" data-img-src="<%= image.url %>" />
             </a>
-            <div class="feature__info <%= featureBlockLayout %>">
-                <div class="feature__icon icon icon--plus">
+            <div class="index__info <%= featureBlockLayout %>">
+                <div class="index__icon icon icon--plus">
                     <span class="vert"></span>
                     <span class="horz"></span>
                 </div>
-                <div class="feature__text p--meta -light">
+                <div class="index__text p--meta -light">
                     <p>
                         <% if ( title ) { %>
                             <strong><%= title %></strong>

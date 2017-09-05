@@ -19,33 +19,3 @@
     z-index: $z_layer_menu - 1;
     }
 .feature__li:nth-child( 3n ) {}
-.feature__info {
-    left: 0;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-
-    &.left {
-        transform: translateX( 100% );
-    }
-    &.right,
-    &.center {
-        text-align: left;
-    }
-
-    a {
-        font-style: italic;
-        border-bottom: 1px solid $white;
-        }
-}
-.feature__icon {
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: translateX( -50% ) translateY( -50% );
-}
-.feature__text {
-    padding-top: $expander-mobile;
-    opacity: 0;
-    transition: opacity $fast-duration $ease;
-}
