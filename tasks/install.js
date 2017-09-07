@@ -35,7 +35,7 @@ console.log( "Installing node_modules..." );
 
 // 2.0: No `node_modules`
 child_process.execSync( `rm -rf ${rootPackageLock}` );
-child_process.execSync( `rm -rf ${rootNodeModules}` );
+// child_process.execSync( `rm -rf ${rootNodeModules}` );
 child_process.execSync( "npm install" );
 
 

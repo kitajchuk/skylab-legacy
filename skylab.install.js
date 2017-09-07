@@ -22,7 +22,8 @@ const config = require( "./skylab.config" );
 // 0.0: Fresh `node_modules`
 console.log( "Installing node_modules..." );
 
-child_process.execSync( `rm -rf ${rootNodeModules}` );
+child_process.execSync( `rm -rf ${rootPackageLock}` );
+// child_process.execSync( `rm -rf ${rootNodeModules}` );
 child_process.execSync( "npm install" );
 
 
