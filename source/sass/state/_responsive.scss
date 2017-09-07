@@ -30,49 +30,26 @@
         font-size: $p-size-medium;
         }
 
-    // Feature project, page covers ( like studio )
-    .project--feature .page__cover {
-        position: relative;
-        padding-top: $expander-one;
-
-        .cms {
-            position: relative;
-            top: auto;
-            transform: translateY( -19% );
+    .slices__parallax {
+        .parallax__cover {
+            height: auto;
         }
-    }
-    .project--feature .slices__slice:first-child .project__cover {
-        height: auto;
-
-        .page__parallax {
-            transform: none !important;
+        .parallax__image {
+            padding-top: 0;
             width: 100%;
         }
-
-        .cover__background {
+        .parallax__background {
             display: none;
         }
-    }
-    .page--studio .page__cover {
-        height: auto;
-        max-width: 100%;
-        padding-bottom: $expander-mobile;
-        padding-top: $expander-two;
-        position: relative;
-        width: 100%;
-
-        .cms {
-            position: relative;
-            top: auto;
-            transform: none;
-        }
-    }
-    .page--studio .slices__slice:first-child .project__cover {
-        height: auto;
-
-        .page__parallax {
-            margin-bottom: $expander-mobile;
+        .parallax__transform {
             transform: none !important;
+        }
+        .parallax__copy {
+            transform: none;
+            padding-bottom: $expander-two;
+            padding-top: $expander-one;
+        }
+        .parallax__leadin {
             width: 100%;
         }
     }

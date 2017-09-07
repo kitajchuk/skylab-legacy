@@ -9,7 +9,7 @@ const isStandard = (ptype === 'Standard');
             <% item.getSliceZone( 'project.slices' ).slices.forEach(( slice ) => { %>
                 <div class="slices__slice slices__<%= slice.sliceType %>">
                     <div class="slices__content">
-                        <%- include( `../slices/${slice.sliceType}.html`, {slice: slice, item: item, coverType: coverType} ) %>
+                        <%- include( `../slices/${slice.sliceType}.html`, {slice: slice, item: item} ) %>
                     </div>
                 </div>
             <% }) %>

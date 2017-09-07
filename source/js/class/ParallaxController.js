@@ -52,7 +52,8 @@ class ParallaxController {
     handle ( element ) {
         const image = element.find( ".js-parallax-image" );
         const background = element.find( ".js-parallax-background" );
-        const bounds = element[ 0 ].getBoundingClientRect();
+        const cover = element.find( ".js-parallax-cover" );
+        const bounds = cover[ 0 ].getBoundingClientRect();
         const offset = (bounds.top + bounds.height / 2) - (window.innerHeight / 2);
         const speed = 4;
 

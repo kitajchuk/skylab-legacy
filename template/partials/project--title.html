@@ -1,0 +1,8 @@
+<%
+const title = (item.getText( 'project.title' ) || item.getText( 'page.title' ));
+%>
+<div class="cms">
+    <% if ( title ) { %>
+        <h1><%= title %></h1>
+    <% } %>
+</div>

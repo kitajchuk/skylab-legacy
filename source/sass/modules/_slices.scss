@@ -19,16 +19,53 @@
     padding-bottom: 0;
     padding-top: 0;
     }
-.slices__parallax + .slices__lead,
 .slices__parallax + .slices__labeledSection .section {
     padding-top: 0;
     }
 
 // Slice Types...
-.slices__lead {
-    .section__label {
-        padding-right: $padding-wrap;
+.slices__parallax {
+    .parallax {
+        &--right {
+            text-align: right;
         }
+        &--center {
+            text-align: center;
+        }
+    }
+    .parallax__cover {
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+    .parallax__image {
+        padding-top: $expander-three;
+    }
+    .parallax__copy {
+        position: relative;
+        text-align: left;
+        transform: translateY( -10.7vw );
+        z-index: 1;
+
+        .page--studio & {
+            color: $black;
+            }
+    }
+    .parallax__info {
+        p {
+            font-size: $h2-h3-size-small;
+            color: $white;
+        }
+    }
+    .parallax__title {
+        .cms {
+            width: 50vw;
+        }
+    }
+    .parallax__info,
+    .parallax__leadin {
+        margin-top: $expander-one / 2;
+    }
 }
 .slices__text {
     text-align: center;

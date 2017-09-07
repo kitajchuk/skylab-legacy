@@ -5,44 +5,39 @@ const background = group.getImage( 'background' );
 const imagePos = group.getText( 'imagePosition' );
 const colorStyle = group.getText( 'colorStyle' );
 %>
-<div class="project__cover cover cover--base <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %> js-parallax -text--<%= imagePos.toLowerCase() %> ghost" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
-    <div class="ghost__child -full">
-        <% if ( coverType === 'page' ) { %>
-            <div class="page__cover -wrap <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+<div class="parallax <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %> js-parallax parallax--<%= imagePos.toLowerCase() %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+    <div class="parallax__cover cover cover--base js-parallax-cover"></div>
+    <% if ( background ) { %>
+        <div class="parallax__background cover__fill js-parallax-background -cover js-lazy-image" data-img-src="<%= background.url %>"></div>
+    <% } %>
+    <% if ( image ) { %>
+        <div class="parallax__image -wrap-static">
+            <div class="tile__wrap parallax__transform js-parallax-image" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
+                <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
+            </div>
+        </div>
+    <% } %>
+    <% if ( item.type === 'page' ) { %>
+        <div class="parallax__copy -wrap <%= colorStyle ? `js-color` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+            <%- include( '../partials/project--title.html', {item: item} ) %>
+        </div>
+    <% } %>
+    <% if ( item.type === 'project' ) { %>
+        <%
+        const featureBlock = item.getGroup( 'project.feature' ).toArray()[ 0 ];
+        %>
+        <div class="parallax__copy -wrap">
+            <div class="parallax__title">
+                <%- include( '../partials/project--title.html', {item: item} ) %>
+            </div>
+            <div class="parallax__info">
+                <%- include( '../partials/project--info.html', {item: item} ) %>
+            </div>
+            <div class="parallax__leadin -wrap-static">
                 <div class="cms">
-                    <% if ( item.getText( 'page.title' ) ) { %>
-                        <h1><%= item.getText( 'page.title' ) %></h1>
-                    <% } %>
+                    <%- featureBlock.getStructuredText( 'description' ).asHtml() %>
                 </div>
             </div>
-        <% } %>
-        <% if ( background ) { %>
-            <div class="cover__fill cover__background js-parallax-background -cover js-lazy-image" data-img-src="<%= background.url %>"></div>
-        <% } %>
-        <% if ( image ) { %>
-            <div class="page__parallax js-parallax-image -wrap-static">
-                <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
-                    <img class="tile__photo image js-lazy-image" data-img-src="<%= image.url %>" />
-                </div>
-            </div>
-        <% } %>
-        <% if ( coverType === 'project' ) { %>
-            <div class="project__info page__cover -wrap">
-                <div class="cms">
-                    <% if ( item.getText( 'project.title' ) ) { %>
-                        <h1><%= item.getText( 'project.title' ) %></h1>
-                    <% } %>
-                </div>
-            </div>
-        <% } %>
-        <% if ( coverType === 'blog' ) { %>
-            <div class="project__info page__cover -wrap">
-                <div class="cms">
-                    <% if ( item.getText( 'blog.title' ) ) { %>
-                        <h1><%= item.getText( 'blog.title' ) %></h1>
-                    <% } %>
-                </div>
-            </div>
-        <% } %>
-    </div>
+        </div>
+    <% } %>
 </div>

@@ -2,5 +2,5 @@
 const item = locals.context.get( 'item' );
 %>
 <div class="page page--<%= item.uid %> js-page">
-    <%- include( 'page--body.html', {item: item, coverType: 'page'} ) %>
+    <%- include( 'page--body.html', {item: item} ) %>
 </div>

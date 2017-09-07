@@ -11,7 +11,7 @@ const blurb = item.getStructuredText( 'blog.blurb' );
                 <% item.getSliceZone( 'blog.slices' ).slices.forEach(( slice ) => { %>
                     <div class="slices__slice slices__<%= slice.sliceType %>">
                         <div class="slices__content">
-                            <%- include( `../slices/${slice.sliceType}.html`, {slice: slice, item: item, coverType: null} ) %>
+                            <%- include( `../slices/${slice.sliceType}.html`, {slice: slice, item: item} ) %>
                         </div>
                     </div>
                 <% }) %>
