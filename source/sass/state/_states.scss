@@ -78,7 +78,13 @@
         display: inline-block;
         }
 }
-.is-work-page {}
+.is-work-page,
+.is-play-page,
+.is-career-page {
+    .fourohfour {
+        padding-top: calc( #{$header-height} + #{$expander-mobile} );
+    }
+}
 .is-studio-page {
     .theme {
         display: none;
@@ -93,7 +99,6 @@
         }
 }
 //.is-home-page:not( .is-query ),
-.is-person-page,
 .is-career-page,
 .is-studio-page,
 .is-work-page.is-uid-page,

@@ -6,6 +6,7 @@
 
 .section__label {
     padding-left: $padding-wrap;
+    padding-right: $padding-wrap;
     width: $wrap-astatic;
 
     .page & > .cms > p:first-child {

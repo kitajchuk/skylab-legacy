@@ -119,12 +119,18 @@
         }
     }
     .reader__li--standard {
+        .reader__cover {
+            display: flex;
+            flex-wrap: wrap;
+        }
         .reader__info {
-            padding-top: $expander-one;
+            order: 1;
+            padding-bottom: $expander-one;
             position: relative;
             width: 100%;
         }
         .reader__body {
+            order: 2;
             width: 100%;
         }
     }
