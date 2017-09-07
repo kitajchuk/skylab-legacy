@@ -1,16 +1,18 @@
 <%
-const image = item.getImage( 'project.image' );
+const image = item.getImage( `${docType}.image` );
+const title = item.getText( `${docType}.title` );
+const description = item.getStructuredText( `${docType}.description` );
 %>
 <div class="project__info -wrap js-scrollninja-info">
     <div class="cms">
-        <% if ( item.getText( 'project.title' ) ) { %>
-            <h1><%= item.getText( 'project.title' ) %></h1>
+        <% if ( title ) { %>
+            <h1><%= title %></h1>
         <% } %>
-        <% if ( item.getStructuredText( 'project.description' ) ) { %>
-            <%- item.getStructuredText( 'project.description' ).asHtml() %>
+        <% if ( description ) { %>
+            <%- description.asHtml() %>
         <% } %>
     </div>
-    <%- include( 'project--info.html', {item: item} ) %>
-    <%- include( 'project--paging.html', {item: item} ) %>
+    <%- include( 'project--info.html', {item: item, docType: docType, baseSlug: baseSlug} ) %>
+    <%- include( 'project--paging.html', {item: item, docType: docType, baseSlug: baseSlug} ) %>
 </div>
-<%- include( 'project--body.html', {item: item} ) %>
+<%- include( 'project--body.html', {item: item, docType: docType, baseSlug: baseSlug} ) %>

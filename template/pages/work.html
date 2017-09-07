@@ -8,9 +8,9 @@
     %>
     <div class="project project--<%= ptype ? ptype.toLowerCase() : 'standard' %> js-project <%= isStandard ? 'js-scrollninja' : '' %>" data-type="<%= ptype ? ptype.toLowerCase() : 'standard' %>" data-previous="<% if ( previous ) { %>/work/<%= previous.uid %>/<% } %>" data-next="<% if ( next ) { %>/work/<%= next.uid %>/<% } %>">
         <% if ( ptype === 'Feature' ) { %>
-            <%- include( '../partials/project--feature.html', {item: item} ) %>
+            <%- include( '../partials/project--feature.html', {item: item, docType: 'project', baseSlug: 'work'} ) %>
         <% } else { %>
-            <%- include( '../partials/project--standard.html', {item: item} ) %>
+            <%- include( '../partials/project--standard.html', {item: item, docType: 'project', baseSlug: 'work'} ) %>
         <% } %>
     </div>
 <% } else { %>

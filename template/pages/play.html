@@ -6,11 +6,11 @@
     const next = locals.context.get( 'next' );
     const isStandard = (btype === 'Standard');
     %>
-    <div class="project project--<%= btype ? btype.toLowerCase() : 'standard' %> js-project <%= isStandard ? 'js-scrollninja' : '' %>" data-type="<%= btype ? btype.toLowerCase() : 'standard' %>" data-previous="<% if ( previous ) { %><%= locals.context.getUrl( previous ) %><% } %>" data-next="<% if ( next ) { %><%= locals.context.getUrl( next ) %><% } %>">
+    <div class="project project--<%= btype ? btype.toLowerCase() : 'standard' %> js-project <%= isStandard ? 'js-scrollninja' : '' %>" data-type="<%= btype ? btype.toLowerCase() : 'standard' %>" data-previous="<% if ( previous ) { %>/play/<%= previous.uid %>/<% } %>" data-next="<% if ( next ) { %>/play/<%= next.uid %>/<% } %>">
         <% if ( btype === 'Feature' ) { %>
-            <%- include( '../partials/blog--feature.html', {item: item} ) %>
+            <%- include( '../partials/project--feature.html', {item: item, docType: 'blog', baseSlug: 'play'} ) %>
         <% } else { %>
-            <%- include( '../partials/blog--standard.html', {item: item} ) %>
+            <%- include( '../partials/project--standard.html', {item: item, docType: 'blog', baseSlug: 'play'} ) %>
         <% } %>
     </div>
 <% } else { %>

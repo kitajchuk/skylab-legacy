@@ -1,23 +1,27 @@
 <%
-const city = item.getText( 'project.city' );
-const state = item.getText( 'project.state' );
-const isFeature = item.getText( 'project.type' ) === 'Feature';
+const city = item.getText( `${docType}.city` );
+const state = item.getText( `${docType}.state` );
+const isFeature = item.getText( `${docType}.type` ) === 'Feature';
+const client = item.getText( `${docType}.client` );
+const year = item.getText( `${docType}.year` );
+const size = item.getText( `${docType}.size` );
+const awards = item.getStructuredText( `${docType}.awards` );
 %>
 <div class="cms cms--meta meta">
-    <% if ( item.getText( 'project.client' ) ) { %>
-        <p><strong>Client</strong>: <em><%- item.getText( 'project.client' ) %></em></p>
+    <% if ( client ) { %>
+        <p><strong>Client</strong>: <em><%- client %></em></p>
     <% } %>
     <% if ( city || state ) { %>
         <p><strong>Location</strong>: <em><% if ( city ) { %><%= city %>, <% } %><%= state %></em></p>
     <% } %>
-    <% if ( item.getText( 'project.year' ) ) { %>
-        <p><strong>Year</strong>: <em><%- item.getText( 'project.year' ) %></em></p>
+    <% if ( year ) { %>
+        <p><strong>Year</strong>: <em><%- year %></em></p>
     <% } %>
-    <% if ( item.getText( 'project.size' ) ) { %>
-        <p><strong>Size</strong>: <em><%- item.getText( 'project.size' ) %></em></p>
+    <% if ( size ) { %>
+        <p><strong>Size</strong>: <em><%- size %></em></p>
     <% } %>
-    <% if ( !isFeature && item.getStructuredText( 'project.awards' ) ) { %>
+    <% if ( !isFeature && awards ) { %>
         <p><strong>Awards</strong>:</p>
-        <em><%- item.getStructuredText( 'project.awards' ).asHtml() %></em>
+        <em><%- awards.asHtml() %></em>
     <% } %>
 </div>
