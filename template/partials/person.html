@@ -9,7 +9,7 @@ const items = locals.context.get( 'items' );
     const info = item.getStructuredText( 'person.description' );
     const numb = Math.floor( Math.random() * 3 ) + 1;
     %>
-    <a href="<%= locals.context.getUrl( item ) %>" class="person -column -column--1of4 toggler__tile js-toggle-tile is-n<%= numb %>">
+    <div class="person -column -column--1of4 toggler__tile js-toggle-tile is-n<%= numb %>">
         <div class="person__wrap -square">
             <div class="portrait person__tile -cover js-lazy-image" data-img-src="<%= portrait.url %>"></div>
             <div class="craft person__tile -cover js-lazy-image" data-img-src="<%= craft.url %>"></div>
@@ -20,5 +20,5 @@ const items = locals.context.get( 'items' );
                 </div>
             </div>
         </div>
-    </a>
+    </div>
 <% }) %>
