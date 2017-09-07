@@ -13,4 +13,6 @@
             <%- include( '../partials/blog--standard.html', {item: item} ) %>
         <% } %>
     </div>
+<% } else { %>
+    <div class="blog js-blog view js-view" data-uid="blog" data-api="/api/blog"></div>
 <% } %>
