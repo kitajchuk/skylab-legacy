@@ -25,6 +25,7 @@
 
     &.is-active {
         opacity: 0.2;
+        z-index: $z_layer_menu_shim;
         }
 }
 .filter__label {
