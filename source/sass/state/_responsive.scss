@@ -139,12 +139,17 @@
             @include wrap-copy();
             }
     }
+    .section {
+        padding-bottom: $expander-one;
+        padding-top: $expander-one;
+        }
     .section__label,
     .section__content {
         width: 100%;
         }
     .section__content {
         padding-left: $padding-wrap;
+        padding-right: $padding-wrap;
         padding-top: $expander-mobile;
         }
     .view--career .career {
