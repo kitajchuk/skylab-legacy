@@ -328,7 +328,7 @@ const getDataForPage = function ( req, listener ) {
                         resolve( data );
 
                     } else {
-                        reject( `Prismic has no data for the content-type "${type}".` );
+                        reject( `${core.config.skylab.name} has no data for the content-type "${type}".` );
                     }
 
                 } else {
@@ -340,7 +340,7 @@ const getDataForPage = function ( req, listener ) {
                         data.item = getDoc( (navi ? navi.uid : req.params.uid), json.results );
 
                         if ( !data.item ) {
-                            reject( `The document with UID "${navi ? navi.uid : req.params.uid}" could not be found by Prismic.` );
+                            reject( `The document with UID "${navi ? navi.uid : req.params.uid}" could not be found by ${core.config.skylab.name}.` );
                         }
                     }
 
