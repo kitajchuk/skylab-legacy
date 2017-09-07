@@ -96,14 +96,14 @@
 .is-person-page,
 .is-career-page,
 .is-studio-page,
-.is-project-page.is-uid-page,
-.is-blog-page.is-uid-page {
+.is-work-page.is-uid-page,
+.is-play-page.is-uid-page {
     .main {
         padding-top: 0;
         }
 }
-.is-blog-page.is-uid-page,
-.is-project-page.is-uid-page {
+.is-play-page.is-uid-page,
+.is-work-page.is-uid-page {
     .header__keys {
         display: inline-block;
         transform: translateX( -100% );

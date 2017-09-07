@@ -62,7 +62,8 @@ const config = {
         siteType: "site",
         mainType: "project",
         blogType: "blog",
-        feedType: "feed",
+        homeType: "home",
+        workType: "work",
         playType: "play",
         colors: [
             { background: "red", query: "red" },

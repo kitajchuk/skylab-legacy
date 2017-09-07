@@ -336,11 +336,11 @@ const getDataForPage = function ( req, listener ) {
                     data.items = json.results;
 
                     // uid
-                    if ( req.params.uid || navi ) {
-                        data.item = getDoc( (navi ? navi.uid : req.params.uid), json.results );
+                    if ( req.params.uid ) {
+                        data.item = getDoc( req.params.uid, json.results );
 
                         if ( !data.item ) {
-                            reject( `The document with UID "${navi ? navi.uid : req.params.uid}" could not be found by ${core.config.skylab.name}.` );
+                            reject( `The document with UID "${req.params.uid}" could not be found by ${core.config.skylab.name}.` );
                         }
                     }
 
@@ -350,16 +350,11 @@ const getDataForPage = function ( req, listener ) {
             const fail = function ( error ) {
                 reject( error );
             };
-            const navi = getNavi( type );
             const form = getForm( req, cache.api, type );
             let query = [];
 
             // query: type?
-            if ( navi ) {
-                query.push( prismic.Predicates.at( "document.type", navi.type ) );
-                query.push( prismic.Predicates.at( "document.id", navi.id ) );
-
-            } else if ( !cache.api.data.forms[ type ] ) {
+            if ( !cache.api.data.forms[ type ] ) {
                 // Only if type? is NOT a search form collection
                 query.push( prismic.Predicates.at( "document.type", type ) );
             }
