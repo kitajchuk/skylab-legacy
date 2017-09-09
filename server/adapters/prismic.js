@@ -172,9 +172,7 @@ const getPartial = function ( req, data, listener ) {
 const getSite = function ( req ) {
     return new Promise(( resolve, reject ) => {
         prismic.api( core.config.api.access, null ).then(( api ) => {
-            const form = api.form( core.config.skylab.mainForm ).pageSize( 100 ).ref( getRef( req, api ) );
-
-            form.submit().then(( json ) => {
+            api.getSingle( "site" ).then(( document ) => {
                 const navi = {
                     items: []
                 };
@@ -183,16 +181,16 @@ const getSite = function ( req ) {
                 };
 
                 // Normalize site context
-                for ( let i in json.results[ 0 ].fragments ) {
+                for ( let i in document.fragments ) {
                     if ( i !== core.config.skylab.naviFrag ) {
                         const key = i.replace( /^site\./, "" );
 
-                        site.data[ key ] = json.results[ 0 ].fragments[ i ].value || json.results[ 0 ].fragments[ i ].url;
+                        site.data[ key ] = document.fragments[ i ].value || document.fragments[ i ].url;
                     }
                 }
 
                 // Normalize navi context
-                json.results[ 0 ].getSliceZone( core.config.skylab.naviFrag ).value.forEach(( slice ) => {
+                document.getSliceZone( core.config.skylab.naviFrag ).value.forEach(( slice ) => {
                     let id = null;
                     let uid = null;
                     let type = null;
