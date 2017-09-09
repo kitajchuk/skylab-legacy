@@ -318,7 +318,11 @@ const getDataForPage = function ( req, listener ) {
             item: null,
             items: null
         };
-        const doQuery = function ( type ) {
+        const doQuery = function ( type, uid ) {
+            let query = [];
+            const navi = getNavi( type );
+            const form = getForm( req, cache.api, type );
+            const isNaviNoForm = (navi && !cache.api.data.forms[ type ]);
             const done = function ( json ) {
                 if ( !json.results.length ) {
                     // Static page with no CMS data attached to it...
@@ -334,11 +338,11 @@ const getDataForPage = function ( req, listener ) {
                     data.items = json.results;
 
                     // uid
-                    if ( req.params.uid ) {
-                        data.item = getDoc( req.params.uid, json.results );
+                    if ( uid || isNaviNoForm ) {
+                        data.item = getDoc( isNaviNoForm ? navi.uid : uid, json.results );
 
                         if ( !data.item ) {
-                            reject( `The document with UID "${req.params.uid}" could not be found by ${core.config.skylab.name}.` );
+                            reject( `The document with UID "${isNaviNoForm ? navi.uid : uid}" could not be found by ${core.config.skylab.name}.` );
                         }
                     }
 
@@ -348,11 +352,13 @@ const getDataForPage = function ( req, listener ) {
             const fail = function ( error ) {
                 reject( error );
             };
-            const form = getForm( req, cache.api, type );
-            let query = [];
 
             // query: type?
-            if ( !cache.api.data.forms[ type ] ) {
+            if ( isNaviNoForm ) {
+                query.push( prismic.Predicates.at( "document.type", navi.type ) );
+                query.push( prismic.Predicates.at( "document.id", navi.id ) );
+
+            } else if ( !cache.api.data.forms[ type ] ) {
                 // Only if type? is NOT a search form collection
                 query.push( prismic.Predicates.at( "document.type", type ) );
             }
@@ -387,7 +393,7 @@ const getDataForPage = function ( req, listener ) {
                 resolve( data );
 
             } else {
-                doQuery( type );
+                doQuery( type, uid );
             }
         });
     });
