@@ -204,6 +204,20 @@
             font-size: 12vh;
         }
     }
+    .navi__li--primary {
+        .navi__a {
+            &:after {
+                height: $navi-strikethrough-small;
+                }
+        }
+    }
+    .navi {
+        &.is-active {
+            .navi__a.is-active:after {
+                top: calc( 58% - #{$navi-strikethrough-small} );
+                }
+        }
+    }
     .slices__diptych,
     .slices__textImage {
         .-column {
