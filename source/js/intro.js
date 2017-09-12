@@ -22,8 +22,7 @@ const intro = {
         this.element = core.dom.intro;
         this.logo = this.element.find( ".js-intro-logo" );
         this.durations = {
-            animation: 3500,
-            transition: core.util.getElementDuration( this.element[ 0 ] )
+            animation: 3500
         };
         core.emitter.on( "app--page-teardown", this.teardown );
     },
@@ -42,12 +41,11 @@ const intro = {
 
         }, intro.durations.animation );
 
-        setTimeout( () => {
+        intro.element.on( "transitionend", () => {
             intro.element.remove();
 
             core.emitter.fire( "app--intro-teardown" );
-
-        }, (intro.durations.animation + intro.durations.transition) );
+        });
     }
 };
 
