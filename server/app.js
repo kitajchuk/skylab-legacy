@@ -13,29 +13,36 @@ const imageJSON = config.env.sandbox ? `http://localhost:${config.browser.port}/
 
 
 
-const canFeatures = function ( req ) {
+const isRootWork = ( req ) => {
+    return req.params.type === config.skylab.workType && !req.params.uid && !req.query.color && !req.query.material && !req.query.space && !req.query.category && !req.query.status;
+};
+
+
+
+const canFeatures = ( req ) => {
     return (req.query.template === config.homepage);
 };
 
 
 
-const canTileset = function ( req ) {
+const canTileset = ( req ) => {
     return (
         req.query.color ||
         req.query.material ||
-        req.query.space
+        req.query.space ||
+        isRootWork( req )
     );
 };
 
 
 
-const canDetail = function ( req ) {
+const canDetail = ( req ) => {
     return (req.params.uid);
 };
 
 
 
-const getColorSort = function ( results ) {
+const getColorSort = ( results ) => {
     return results.sort(( a, b ) => {
         const minA = Math.min.apply( Math, a.deltas );
         const minB = Math.min.apply( Math, b.deltas );
@@ -51,7 +58,7 @@ const getColorSort = function ( results ) {
 
 
 
-const getResults = function ( kind, value ) {
+const getResults = ( kind, value ) => {
     return new Promise(( resolve, reject ) => {
         request({
             url: imageJSON,
@@ -82,7 +89,32 @@ const getResults = function ( kind, value ) {
 
 
 
-const onQuery = function ( client, api, query, cache, req ) {
+const getMapped = ( items ) => {
+    return items.map(( item ) => {
+        const image = item.getImage( `${config.skylab.mainType}.image` );
+
+        return {
+            image: {
+                url: image.main.url,
+                doc: `/${item.type}/${item.uid}/`,
+                width: image.main.width,
+                height: image.main.height
+            },
+            doc: {
+                title: item.getText( `${config.skylab.mainType}.title` ),
+                year: item.getText( `${config.skylab.mainType}.year` ),
+                city: item.getText( `${config.skylab.mainType}.city` ),
+                state: item.getText( `${config.skylab.mainType}.state` ),
+                categories: []
+            },
+            color: "#151515"
+        };
+    });
+};
+
+
+
+const onQuery = ( client, api, query, cache, req ) => {
     let ret = query;
 
     if ( req.query.status ) {
@@ -110,7 +142,12 @@ const onQuery = function ( client, api, query, cache, req ) {
 
 
 
-const onContext = function ( context, cache, req ) {
+const onContext = ( context, cache, req ) => {
+    if ( isRootWork( req ) ) {
+        context.set( "items", getMapped( context.get( "items" ) ) );
+        lager.info( `Mapping ${req.params.type} to imageprocess JSON format...` );
+    }
+
     // Add `tileset` array to the context for filter criteria
     if ( canTileset( req ) ) {
         context.set( "tileset", context.get( "items" ) );
