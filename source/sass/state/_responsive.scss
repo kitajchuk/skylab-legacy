@@ -230,14 +230,6 @@
 
 
 @media only screen and ( max-width: $break-mobile-full ) {
-    $filter-width: 60vw;
-
-    .is-filter-open {
-        .header__utility {
-            transform: translate3d( -$filter-width, 0, 0 );
-            }
-    }
-
     // Type
     .p,
     .cms p,
@@ -256,10 +248,6 @@
     .h4,
     .cms h4 {
         font-size: $h2-h3-size-small;
-        }
-    .filter {
-        width: $filter-width;
-        padding-left: 60px;
         }
     .filter__color {
         height: 16px;
