@@ -165,7 +165,7 @@
     .view--career .career + .career {
         margin-top: $expander-one;
         }
-    .person {
+    .view--person .person {
         width: 33.333333%;
         }
     .newbiz {
@@ -300,7 +300,7 @@
     .paging {
         display: none;
         }
-    .person {
+    .view--person .person {
         width: 50%;
         }
 
@@ -320,7 +320,7 @@
         margin-top: $expander-mobile / 2;
         }
 
-    .person {
+    .view--person .person {
         margin-bottom: $expander-mobile / 2;
         padding-right: $expander-mobile / 2;
         }

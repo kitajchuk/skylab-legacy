@@ -4,7 +4,6 @@ const label = group.getStructuredText( 'label' );
 const text = group.getStructuredText( 'text' );
 const contentType = group.getText( 'contentType' );
 const colorStyle = group.getText( 'colorStyle' );
-const isPerson = contentType && contentType === 'Person';
 
 let wrapClass = '';
 
@@ -15,19 +14,11 @@ if ( contentType === 'NewBiz' ) {
     wrapClass = '-wrap-static--right';
 }
 %>
-<div class="section <%= isPerson ? 'toggler js-toggler' : '' %> -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>" <% if ( isPerson ) { %>data-type="center"<% } %>>
+<div class="section -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
     <div class="section__label -column -vtop -grey">
         <div class="cms">
             <%- label.asHtml() %>
         </div>
-        <% if ( isPerson ) { %>
-            <ul class="toggler__toc -exp-1">
-                <li class="toggler__btn js-toggler-btn p strong -btn -light">Portraits</li>
-                <li class="toggler__btn js-toggler-btn p strong -btn -light">Our Craft</li>
-                <li class="toggler__btn js-toggler-btn p strong -btn -light">Our Desk</li>
-                <li class="toggler__btn js-toggler-btn p strong -btn -light">Information</li>
-            </ul>
-        <% } %>
     </div>
     <div class="section__content -column -vtop -wrap-static <%= wrapClass %>">
         <% if ( contentType ) { %>

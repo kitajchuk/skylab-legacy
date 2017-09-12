@@ -72,6 +72,12 @@
     .filter {
         background-color: $filter-light;
         }
+    .view--person {
+        .icon--plus .vert,
+        .icon--plus .horz {
+            background-color: $white;
+            }
+    }
 }
 .is-home-page {
     .header__svg {
@@ -210,6 +216,24 @@
     .index__info a:hover {
         border-bottom-color: $gold;
         }
+    .view--person {
+        .person:hover {
+            z-index: 2;
+
+            .portrait2,
+            .description {
+                opacity: 1;
+                }
+
+            .index__text {
+                opacity: 1;
+                }
+            .icon--plus {
+                height: 32px;
+                width: 32px;
+                }
+        }
+    }
 }
 .is-touchable {
     .header__keys {

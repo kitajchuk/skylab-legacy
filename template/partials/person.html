@@ -4,19 +4,20 @@ const items = locals.context.get( 'items' );
 <% items.forEach(( item ) => { %>
     <%
     const portrait = item.getImage( 'person.portrait' );
-    const craft = item.getImage( 'person.craft' );
-    const desk = item.getImage( 'person.desk' );
-    const info = item.getStructuredText( 'person.description' );
-    const numb = Math.floor( Math.random() * 3 ) + 1;
+    const portrait2 = item.getImage( 'person.portrait2' );
+    const description = item.getStructuredText( 'person.description' );
     %>
-    <div class="person -column -column--1of4 toggler__tile js-toggle-tile is-n<%= numb %>">
+    <div class="person -column -column--1of4">
         <div class="person__wrap -square">
             <div class="portrait person__tile -cover js-lazy-image" data-img-src="<%= portrait ? portrait.url : '' %>"></div>
-            <div class="craft person__tile -cover js-lazy-image" data-img-src="<%= craft ? craft.url : '' %>"></div>
-            <div class="desk person__tile -cover js-lazy-image" data-img-src="<%= desk ? desk.url : '' %>"></div>
-            <div class="information person__tile -text--center ghost">
-                <div class="ghost__child cms cms--meta p--meta">
-                    <%- info.asHtml() %>
+            <div class="portrait2 person__tile -cover js-lazy-image" data-img-src="<%= portrait2 ? portrait2.url : '' %>"></div>
+            <div class="index__info center">
+                <div class="index__icon icon icon--plus">
+                    <span class="vert"></span>
+                    <span class="horz"></span>
+                </div>
+                <div class="index__text p--meta -light">
+                    <%- description.asHtml() %>
                 </div>
             </div>
         </div>

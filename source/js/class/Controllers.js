@@ -9,7 +9,6 @@ import ParallaxController from "./ParallaxController";
 import MapController from "./MapController";
 import HoverController from "./HoverController";
 import ColorController from "./ColorController";
-import TogglerController from "./TogglerController";
 import ScrollNinja from "./ScrollNinja";
 
 
@@ -73,7 +72,6 @@ class Controllers {
         this.push( "parallax", this.element.find( core.config.parallaxSelector ), ParallaxController, true );
         this.push( "map", this.element.find( core.config.mapSelector ), MapController, true );
         this.push( "hovers", this.element.find( core.config.hoverSelector ), HoverController, !core.detect.isDevice() );
-        this.push( "toggler", this.element.find( core.config.togglerSelector ), TogglerController, true );
         this.push( "query", ["q"], QueryController, true );
 
         this.images = this.element.find( core.config.lazyImageSelector );
