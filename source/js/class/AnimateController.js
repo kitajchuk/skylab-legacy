@@ -44,14 +44,18 @@ class AnimateController extends Controller {
     start () {
         // Call on parent cycle
         this.go(() => {
-            this.animates.forEach(( element, i ) => {
-                if ( core.util.isElementVisible( element ) ) {
-                    this.animates.eq( i ).addClass( "is-animate" );
+            const anims = this.animates.not( ".is-animate" );
 
-                } else {
-                    this.animates.eq( i ).removeClass( "is-animate" );
-                }
-            });
+            if ( anims.length ) {
+                anims.forEach(( element, i ) => {
+                    if ( core.util.isElementVisible( element ) ) {
+                        anims.eq( i ).addClass( "is-animate" );
+                    }
+                });
+
+            } else {
+                this.stop();
+            }
         });
     }
 
