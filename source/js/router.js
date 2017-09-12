@@ -181,8 +181,8 @@ const router = {
         core.dom.main.addClass( "is-inactive" );
 
         navi.close();
-        // filter.close();
-        // filter.deactivate();
+        filter.close();
+        filter.deactivate();
         this.controllers.destroy();
     },
 

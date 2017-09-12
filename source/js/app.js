@@ -55,11 +55,6 @@ class App {
                 navi.open();
             }
 
-            if ( router.is( "work" ) ) {
-                filter.query();
-                filter.open();
-            }
-
             this.bindPage();
         });
     }
