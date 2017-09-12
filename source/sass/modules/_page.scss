@@ -26,9 +26,12 @@
 
 
 
-.view--career .career {
-    padding-right: $expander-one;
+.view--career {
+    .career {
+        margin-bottom: $expander-one;
+        padding-right: $expander-one;
     }
+}
 
 
 

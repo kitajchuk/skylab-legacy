@@ -5,12 +5,15 @@ const items = locals.context.get( 'items' );
     <%
     const title = item.getText( 'career.title' );
     const excerpt = item.getStructuredText( 'career.excerpt' );
+    const clickthrough = item.getText( 'career.clickthrough' );
     %>
     <div class="career -column -column--2of4 -vtop">
         <div class="career__wrap cms">
             <p><strong><%= title %></strong></p>
             <%- excerpt.asHtml() %>
-            <p><a class="-grey" href="<%= locals.context.getUrl( item )%>">Learn More</a></p>
+            <% if ( clickthrough !== 'Off' ) { %>
+                <p><a class="-grey" href="<%= locals.context.getUrl( item )%>">Learn More</a></p>
+            <% } %>
         </div>
     </div>
 <% }) %>
