@@ -73,9 +73,23 @@
         background-color: $filter-light;
         }
     .view--person {
+        .index__text {
+            color: $white;
+
+            a {
+                border-bottom-color: $white;
+                }
+        }
         .icon--plus .vert,
         .icon--plus .horz {
             background-color: $white;
+            }
+    }
+    .index__text {
+        color: $black;
+
+        a {
+            border-bottom-color: $black;
             }
     }
 }
