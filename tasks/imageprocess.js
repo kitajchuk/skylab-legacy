@@ -227,14 +227,14 @@ const doImageProcess = function () {
                     let feature = doc.getGroup( `${core.config.skylab.mainType}.feature` );
 
                     // Main Image
-                    if ( image ) {
-                        pushResult( doc, image );
-                    }
+                    // if ( image ) {
+                    //     pushResult( doc, image );
+                    // }
 
                     // Feature Images
-                    if ( feature ) {
-                        pushFeature( doc, feature );
-                    }
+                    // if ( feature ) {
+                    //     pushFeature( doc, feature );
+                    // }
 
                     // Content Images
                     if ( slices ) {
