@@ -1,6 +1,7 @@
 <%
 const group = slice.value.toArray()[ 0 ];
 const label = group.getStructuredText( 'label' );
+const labelSlug = label.blocks[ 0 ].text.toLowerCase().replace( /\s+/g, "-" );
 const text = group.getStructuredText( 'text' );
 const contentType = group.getText( 'contentType' );
 const colorStyle = group.getText( 'colorStyle' );
@@ -14,7 +15,7 @@ if ( contentType === 'NewBiz' ) {
     wrapClass = '-wrap-static--right';
 }
 %>
-<div class="section -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
+<div class="section section--<%= labelSlug %> -exp-2 <%= colorStyle ? `js-color -theme--${colorStyle.toLowerCase()}` : '' %>" data-color="<%= colorStyle ? colorStyle.toLowerCase() : '' %>">
     <div class="section__label -column -vtop -grey">
         <div class="cms">
             <%- label.asHtml() %>

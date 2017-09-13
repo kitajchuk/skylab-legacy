@@ -23,6 +23,9 @@
             }
     }
 }
+.section.section--follow-us {
+    padding-top: 0;
+}
 
 
 
@@ -38,35 +41,35 @@
 .view--person {
     margin-right: -$expander-mobile;
 
-    .person {
-        margin-bottom: $expander-mobile;
-        padding-right: $expander-mobile;
-        position: relative;
-        z-index: 1;
-        }
-    .person__wrap {
-        cursor: pointer;
-        position: relative;
-        }
-    .person__tile {
-        height: 100%;
-        left: 0;
-        opacity: 0;
-        padding: 0 $expander-mobile;
-        position: absolute;
-        top: 0;
-        transition: opacity $fast-duration $ease,
-                    z-index $fast-duration $ease;
-        width: 100%;
-        z-index: 1;
-        }
-    .portrait {
-        opacity: 1;
-        }
     .index__info {
         z-index: 2;
         }
 }
+.person {
+    margin-bottom: $expander-mobile;
+    padding-right: $expander-mobile;
+    position: relative;
+    z-index: 1;
+    }
+.person__wrap {
+    cursor: pointer;
+    position: relative;
+    }
+.person__tile {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 0 $expander-mobile;
+    position: absolute;
+    top: 0;
+    transition: opacity $fast-duration $ease,
+                z-index $fast-duration $ease;
+    width: 100%;
+    z-index: 1;
+    }
+.portrait {
+    opacity: 1;
+    }
 
 
 
@@ -77,4 +80,21 @@
 }
 .newbiz__info {
     padding-right: $expander-mobile;
+
+    &.cms:not( .cms--meta ) {
+        p + p {
+            margin-top: 10px;
+            }
     }
+}
+
+
+
+.social__link {
+    height: 32px;
+    width: 32px;
+
+    & + .social__link {
+        margin-left: 16px;
+    }
+}
