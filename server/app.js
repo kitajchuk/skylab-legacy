@@ -96,7 +96,7 @@ const getMapped = ( items ) => {
         return {
             image: {
                 url: image.main.url,
-                doc: `/${item.type}/${item.uid}/`,
+                doc: `/${config.skylab.workType}/${item.uid}/`,
                 width: image.main.width,
                 height: image.main.height
             },

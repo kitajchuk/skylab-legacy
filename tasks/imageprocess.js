@@ -138,7 +138,7 @@ const pushResult = function ( doc, image ) {
         results.raw.push({
             image: {
                 url: image.url,
-                doc: `/${doc.type}/${doc.uid}/`,
+                doc: `/${core.config.skylab.workType}/${doc.uid}/`,
                 width: image.main.width,
                 height: image.main.height
             },
