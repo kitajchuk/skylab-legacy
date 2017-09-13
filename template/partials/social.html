@@ -8,7 +8,7 @@ const items = locals.context.get( 'items' );
     const url = item.getLink( 'social.url' );
     %>
     <li class="social__link -column">
-        <a class="social__icon" href="<%= url.url() %>">
+        <a class="social__icon" href="<%= url.url() %>" target="_blank">
             <%- include( `svg--${service}.html` ) %>
         </a>
     </li>
