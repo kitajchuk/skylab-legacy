@@ -13,6 +13,10 @@
         padding: 0;
         }
 }
+.reader__info {
+    position: relative;
+    z-index: 2;
+}
 .reader__li--feature {
     .reader__title {
         position: relative;

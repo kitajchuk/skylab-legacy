@@ -62,7 +62,9 @@
             width: 50vw;
         }
     }
-    .parallax__info,
+    .parallax__info {
+        margin-top: 100px;
+    }
     .parallax__leadin {
         margin-top: $expander-one / 2;
     }
