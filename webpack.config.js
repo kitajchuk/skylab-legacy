@@ -7,7 +7,7 @@ const webpack = require( "webpack" );
 const autoprefixer = require( "autoprefixer" );
 const BrowserSyncPlugin = require( "browser-sync-webpack-plugin" );
 const CompressionPlugin = require( "compression-webpack-plugin" );
-const sassFontPath = (config.aws.cdnOn && !config.env.sandbox && !config.env.staging) ? `${config.aws.cdn}/fonts/` : "/fonts/";
+const sassFontPath = (config.aws.cdnOn && !config.env.sandbox) ? `${config.aws.cdn}/fonts/` : "/fonts/";
 
 
 
