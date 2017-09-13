@@ -5,25 +5,36 @@
 # git config --global core.excludesfile ~/.gitignore_global
 
 
-# OS / Cache
+# Logs
+*.log
+
+
+# OS / Cache / Dot
 .DS_Store
 .sass-cache
+.notes
+.tmp
 
 
 # Dev
-.notes
 tmp
 local
 sandbox
 static/js
 static/css
+static/robots.txt
+static/sitemap.xml
+static/cache.manifest
+tasks/static
+
+# Dev - you can opt in to any of these you want
 static/json
 static/svg
 static/touch
-tasks/static
+static/img
 
 
 # Node / NPM
 node_modules
 npm-debug.log
-*.log
+yarn.lock

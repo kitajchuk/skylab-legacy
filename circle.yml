@@ -17,7 +17,7 @@ dependencies:
     # cache_directories:
     #     - "node_modules"
     override:
-        # Manually clear node_modules cacge...
+        # Manually clear node_modules cache...
         - rm -rf node_modules
         - npm rebuild node-sass
         - npm run bootstrap
@@ -30,12 +30,10 @@ deployment:
     staging:
         branch: dev
         commands:
-            - npm run build:staging
-            - make -ef Circlefile deploy_staging
-            - make -ef Circlefile deploy_task
+            #- npm run build:staging
+            - npm run deploy:staging
     production:
         branch: master
         commands:
-            - npm run build:production
-            - make -ef Circlefile deploy_production
-            - make -ef Circlefile deploy_task
+            #- npm run build:production
+            - npm run deploy:production

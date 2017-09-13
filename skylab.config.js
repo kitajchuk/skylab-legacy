@@ -1,6 +1,8 @@
 const path = require( "path" );
 const root = __dirname;
 const config = {
+    // The URL of your actual site
+    url: "http://skylabarchitecture.com",
     // Homepage UID
     homepage: "home",
     // Page Not Found — 404
@@ -20,8 +22,9 @@ const config = {
         adapter: "prismic"
     },
     // Deployment config ( AWS etc... )
-    deploy: {
-        cdnURL: "https://s3-us-west-2.amazonaws.com/skylabarchitecture/static",
+    aws: {
+        cdn: "https://s3-us-west-2.amazonaws.com/skylabarchitecture/static",
+        cdnOn: true // Turn on to use CloudFront CDN
     },
     // Templating config
     template: {
@@ -52,7 +55,26 @@ const config = {
         level: 9,
         threshold: 0
     },
-
+    // Generators config ( sitemap, robots, cache manifest )
+    generate: {
+        sitemap: {
+            site: false,
+            person: false,
+            social: false,
+            newbiz: false
+        },
+        mappings: {
+            blog: "play",
+            project: "work"
+        },
+        robots: {
+            site: false,
+            page: false,
+            person: false,
+            social: false,
+            newbiz: false
+        }
+    },
     // Skylab-www specific ( Prismic )
     skylab: {
         name: "Skylab",
@@ -79,9 +101,8 @@ const config = {
 
 
 // Serves assets from either CDN or App Server...
-config.deploy.cdnEnabled = (!config.env.sandbox && config.deploy.cdnURL);
-config.static.js = config.deploy.cdnEnabled ? `${config.deploy.cdnURL}${config.static.endJS}` : config.static.endJS;
-config.static.css = config.deploy.cdnEnabled ? `${config.deploy.cdnURL}${config.static.endCSS}` : config.static.endCSS;
+config.static.js = (config.aws.cdnOn && !config.env.sandbox && !config.env.staging) ? `${config.aws.cdn}${config.static.endJS}` : config.static.endJS;
+config.static.css = (config.aws.cdnOn && !config.env.sandbox && !config.env.staging) ? `${config.aws.cdn}${config.static.endCSS}` : config.static.endCSS;
 
 
 
