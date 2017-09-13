@@ -9,7 +9,7 @@ const router = require( "./router" );
 const shuffle = require( "shuffle-array" );
 const lager = require( "properjs-lager" );
 const request = require( "request" );
-const imageJSON = config.env.sandbox ? `http://localhost:${config.browser.port}/json/imageprocess.json` : `${config.deploy.cdnURL}/json/imageprocess.json`;
+const imageJSON = config.env.sandbox ? `http://localhost:${config.browser.port}/json/imageprocess.json` : `${config.aws.cdn}/json/imageprocess.json`;
 
 
 
