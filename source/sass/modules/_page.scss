@@ -74,6 +74,8 @@
 
 
 .newbiz {
+    padding-top: 69px;
+
     .person__tile {
         opacity: 1;
         }
@@ -83,9 +85,12 @@
 
     &.cms:not( .cms--meta ) {
         p + p {
-            margin-top: 10px;
+            margin-top: 0;
             }
     }
+}
+.newbiz__image {
+    width: 128px;
 }
 
 

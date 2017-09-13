@@ -7,6 +7,11 @@
 .feature__li {
     pointer-events: none;
     position: relative;
+
+    .tile__photo {
+        transition: opacity $fast-duration $ease;
+        transform: translate3d( 0, 0, 0 );
+    }
 }
 .feature__wrap {
     max-width: 40%;

@@ -32,5 +32,7 @@
 .index__text {
     padding-top: $expander-mobile;
     opacity: 0;
-    transition: opacity $fast-duration $ease;
+    transform: translate3d( 0, -8px, 0 );
+    transition: opacity $fast-duration $ease,
+                transform $fast-duration $ease-bounce;
 }

@@ -21,8 +21,8 @@
 }
 .icon--plus {
     height: 16px;
-    transition: height $fast-duration $ease,
-                width $fast-duration $ease;
+    transition: height $fast-duration $ease-bounce,
+                width $fast-duration $ease-bounce;
     width: 16px;
 
     .vert {

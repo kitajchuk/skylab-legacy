@@ -3,20 +3,20 @@
 *******************************************************************************/
 .animate {
     opacity: 0;
-    transition: opacity $base-duration $ease;
+    transition: opacity $fast-duration $ease;
 
     &.is-animate {
         opacity: 1;
         }
 }
 .animate-lift {
-    // opacity: 0;
+    opacity: 0;
     transform: translate3d( 0, $expander-three, 0 );
-    transition: transform $base-duration $ease,
-                opacity $base-duration $ease;
+    transition: transform $fast-duration $ease,
+                opacity $fast-duration $ease;
 
     &.is-animate {
-        // opacity: 1;
+        opacity: 1;
         transform: translate3d( 0, 0, 0 );
         }
 }
