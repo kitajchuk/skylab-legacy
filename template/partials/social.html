@@ -1,13 +1,13 @@
 <%
 const items = locals.context.get( 'items' );
 %>
-<ul class="social">
+<ul class="social -column--1of4">
 <% items.forEach(( item ) => { %>
     <%
     const service = item.getText( 'social.service' ).toLowerCase();
     const url = item.getLink( 'social.url' );
     %>
-    <li class="social__link -column">
+    <li class="social__link">
         <a class="social__icon" href="<%= url.url() %>" target="_blank">
             <%- include( `svg--${service}.html` ) %>
         </a>

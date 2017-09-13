@@ -90,11 +90,12 @@
 
 
 
+.social {
+    display: flex;
+    justify-content: space-between;
+    padding-right: $expander-mobile;
+    }
 .social__link {
     height: 32px;
     width: 32px;
-
-    & + .social__link {
-        margin-left: 37px;
     }
-}

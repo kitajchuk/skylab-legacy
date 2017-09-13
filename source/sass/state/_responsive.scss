@@ -70,6 +70,12 @@
             transform: none;
         }
     }
+
+    // Studio
+    .view--person .person,
+    .view--social .social {
+        width: 33.333333%;
+        }
 }
 
 
@@ -161,9 +167,6 @@
     .view--career .career {
         padding-right: $padding-wrap;
         width: 100%;
-        }
-    .view--person .person {
-        width: 33.333333%;
         }
     .newbiz {
         text-align: left;
