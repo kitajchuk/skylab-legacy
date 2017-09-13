@@ -41,7 +41,9 @@ const config = {
     },
     // Browser-sync config
     browser: {
-        port: 8001
+        port: 8001,
+        hobo: "is eq not attr index filter detach remove append toggleClass",
+        appcache: true
     },
     // Static assets config
     static: {
@@ -78,7 +80,6 @@ const config = {
     // Skylab-www specific ( Prismic )
     skylab: {
         name: "Skylab",
-        hoboBuild: "is eq not attr index filter detach remove append toggleClass",
         mainForm: "sitewide",
         naviFrag: "site.navi",
         siteType: "site",

@@ -54,7 +54,7 @@ if ( !fs.existsSync( rootNotes ) ) {
 // 4.0 Hobo.js build
 console.log( "Building properjs-hobo..." );
 
-child_process.execSync( `cd ${rootHobo} && npm install && npm run build -- '${config.skylab.hoboBuild}'` );
+child_process.execSync( `cd ${rootHobo} && npm install && npm run build -- '${config.browser.hobo}'` );
 
 
 // 5.0 server install

@@ -23,6 +23,7 @@ class ContextObject {
         this.items = null;
         this.stylesheet = config.static.css;
         this.javascript = config.static.js;
+        this.config = config;
     }
 
     set ( prop, value ) {
