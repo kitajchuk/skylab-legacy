@@ -1,1 +1,6 @@
-<div class="home js-home view js-view" data-uid="home" data-api="/api/home"></div>
+<%
+const features = locals.context.get( 'features' );
+%>
+<% if ( features ) { %>
+    <%- include( '../partials/features.html', {features: features} ) %>
+<% } %>

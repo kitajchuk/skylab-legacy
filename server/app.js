@@ -20,7 +20,7 @@ const isIndex = ( req ) => {
 
 
 const canFeatures = ( req ) => {
-    return (req.query.template === config.homepage);
+    return (req.params.type === config.homepage);
 };
 
 
