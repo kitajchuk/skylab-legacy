@@ -13,8 +13,8 @@ const imageJSON = config.env.sandbox ? `http://localhost:${config.browser.port}/
 
 
 
-const isRootWork = ( req ) => {
-    return req.params.type === config.skylab.workType && !req.params.uid && !req.query.color && !req.query.material && !req.query.space && !req.query.category && !req.query.status;
+const isIndex = ( req ) => {
+    return (req.params.type === config.skylab.indexType);
 };
 
 
@@ -30,7 +30,7 @@ const canTileset = ( req ) => {
         req.query.color ||
         req.query.material ||
         req.query.space ||
-        isRootWork( req )
+        isIndex( req )
     );
 };
 
@@ -143,7 +143,7 @@ const onQuery = ( client, api, query, cache, req ) => {
 
 
 const onContext = ( context, cache, req ) => {
-    if ( isRootWork( req ) ) {
+    if ( isIndex( req ) ) {
         context.set( "items", getMapped( context.get( "items" ) ) );
         lager.info( `Mapping ${req.params.type} to imageprocess JSON format...` );
     }
@@ -182,6 +182,7 @@ const onContext = ( context, cache, req ) => {
 router.on( config.skylab.homeType, { query: onQuery, context: onContext } );
 router.on( config.skylab.workType, { query: onQuery, context: onContext } );
 router.on( config.skylab.playType, { query: onQuery, context: onContext } );
+router.on( config.skylab.indexType, { query: onQuery, context: onContext } );
 
 
 

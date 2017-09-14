@@ -31,7 +31,6 @@ const filter = {
         this.filterSets = this.element.find( ".js-filterset" );
         this.timeout = null;
         this.labelText = "Filter";
-        this.skipLabel = "All";
         this.filterViews = [];
 
         this.setup();
@@ -56,7 +55,7 @@ const filter = {
                     if ( done === this.filterSets.length ) {
                         this.options = this.element.find( ".js-filter-option" );
                         this.label = this.element.find( ".js-filter-label" );
-                        this.alls = this.element.find( ".js-filter-all" );
+                        this.navis = this.element.find( ".js-filter-navi" );
 
                         this.bind();
                         this.query();
@@ -68,8 +67,12 @@ const filter = {
 
 
     query () {
+        // @this.view
+        this.view = window.location.pathname.replace( /^\/|\/$/g, "" );
+
         // query?
         if ( window.location.search ) {
+            // @this.params
             this.params = paramalama( window.location.search );
 
             this.deactivate();
@@ -86,18 +89,23 @@ const filter = {
 
         } else {
             this.deactivate();
+            this.navigate();
+        }
+    },
 
-            const option = this.filterSets.filter( `[data-scope='${router.view}']` ).find( ".js-filter-all" );
 
-            if ( option.length ) {
-                this.activate( option );
-            }
+    navigate () {
+        const naviEl = this.navis.filter( `.js-navi--${this.view}` );
+
+        this.navis.removeClass( "is-active" );
+
+        if ( naviEl ) {
+            naviEl.addClass( "is-active" );
         }
     },
 
 
     deactivate () {
-        this.alls.removeClass( "is-active" );
         this.options.removeClass( "is-active" );
         this.label.addClass( "is-empty" );
         this.label[ 0 ].innerHTML = this.labelText;
@@ -109,10 +117,8 @@ const filter = {
 
         option.addClass( "is-active" );
 
-        if ( value !== this.skipLabel ) {
-            this.label.removeClass( "is-empty" );
-            this.label[ 0 ].innerHTML = value;
-        }
+        this.label.removeClass( "is-empty" );
+        this.label[ 0 ].innerHTML = value;
     },
 
 

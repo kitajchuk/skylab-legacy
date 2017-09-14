@@ -88,6 +88,7 @@ const config = {
         homeType: "home",
         workType: "work",
         playType: "play",
+        indexType: "index",
         colors: [
             { background: "red", query: "red" },
             { background: "#ff7b2b", query: "orange" },
