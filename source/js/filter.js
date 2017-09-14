@@ -1,7 +1,7 @@
 import * as core from "./core";
 import paramalama from "paramalama";
 import $ from "properjs-hobo";
-import router from "./router";
+// import router from "./router";
 import View from "./class/View";
 
 
@@ -68,7 +68,7 @@ const filter = {
 
     query () {
         // @this.view
-        this.view = window.location.pathname.replace( /^\/|\/$/g, "" );
+        this.view = window.location.pathname.replace( /\//g, "" );
 
         // query?
         if ( window.location.search ) {
