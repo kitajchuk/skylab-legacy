@@ -269,21 +269,14 @@
         padding-top: $expander-mobile / 2;
         }
     .grid {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -2px;
+        column-count: 2;
+        column-gap: 4px;
         padding: 0;
         }
     .grid__item {
-        flex-grow: 1;
         margin-bottom: 4px;
-        padding-left: 2px;
-        padding-right: 2px;
-        width: 50%;
-
-        &:last-child {
-            margin-bottom: 0
-            }
+        padding: 0;
+        width: 100%;
         }
     .feature__li + .feature__li {
         margin-top: -($expander-mobile / 2);
