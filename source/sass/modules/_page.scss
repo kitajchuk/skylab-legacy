@@ -39,16 +39,19 @@
 
 
 .view--person {
-    margin-right: -$expander-mobile;
+    margin-left: -($expander-mobile / 2);
+    margin-right: -($expander-mobile / 2);
 
     .index__info {
         z-index: 2;
         }
 }
 .person {
+    padding-left: $expander-mobile / 2;
+    padding-right: $expander-mobile / 2;
     margin-bottom: $expander-mobile;
-    padding-right: $expander-mobile;
     position: relative;
+    width: 25%;
     z-index: 1;
     }
 .person__wrap {

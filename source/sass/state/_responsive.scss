@@ -72,8 +72,8 @@
     }
 
     // Studio
-    .view--person .person {
-        width: 33.333333%;
+    .person {
+        width: 33.33333%
         }
 }
 
@@ -287,7 +287,7 @@
     .paging {
         display: none;
         }
-    .view--person .person {
+    .person {
         width: 50%;
         }
 
@@ -307,9 +307,14 @@
         margin-top: $expander-mobile / 2;
         }
 
-    .view--person .person {
+    .view--person {
+        margin-left: -($expander-mobile / 4);
+        margin-right: -($expander-mobile / 4);
+        }
+    .person {
         margin-bottom: $expander-mobile / 2;
-        padding-right: $expander-mobile / 2;
+        padding-left: $expander-mobile / 4;
+        padding-right: $expander-mobile / 4;
         }
 
     .index__info {

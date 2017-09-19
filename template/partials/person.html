@@ -7,7 +7,7 @@ const items = locals.context.get( 'items' );
     const portrait2 = item.getImage( 'person.portrait2' );
     const description = item.getStructuredText( 'person.description' );
     %>
-    <div class="person -column -column--1of4">
+    <div class="person -column">
         <div class="person__wrap -square">
             <div class="portrait person__tile -cover js-lazy-image" data-img-src="<%= portrait ? portrait.url : '' %>"></div>
             <div class="portrait2 person__tile -cover js-lazy-image" data-img-src="<%= portrait2 ? portrait2.url : '' %>"></div>
