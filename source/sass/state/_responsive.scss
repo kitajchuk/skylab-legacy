@@ -245,6 +245,9 @@
     .cms li {
         font-size: $p-size-small;
         }
+    .cms.p--meta p {
+        font-size: $p-size-small - 2px;
+        }
     .h1,
     .cms h1 {
         font-size: 16vw;

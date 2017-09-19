@@ -84,6 +84,7 @@
         }
 }
 .newbiz__info {
+    padding-bottom: $expander-mobile;
     padding-right: $expander-mobile;
 
     &.cms:not( .cms--meta ) {
