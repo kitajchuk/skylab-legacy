@@ -296,6 +296,16 @@
     .slices__map .map__marker {
         width: 120px;
         }
+    .slices__parallax .parallax__copy {
+        padding-bottom: $expander-mobile;
+        }
+    .slices__parallax .parallax__info {
+        margin-top: $expander-mobile;
+
+        p {
+            font-size: $p-size-small;
+            }
+    }
 
     .-exp-1,
     .-exp-2 {
