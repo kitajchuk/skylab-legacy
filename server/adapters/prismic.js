@@ -295,6 +295,11 @@ const getDataForApi = function ( req, listener ) {
                         form.query( query );
                     }
 
+                    // ordering: pubsub?
+                    if ( listener && listener.handlers.orderings ) {
+                        listener.handlers.orderings( prismic, cache.api, form, cache, req );
+                    }
+
                     // submit
                     form.submit().then( done ).catch( fail );
                 }
@@ -378,7 +383,10 @@ const getDataForPage = function ( req, listener ) {
                     form.query( query );
                 }
 
-                // ordering?
+                // ordering: pubsub?
+                if ( listener && listener.handlers.orderings ) {
+                    listener.handlers.orderings( prismic, cache.api, form, cache, req );
+                }
 
                 // submit
                 form.submit().then( done ).catch( fail );

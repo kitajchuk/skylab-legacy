@@ -177,12 +177,17 @@ const onContext = ( context, cache, req ) => {
 
 
 
+const onOrderings = ( client, api, form, cache, req ) => {
+    form.orderings( `[my.${config.skylab.mainType}.date desc]` );
+};
+
+
+
 // :type, :handlers
-// router.on( config.homepage, { query: onQuery, context: onContext } );
 router.on( config.skylab.homeType, { query: onQuery, context: onContext } );
 router.on( config.skylab.workType, { query: onQuery, context: onContext } );
 router.on( config.skylab.playType, { query: onQuery, context: onContext } );
-router.on( config.skylab.indexType, { query: onQuery, context: onContext } );
+router.on( config.skylab.indexType, { query: onQuery, context: onContext, orderings: onOrderings } );
 
 
 
