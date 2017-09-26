@@ -78,23 +78,13 @@
 
 .newbiz {
     padding-top: 69px;
-
-    .person__tile {
-        opacity: 1;
-        }
 }
 .newbiz__info {
-    padding-bottom: $expander-mobile;
-    padding-right: $expander-mobile;
-
     &.cms:not( .cms--meta ) {
         p + p {
             margin-top: 0;
             }
     }
-}
-.newbiz__image {
-    width: 128px;
 }
 
 
