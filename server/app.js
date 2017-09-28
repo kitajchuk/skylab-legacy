@@ -19,6 +19,12 @@ const isIndex = ( req ) => {
 
 
 
+const isWork = ( req ) => {
+    return (req.params.type === config.skylab.workType);
+};
+
+
+
 const canFeatures = ( req ) => {
     return (req.params.type === config.homepage);
 };
@@ -146,6 +152,15 @@ const onContext = ( context, cache, req ) => {
     if ( isIndex( req ) ) {
         context.set( "items", getMapped( context.get( "items" ) ) );
         lager.info( `Mapping ${req.params.type} to imageprocess JSON format...` );
+    }
+
+    if ( isWork( req ) ) {
+        context.set( "items", context.get( "items" ).filter(( doc ) => {
+            const type = doc.getText( `${config.skylab.mainType}.type` ) || doc.getText( `${config.skylab.blogType}.type` );
+
+            return (type !== "Hidden");
+        }));
+        lager.info( `Removing hidden documents from the items...` );
     }
 
     // Add `tileset` array to the context for filter criteria
