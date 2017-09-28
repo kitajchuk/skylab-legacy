@@ -43,7 +43,7 @@ const config = {
     browser: {
         port: 8001,
         hobo: "is eq not attr index filter detach remove append toggleClass",
-        appcache: true
+        appcache: (process.env.NODE_ENV === "production")
     },
     // Static assets config
     static: {
