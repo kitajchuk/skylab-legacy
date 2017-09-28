@@ -161,7 +161,7 @@ const pushResult = function ( doc, image ) {
 const processResult = function ( result ) {
     getImageColors( result ).then(( colors ) => {
         const progress = (total - results.raw.length) / total;
-        const jsonPath = path.join( __dirname, "../", "static", "json", "imageprocess.json";
+        const jsonPath = path.join( __dirname, "../", "static", "json", "imageprocess.json" );
         const colorInfo = getQueryColors( colors );
 
         result.colors = colorInfo.colors;
