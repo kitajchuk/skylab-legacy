@@ -82,7 +82,9 @@ const getResults = ( kind, value ) => {
 
             } else {
                 let results = json.filter(( result ) => {
-                    return (result[ kind ].indexOf( value ) !== -1 );
+                    const regex = new RegExp( value.toLowerCase(), "gi" );
+
+                    return regex.test( result[ kind ].join( "" ).toLowerCase() );
                 });
 
                 // Filters...?
