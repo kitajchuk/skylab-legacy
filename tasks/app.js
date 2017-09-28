@@ -11,22 +11,23 @@ const bodyParser = require( "body-parser" );
 const child_process = require( "child_process" );
 const slacker = require( "properjs-slacker" );
 const context = "skylab-taskrunner";
+const secret = String( fs.readFileSync( path.join( __dirname, "../task-secret" ) ) ).replace( /^\s+|\s+$/g, "" );
 let taskRunner = false;
 
 
 
-const doTaskRunner = function () {
+const doTaskRunner = () => {
     taskRunner = true;
 
     const task = child_process.spawn( "/var/www/html/task-imgpro" );
 
-    task.stdout.on( "data", ( data ) => {
-        lager.info( `task.stdout => ${data}` );
-    });
+    // task.stdout.on( "data", ( data ) => {
+    //     lager.info( `task.stdout => ${data}` );
+    // });
 
-    task.stderr.on( "data", ( data ) => {
-        lager.info( `task.stderr => ${data}` );
-    });
+    // task.stderr.on( "data", ( data ) => {
+    //     lager.info( `task.stderr => ${data}` );
+    // });
 
     task.on( "close", ( code ) => {
         taskRunner = false;
@@ -34,14 +35,48 @@ const doTaskRunner = function () {
         slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
             "Task Runner S3 Uploaded!"
         ]);
-
-        lager.server( "Task Runner Complete!" );
     });
 };
 
 
 
-const startTaskServer = function () {
+const checkSecret = ( req, res, next ) => {
+    if ( req.body.secret !== secret ) {
+        res.status( 403 ).send( "Skylab taskrunner requires a secret." );
+
+    } else {
+        next();
+    }
+};
+
+
+
+const checkHitType = ( req, res, next ) => {
+    if ( req.body.type === "test-trigger" ) {
+        res.status( 200 ).send( "Skylab taskrunner ignores test triggers." );
+
+    } else if ( req.body.type === "api-update" ) {
+        next();
+
+    } else {
+        res.status( 200 ).send( "Skylab taskrunner invalid req.body.type." );
+    }
+};
+
+
+
+const checkRunner = ( req, res, next ) => {
+    if ( taskRunner ) {
+        res.status( 200 ).send( "Skylab taskrunner running." );
+
+    } else {
+        next();
+    }
+};
+
+
+
+const startTaskRunner = () => {
     const expressApp = express();
 
     expressApp.use(bodyParser.json({
@@ -53,38 +88,14 @@ const startTaskServer = function () {
     }));
 
     expressApp.get( "/", ( req, res ) => {
-        // 2xx required by Prismic.io
-        res.status( 200 ).send( "Running" );
+        res.status( 200 ).send( "Skylab taskrunner server is up." );
     });
 
-    expressApp.post( "/webhook", ( req, res ) => {
-        lager.server( "Webhook Post Request" );
-        lager.data( req.body );
+    expressApp.post( "/webhook", checkSecret, checkHitType, checkRunner, ( req, res ) => {
+        setTimeout(() => res.status( 200 ).send( "Skylab taskrunner initialized." ), 250 );
 
-        // api-update
-        // test-trigger
-        if ( req.body.type === "api-update" ) {
-            if ( !taskRunner ) {
-                lager.server( "Initializing Task Runner..." );
-
-                res.status( 200 ).send( "Skylab taskrunner initialized." );
-
-                doTaskRunner();
-
-            } else {
-                lager.warn( "Task Runner Running..." );
-
-                res.status( 200 ).send( "Skylab taskrunner running." );
-            }
-
-        } else if ( req.body.type === "test-trigger" ) {
-            lager.info( "Test trigger received..." );
-
-            res.status( 200 ).send( "Skylab taskrunner ignores test triggers." );
-        }
+        doTaskRunner();
     });
-
-    lager.server( "Task Runner Listening for Updates..." );
 
     expressApp.listen( expressPort );
 };
@@ -113,7 +124,7 @@ cli.parse({
 
 
 if ( cli.options.token && cli.options.webhook && cli.options.channel && cli.options.key && cli.options.secret && cli.options.region && cli.options.bucket && cli.options.prefix && cli.options.directory ) {
-    startTaskServer();
+    startTaskRunner();
 
 } else {
     lager.error( "All arguments required: token, webhook, channel, key, secret, region, bucket, prefix, directory..." );
