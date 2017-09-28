@@ -67,18 +67,21 @@ const startTaskServer = function () {
             if ( !taskRunner ) {
                 lager.server( "Initializing Task Runner..." );
 
+                res.status( 200 ).send( "Skylab taskrunner initialized." );
+
                 doTaskRunner();
 
             } else {
                 lager.warn( "Task Runner Running..." );
+
+                res.status( 200 ).send( "Skylab taskrunner running." );
             }
 
         } else if ( req.body.type === "test-trigger" ) {
             lager.info( "Test trigger received..." );
-        }
 
-        // 2xx required by Prismic.io
-        res.status( 200 ).send( "Thanks" );
+            res.status( 200 ).send( "Skylab taskrunner ignores test triggers." );
+        }
     });
 
     lager.server( "Task Runner Listening for Updates..." );
