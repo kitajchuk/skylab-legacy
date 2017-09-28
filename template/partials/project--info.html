@@ -3,7 +3,8 @@ const city = item.getText( `${docType}.city` );
 const state = item.getText( `${docType}.state` );
 const isFeature = item.getText( `${docType}.type` ) === 'Feature';
 const client = item.getText( `${docType}.client` );
-const year = item.getText( `${docType}.year` );
+const date = item.getDate( `${docType}.date` );
+const year = date ? date.getFullYear() : null;
 const size = item.getText( `${docType}.size` );
 const awards = item.getStructuredText( `${docType}.awards` );
 %>
@@ -14,8 +15,8 @@ const awards = item.getStructuredText( `${docType}.awards` );
     <% if ( city || state ) { %>
         <p><strong>Location</strong>: <em><% if ( city ) { %><%= city %>, <% } %><%= state %></em></p>
     <% } %>
-    <% if ( year ) { %>
-        <p><strong>Year</strong>: <em><%- year %></em></p>
+    <% if ( date && year ) { %>
+        <p><strong>Completion Date</strong>: <em><%- year %></em></p>
     <% } %>
     <% if ( size ) { %>
         <p><strong>Size</strong>: <em><%- size %></em></p>

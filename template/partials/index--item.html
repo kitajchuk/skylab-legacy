@@ -20,11 +20,6 @@ const state = item.getText( 'project.state' );
                 <% if ( city ) { %><%= city %>, <% } %><%= state %>
             </div>
         <% } %>
-        <% if ( item.getText( 'project.year' ) ) { %>
-            <div class="p">
-                <%= item.getText( 'project.year' ) %>
-            </div>
-        <% } %>
     </div>
     <div class="index__categories index__col -column -column--1of3">
         <% if ( item.getGroup( 'project.categories' ) ) { %>

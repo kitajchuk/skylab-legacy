@@ -1,7 +1,6 @@
 <%
 const image = (feature.getImage( 'project.image' ) || feature.getImage( 'blog.image' ));
 const title = (feature.getText( 'project.title' ) || feature.getText( 'blog.title' ));
-const year = (feature.getText( 'project.year' ) || feature.getText( 'blog.year' ));
 const city = (feature.getText( 'project.city' ) || feature.getText( 'blog.city' ));
 const state = (feature.getText( 'project.state' ) || feature.getText( 'blog.city' ));
 const categories = (feature.getGroup( 'project.categories' ) || feature.getGroup( 'blog.categories' ));
@@ -26,9 +25,6 @@ const imageClip = featureBlock ? featureBlock.getText( 'imageclip' ) : null;
                     <p>
                         <% if ( title ) { %>
                             <strong><%= title %></strong>
-                        <% } %>
-                        <% if ( year ) { %>
-                            <span><%= year %></span>
                         <% } %>
                         <br />
                         <% if ( city || state ) { %>
