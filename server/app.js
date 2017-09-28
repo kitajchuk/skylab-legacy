@@ -127,6 +127,16 @@ const getMapped = ( items ) => {
 
 
 
+const getNotHidden = ( items ) => {
+    return items.filter(( doc ) => {
+        const type = doc.getText( `${config.skylab.mainType}.type` ) || doc.getText( `${config.skylab.blogType}.type` );
+
+        return (type !== "Hidden");
+    });
+};
+
+
+
 const onQuery = ( client, api, query, cache, req ) => {
     let ret = query;
 
@@ -157,16 +167,12 @@ const onQuery = ( client, api, query, cache, req ) => {
 
 const onContext = ( context, cache, req ) => {
     if ( isIndex( req ) ) {
-        context.set( "items", getMapped( context.get( "items" ) ) );
+        context.set( "items", getMapped( getNotHidden( context.get( "items" ) ) ) );
         lager.info( `Mapping ${req.params.type} to imageprocess JSON format...` );
     }
 
     if ( isWork( req ) ) {
-        context.set( "items", context.get( "items" ).filter(( doc ) => {
-            const type = doc.getText( `${config.skylab.mainType}.type` ) || doc.getText( `${config.skylab.blogType}.type` );
-
-            return (type !== "Hidden");
-        }));
+        context.set( "items", getNotHidden( context.get( "items" ) ) );
         lager.info( `Removing hidden documents from the items...` );
     }
 
