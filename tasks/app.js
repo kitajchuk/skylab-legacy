@@ -2,6 +2,7 @@
 
 
 
+const fs = require( "fs" );
 const path = require( "path" );
 const cli = require( "cli" );
 const lager = require( "properjs-lager" );
