@@ -19,7 +19,7 @@ items.forEach(( doc ) => {
 
     if ( cats ) {
         cats.value.forEach(( cat ) => {
-            if ( filters.categories.indexOf( cat.data.category.value ) === -1 ) {
+            if ( cat.data.category && filters.categories.indexOf( cat.data.category.value ) === -1 ) {
                 filters.categories.push( cat.data.category.value );
             }
         });
