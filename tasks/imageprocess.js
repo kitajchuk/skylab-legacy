@@ -6,16 +6,18 @@ const fs = require( "fs" );
 const yargs = require( "yargs" );
 const path = require( "path" );
 const lager = require( "properjs-lager" );
-const chroma = require( "chroma-js" );
+// const chroma = require( "chroma-js" );
 const prismic = require( "prismic.io" );
 const slacker = require( "properjs-slacker" );
 const core = {
     config: require( "../skylab.config" )
 };
-const colorLibs = {
-    default: require( "get-image-colors" )
-};
+// const colorLibs = {
+//     default: require( "get-image-colors" )
+// };
 const context = "skylab-imageprocess";
+const staticJSONPath = path.join( __dirname, "../static/json/imageprocess.json" );
+let staticJSONData = null;
 let token = null;
 let webhook = null;
 let channel = null;
@@ -55,6 +57,8 @@ const getQueryColors = function ( colors ) {
             queryColors.deltas.push( closestColor.diff );
         }
     });
+
+    colors = null;
 
     return queryColors;
 };
@@ -127,7 +131,14 @@ const pushFeature = function ( doc, feature ) {
 
 
 const pushResult = function ( doc, image ) {
+    // Make sure we don't have this image in raw results!
     const found = results.raw.find(( result ) => {
+        return (result.image.url === image.url);
+
+    // ALSO make sure we don't have this image in saved results
+    // This is the "tree-shaking" so we don't process images that are already in our JSON cache.
+    // Ideally this should reduce greatly how many images are processed at once after the first run.
+    }) || staticJSONData.find(( result ) => {
         return (result.image.url === image.url);
     });
 
@@ -144,14 +155,13 @@ const pushResult = function ( doc, image ) {
             },
             doc: {
                 title: doc.getText( "project.title" ),
-                year: doc.getText( "project.year" ),
                 city: doc.getText( "project.city" ),
                 state: doc.getText( "project.state" ),
                 categories: cats
             },
             tags: getImageTags( image.main.alt ),
-            color: "#000000",
-            colors: []
+            // color: "#000000",
+            // colors: []
         });
     }
 };
@@ -159,21 +169,23 @@ const pushResult = function ( doc, image ) {
 
 
 const processResult = function ( result ) {
-    getImageColors( result ).then(( colors ) => {
+    // getImageColors( result ).then(( colors ) => {
         const progress = (total - results.raw.length) / total;
         const jsonPath = path.join( __dirname, "../", "static", "json", "imageprocess.json" );
-        const colorInfo = getQueryColors( colors );
+        // const colorInfo = getQueryColors( colors );
 
-        result.colors = colorInfo.colors;
-        result.color = colors[ 0 ].hex();
-        result.deltas = colorInfo.deltas;
+        // result.colors = colorInfo.colors;
+        // result.color = colors[ 0 ].hex();
+        // result.deltas = colorInfo.deltas;
 
         results.processed.push( result );
 
         // Output progress bar to console ?
 
-        // Push slack entry
-        message.push( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
+        // Log but don't push slack entry as it is likely too large a message that way...
+        lager.info( `Image processed: Tags: ${result.tags.join( ", " )}` );
+        // lager.info( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
+            // message.push( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
 
         if ( !results.raw.length ) {
             fs.writeFile( jsonPath, JSON.stringify( results.processed ), "utf8", ( error ) => {
@@ -191,7 +203,7 @@ const processResult = function ( result ) {
         } else {
             processResult( results.raw.pop() );
         }
-    });
+    // });
 };
 
 
@@ -205,6 +217,7 @@ const doImageProcess = function () {
     token = yargs.argv.token;
     webhook = yargs.argv.webhook;
     channel = yargs.argv.channel;
+    staticJSONData = JSON.parse( String( fs.readFileSync( staticJSONPath ) ) );
 
     slacker( token, webhook, channel, context, [
         `Initializing ${context}`
@@ -215,63 +228,62 @@ const doImageProcess = function () {
     prismic.api( core.config.api.access, null ).then(( api ) => {
         lager.info( `Loading all documents for content-type ${core.config.skylab.mainType}...` );
 
-        api.form( core.config.skylab.mainType )
-            .pageSize( 100 )
-            .ref( api.master() )
-            .query( [prismic.Predicates.at( "document.type", core.config.skylab.mainType )] )
-            .submit().then(( json ) => {
-                // Iterate project documents and get ALL associated images
-                json.results.forEach(( doc ) => {
-                    const image = doc.getImage( `${core.config.skylab.mainType}.image` );
-                    const slices = doc.getSliceZone( `${core.config.skylab.mainType}.slices` );
-                    let feature = doc.getGroup( `${core.config.skylab.mainType}.feature` );
+        const getDocs = ( page ) => {
+            api.form( core.config.skylab.mainType )
+                .page( page )
+                .pageSize( 100 )
+                .ref( api.master() )
+                .query( [prismic.Predicates.at( "document.type", core.config.skylab.mainType )] )
+                .submit().then( gotDocs );
+        };
+        const gotDocs = ( json ) => {
+            // Iterate project documents and get ALL associated images
+            json.results.forEach(( doc ) => {
+                const image = doc.getImage( `${core.config.skylab.mainType}.image` );
+                const slices = doc.getSliceZone( `${core.config.skylab.mainType}.slices` );
 
-                    // Main Image
-                    // if ( image ) {
-                    //     pushResult( doc, image );
-                    // }
+                // Content Images
+                if ( slices ) {
+                    slices.value.forEach(( slice ) => {
+                        // image?
+                        if ( slice.sliceType === "image" ) {
+                            pushResult( doc, slice.value );
+                        }
 
-                    // Feature Images
-                    // if ( feature ) {
-                    //     pushFeature( doc, feature );
-                    // }
+                        // diptych?
+                        if ( slice.sliceType === "diptych" ) {
+                            pushDiptych( doc, slice );
+                        }
 
-                    // Content Images
-                    if ( slices ) {
-                        slices.value.forEach(( slice ) => {
-                            // image?
-                            if ( slice.sliceType === "image" ) {
-                                pushResult( doc, slice.value );
-                            }
+                        // textImage?
+                        if ( slice.sliceType === "textImage" ) {
+                            pushTextImage( doc, slice );
+                        }
 
-                            // diptych?
-                            if ( slice.sliceType === "diptych" ) {
-                                pushDiptych( doc, slice );
-                            }
+                        // parallax?
+                        if ( slice.sliceType === "parallax" ) {
+                            pushParallax( doc, slice );
+                        }
+                    });
+                }
 
-                            // textImage?
-                            if ( slice.sliceType === "textImage" ) {
-                                pushTextImage( doc, slice );
-                            }
+                doc = null;
+            });
 
-                            // parallax?
-                            if ( slice.sliceType === "parallax" ) {
-                                pushParallax( doc, slice );
-                            }
-                        });
-                    }
-                });
+            if ( json.next_page ) {
+                getDocs( (json.page + 1) );
 
-            total = results.raw.length;
+            } else {
+                lager.info( `Image processing for ${results.raw.length} images.` );
+                    message.push( `Image processing for ${results.raw.length} images.` );
 
-            lager.info( `Image processing for ${total} images.` );
-                message.push( `Image processing for ${total} images.` );
+                if ( results.raw.length > 0 ) {
+                    processResult( results.raw.pop() );
+                }
+            }
+        };
 
-            // lager.info( `Slicing off 1 image for testing.` );
-            // results.raw = results.raw.slice( 0, 1 );
-
-            processResult( results.raw.pop() );
-        });
+        getDocs( 1 );
     });
 };
 
