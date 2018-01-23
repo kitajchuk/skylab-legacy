@@ -279,6 +279,12 @@ const doImageProcess = function () {
 
                 if ( results.raw.length > 0 ) {
                     processResult( results.raw.pop() );
+
+                } else {
+                    lager.info( `No new images to process.` );
+                        message.push( `No new images to process.` );
+
+                    slacker( token, webhook, channel, context, message );
                 }
             }
         };
