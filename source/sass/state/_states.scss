@@ -171,7 +171,8 @@
         display: none !important;
         }
     .filter {
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
         transform: translate3d( 0, 0, 0 );
         -webkit-overflow-scrolling: touch;
         }
