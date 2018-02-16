@@ -105,6 +105,7 @@ const config = {
 // Serves assets from either CDN or App Server...
 config.static.js = (config.aws.cdnOn && !config.env.sandbox) ? `${config.aws.cdn}${config.static.endJS}` : config.static.endJS;
 config.static.css = (config.aws.cdnOn && !config.env.sandbox) ? `${config.aws.cdn}${config.static.endCSS}` : config.static.endCSS;
+config.aws.cdn = (config.aws.cdnOn && config.env.sandbox) ? `http://localhost:${config.browser.port}` : config.aws.cdn;
 
 
 

@@ -6,18 +6,14 @@ const fs = require( "fs" );
 const yargs = require( "yargs" );
 const path = require( "path" );
 const lager = require( "properjs-lager" );
-// const chroma = require( "chroma-js" );
 const prismic = require( "prismic.io" );
 const slacker = require( "properjs-slacker" );
 const core = {
     config: require( "../skylab.config" )
 };
-// const colorLibs = {
-//     default: require( "get-image-colors" )
-// };
 const context = "skylab-imageprocess";
 const staticJSONPath = path.join( __dirname, "../static/json/imageprocess.json" );
-let staticJSONData = null;
+let index = 0;
 let token = null;
 let webhook = null;
 let channel = null;
@@ -26,52 +22,6 @@ let message = [];
 let results = {
     raw: [],
     processed: []
-};
-
-
-
-const getQueryColors = function ( colors ) {
-    const queryColors = {
-        colors: [],
-        deltas: []
-    };
-
-    colors.forEach(( color ) => {
-        let closestColor = {
-            diff: 1000000,
-            color: null
-        };
-
-        core.config.skylab.colors.forEach(( coreColor ) => {
-            // const distance = chroma.distance( color.hex(), chroma( coreColor.query ).hex() );
-            const deltaE = chroma.deltaE( color.hex(), chroma( coreColor.query ).hex() );
-
-            if ( deltaE < closestColor.diff ) {
-                closestColor.diff = deltaE;
-                closestColor.color = coreColor.query;
-            }
-        });
-
-        if ( queryColors.colors.indexOf( closestColor.color ) === -1 ) {
-            queryColors.colors.push( closestColor.color );
-            queryColors.deltas.push( closestColor.diff );
-        }
-    });
-
-    colors = null;
-
-    return queryColors;
-};
-
-
-
-const getImageColors = function ( result ) {
-    return new Promise(( resolve, reject ) => {
-        colorLibs.default( result.image.url ).then(( colors ) => {
-            // Already chroma-js instances
-            resolve( colors );
-        });
-    });
 };
 
 
@@ -131,14 +81,8 @@ const pushFeature = function ( doc, feature ) {
 
 
 const pushResult = function ( doc, image ) {
-    // Make sure we don't have this image in raw results!
+    // Make sure we don't have this image in raw results already!
     const found = results.raw.find(( result ) => {
-        return (result.image.url === image.url);
-
-    // ALSO make sure we don't have this image in saved results
-    // This is the "tree-shaking" so we don't process images that are already in our JSON cache.
-    // Ideally this should reduce greatly how many images are processed at once after the first run.
-    }) || staticJSONData.find(( result ) => {
         return (result.image.url === image.url);
     });
 
@@ -160,8 +104,8 @@ const pushResult = function ( doc, image ) {
                 categories: cats
             },
             tags: getImageTags( image.main.alt ),
-            // color: "#000000",
-            // colors: []
+            color: "#111",
+            index: index++
         });
     }
 };
@@ -169,41 +113,32 @@ const pushResult = function ( doc, image ) {
 
 
 const processResult = function ( result ) {
-    // getImageColors( result ).then(( colors ) => {
-        const progress = (total - results.raw.length) / total;
-        const jsonPath = path.join( __dirname, "../", "static", "json", "imageprocess.json" );
-        // const colorInfo = getQueryColors( colors );
+    const progress = (total - results.raw.length) / total;
+    const jsonPath = path.join( __dirname, "../", "static", "json", "imageprocess.json" );
 
-        // result.colors = colorInfo.colors;
-        // result.color = colors[ 0 ].hex();
-        // result.deltas = colorInfo.deltas;
+    results.processed.push( result );
 
-        results.processed.push( result );
+    // Output progress bar to console ?
 
-        // Output progress bar to console ?
+    // Log but don't push slack entry as it is likely too large a message that way...
+    lager.info( `${result.index}) Image processed: Tags: ${result.tags.join( ", " )}` );
 
-        // Log but don't push slack entry as it is likely too large a message that way...
-        lager.info( `Image processed: Tags: ${result.tags.join( ", " )}` );
-        // lager.info( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
-            // message.push( `Image processed / Tags ${result.tags.join( ", " )} / Colors ${result.colors.join( ", " )}` );
+    if ( !results.raw.length ) {
+        fs.writeFile( jsonPath, JSON.stringify( results.processed ), "utf8", ( error ) => {
+            // Slack Error so we are aware ;-P
+            if ( error ) {
+                message = [error];
 
-        if ( !results.raw.length ) {
-            fs.writeFile( jsonPath, JSON.stringify( results.processed ), "utf8", ( error ) => {
-                // Slack Error so we are aware ;-P
-                if ( error ) {
-                    message = [error];
+            } else {
+                message.push( `Image processing JSON saved to ${jsonPath}.` );
+            }
 
-                } else {
-                    message.push( `Image processing JSON saved to ${jsonPath}.` );
-                }
+            slacker( token, webhook, channel, context, message );
+        });
 
-                slacker( token, webhook, channel, context, message );
-            });
-
-        } else {
-            processResult( results.raw.pop() );
-        }
-    // });
+    } else {
+        processResult( results.raw.pop() );
+    }
 };
 
 
@@ -217,7 +152,7 @@ const doImageProcess = function () {
     token = yargs.argv.token;
     webhook = yargs.argv.webhook;
     channel = yargs.argv.channel;
-    staticJSONData = JSON.parse( String( fs.readFileSync( staticJSONPath ) ) );
+    index = 0;
 
     slacker( token, webhook, channel, context, [
         `Initializing ${context}`

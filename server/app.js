@@ -53,22 +53,6 @@ const canDetail = ( req ) => {
 
 
 
-const getColorSort = ( results ) => {
-    return results.sort(( a, b ) => {
-        const minA = Math.min.apply( Math, a.deltas );
-        const minB = Math.min.apply( Math, b.deltas );
-
-        if ( minA < minB ) {
-            return -1;
-
-        } else {
-            return 1;
-        }
-    });
-};
-
-
-
 const getResults = ( kind, value ) => {
     return new Promise(( resolve, reject ) => {
         request({
@@ -86,11 +70,6 @@ const getResults = ( kind, value ) => {
 
                     return regex.test( result[ kind ].join( "" ).toLowerCase() );
                 });
-
-                // Filters...?
-                if ( kind === "colors" ) {
-                    results = getColorSort( results );
-                }
 
                 resolve({
                     results: results
@@ -120,7 +99,7 @@ const getMapped = ( items ) => {
                 state: item.getText( `${config.skylab.mainType}.state` ),
                 categories: []
             },
-            color: "#151515"
+            color: "#111"
         };
     });
 };
@@ -150,14 +129,9 @@ const onQuery = ( client, api, query, cache, req ) => {
         lager.info( `Querying by Category ${req.query.category}` );
     }
 
-    if ( req.query.color ) {
-        ret = getResults( "colors", req.query.color );
-        lager.info( `Querying by Color ${req.query.color}` );
-    }
-
-    if ( req.query.material || req.query.space ) {
-        ret = getResults( "tags", req.query.material || req.query.space );
-        lager.info( `Querying by Tag ${req.query.material || req.query.space}` );
+    if ( req.query.color || req.query.material || req.query.space ) {
+        ret = getResults( "tags", req.query.color || req.query.material || req.query.space );
+        lager.info( `Querying by Tag ${req.query.color || req.query.material || req.query.space}` );
     }
 
     return ret;
