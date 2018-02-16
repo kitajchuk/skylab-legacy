@@ -146,6 +146,12 @@ class View {
      */
     exec () {
         this.controllers.exec();
+        this.controllers.imageController.on( "preload", ( obj ) => {
+            obj.element.className += " is-lazy-loaded";
+        });
+        this.controllers.imageController.on( "lazyload", ( obj ) => {
+            obj.element.className += " is-lazy-loaded";
+        });
     }
 
 

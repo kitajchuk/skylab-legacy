@@ -55,6 +55,7 @@
     z-index: 1;
     }
 .person__wrap {
+    background-color: $black111;
     cursor: pointer;
     position: relative;
     }
@@ -65,14 +66,16 @@
     padding: 0 $expander-mobile;
     position: absolute;
     top: 0;
-    transition: opacity $fast-duration $ease,
-                z-index $fast-duration $ease;
+    transition: opacity $long-duration $ease,
+                z-index $long-duration $ease;
     width: 100%;
     z-index: 1;
     }
 .portrait {
-    opacity: 1;
-    }
+    &.is-lazy-loaded {
+        opacity: 1;
+        }
+}
 
 
 
