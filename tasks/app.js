@@ -20,32 +20,13 @@ let taskRunner = false;
 const doTaskRunner = () => {
     taskRunner = true;
 
-    // const task = child_process.execSync( "/var/www/html/task-imgpro" );
-
-    child_process.execSync( "/var/www/html/task-imgpro" );
-    child_process.execSync( "/var/www/html/task-s3" );
+    child_process.execSync( "/var/www/html/task-runner" );
 
     slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
         "Task Runner S3 Uploaded!"
     ]);
 
     taskRunner = false;
-
-    // task.stdout.on( "data", ( data ) => {
-    //     lager.info( `task.stdout => ${data}` );
-    // });
-
-    // task.stderr.on( "data", ( data ) => {
-    //     lager.info( `task.stderr => ${data}` );
-    // });
-
-    // task.on( "close", ( code ) => {
-    //     taskRunner = false;
-    //
-    //     slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
-    //         "Task Runner S3 Uploaded!"
-    //     ]);
-    // });
 };
 
 
