@@ -163,6 +163,10 @@
         }
 }
 .is-filter-open {
+    html,
+    body {
+        overflow: hidden;
+        }
     .header__utility {
         transform: translate3d( -$filter-width, 0, 0 );
         }
