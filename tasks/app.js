@@ -12,16 +12,13 @@ const bodyParser = require( "body-parser" );
 const child_process = require( "child_process" );
 const context = "skylab-taskrunner";
 const secret = String( fs.readFileSync( path.join( __dirname, "../task-secret" ) ) ).replace( /^\s+|\s+$/g, "" );
-let taskRunner = false;
+const taskBounce = 1000;
+let taskRunner = null;
 
 
 
 const doTaskRunner = () => {
-    taskRunner = true;
-
     child_process.execSync( "/var/www/html/task-runner" );
-
-    taskRunner = false;
 };
 
 
@@ -55,18 +52,6 @@ const checkHitType = ( req, res, next ) => {
 
 
 
-const checkRunner = ( req, res, next ) => {
-    if ( taskRunner ) {
-        res.status( 200 ).send( "Skylab taskrunner running." );
-        lager.warn( "Skylab taskrunner is running." );
-
-    } else {
-        next();
-    }
-};
-
-
-
 const startTaskRunner = () => {
     const expressApp = express();
 
@@ -83,14 +68,20 @@ const startTaskRunner = () => {
         lager.cache( "Skylab taskrunner server is up." );
     });
 
-    expressApp.post( "/webhook", checkSecret, checkHitType, checkRunner, ( req, res ) => {
-        setTimeout(() => {
+    expressApp.post( "/webhook", checkSecret, checkHitType, ( req, res ) => {
+        try {
+            clearTimeout( taskRunner );
+
+        } catch ( error ) {
+            lager.error( error );
+        }
+
+        taskRunner = setTimeout(() => {
+            doTaskRunner();
             res.status( 200 ).send( "Skylab taskrunner initialized." );
             lager.cache( "Skylab taskrunner initialized." );
 
-        }, 100 );
-
-        doTaskRunner();
+        }, taskBounce );
     });
 
     expressApp.listen( expressPort );
