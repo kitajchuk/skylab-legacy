@@ -5,6 +5,7 @@ const rootNodeModules = path.join( root, "node_modules" );
 const rootPackageLock = path.join( root, "package-lock.json" );
 const rootStatic = path.join( root, "../", "static" );
 const rootStaticJson = path.join( rootStatic, "json" );
+const rootAppStart = path.join( root, "../", "task-appstart" );
 const child_process = require( "child_process" );
 const yargs = require( "yargs" );
 
@@ -34,7 +35,7 @@ if ( !fs.existsSync( rootStaticJson ) ) {
 console.log( "Installing node_modules..." );
 
 // 2.0: No `node_modules`
-child_process.execSync( `rm -rf ${rootPackageLock}` );
+// child_process.execSync( `rm -rf ${rootPackageLock}` );
 // child_process.execSync( `rm -rf ${rootNodeModules}` );
 child_process.execSync( "npm install" );
 
@@ -48,4 +49,4 @@ child_process.execSync( "iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDI
 // 4.0 Start `environment` server
 console.log( "Starting task server..." );
 
-child_process.execSync( `node_modules/.bin/forever -a -l forever.log -o out.log -e err.log start app.js --token "${yargs.argv.token}" --webhook "${yargs.argv.webhook}" --channel "${yargs.argv.channel}" --key ${yargs.argv.key} --secret ${yargs.argv.secret} --region "${yargs.argv.region}" --bucket "${yargs.argv.bucket}" --prefix "static" --directory "static"` );
+child_process.execSync( rootAppStart );

@@ -4,13 +4,12 @@
 
 const fs = require( "fs" );
 const path = require( "path" );
-const cli = require( "cli" );
+const yargs = require( "yargs" );
 const lager = require( "properjs-lager" );
 const express = require( "express" );
 const expressPort = 8000;
 const bodyParser = require( "body-parser" );
 const child_process = require( "child_process" );
-const slacker = require( "properjs-slacker" );
 const context = "skylab-taskrunner";
 const secret = String( fs.readFileSync( path.join( __dirname, "../task-secret" ) ) ).replace( /^\s+|\s+$/g, "" );
 let taskRunner = false;
@@ -22,10 +21,6 @@ const doTaskRunner = () => {
 
     child_process.execSync( "/var/www/html/task-runner" );
 
-    slacker( cli.options.token, cli.options.webhook, cli.options.channel, context, [
-        "Task Runner S3 Uploaded!"
-    ]);
-
     taskRunner = false;
 };
 
@@ -34,6 +29,7 @@ const doTaskRunner = () => {
 const checkSecret = ( req, res, next ) => {
     if ( req.body.secret !== secret ) {
         res.status( 403 ).send( "Skylab taskrunner requires a secret." );
+        lager.warn( "Skylab taskrunner requires a secret." );
 
     } else {
         next();
@@ -45,12 +41,15 @@ const checkSecret = ( req, res, next ) => {
 const checkHitType = ( req, res, next ) => {
     if ( req.body.type === "test-trigger" ) {
         res.status( 200 ).send( "Skylab taskrunner ignores test triggers." );
+        lager.warn( "Skylab taskrunner ignores test triggers." );
 
     } else if ( req.body.type === "api-update" ) {
+        lager.cache( "Skylab taskrunner api-update triggered." );
         next();
 
     } else {
         res.status( 200 ).send( "Skylab taskrunner invalid req.body.type." );
+        lager.warn( "Skylab taskrunner invalid req.body.type." );
     }
 };
 
@@ -59,6 +58,7 @@ const checkHitType = ( req, res, next ) => {
 const checkRunner = ( req, res, next ) => {
     if ( taskRunner ) {
         res.status( 200 ).send( "Skylab taskrunner running." );
+        lager.warn( "Skylab taskrunner is running." );
 
     } else {
         next();
@@ -80,41 +80,27 @@ const startTaskRunner = () => {
 
     expressApp.get( "/", ( req, res ) => {
         res.status( 200 ).send( "Skylab taskrunner server is up." );
+        lager.cache( "Skylab taskrunner server is up." );
     });
 
     expressApp.post( "/webhook", checkSecret, checkHitType, checkRunner, ( req, res ) => {
-        setTimeout(() => res.status( 200 ).send( "Skylab taskrunner initialized." ), 250 );
+        setTimeout(() => {
+            res.status( 200 ).send( "Skylab taskrunner initialized." );
+            lager.cache( "Skylab taskrunner initialized." );
+
+        }, 100 );
 
         doTaskRunner();
     });
 
     expressApp.listen( expressPort );
+
+    lager.cache( "Skylab taskrunner server booted." );
 };
 
 
 
-cli.setApp( "skylab-tasks", "0.1.0" );
-
-
-
-cli.parse({
-    // Imageprocess Options:
-    token: ["token", "The Slack app integration token.", "string", ""],
-    webhook: ["webhook", "The Slack app integration webhook URL.", "string", ""],
-    channel: ["channel", "The Slack channel to ping.", "string", ""],
-
-    // ProperJS/s3 Options:
-    key: ["key", "The AWS access key id ( IAM ).", "string", ""],
-    secret: ["secret", "The AWS secret access key ( IAM ).", "string", ""],
-    region: ["region", "The AWS region, like us-west-2.", "string", ""],
-    bucket: ["bucket", "The AWS s3 bucket name to sync with.", "string", ""],
-    prefix: ["prefix", "The AWS s3 folder name to sync files to.", "string", ""],
-    directory: ["directory", "The local directory to sync to AWS s3.", "string", ""]
-});
-
-
-
-if ( cli.options.token && cli.options.webhook && cli.options.channel && cli.options.key && cli.options.secret && cli.options.region && cli.options.bucket && cli.options.prefix && cli.options.directory ) {
+if ( yargs.argv.token && yargs.argv.webhook && yargs.argv.channel && yargs.argv.key && yargs.argv.secret && yargs.argv.region && yargs.argv.bucket && yargs.argv.prefix && yargs.argv.directory ) {
     startTaskRunner();
 
 } else {

@@ -8,15 +8,13 @@ const path = require( "path" );
 const lager = require( "properjs-lager" );
 const prismic = require( "prismic.io" );
 const slacker = require( "properjs-slacker" );
+const s3 = require( "properjs-s3" );
 const core = {
     config: require( "../skylab.config" )
 };
 const context = "skylab-imageprocess";
 const staticJSONPath = path.join( __dirname, "../static/json/imageprocess.json" );
 let index = 0;
-let token = null;
-let webhook = null;
-let channel = null;
 let total = null;
 let message = [];
 let results = {
@@ -133,7 +131,22 @@ const processResult = function ( result ) {
                 message.push( `Image processing JSON saved to ${jsonPath}.` );
             }
 
-            slacker( token, webhook, channel, context, message );
+            slacker( yargs.argv.token, yargs.argv.webhook, yargs.argv.channel, context, message );
+
+            s3.sync(
+                yargs.argv.key,
+                yargs.argv.secret,
+                yargs.argv.region,
+                yargs.argv.bucket,
+                yargs.argv.prefix,
+                yargs.argv.directory
+
+            ).then(() => {
+                slacker( yargs.argv.token, yargs.argv.webhook, yargs.argv.channel, context, ["S3 Upload success"] );
+
+            }).catch(( error ) => {
+                slacker( yargs.argv.token, yargs.argv.webhook, yargs.argv.channel, context, [`S3 Upload error: ${error}`] );
+            });
         });
 
     } else {
@@ -149,12 +162,9 @@ const doImageProcess = function () {
         processed: []
     };
     message = [];
-    token = yargs.argv.token;
-    webhook = yargs.argv.webhook;
-    channel = yargs.argv.channel;
     index = 0;
 
-    slacker( token, webhook, channel, context, [
+    slacker( yargs.argv.token, yargs.argv.webhook, yargs.argv.channel, context, [
         `Initializing ${context}`
     ]);
 
@@ -219,7 +229,7 @@ const doImageProcess = function () {
                     lager.info( `No new images to process.` );
                         message.push( `No new images to process.` );
 
-                    slacker( token, webhook, channel, context, message );
+                    slacker( yargs.argv.token, yargs.argv.webhook, yargs.argv.channel, context, message );
                 }
             }
         };
@@ -230,7 +240,7 @@ const doImageProcess = function () {
 
 
 
-if ( yargs.argv.token && yargs.argv.webhook && yargs.argv.channel ) {
+if ( yargs.argv.token && yargs.argv.webhook && yargs.argv.channel && yargs.argv.key && yargs.argv.secret && yargs.argv.region && yargs.argv.bucket && yargs.argv.prefix && yargs.argv.directory ) {
     doImageProcess();
 
 } else {

@@ -23,7 +23,7 @@
     "forever": "^0.15.2",
     "prismic.io": "^3.5.0",
     "properjs-lager": "^0.1.0",
-    "properjs-s3": "^0.1.5",
+    "properjs-s3": "^0.2.0",
     "properjs-slacker": "^0.1.4",
     "yargs": "^8.0.2"
   }
