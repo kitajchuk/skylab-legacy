@@ -7,14 +7,14 @@
 .section__label {
     padding-left: $padding-wrap;
     padding-right: $padding-wrap;
-    width: $wrap-astatic;
+    width: 40%;
 
     .page & > .cms > p:first-child {
         @include meta();
         }
 }
 .section__content {
-    width: $wrap-static;
+    width: 60%;
     }
 .section.-theme--dark {
     .section__label {
