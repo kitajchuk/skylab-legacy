@@ -190,11 +190,6 @@ router.on( config.skylab.homeType, { query: onQuery, context: onContext } );
 router.on( config.skylab.workType, { query: onQuery, context: onContext } );
 router.on( config.skylab.playType, { query: onQuery, context: onContext } );
 router.on( config.skylab.indexType, { query: onQuery, context: onContext, orderings: onOrderings } );
-router.on( "person", {
-    orderings: ( client, api, form, cache, req ) => {
-        form.orderings( `[my.person.order]` );
-    }
-});
 
 
 
