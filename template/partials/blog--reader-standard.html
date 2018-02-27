@@ -18,7 +18,7 @@ const blurb = item.getStructuredText( 'blog.blurb' );
         <h1><%= title %></h1>
         <%- description.asHtml() %>
     </div>
-    <div class="reader__body section__content slices -wrap-static -text--left -column -vtop">
+    <div class="reader__body section__content slices -text--left -column -vtop">
         <% if ( item.getSliceZone( 'blog.slices' ) ) { %>
             <% item.getSliceZone( 'blog.slices' ).slices.forEach(( slice ) => { %>
                 <div class="slices__slice slices__<%= slice.sliceType %>">

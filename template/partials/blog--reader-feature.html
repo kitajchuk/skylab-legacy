@@ -11,7 +11,7 @@ const blurb = item.getStructuredText( 'blog.blurb' );
         </div>
     </div>
     <div class="reader__body -column -column--2of4">
-        <div class="reader__body__wrap -wrap-static">
+        <div class="reader__body__wrap">
             <div class="tile__wrap" style="padding-bottom:<%= locals.context.getMediaAspect( image.main ) %>;">
                 <img class="tile__photo image js-lazy-image animate animate--slow js-animate" data-img-src="<%= image.url %>" />
             </div>
@@ -35,7 +35,7 @@ const blurb = item.getStructuredText( 'blog.blurb' );
             </div>
         </div>
     </div>
-    <div class="section__content -column -vtop -wrap-static -wrap--right -text--left">
+    <div class="section__content -column -vtop -wrap--right -text--left">
         <div class="cms">
             <%- description.asHtml() %>
         </div>
