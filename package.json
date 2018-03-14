@@ -24,7 +24,7 @@
     "connect:production": "ssh ec2-user@$npm_package_config_aws_ec2_production_host -i ./sandbox/skylab.pem",
     "connect:task": "ssh ec2-user@$npm_package_config_aws_ec2_task_host -i ./sandbox/skylab.pem",
     "deploy:staging": "npm run build:staging ; npm run generate:sitemap ; npm run generate:robots ; npm run generate:appcache ; export NODE_ENV=staging ; export AWS_HOST=${AWS_STAGING_HOST} ; ./skylab.deploy",
-    "deploy:production": "npm run build:production ; npm run generate:sitemap ; npm run generate:robots ; npm run generate:appcache ; export NODE_ENV=production ; export AWS_HOST=${AWS_PRODUCTION_HOST} ; ./skylab.deploy",
+    "deploy:production": "npm run build:production ; npm run generate:sitemap ; npm run generate:robots ; npm run generate:appcache ; export NODE_ENV=production ; export AWS_HOST=${AWS_PRODUCTION_HOST} ; ./skylab.sync ; ./skylab.deploy",
     "deploy:task": "rsync -av -e 'ssh -i ./sandbox/skylab.pem' --rsync-path 'sudo rsync' --exclude 'tasks/node_modules' tasks skylab.config.js ec2-user@$npm_package_config_aws_ec2_task_host:/var/www/html/",
     "task:imageprocess": "./sandbox/imageprocess"
   },
