@@ -4,7 +4,7 @@ const isStandard = (ptype === 'Standard');
 const slices = item.getSliceZone( `${docType}.slices` );
 %>
 
-<div class="project__body <%= isStandard ? 'js-scrollninja-body' : '' %>">
+<div class="project__body project__body--<%= docType %> <%= isStandard ? 'js-scrollninja-body' : '' %>">
     <div class="slices">
         <% if ( slices ) { %>
             <% slices.slices.forEach(( slice ) => { %>
