@@ -30,8 +30,7 @@
     "node-watch": "^0.5.3",
     "prismic.io": "^3.5.0",
     "properjs-lager": "^0.1.0",
-    "request": "^2.81.0",
-    "shuffle-array": "^1.0.1"
+    "request": "^2.81.0"
   },
   "false": {}
 }

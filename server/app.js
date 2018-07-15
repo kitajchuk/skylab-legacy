@@ -6,7 +6,6 @@ const fs = require( "fs" );
 const path = require( "path" );
 const config = require( "../skylab.config" );
 const router = require( "./router" );
-const shuffle = require( "shuffle-array" );
 const lager = require( "properjs-lager" );
 const request = require( "request" );
 const imageJSON = `${config.aws.cdn}/json/imageprocess.json`;
@@ -157,11 +156,38 @@ const onContext = ( context, cache, req ) => {
 
     // Add `features` array to the context
     if ( canFeatures( req ) ) {
-        context.set( "features", shuffle(context.get( "items" ).filter(( doc ) => {
+        context.set( "features", context.get( "items" ).filter(( doc ) => {
             const type = doc.getText( `${config.skylab.mainType}.type` ) || doc.getText( `${config.skylab.blogType}.type` );
 
             return (type === "Feature");
-        })));
+
+        }).sort(( docA, docB ) => {
+            let ret = 0;
+            let dateA = docA.getDate( `${config.skylab.mainType}.date` ) || docA.getDate( `${config.skylab.blogType}.date` );
+            let dateB = docB.getDate( `${config.skylab.mainType}.date` ) || docB.getDate( `${config.skylab.blogType}.date` );
+
+            // Don't sort null values
+            if ( dateA === null && dateB === null ) {
+                ret = 0;
+
+            // Sorts B above A
+            } else if ( dateA === null ) {
+                ret = 1;
+
+            // Sorts A above B
+            } else if ( dateB === null ) {
+                ret = -1;
+
+            } else {
+                dateA = new Date( dateA );
+                dateB = new Date( dateB );
+
+                ret = (dateA.getTime() < dateB.getTime() ? 1 : -1);
+            }
+
+            return ret;
+
+        }));
     }
 
     // Add `previous` / `next` documents to context
