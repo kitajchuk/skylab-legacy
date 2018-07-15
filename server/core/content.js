@@ -61,7 +61,8 @@ const getPage = function ( req, res, listener ) {
             context.set({
                 navi: core.query.cache.navi,
                 site: core.query.cache.site,
-                colors: core.config.skylab.colors
+                colors: core.config.skylab.colors,
+                imageTags: core.config.skylab.imageTags
             });
 
             resolve(( callback ) => {

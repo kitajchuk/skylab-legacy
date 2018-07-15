@@ -136,7 +136,8 @@ const getPartial = function ( req, data, listener ) {
         localObject.context.set({
             site: cache.site,
             navi: cache.navi,
-            colors: core.config.skylab.colors
+            colors: core.config.skylab.colors,
+            imageTags: core.config.skylab.imageTags
         });
 
         if ( data.document ) {

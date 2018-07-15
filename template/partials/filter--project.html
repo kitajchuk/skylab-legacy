@@ -1,9 +1,8 @@
 <%
 const filters = {
-    spaces: [],
-    materials: [],
+    tags: [],
     categories: [],
-    statuses: [],
+    imageTags: locals.context.get( 'imageTags' ),
     colors: locals.context.get( 'colors' )
 };
 const items = locals.context.get( 'items' );
@@ -11,11 +10,7 @@ const site = locals.context.get( 'site' );
 
 items.forEach(( doc ) => {
     const cats = doc.getGroup( 'project.categories' );
-    const status = doc.getText( 'project.status' );
-
-    if ( status && filters.statuses.indexOf( status ) === -1 ) {
-        filters.statuses.push( status );
-    }
+    const tags = doc.tags;
 
     if ( cats ) {
         cats.value.forEach(( cat ) => {
@@ -24,50 +19,56 @@ items.forEach(( doc ) => {
             }
         });
     }
-});
 
-site.data.spaces.forEach(( space ) => {
-    filters.spaces.push( space.data.space.value );
-});
-
-site.data.materials.forEach(( material ) => {
-    filters.materials.push( material.data.material.value );
+    if ( tags ) {
+        tags.forEach(( tag ) => {
+            if ( tag && filters.tags.indexOf( tag ) === -1 ) {
+                filters.tags.push( tag );
+            }
+        });
+    }
 });
 %>
 <ul class="filter__col">
+    <li class="filter__li">
+        <a class="filter__a js-filter-navi js-navi--index p p--meta a" href="/index/">Project Index</a>
+    </li>
+</ul>
+
+<!-- These come from Project Documents > Project Metadata -->
+<ul class="filter__col filter__by-tag">
+    <% filters.tags.forEach(( tag ) => { %>
+        <li class="filter__li">
+            <a class="filter__a js-filter-option js-filter-tag p p--meta a" data-value="<%= tag %>" href="/work/?tag=<%= tag %>"><%= tag %></a>
+        </li>
+    <% }) %>
+</ul>
+
+<!-- These come from Project Documents > Project Metadata -->
+<ul class="filter__col filter__by-category">
     <% filters.categories.forEach(( category ) => { %>
         <li class="filter__li">
             <a class="filter__a js-filter-option js-filter-category p p--meta a" data-value="<%= category %>" href="/work/?category=<%= category %>"><%= category %></a>
         </li>
     <% }) %>
 </ul>
-<ul class="filter__col">
-    <% filters.statuses.forEach(( status ) => { %>
-        <li class="filter__li">
-            <a class="filter__a js-filter-option js-filter-status p p--meta a" data-value="<%= status %>" href="/work/?status=<%= status %>"><%= status %></a>
-        </li>
-    <% }) %>
-</ul>
-<ul class="filter__col">
-    <% filters.materials.forEach(( material ) => { %>
-        <li class="filter__li">
-            <a class="filter__a js-filter-option js-filter-material p p--meta a" data-value="<%= material %>" href="/work/?material=<%= material %>"><%= material %></a>
-        </li>
-    <% }) %>
-</ul>
-<ul class="filter__col">
-    <% filters.spaces.forEach(( space ) => { %>
-        <li class="filter__li">
-            <a class="filter__a js-filter-option js-filter-space p p--meta a" data-value="<%= space %>" href="/work/?space=<%= space %>"><%= space %></a>
-        </li>
-    <% }) %>
-</ul>
-<ul class="filter__col">
+
+<!-- These come from skylab.config.js -->
+<ul class="filter__col filter__by-imagetag">
     <li class="filter__li">
-        <a class="filter__a js-filter-navi js-navi--index p p--meta a" href="/index/">Project Index</a>
+        <div class="p p--meta strong">By Image</div>
+    </li>
+    <li class="filter__li">
+        <% filters.imageTags.forEach(( imageTag ) => { %>
+            <li class="filter__li">
+                <a class="filter__a js-filter-option js-filter-image p p--meta a" data-value="<%= imageTag %>" href="/work/?image=<%= imageTag %>"><%= imageTag %></a>
+            </li>
+        <% }) %>
     </li>
 </ul>
-<ul class="filter__col">
+
+<!-- These come from skylab.config.js -->
+<ul class="filter__col filter__by-color">
     <li class="filter__li">
         <div class="p p--meta strong">By Color</div>
     </li>

@@ -96,6 +96,14 @@ const config = {
             { background: "#2ae0ff", query: "blue" },
             { background: "black", query: "black" },
             { background: "white", query: "white" }
+        ],
+        imageTags: [
+            "Bathe",
+            "Drink",
+            "Eat",
+            "Hang",
+            "Sleep",
+            "Work"
         ]
     }
 };

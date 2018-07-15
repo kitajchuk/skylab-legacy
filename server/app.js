@@ -22,8 +22,9 @@ const isIndex = ( req ) => {
 const isWork = ( req ) => {
     return (
         req.params.type === config.skylab.workType &&
-        !req.query.material &&
-        !req.query.space &&
+        !req.query.tag &&
+        !req.query.category &&
+        !req.query.image &&
         !req.query.color
     );
 };
@@ -39,8 +40,7 @@ const canFeatures = ( req ) => {
 const canTileset = ( req ) => {
     return (
         req.query.color ||
-        req.query.material ||
-        req.query.space ||
+        req.query.image ||
         isIndex( req )
     );
 };
@@ -119,9 +119,9 @@ const getNotHidden = ( items ) => {
 const onQuery = ( client, api, query, cache, req ) => {
     let ret = query;
 
-    if ( req.query.status ) {
-        ret.push( client.Predicates.at( `my.${config.skylab.mainType}.status`, req.query.status ) );
-        lager.info( `Querying by Status ${req.query.status}` );
+    if ( req.query.tag ) {
+        ret.push( client.Predicates.at( `document.tags`, req.query.tag ) );
+        lager.info( `Querying by Tag ${req.query.tag}` );
     }
 
     if ( req.query.category ) {
@@ -129,9 +129,9 @@ const onQuery = ( client, api, query, cache, req ) => {
         lager.info( `Querying by Category ${req.query.category}` );
     }
 
-    if ( req.query.color || req.query.material || req.query.space ) {
-        ret = getResults( "tags", req.query.color || req.query.material || req.query.space );
-        lager.info( `Querying by Tag ${req.query.color || req.query.material || req.query.space}` );
+    if ( req.query.color || req.query.image ) {
+        ret = getResults( "tags", req.query.color || req.query.image );
+        lager.info( `Querying by Tag ${req.query.color || req.query.image}` );
     }
 
     return ret;
