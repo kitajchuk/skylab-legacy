@@ -54,11 +54,25 @@ class ProjectController extends Controller {
         };
 
         core.dom.doc.on( "keydown", this.onKeydown );
+
+        this.keys.left.on( "click", () => {
+            this.onKeydown({
+                keyCode: 37
+            });
+        });
+        this.keys.right.on( "click", () => {
+            this.onKeydown({
+                keyCode: 39
+            });
+        });
     }
 
 
     destroy () {
         core.dom.doc.off( "keydown", this.onKeydown );
+
+        this.keys.left.off( "click" );
+        this.keys.right.off( "click" );
     }
 }
 
