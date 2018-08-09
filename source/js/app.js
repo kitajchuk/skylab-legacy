@@ -55,6 +55,8 @@ class App {
                 navi.open();
             }
 
+            filter.playIcon();
+
             this.bindPage();
         });
     }
@@ -77,8 +79,8 @@ class App {
 
         // Views
         this.navi.init();
-        this.intro.init();
         this.filter.init();
+        this.intro.init();
 
         // Controller
         this.router.init();

@@ -34,6 +34,30 @@ const filter = {
         this.filterViews = [];
 
         this.setup();
+        this.setupIcon();
+    },
+
+
+    setupIcon () {
+        this.livicon = window.jQuery( ".js-livicon-evo" );
+        this.livicon.addLiviconEvo({
+            name: "arrow-left.svg",
+            style: "lines",
+            size: "50px",
+            strokeColor: "#ffffff",
+            eventType: "none"
+        });
+    },
+
+
+    playIcon () {
+        this.liviconTimer = null;
+        this.liviconRunner = () => {
+            this.livicon.playLiviconEvo();
+
+            this.liviconTimer = setTimeout( this.liviconRunner.bind( this ), 10000 );
+        };
+        this.liviconRunner();
     },
 
 

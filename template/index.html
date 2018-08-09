@@ -39,6 +39,7 @@
         <meta itemprop="thumbnailUrl" content="<%= locals.context.getPageImage() %>" />
         <meta itemprop="image" content="<%= locals.context.getPageImage() %>" />
         <link href="<%= locals.context.get( 'stylesheet' ) + '?v=' + locals.context.get( 'timestamp' ) %>" rel="stylesheet" />
+        <link href="/LivIconsEvo/css/LivIconsEvo.css" rel="stylesheet" />
     </head>
     <body>
         <%- include( 'site/header.html' ) %>
@@ -49,6 +50,10 @@
         </main>
         <%- include( 'site/theme.html' ) %>
         <%- include( 'site/intro.html' ) %>
+        <script src="/LivIconsEvo/js/jquery-3.3.1.min.js"></script>
+        <script src="/LivIconsEvo/js/LivIconsEvo.Tools.js"></script>
+        <script src="/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+        <script src="/LivIconsEvo/js/LivIconsEvo.min.js"></script>
         <script src="<%= locals.context.get( 'javascript' ) + '?v=' + locals.context.get( 'timestamp' ) %>"></script>
         <%- include( 'site/ga.html' ) %>
     </body>
