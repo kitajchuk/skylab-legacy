@@ -98,10 +98,16 @@ const getPage = function ( req, res, listener ) {
  *
  */
 const getPreview = function ( req, res ) {
+    let resolvedUrl = "/";
+
     return new Promise(( resolve, reject ) => {
         const previewToken = req.query.token;
         const linkResolver = function ( doc ) {
-            return `/${doc.type}/${doc.uid}/`;
+            const type = (core.config.generate.mappings[ doc.type ] || doc.type);
+
+            resolvedUrl = (type === "page") ? `/${doc.uid}/` : `/${type}/${doc.uid}/`;
+
+            return resolvedUrl;
         };
 
         prismic.api( core.config.api.access, null ).then(( api ) => {
@@ -112,7 +118,7 @@ const getPreview = function ( req, res ) {
                     httpOnly: false
                 });
 
-                resolve( redirectUrl );
+                resolve( resolvedUrl );
             });
         });
     });
