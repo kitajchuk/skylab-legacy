@@ -61,6 +61,13 @@ const filter = {
     },
 
 
+    stopIcon () {
+        clearTimeout( this.liviconTimer );
+        this.liviconTimer = null;
+        this.liviconRunner = null;
+    },
+
+
     setup () {
         let done = 0;
 
@@ -160,6 +167,7 @@ const filter = {
     open () {
         return new Promise(( resolve ) => {
             this.clearOut();
+            this.stopIcon();
             this.isOpen = true;
             this.element.addClass( "is-active" );
             core.dom.html.addClass( "is-filter-open" );
@@ -173,6 +181,7 @@ const filter = {
     close () {
         return new Promise(( resolve ) => {
             this.clearOut();
+            this.playIcon();
             this.isOpen = false;
             this.element.addClass( "is-closing" ).removeClass( "is-active" );
             core.dom.html.removeClass( "is-filter-open" );
