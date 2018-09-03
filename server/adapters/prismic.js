@@ -143,7 +143,8 @@ const getPartial = function ( req, data, listener ) {
             site: cache.site,
             navi: cache.navi,
             colors: core.config.skylab.colors,
-            imageTags: core.config.skylab.imageTags
+            imageTags: core.config.skylab.imageTags,
+            categories: core.config.skylab.categories
         });
 
         if ( data.document ) {

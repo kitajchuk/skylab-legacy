@@ -104,6 +104,21 @@ const config = {
             "Hang",
             "Sleep",
             "Work"
+        ],
+        categories: [
+            "Public",
+            "Cultural",
+            "Commercial",
+            "Workspace",
+            "Hospitality",
+            "Multi-Family",
+            "Residential",
+            "Mountain",
+            "Retail",
+            "Exhibition",
+            "Adaptive Re-Use",
+            "Prefab",
+            "Construction"
         ]
     }
 };

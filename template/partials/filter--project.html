@@ -1,48 +1,19 @@
 <%
 const filters = {
-    tags: [],
-    categories: [],
     imageTags: locals.context.get( 'imageTags' ),
-    colors: locals.context.get( 'colors' )
+    colors: locals.context.get( 'colors' ),
+    categories: locals.context.get( 'categories' )
 };
-const items = locals.context.get( 'items' );
-const site = locals.context.get( 'site' );
-
-items.forEach(( doc ) => {
-    const cats = doc.getGroup( 'project.categories' );
-    const tags = doc.tags;
-
-    if ( cats ) {
-        cats.value.forEach(( cat ) => {
-            if ( cat.data.category && filters.categories.indexOf( cat.data.category.value ) === -1 ) {
-                filters.categories.push( cat.data.category.value );
-            }
-        });
-    }
-
-    if ( tags ) {
-        tags.forEach(( tag ) => {
-            if ( tag && filters.tags.indexOf( tag ) === -1 ) {
-                filters.tags.push( tag );
-            }
-        });
-    }
-});
 %>
-<ul class="filter__col">
-    <li class="filter__li">
-        <a class="filter__a js-filter-navi js-navi--index p p--meta a" href="/index/">Project Index</a>
-    </li>
-</ul>
+<div class="filter__label ghost">
+    <a class="filter__a js-filter-navi js-navi--index p p--meta a ghost__child" href="/index/">Project Index</a>
+</div>
 
-<!-- These come from Project Documents > Project Metadata -->
-<ul class="filter__col filter__by-tag">
-    <% filters.tags.forEach(( tag ) => { %>
-        <li class="filter__li">
-            <a class="filter__a js-filter-option js-filter-tag p p--meta a" data-value="<%= tag %>" href="/work/?tag=<%= tag %>"><%= tag %></a>
-        </li>
-    <% }) %>
-</ul>
+<div class="filter__col">
+    <li class="filter__li">
+        <div class="js-filter-label p strong is-empty">Filter</div>
+    </li>
+</div>
 
 <!-- These come from Project Documents > Project Metadata -->
 <ul class="filter__col filter__by-category">
