@@ -27,7 +27,6 @@ const cache = {
     navi: null
 };
 const core = {
-    watch: require( "../core/watch" ),
     config: require( "../../skylab.config" ),
     template: require( "../core/template" )
 };
@@ -339,7 +338,7 @@ const getDataForPage = function ( req, listener ) {
             const done = function ( json ) {
                 if ( !json.results.length ) {
                     // Static page with no CMS data attached to it...
-                    if ( core.watch.cache.pages.indexOf( `${type}.html` ) !== -1 ) {
+                    if ( core.template.cache.pages.indexOf( `${type}.html` ) !== -1 ) {
                         resolve( data );
 
                     } else {
