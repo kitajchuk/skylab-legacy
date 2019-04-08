@@ -4,10 +4,10 @@ const lager = require( "properjs-lager" );
 
 
 
-lager.cache( `${config.skylab.name} generating robots.txt` );
+//lager.cache( `${config.skylab.name} generating robots.txt` );
 
 
 
 sitemap.generate().then(() => {
-    lager.cache( `${config.skylab.name} robots.txt generated` );
+    //lager.cache( `${config.skylab.name} robots.txt generated` );
 });

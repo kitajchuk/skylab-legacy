@@ -79,7 +79,7 @@ const getPage = function ( req, res, listener ) {
                 callback( (context.page === core.config.notfound ? 404 : 200), html );
 
             }).catch(( error ) => {
-                lager.error( error );
+                //lager.error( error );
             });
         };
 

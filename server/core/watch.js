@@ -38,8 +38,8 @@ const getPages = function () {
 const startWatch = function () {
     watch( config.template.dir, { recursive: true, filter: /\.html$/ }, ( event, filename ) => {
         getPages().then(( files ) => {
-            lager.template( `Updated pages list` );
-            lager.template( JSON.stringify( files, null, 4 ) );
+            //lager.template( `Updated pages list` );
+            //lager.template( JSON.stringify( files, null, 4 ) );
         });
     });
 };

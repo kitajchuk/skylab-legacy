@@ -120,17 +120,17 @@ const onQuery = ( client, api, query, cache, req ) => {
 
     if ( req.query.tag ) {
         ret.push( client.Predicates.at( `document.tags`, req.query.tag ) );
-        lager.info( `Querying by Tag ${req.query.tag}` );
+        //lager.info( `Querying by Tag ${req.query.tag}` );
     }
 
     if ( req.query.category ) {
         ret.push( client.Predicates.at( `my.${req.params.type === config.skylab.workType ? config.skylab.mainType : config.skylab.blogType}.categories.category`, req.query.category ) );
-        lager.info( `Querying by Category ${req.query.category}` );
+        //lager.info( `Querying by Category ${req.query.category}` );
     }
 
     if ( req.query.color || req.query.image ) {
         ret = getResults( "tags", req.query.color || req.query.image );
-        lager.info( `Querying by Tag ${req.query.color || req.query.image}` );
+        //lager.info( `Querying by Tag ${req.query.color || req.query.image}` );
     }
 
     return ret;
@@ -141,12 +141,12 @@ const onQuery = ( client, api, query, cache, req ) => {
 const onContext = ( context, cache, req ) => {
     if ( isIndex( req ) ) {
         context.set( "items", getMapped( getNotHidden( context.get( "items" ) ) ) );
-        lager.info( `Mapping ${req.params.type} to imageprocess JSON format...` );
+        //lager.info( `Mapping ${req.params.type} to imageprocess JSON format...` );
     }
 
     if ( isWork( req ) ) {
         context.set( "items", getNotHidden( context.get( "items" ) ) );
-        lager.info( `Removing hidden documents from the items...` );
+        //lager.info( `Removing hidden documents from the items...` );
     }
 
     // Add `tileset` array to the context for filter criteria

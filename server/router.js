@@ -127,8 +127,8 @@ module.exports = {
 
             expressApp.listen( core.config.express.port );
 
-            lager.server( `Express server started` );
-            lager.server( `Access URL — http://localhost:${core.config.browser.port}` );
+            //lager.server( `Express server started` );
+            //lager.server( `Access URL — http://localhost:${core.config.browser.port}` );
         });
     }
 };
