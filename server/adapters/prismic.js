@@ -19,19 +19,19 @@
  *
  *
  */
-const path = require( "path" );
-const prismic = require( "prismic.io" );
+const path = require("path");
+const prismic = require("prismic.io");
 const cache = {
     api: null,
     site: null,
     navi: null
 };
 const core = {
-    config: require( "../../skylab.config" ),
-    template: require( "../core/template" )
+    config: require("../../skylab.config"),
+    template: require("../core/template")
 };
-const ContextObject = require( "../class/ContextObject" );
-const lager = require( "properjs-lager" );
+const ContextObject = require("../class/ContextObject");
+const lager = require("properjs-lager");
 
 
 
@@ -40,33 +40,33 @@ const lager = require( "properjs-lager" );
  * Handle API requests.
  *
  */
-const getApi = function ( req, res, listener ) {
-    return new Promise(( resolve, reject ) => {
-        getDataForApi( req, listener ).then(( json ) => {
+const getApi = function (req, res, listener) {
+    return new Promise((resolve, reject) => {
+        getDataForApi(req, listener).then((json) => {
             const data = {};
 
             // Single document for /:type/:uid
-            if ( req.params.uid ) {
-                data.document = getDoc( req.params.uid, json );
+            if (req.params.uid) {
+                data.document = getDoc(req.params.uid, json);
 
-            // All documents for /:type
+                // All documents for /:type
             } else {
                 data.documents = json;
             }
 
             // Render partial for ?format=html&template=foo
-            if ( req.query.format === "html" ) {
-                getPartial( req, data, listener ).then(( html ) => {
-                    resolve( html );
+            if (req.query.format === "html") {
+                getPartial(req, data, listener).then((html) => {
+                    resolve(html);
                 });
 
             } else {
-                resolve( data );
+                resolve(data);
             }
 
-        }).catch(( error ) => {
+        }).catch((error) => {
             // Resolve error as JSON result
-            resolve( error );
+            resolve(error);
         });
     });
 };
@@ -78,13 +78,13 @@ const getApi = function ( req, res, listener ) {
  * Handle Page requests.
  *
  */
-const getPage = function ( req, res, listener ) {
-    return new Promise(( resolve, reject ) => {
-        getDataForPage( req, listener ).then(( json ) => {
-            resolve( json );
+const getPage = function (req, res, listener) {
+    return new Promise((resolve, reject) => {
+        getDataForPage(req, listener).then((json) => {
+            resolve(json);
 
-        }).catch(( error ) => {
-            reject( error );
+        }).catch((error) => {
+            reject(error);
         });
     });
 };
@@ -96,28 +96,28 @@ const getPage = function ( req, res, listener ) {
  * Handle preview URLs from Prismic for draft content.
  *
  */
-const getPreview = function ( req, res ) {
+const getPreview = function (req, res) {
     let resolvedUrl = "/";
 
-    return new Promise(( resolve, reject ) => {
+    return new Promise((resolve, reject) => {
         const previewToken = req.query.token;
-        const linkResolver = function ( doc ) {
-            const type = (core.config.generate.mappings[ doc.type ] || doc.type);
+        const linkResolver = function (doc) {
+            const type = (core.config.generate.mappings[doc.type] || doc.type);
 
             resolvedUrl = (type === "page") ? `/${doc.uid}/` : `/${type}/${doc.uid}/`;
 
             return resolvedUrl;
         };
 
-        prismic.api( core.config.api.access, null ).then(( api ) => {
-            api.previewSession( previewToken, linkResolver, "/", ( error, redirectUrl ) => {
-                res.cookie( prismic.previewCookie, previewToken, {
+        prismic.api(core.config.api.access, null).then((api) => {
+            api.previewSession(previewToken, linkResolver, "/", (error, redirectUrl) => {
+                res.cookie(prismic.previewCookie, previewToken, {
                     maxAge: 60 * 30 * 1000,
                     path: "/",
                     httpOnly: false
                 });
 
-                resolve( resolvedUrl );
+                resolve(resolvedUrl);
             });
         });
     });
@@ -130,13 +130,13 @@ const getPreview = function ( req, res ) {
  * Handle partial rendering.
  *
  */
-const getPartial = function ( req, data, listener ) {
-    return new Promise(( resolve, reject ) => {
+const getPartial = function (req, data, listener) {
+    return new Promise((resolve, reject) => {
         const partial = (req.query.template || req.params.type);
         const localObject = {
-            context: new ContextObject( partial )
+            context: new ContextObject(partial)
         };
-        const template = path.join( core.config.template.partialsDir, `${partial}.html` );
+        const template = path.join(core.config.template.partialsDir, `${partial}.html`);
 
         localObject.context.set({
             site: cache.site,
@@ -146,25 +146,25 @@ const getPartial = function ( req, data, listener ) {
             categories: core.config.skylab.categories
         });
 
-        if ( data.document ) {
-            localObject.context.set( "item", data.document );
+        if (data.document) {
+            localObject.context.set("item", data.document);
         }
 
-        if ( data.documents ) {
-            localObject.context.set( "items", data.documents );
+        if (data.documents) {
+            localObject.context.set("items", data.documents);
         }
 
         // context?
-        if ( listener && listener.handlers.context ) {
-            localObject.context = listener.handlers.context( localObject.context, cache, req );
+        if (listener && listener.handlers.context) {
+            localObject.context = listener.handlers.context(localObject.context, cache, req);
         }
 
-        core.template.render( template, localObject )
-            .then(( html ) => {
-                resolve( html );
+        core.template.render(template, localObject)
+            .then((html) => {
+                resolve(html);
             })
-            .catch(( error ) => {
-                reject( error );
+            .catch((error) => {
+                reject(error);
             });
     });
 };
@@ -176,10 +176,10 @@ const getPartial = function ( req, data, listener ) {
  * Load the Site context model.
  *
  */
-const getSite = function ( req ) {
-    return new Promise(( resolve, reject ) => {
-        prismic.api( core.config.api.access, null ).then(( api ) => {
-            api.getSingle( "site" ).then(( document ) => {
+const getSite = function (req) {
+    return new Promise((resolve, reject) => {
+        prismic.api(core.config.api.access, null).then((api) => {
+            api.getSingle("site").then((document) => {
                 const navi = {
                     items: []
                 };
@@ -188,33 +188,33 @@ const getSite = function ( req ) {
                 };
 
                 // Normalize site context
-                for ( let i in document.fragments ) {
-                    if ( i !== core.config.skylab.naviFrag ) {
-                        const key = i.replace( /^site\./, "" );
+                for (let i in document.fragments) {
+                    if (i !== core.config.skylab.naviFrag) {
+                        const key = i.replace(/^site\./, "");
 
-                        site.data[ key ] = document.fragments[ i ].value || document.fragments[ i ].url;
+                        site.data[key] = document.fragments[i].value || document.fragments[i].url;
                     }
                 }
 
                 // Normalize navi context
-                document.getSliceZone( core.config.skylab.naviFrag ).value.forEach(( slice ) => {
+                document.getSliceZone(core.config.skylab.naviFrag).value.forEach((slice) => {
                     let id = null;
                     let uid = null;
                     let type = null;
                     let slug = null;
-                    const style = slice.value.value[ 0 ].data.style.value.toLowerCase();
-                    const title = slice.value.value[ 0 ].data.name.value;
+                    const style = slice.value.value[0].data.style.value.toLowerCase();
+                    const title = slice.value.value[0].data.name.value;
 
                     // Handle Document.link to a Page
-                    if ( slice.value.value[ 0 ].data.page ) {
-                        id = slice.value.value[ 0 ].data.page.value.document.id;
-                        uid = slice.value.value[ 0 ].data.page.value.document.uid;
-                        type = slice.value.value[ 0 ].data.page.value.document.type;
+                    if (slice.value.value[0].data.page) {
+                        id = slice.value.value[0].data.page.value.document.id;
+                        uid = slice.value.value[0].data.page.value.document.uid;
+                        type = slice.value.value[0].data.page.value.document.type;
                         slug = uid;
 
-                    // Handle `slug` manual entry
+                        // Handle `slug` manual entry
                     } else {
-                        slug = slice.value.value[ 0 ].data.slug.value.replace( /\//g, "" );
+                        slug = slice.value.value[0].data.slug.value.replace(/\//g, "");
                         id = slug;
                         uid = slug;
                         type = slug;
@@ -247,11 +247,11 @@ const getSite = function ( req ) {
  * Mapping for `site.navi` links referencing `Page` documents
  *
  */
-const getNavi = function ( type ) {
+const getNavi = function (type) {
     let ret = false;
 
-    cache.navi.items.forEach(( item ) => {
-        if ( item.uid === type ) {
+    cache.navi.items.forEach((item) => {
+        if (item.uid === type) {
             ret = item;
         }
     });
@@ -266,54 +266,76 @@ const getNavi = function ( type ) {
  * Load data for API response. Resolve RAW from Service.
  *
  */
-const getDataForApi = function ( req, listener ) {
-    return new Promise(( resolve, reject ) => {
-        const doQuery = function ( type ) {
-            prismic.api( core.config.api.access, null ).then(( api ) => {
-                const done = function ( json ) {
-                    resolve( json.results );
+const getDataForApi = function (req, listener) {
+    return new Promise((resolve, reject) => {
+        const doQuery = function (type) {
+            prismic.api(core.config.api.access, null).then((api) => {
+                const done = function (json) {
+                    resolve(json.results);
                 };
-                const fail = function ( error ) {
+                const fail = function (error) {
                     resolve({
                         error: error
                     });
                 };
-                const form = getForm( req, api, type );
+                // const form = getForm(req, api, type);
                 let query = [];
 
+                let newType = type;
+
+                if (type === "home") {
+                    newType = "project";
+                } else if (type === "studio") {
+                    newType = "page";
+                } else if (type === "work") {
+                    newType = "project";
+                } else if (type === "play") {
+                    newType = "blog";
+                }
+
                 // query: type?
-                if ( !api.data.forms[ type ] ) {
+                if (!api.data.forms[type]) {
                     // Only if type? is NOT a search form collection
-                    query.push( prismic.Predicates.at( "document.type", type ) );
+                    query.push(prismic.Predicates.at("document.type", type));
                 }
 
                 // query: pubsub?
-                if ( listener && listener.handlers.query ) {
-                    query = listener.handlers.query( prismic, api, query, cache, req );
+                if (listener && listener.handlers.query) {
+                    query = listener.handlers.query(prismic, api, query, cache, req);
                 }
 
                 // query: promise?
-                if ( query instanceof Promise ) {
-                    query.then( done ).catch( fail );
+                if (query instanceof Promise) {
+                    query.then(done).catch(fail);
 
                 } else {
                     // query?
-                    if ( query.length ) {
-                        form.query( query );
-                    }
+                    // if (query.length) {
+                    //     form.query(query);
+                    // }
 
                     // ordering: pubsub?
-                    if ( listener && listener.handlers.orderings ) {
-                        listener.handlers.orderings( prismic, cache.api, form, cache, req );
-                    }
+                    // if (listener && listener.handlers.orderings) {
+                    //     listener.handlers.orderings(prismic, cache.api, form, cache, req);
+                    // }
 
                     // submit
-                    form.submit().then( done ).catch( fail );
+                    // form.submit().then(done).catch(fail);
+
+                    const options = {
+                        pageSize: 100
+                    };
+
+                    if (listener && listener.handlers.orderings) {
+                        options.orderings = `[my.${core.config.skylab.mainType}.date desc]`;
+                    }
+
+                    cache.api.query(query, options).then(done).catch(fail);
                 }
             });
         };
 
-        doQuery( req.params.type );
+        doQuery(req.params.type);
     });
 };
 
@@ -324,25 +346,28 @@ const getDataForApi = function ( req, listener ) {
  * Load data for Page response.
  *
  */
-const getDataForPage = function ( req, listener ) {
-    return new Promise(( resolve, reject ) => {
+const getDataForPage = function (req, listener) {
+    return new Promise((resolve, reject) => {
         const data = {
             item: null,
             items: null
         };
-        const doQuery = function ( type, uid ) {
+        const doQuery = function (type, uid) {
+            console.log(cache.api);
             let query = [];
-            const navi = getNavi( type );
-            const form = getForm( req, cache.api, type );
-            const isNaviNoForm = (navi && !cache.api.data.forms[ type ]);
-            const done = function ( json ) {
-                if ( !json.results.length ) {
+            const navi = getNavi(type);
+            // const form = getForm(req, cache.api, type);
+            // const isNaviNoForm = (navi && !cache.api.data.forms[type]);
+            const isNaviNoForm = navi && type === "studio";
+            const done = function (json) {
+                console.log(json);
+                if (!json.results.length) {
                     // Static page with no CMS data attached to it...
-                    if ( core.template.cache.pages.indexOf( `${type}.html` ) !== -1 ) {
-                        resolve( data );
+                    if (core.template.cache.pages.indexOf(`${type}.html`) !== -1) {
+                        resolve(data);
 
                     } else {
-                        reject( `${core.config.skylab.name} has no data for the content-type "${type}".` );
+                        reject(`${core.config.skylab.name} has no data for the content-type "${type}".`);
                     }
 
                 } else {
@@ -350,65 +375,86 @@ const getDataForPage = function ( req, listener ) {
                     data.items = json.results;
 
                     // uid
-                    if ( uid || isNaviNoForm ) {
-                        data.item = getDoc( isNaviNoForm ? navi.uid : uid, json.results );
+                    if (uid || isNaviNoForm) {
+                        data.item = getDoc(isNaviNoForm ? navi.uid : uid, json.results);
 
-                        if ( !data.item ) {
-                            reject( `The document with UID "${isNaviNoForm ? navi.uid : uid}" could not be found by ${core.config.skylab.name}.` );
+                        if (!data.item) {
+                            reject(`The document with UID "${isNaviNoForm ? navi.uid : uid}" could not be found by ${core.config.skylab.name}.`);
                         }
                     }
 
-                    resolve( data );
+                    resolve(data);
                 }
             };
-            const fail = function ( error ) {
-                reject( error );
+            const fail = function (error) {
+                reject(error);
             };
 
-            // query: type?
-            if ( isNaviNoForm ) {
-                query.push( prismic.Predicates.at( "document.type", navi.type ) );
-                query.push( prismic.Predicates.at( "document.id", navi.id ) );
+            let newType = type;
 
-            } else if ( !cache.api.data.forms[ type ] ) {
+            if (type === "home") {
+                newType = "project";
+            } else if (type === "studio") {
+                newType = "page";
+            } else if (type === "work") {
+                newType = "project";
+            } else if (type === "play") {
+                newType = "blog";
+            }
+
+            // query: type?
+            if (isNaviNoForm) {
+                query.push(prismic.Predicates.at("document.type", navi.type));
+                query.push(prismic.Predicates.at("document.id", navi.id));
+
+            } else if (!cache.api.data.forms[type]) {
                 // Only if type? is NOT a search form collection
-                query.push( prismic.Predicates.at( "document.type", type ) );
+                query.push(prismic.Predicates.at("document.type", newType));
             }
 
             // query: pubsub?
-            if ( listener && listener.handlers.query ) {
-                query = listener.handlers.query( prismic, cache.api, query, cache, req );
+            if (listener && listener.handlers.query) {
+                query = listener.handlers.query(prismic, cache.api, query, cache, req);
             }
 
             // query: promise?
-            if ( query instanceof Promise ) {
-                query.then( done ).catch( fail );
+            if (query instanceof Promise) {
+                query.then(done).catch(fail);
 
             } else {
                 // query?
-                if ( query.length ) {
-                    form.query( query );
-                }
+                // if (query.length) {
+                //     form.query(query);
+                // }
 
                 // ordering: pubsub?
-                if ( listener && listener.handlers.orderings ) {
-                    listener.handlers.orderings( prismic, cache.api, form, cache, req );
-                }
+                // if (listener && listener.handlers.orderings) {
+                //     listener.handlers.orderings(prismic, cache.api, form, cache, req);
+                // }
 
                 // submit
-                form.submit().then( done ).catch( fail );
+                // form.submit().then(done).catch(fail);
+                const options = {
+                    pageSize: 100
+                };
+
+                if (listener && listener.handlers.orderings) {
+                    options.orderings = `[my.${core.config.skylab.mainType}.date desc]`;
+                }
+
+                cache.api.query(query, options).then(done).catch(fail);
             }
         };
 
-        getSite( req ).then(() => {
+        getSite(req).then(() => {
             const uid = req.params.uid;
             const type = req.params.type;
 
-            if ( !type ) {
-                resolve( data );
+            if (!type) {
+                resolve(data);
 
             } else {
-                doQuery( type, uid );
+                doQuery(type, uid);
             }
         });
     });
@@ -421,11 +467,11 @@ const getDataForPage = function ( req, listener ) {
  * Get valid `ref` for Prismic API data.
  *
  */
-const getRef = function ( req, api ) {
+const getRef = function (req, api) {
     let ref = api.master();
 
-    if ( req && req.cookies && req.cookies[ prismic.previewCookie ] ) {
-        ref = req.cookies[ prismic.previewCookie ];
+    if (req && req.cookies && req.cookies[prismic.previewCookie]) {
+        ref = req.cookies[prismic.previewCookie];
     }
 
     return ref;
@@ -438,8 +484,8 @@ const getRef = function ( req, api ) {
  * Get one document from all documents.
  *
  */
-const getDoc = function ( uid, documents ) {
-    return documents.find(( doc ) => {
+const getDoc = function (uid, documents) {
+    return documents.find((doc) => {
         return (doc.uid === uid);
     });
 };
@@ -451,10 +497,10 @@ const getDoc = function ( uid, documents ) {
  * Get the stub of the search form.
  *
  */
-const getForm = function ( req, api, collection ) {
-    const form = api.data.forms[ collection ] ? collection : "everything";
+const getForm = function (req, api, collection) {
+    const form = api.data.forms[collection] ? collection : "everything";
 
-    return api.form( form ).pageSize( 100 ).ref( getRef( req, api ) );
+    return api.form(form).pageSize(100).ref(getRef(req, api));
 };
 
 
